@@ -115,6 +115,6 @@ workflows:
       - deploy:
           requires:
             - build
-      # - merge:
-      #     requires:
-      #       - deploy
+      - merge:
+          requires:
+            - deploy
