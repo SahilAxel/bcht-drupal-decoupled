@@ -13,9 +13,14 @@
 /web/sites/*/files
 /web/sites/*/private
 
+# Ignore paths that may contain temporary files
+/web/sites/*/translations
+/web/sites/*/tmp
+/web/sites/*/cache
+
 # Ignore SimpleTest multi-site environment.
 /web/sites/simpletest
-
+/web/themes/**/node_modules
 
 # Ignore custom modules managed by Composer.
 #
@@ -95,3 +100,43 @@
 
 # Ignore .env files as they are personal
 #/.env
+
+# Ignore drupal core (if not versioning drupal sources)
+/web/vendor
+/web/core
+/web/modules/README.txt
+/web/profiles/README.txt
+/web/sites/development.services.yml
+/web/sites/example.settings.local.php
+/web/sites/example.sites.php
+/web/sites/README.txt
+/web/themes/README.txt
+/web/.csslintrc
+/web/.editorconfig
+/web/.eslintignore
+/web/.eslintrc.json
+/web/.gitattributes
+/web/.htaccess
+/web/.ht.router.php
+/web/autoload.php
+/web/composer.json
+/web/composer.lock
+/web/example.gitignore
+/web/index.php
+/web/INSTALL.txt
+/web/LICENSE.txt
+/web/README.md
+/web/robots.txt
+/web/update.php
+/web/web.config
+
+# Ignore vendor dependencies and scripts
+/vendor
+/composer.phar
+/composer
+/robo.phar
+/robo
+/drush.phar
+/drush
+/drupal.phar
+/drupal
