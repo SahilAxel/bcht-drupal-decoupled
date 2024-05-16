@@ -1,0 +1,120 @@
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: cimg/php:8.2-node
+  # BUILD_TOOLS_VERSION: dev-master
+
+version: 2.1
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - composer-cache-{{ checksum "composer.json" }}
+            - composer-cache-
+
+      - run:
+          name: Update .gitignore
+          command: rm .gitignore; mv deploy-gitignore.txt .gitignore
+
+      - run:
+          name: install imagick
+          command: sudo apt-get update && sudo apt-get install -y libmagickwand-dev --no-install-recommends && sudo rm -rf /var/lib/apt/lists/*
+      - run: sudo mkdir -p /usr/src/php/ext/imagick
+      - run: sudo chmod 777 /usr/src/php/ext/imagick
+      - run: sudo curl -fsSL https://github.com/Imagick/imagick/archive/refs/tags/3.7.0.tar.gz | tar xvz -C "/usr/src/php/ext/imagick" --strip 1
+      - run: sudo docker-php-ext-install imagick
+      - run: sudo rm /etc/ImageMagick-6/policy.xml
+
+      - run:
+          name: Run Composer Install
+          command: composer install --no-dev --no-interaction --optimize-autoloader
+
+      - save_cache:
+          key: composer-cache-{{ checksum "composer.json" }}
+          paths:
+            - $HOME/.composer/cache
+
+      # - run:
+      #     name: Install NVM and Build Front-End Assets
+      #     command: ./.circleci/scripts/build-front-end
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - docroot
+            - vendor
+
+  deploy:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - attach_workspace:
+          at: .
+
+      - run:
+          # Set TERMINUS_ENV and related environment variables.
+          # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
+          name: Set environment variables
+          command: ./.circleci/scripts/set-environment
+
+      - run:
+          name: Setup Terminus
+          command: ./.circleci/scripts/setup-terminus
+
+      - run:
+          name: Install Terminus Build Tools Plugin
+          command: ./.circleci/scripts/install-terminus-build-tools-plugin
+
+      - run:
+          name: Save variables
+          command: ./.circleci/scripts/save-variables
+
+      - run:
+          name: Create multidev environment
+          command: ./.circleci/scripts/create-multidev
+          no_output_timeout: 30m
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  merge:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run:
+          name: Setup Terminus
+          command: ./.circleci/scripts/setup-terminus
+
+      - run:
+          name: Install Terminus Build Tools Plugin
+          command: ./.circleci/scripts/install-terminus-build-tools-plugin
+
+      - run:
+          name: Restore variables
+          command: ./.circleci/scripts/restore-variables
+
+      - run:
+          name: Merge into master (if needed)
+          command: ./.circleci/scripts/merge-master
+          no_output_timeout: 30m
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+      - merge:
+          requires:
+            - deploy

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -eo pipefail
+
+mkdir ~/terminus && cd ~/terminus
+
+curl -L https://github.com/pantheon-systems/terminus/releases/download/$(curl --silent "https://api.github.com/repos/pantheon-systems/terminus/releases/tags/3.1.4" | perl -nle'print $& while m{"tag_name": "\K.*?(?=")}g')/terminus.phar --output terminus
+
+chmod +x terminus
+
+sudo ln -s ~/terminus/terminus /usr/local/bin/terminus
+
+# Log in via Terminus
+terminus auth:login --machine-token="$TERMINUS_TOKEN"

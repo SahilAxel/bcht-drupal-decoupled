@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Install the Terminus Build Tools plugin
+echo "Install Terminus Build Tools Plugin version 3.x"
+terminus self:plugin:install terminus-build-tools-plugin
