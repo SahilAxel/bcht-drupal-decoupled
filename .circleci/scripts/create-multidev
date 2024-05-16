@@ -26,11 +26,6 @@ terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
 # Flush the cache
 terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" cr
 
-# Remove problematic config before importing config.
-# Ref: https://www.drupal.org/project/drupal/issues/2856021#comment-14364115
-# @todo: Remove this step once D8 migrates to D9 on test and live.
-terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- cdel language.entity.en
-
 # If exported configuration is available, then import it.
 # if [ -f "config/system.site.yml" ] ; then
   terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- config-import --yes
