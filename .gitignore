@@ -141,3 +141,6 @@
 /drush
 /drupal.phar
 /drupal
+
+# Ignore ide files
+.idea/
