@@ -23,11 +23,12 @@
         "drush/drush": "^11 || ^12",
         "drupal/admin_toolbar": "^3.4",
         "drupal/paragraphs": "^1.17",
-        "drupal/pathauto": "^1.12"
+        "drupal/pathauto": "^1.12",
+        "drupal/config_ignore": "^3.3",
+        "drupal/config_split": "^2.0"
     },
     "require-dev": {
-        "drupal/core-dev": "^10",
-        "axelerant/drupal-quality-checker": "^1.4"
+        "drupal/core-dev": "^10"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -83,9 +84,7 @@
             "drupal/core-composer-scaffold": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "phpstan/extension-installer": true,
-            "php-http/discovery": true,
-            "phpro/grumphp-shim": true,
-            "axelerant/drupal-quality-checker": true
+            "php-http/discovery": true
         }
     }
 }
