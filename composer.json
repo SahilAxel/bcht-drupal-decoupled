@@ -26,7 +26,8 @@
         "drupal/pathauto": "^1.12"
     },
     "require-dev": {
-        "drupal/core-dev": "^10"
+        "drupal/core-dev": "^10",
+        "axelerant/drupal-quality-checker": "^1.4"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -82,7 +83,9 @@
             "drupal/core-composer-scaffold": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "phpstan/extension-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "phpro/grumphp-shim": true,
+            "axelerant/drupal-quality-checker": true
         }
     }
 }
