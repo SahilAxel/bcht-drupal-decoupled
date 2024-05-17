@@ -99,8 +99,8 @@ jobs:
           command: ./.circleci/scripts/restore-variables
 
       - run:
-          name: Merge into master (if needed)
-          command: ./.circleci/scripts/merge-master
+          name: Merge into main (if needed)
+          command: ./.circleci/scripts/merge-main
           no_output_timeout: 30m
 
 workflows:
