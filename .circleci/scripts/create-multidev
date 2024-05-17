@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -eo pipefail
+
+#
+# Recreate environment from test for feature branches
+# and push only code for develop and release branches.
+#
+if [[ $CIRCLE_BRANCH == "develop" ]] ; then
+  terminus -n connection:set "$TERMINUS_SITE.develop" git
+  terminus -n build:env:push "$TERMINUS_SITE.develop" --yes
+  terminus -n connection:set "$TERMINUS_SITE.develop" sftp
+elif [[ $CIRCLE_BRANCH == "release" ]] ; then
+  terminus -n connection:set "$TERMINUS_SITE.release" git
+  terminus -n build:env:push "$TERMINUS_SITE.release" --yes
+  terminus -n connection:set "$TERMINUS_SITE.release" sftp
+else
+  # Create a new multidev site to test on
+  terminus -n env:wake "$TERMINUS_SITE.dev"
+  terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --clone-content
+fi
+
+# Run any database updates
+terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
+
+# Flush the cache
+terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" cr
+
+# If exported configuration is available, then import it.
+# if [ -f "config/system.site.yml" ] ; then
+  terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- config-import --yes
+# fi

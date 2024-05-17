@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -eo pipefail
+
+# Avoid ssh prompting when connecting to new ssh hosts
+mkdir -p $HOME/.ssh && echo "StrictHostKeyChecking no" >> "$HOME/.ssh/config"
+
+cat env-variables >> $BASH_ENV
+source $BASH_ENV
