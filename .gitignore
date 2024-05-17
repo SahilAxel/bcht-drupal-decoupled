@@ -82,6 +82,7 @@
 # ------------------------------------------------------------------
 /.editorconfig
 /.gitattributes
+/*.dist
 
 # The pantheon-systems/drupal-integrations project places a
 # .drush-lock-update file at the project root.
