@@ -38,10 +38,6 @@ jobs:
           paths:
             - $HOME/.composer/cache
 
-      # - run:
-      #     name: Install NVM and Build Front-End Assets
-      #     command: ./.circleci/scripts/build-front-end
-
       - persist_to_workspace:
           root: .
           paths:
