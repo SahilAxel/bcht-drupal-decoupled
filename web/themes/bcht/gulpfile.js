@@ -5,7 +5,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const del = require("del");
-// const eslint = require('gulp-eslint');
+const eslint = require('gulp-eslint');
 
 var paths = {
  sassSrc: 'src/scss/**/*.scss',
