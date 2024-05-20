@@ -1,5 +1,43 @@
-//Fonts
+@font-face {
+  font-family: 'MuseoSans';
+  src: url('../../fonts/MuseoSans_300.ttf');
+}
 
-// Colors
-$black: #000000;
-$white: #ffffff;
+@font-face {
+  font-family: 'MuseoSansItalic';
+  src: url('../../fonts/MuseoSans_300_Italic.ttf');
+}
+@font-face {
+  font-family: 'MuseoSansBold';
+  src: url('../../fonts/MuseoSans_900.ttf');
+}
+
+@font-face {
+  font-family: 'MuseoSansBoldItalic';
+  src: url('../../fonts/MuseoSans_900_Italic.ttf');
+}
+// Variables
+$MuseoSans: 'MuseoSans', sans-serif;
+$MuseoSansBold: 'MuseoSansBold', sans-serif;
+$MuseoSansItalic: 'MuseoSansItalic', sans-serif;
+$MuseoSansBoldItalic: 'MuseoSansBoldItalic', sans-serif;
+
+// Primary Colors
+$BostonBlue: #003087;
+$BostonOcean: #007dba;
+$BostonPink: #c14991;
+$BostonSky: #41b6e6;
+
+// Secondary Colors
+$BostonSkyTint1: #95ddfa;
+$BostonSkyTint2: #c9efff;
+$BostonPinkTint: #fcc3e5;
+$BostonGray: #5a5e6f;
+$BostonGrayTint: #c0c3d0;
+
+//Action Color
+$BostonRed: #e30000;
+
+// Neutral Colors
+$Black: #001c00;
+$White: #ffffff;
