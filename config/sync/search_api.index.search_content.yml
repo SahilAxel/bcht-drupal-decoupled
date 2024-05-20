@@ -2,8 +2,6 @@ uuid: e6844445-10c0-4aaa-9d70-52bf848f1539
 langcode: en
 status: true
 dependencies:
-  config:
-    - search_api.server.pantheon_solr8
   module:
     - node
     - search_api
@@ -92,4 +90,4 @@ options:
   cron_limit: 50
   index_directly: true
   track_changes_in_references: true
-server: pantheon_solr8
+server: null

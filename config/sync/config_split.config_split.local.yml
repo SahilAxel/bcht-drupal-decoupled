@@ -10,8 +10,9 @@ stackable: false
 no_patching: false
 storage: folder
 folder: ../config/local
-module: {  }
+module:
+  devel: 0
 theme: {  }
-complete_list: {  }
-partial_list:
+complete_list:
   - search_api.server.pantheon_solr8
+partial_list: {  }

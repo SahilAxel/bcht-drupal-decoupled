@@ -1,0 +1,7 @@
+adding:
+  dependencies:
+    config:
+      - search_api.server.pantheon_solr8
+  server: pantheon_solr8
+removing:
+  server: null
