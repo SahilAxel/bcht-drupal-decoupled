@@ -16,6 +16,21 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  */
 include __DIR__ . "/settings.pantheon.php";
 
+$settings['config_sync_directory'] = '../config/sync';
+
+if ($_ENV['PANTHEON_ENVIRONMENT'] == 'dev') {
+  $config['config_split.config_split.dev']['status'] = TRUE;
+}
+elseif ($_ENV['PANTHEON_ENVIRONMENT'] == 'test') {
+  $config['config_split.config_split.test']['status'] = TRUE;
+}
+elseif ($_ENV['PANTHEON_ENVIRONMENT'] == 'live') {
+  $config['config_split.config_split.live']['status'] = TRUE;
+}
+elseif (getenv('IS_DDEV_PROJECT') == TRUE){
+  $config['config_split.config_split.local']['status'] = TRUE;
+}
+
 /**
  * Skipping permissions hardening will make scaffolding
  * work better, but will also raise a warning when you
@@ -28,10 +43,10 @@ include __DIR__ . "/settings.pantheon.php";
 /**
  * If there is a local settings file, then include it
  */
-$local_settings = __DIR__ . "/settings.local.php";
+/* $local_settings = __DIR__ . "/settings.local.php";
 if (file_exists($local_settings)) {
   include $local_settings;
-}
+} */
 
 // Automatically generated include for settings managed by ddev.
 $ddev_settings = dirname(__FILE__) . '/settings.ddev.php';

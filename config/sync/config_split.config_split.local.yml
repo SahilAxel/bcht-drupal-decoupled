@@ -1,0 +1,17 @@
+uuid: db2cff6d-f466-4231-95f4-e5311d9de35f
+langcode: en
+status: false
+dependencies: {  }
+id: local
+label: Local
+description: ''
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../config/local
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list:
+  - search_api.server.pantheon_solr8

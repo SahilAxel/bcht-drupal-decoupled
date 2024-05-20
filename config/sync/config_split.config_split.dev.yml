@@ -1,0 +1,17 @@
+uuid: 8a72054e-f8f8-4c78-bf08-6d98b75bb016
+langcode: en
+status: false
+dependencies: {  }
+id: dev
+label: 'Dev Instance Pantheon'
+description: ''
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../config/dev
+module: {  }
+theme: {  }
+complete_list:
+  - search_api.server.pantheon_solr8
+partial_list: {  }
