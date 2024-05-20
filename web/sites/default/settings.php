@@ -3,6 +3,7 @@
 /**
  * Load services definition file.
  */
+
 $settings['container_yamls'][] = __DIR__ . '/services.yml';
 
 /**
@@ -15,6 +16,24 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  *      the site settings remain consistent.
  */
 include __DIR__ . "/settings.pantheon.php";
+
+$settings['config_sync_directory'] = '../config/sync';
+
+if (!empty($_ENV['PANTHEON_ENVIRONMENT'])) {
+  switch ($_ENV['PANTHEON_ENVIRONMENT']) {
+    case 'live':
+      $config['config_split.config_split.live']['status'] = TRUE;
+      break;
+    case 'test':
+      $config['config_split.config_split.test']['status'] = TRUE;
+      break;
+    default:
+      $config['config_split.config_split.dev']['status'] = TRUE;
+      break;
+  }
+} elseif (getenv('IS_DDEV_PROJECT') == TRUE) {
+  $config['config_split.config_split.local']['status'] = TRUE;
+}
 
 /**
  * Skipping permissions hardening will make scaffolding

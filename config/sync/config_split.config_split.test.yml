@@ -1,0 +1,16 @@
+uuid: 70672cf6-37c4-4386-96f8-d8f2c48598e0
+langcode: en
+status: false
+dependencies: {  }
+id: test
+label: 'Test Instance Pantheon'
+description: ''
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../config/test
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list: {  }

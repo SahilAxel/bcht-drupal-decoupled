@@ -1,0 +1,16 @@
+uuid: bf3050b9-aed7-4a97-a509-333d6a035d9b
+langcode: en
+status: false
+dependencies: {  }
+id: live
+label: 'Live Instance Pantheon'
+description: ''
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../config/live
+module: {  }
+theme: {  }
+complete_list: {  }
+partial_list: {  }

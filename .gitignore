@@ -144,3 +144,4 @@
 
 # Ignore ide files
 .idea/
+.DS_Store
