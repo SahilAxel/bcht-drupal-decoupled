@@ -1,0 +1,118 @@
+@import './base/variables';
+
+body {
+  font-size: 16px;
+  line-height: 24px;
+  color: $BostonGray;
+  font-weight: 400;
+
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  a {
+    color: $BostonPink;
+    text-decoration: underline;
+    &:hover {
+      color: $BostonOcean;
+    }
+  }
+}
+p {
+  color: $BostonGray;
+  font-size: 18px;
+  line-height: 28px;
+  strong {
+    font-family: $MuseoSansBold;
+  }
+}
+.link-blue {
+  color: $BostonBlue;
+  text-decoration: underline;
+  &:hover {
+    color: $BostonPink;
+  }
+}
+.link-pink {
+  color: $BostonPink;
+  text-decoration: underline;
+  &:hover {
+    color: $BostonBlue;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $MuseoSansBold;
+  margin: 0;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 52px;
+  line-height: 64px;
+}
+h2 {
+  font-size: 36px;
+  line-height: 44px;
+}
+h3 {
+  font-size: 32px;
+  line-height: 42px;
+}
+h4 {
+  font-size: 28px;
+  line-height: 36px;
+}
+h5 {
+  font-size: 24px;
+  line-height: 32px;
+}
+h6 {
+  font-size: 20px;
+  line-height: 26px;
+}
+.t7 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+}
+.t8 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+}
+.p1 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+.p2 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.p3 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+}
+.p4 {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+}
+.p5 {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 400;
+}
+.p6 {
+  font-size: 28px;
+  line-height: 42px;
+  font-weight: 400;
+}
