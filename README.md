@@ -55,11 +55,38 @@ ddev drush cr
 
 ## Gulp Compilation
 
-cd into `web/themes/custom/bcht` and run the below command to compile the scss files
-`npm install`
-`gulp` (build)
-`gulp watch` (to watch the changes)
-    ```
+1. cd into `web/themes/custom/bcht` and then Run the below command to compile the scss files
+2. `npm install`
+3. `gulp` (build)
+4. `gulp watch` (to watch the changes)
+
+## Git Workflow
+
+1. In order to create a feature branch, pull the latest changes of the `main` branch and use the latest code of the `main` branch to create the feature branch:
+```
+$ git checkout main
+$ git fetch origin
+$ git rebase origin/main
+```
+2. Create the feature branch using the ticket number of the task ticket, e.g if the ticket ID is BCHT-1 then name the feature branch name as `BCHT-1` :
+```
+$ git checkout -b BCHT-1
+```
+Note: kindly avoid using the user story number for feature branch, unless we do not have any task ticket for the user story.
+3. While adding or pushing a commit, make sure the git commit message is prefixed with the ticket key (e.g `BCHT-1:`) and includes details of the changes made:
+```
+$ git status
+$ git add [files]
+$ git commit -m "BCHT-1: Created the Generic Page details content type."
+$ git push origin BCHT-1
+```
+4. Make sure to rebase your feature branch with latest code of the `main` branch always before raising the pull request.
+5. Navigate to GitHub and open a pull request using the feature branch as origin (e.g `BCHT-1`) and ` main` as the target branch.
+6. Fix the merge conflicts (if any), need to make sure there are no merge conflicts in the PR before final review.
+7. Add the details of the changes made in the pull request, and attach the screenshots of the components/section worked upon in the PR.
+8. Ensure doing the self review of the pull request to identify the common  mistakes and fix them first to avoid any re-open.
+9. Add the proper Testings Steps into the `Testing Steps` fields of the Jira ticket worked upon, and then move the ticket into Code Review and assign it to the Team Lead for a review
+
 
 ## Resources
 
@@ -75,3 +102,9 @@ cd into `web/themes/custom/bcht` and run the below command to compile the scss f
 3.  Create [machine token](https://docs.pantheon.io/terminus/instal) for authentication and to execute drush command setup [ssh authentication](https://docs.pantheon.io/ssh-keys)
 4.  After terminus is installed and authentication step is completed you can execute drush commands on the different environment via the following syntax structure.
     `terminus drush <site>.<env> -- <drush-command>`
+
+### DDEV references
+
+- DDEV Installation: https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/ 
+- DDEV Commands: https://ddev.readthedocs.io/en/stable/users/usage/cli/ 
+- DDEV Troubleshooting: https://ddev.readthedocs.io/en/stable/users/usage/troubleshooting/ 
