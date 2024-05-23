@@ -5,7 +5,7 @@ body {
   line-height: 24px;
   color: $BostonGray;
   font-weight: 400;
-
+  font-family: $HelveticaRegular;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -92,24 +92,29 @@ h6 {
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+  font-family: $HelveticaRegular;
 }
 .p3 {
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
+  font-family: $HelveticaRegular;
 }
 .p4 {
   font-size: 20px;
   line-height: 30px;
   font-weight: 400;
+  font-family: $HelveticaRegular;
 }
 .p5 {
   font-size: 24px;
   line-height: 36px;
   font-weight: 400;
+  font-family: $HelveticaRegular;
 }
 .p6 {
   font-size: 28px;
   line-height: 42px;
   font-weight: 400;
+  font-family: $HelveticaRegular;
 }

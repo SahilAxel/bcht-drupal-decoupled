@@ -16,11 +16,34 @@
   font-family: 'MuseoSansBoldItalic';
   src: url('../../fonts/MuseoSans_900_Italic.ttf');
 }
-// Variables
+
+@font-face {
+  font-family: 'HelveticaRegular';
+  src: url('../../fonts/Helvetica.woff');
+}
+@font-face {
+  font-family: 'HelveticaBold';
+  src: url('../../fonts/Helvetica_Bold.woff');
+}
+@font-face {
+  font-family: 'HelveticaOblique';
+  src: url('../../fonts/Helvetica_Oblique.woff');
+}
+@font-face {
+  font-family: 'HelveticaBoldOblique';
+  src: url('../../fonts/HelveticaBoldOblique.woff');
+}
+
+
+// Font Variables
 $MuseoSans: 'MuseoSans', sans-serif;
 $MuseoSansBold: 'MuseoSansBold', sans-serif;
 $MuseoSansItalic: 'MuseoSansItalic', sans-serif;
 $MuseoSansBoldItalic: 'MuseoSansBoldItalic', sans-serif;
+$HelveticaRegular: 'HelveticaRegular', Arial, sans-serif;
+$HelveticaBold: 'HelveticaBold', Arial, sans-serif;
+$HelveticaOblique: 'HelveticaOblique', Arial, sans-serif;
+$HelveticaBoldOblique: 'HelveticaBoldOblique', Arial, sans-serif;
 
 // Primary Colors
 $BostonBlue: #003087;
