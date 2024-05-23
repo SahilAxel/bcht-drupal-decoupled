@@ -8,9 +8,7 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
-  a {
-    text-decoration: none;
-  }
+  text-decoration: none;
   cursor: pointer;
   font-family: $MuseoSans;
   &--default {
@@ -18,6 +16,7 @@
     color: $White;
     &:hover {
       background-color: $BostonOcean;
+      color: $White;
     }
   }
   &--white {
@@ -45,15 +44,14 @@
   font-size: 16px;
   line-height: 20px;
   cursor: pointer;
+  text-decoration: none;
   font-family: $MuseoSans;
-  a {
-    text-decoration: none;
-  }
   &--default {
     background-color: $BostonPink;
     color: $White;
     &:hover {
       background-color: $BostonOcean;
+      color: $White;
     }
   }
   &--white {
@@ -82,6 +80,7 @@
   line-height: 22px;
   width: fit-content;
   font-family: $MuseoSans;
+  text-decoration: none;
   &--default {
     color: $BostonPink;
     border: 2px solid $BostonPink;
@@ -115,20 +114,21 @@
   font-size: 16px;
   line-height: 20px;
   cursor: pointer;
+  text-decoration: none;
   font-family: $MuseoSans;
   &--default {
     color: $BostonPink;
     border: 2px solid $BostonPink;
     &:hover {
-      background-color: $BostonOcean;
       color: $BostonOcean;
+      border: 2px solid $BostonOcean;
     }
   }
   &--white {
     color: $White;
     border: 2px solid $White;
     &:hover {
-      background-color: $BostonSky;
+      border: 2px solid $BostonSky;
       color: $BostonSky;
     }
   }
@@ -136,7 +136,7 @@
     color: $White;
     border: 2px solid $White;
     &:hover {
-      background-color: $BostonSkyTint2;
+      border: 2px solid $BostonSkyTint2;
       color: $BostonSkyTint2;
     }
   }
