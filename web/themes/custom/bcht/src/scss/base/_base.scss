@@ -1,4 +1,4 @@
-@import './base/variables';
+@import '../settings/settings.all';
 
 body {
   font-size: 16px;
@@ -18,6 +18,19 @@ body {
       color: $BostonOcean;
     }
   }
+  ul,
+  ol {
+    li {
+      font-family: $HelveticaRegular;
+      font-weight: 400;
+      &::marker {
+        color: $BostonOcean;
+      }
+    }
+  }
+}
+hr {
+  border: 2px solid $BostonOcean;
 }
 p {
   color: $BostonGray;
@@ -25,64 +38,24 @@ p {
   line-height: 28px;
 }
 .link-blue {
-  color: $BostonBlue;
+  color: $BostonOcean;
+  cursor: pointer;
   text-decoration: underline;
+  color: $BostonOcean;
+  cursor: pointer;
   &:hover {
     color: $BostonPink;
   }
 }
 .link-pink {
   color: $BostonPink;
+  cursor: pointer;
   text-decoration: underline;
   &:hover {
-    color: $BostonBlue;
+    color: $BostonOcean;
   }
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $MuseoSansBold;
-  margin: 0;
-  font-weight: 700;
-}
 
-h1 {
-  font-size: 52px;
-  line-height: 64px;
-}
-h2 {
-  font-size: 36px;
-  line-height: 44px;
-}
-h3 {
-  font-size: 32px;
-  line-height: 42px;
-}
-h4 {
-  font-size: 28px;
-  line-height: 36px;
-}
-h5 {
-  font-size: 24px;
-  line-height: 32px;
-}
-h6 {
-  font-size: 20px;
-  line-height: 26px;
-}
-.t7 {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 26px;
-}
-.t8 {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 22px;
-}
 .p1 {
   font-size: 14px;
   line-height: 22px;
