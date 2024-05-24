@@ -1,7 +1,7 @@
-(function (Drupal, $, once) {
+(function(Drupal, $, once) {
   Drupal.behaviors.global = {
     attach: (context, settings) => {
-      console.log("Hello test")
+      console.log('Hello CI/CD');
     },
   };
-}(Drupal, jQuery, once));
+})(Drupal, jQuery, once);
