@@ -1,0 +1,11 @@
+uuid: 34056e27-3185-4e18-bbba-30222b24a347
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.wysiwig
+label: WYSIWIG
+description: ''
+targetEntityType: media
+cache: true

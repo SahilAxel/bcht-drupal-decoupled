@@ -2,8 +2,12 @@ uuid: 633e367b-0595-45b9-8b5d-5b4c531989ce
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.wysiwig
   module:
+    - ckeditor_media_resize
     - editor
+    - media
 _core:
   default_config_hash: vpZysv3RHJjhYzq7O_q5q8mVlHdrSzKELmXyiX6RtV0
 name: 'Full HTML'
@@ -14,29 +18,79 @@ filters:
     id: editor_file_reference
     provider: editor
     status: true
-    weight: 11
+    weight: -49
     settings: {  }
   filter_align:
     id: filter_align
     provider: filter
     status: true
-    weight: 8
+    weight: -43
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: false
+    weight: -45
     settings: {  }
   filter_caption:
     id: filter_caption
     provider: filter
     status: true
-    weight: 9
+    weight: -42
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -47
+    settings:
+      allowed_html: '<br> <p class="featured-text text-align-left text-align-center text-align-right text-align-justify"> <h2 class="text-align-left text-align-center text-align-right text-align-justify"> <h3 class="text-align-left text-align-center text-align-right text-align-justify"> <h4 class="text-align-left text-align-center text-align-right text-align-justify"> <h5 class="text-align-left text-align-center text-align-right text-align-justify"> <h6 class="text-align-left text-align-center text-align-right text-align-justify"> <iframe src title width height allow allowfullscreen referrerpolicy loading> <strong> <em> <u> <blockquote> <a href class> <ul> <ol reversed start> <li> <hr> <drupal-media data-entity-type data-entity-uuid alt data-caption data-align data-media-width> <div class="raw-html-embed text-align-left text-align-center text-align-right text-align-justify">'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -46
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: -41
     settings: {  }
   filter_htmlcorrector:
     id: filter_htmlcorrector
     provider: filter
     status: true
-    weight: 10
+    weight: -50
     settings: {  }
   filter_image_lazy_load:
     id: filter_image_lazy_load
     provider: filter
     status: true
-    weight: 15
+    weight: -48
     settings: {  }
+  filter_resize_media:
+    id: filter_resize_media
+    provider: ckeditor_media_resize
+    status: true
+    weight: 90
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: -44
+    settings:
+      filter_url_length: 72
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: -40
+    settings:
+      default_view_mode: wysiwig
+      allowed_view_modes: {  }
+      allowed_media_types:
+        image: image
