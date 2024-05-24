@@ -3,3 +3,6 @@
 @import './base/container';
 @import './base/variables';
 @import './base/buttons';
+body {
+  background-color: $BostonRed;
+}

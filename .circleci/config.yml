@@ -2,7 +2,6 @@ defaults: &defaults
   working_directory: ~/repo
   docker:
     - image: cimg/php:8.2-node
-  # BUILD_TOOLS_VERSION: dev-master
 
 version: 2.1
 jobs:
@@ -38,11 +37,22 @@ jobs:
           paths:
             - $HOME/.composer/cache
 
+      - run:
+          name: Install Node.js dependencies
+          working_directory: web/themes/custom/bcht
+          command: npm install
+
+      - run:
+          name: Run Gulp tasks
+          working_directory: web/themes/custom/bcht
+          command: npx gulp
+
       - persist_to_workspace:
           root: .
           paths:
             - docroot
             - vendor
+            - web/themes/custom/bcht/build
 
   deploy:
     <<: *defaults
