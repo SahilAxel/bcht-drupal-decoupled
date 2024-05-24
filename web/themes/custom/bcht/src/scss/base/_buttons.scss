@@ -1,7 +1,6 @@
-@import './base/variables';
+@import '../settings/settings.all';
 
 // Default Button styles
-
 .btn {
   padding: 15px 25px;
   border-radius: 6px;
@@ -11,6 +10,7 @@
   text-decoration: none;
   cursor: pointer;
   font-family: $MuseoSans;
+  border: none;
   &--default {
     background-color: $BostonPink;
     color: $White;
@@ -46,6 +46,7 @@
   cursor: pointer;
   text-decoration: none;
   font-family: $MuseoSans;
+  border: none;
   &--default {
     background-color: $BostonPink;
     color: $White;
@@ -81,8 +82,11 @@
   width: fit-content;
   font-family: $MuseoSans;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
   &--default {
     color: $BostonPink;
+    background-color: $White;
     border: 2px solid $BostonPink;
     &:hover {
       color: $BostonOcean;
@@ -92,6 +96,7 @@
   &--white {
     color: $White;
     border: 2px solid $White;
+    background-color: $White;
     &:hover {
       border: 2px solid $BostonSky;
       color: $BostonSky;
@@ -100,6 +105,7 @@
   &--tint {
     color: $White;
     border: 2px solid $White;
+    background-color: $White;
     &:hover {
       border: 2px solid $BostonSkyTint2;
       color: $BostonSkyTint2;
@@ -115,9 +121,11 @@
   line-height: 20px;
   cursor: pointer;
   text-decoration: none;
+  border: none;
   font-family: $MuseoSans;
   &--default {
     color: $BostonPink;
+    background-color: $White;
     border: 2px solid $BostonPink;
     &:hover {
       color: $BostonOcean;
@@ -127,6 +135,8 @@
   &--white {
     color: $White;
     border: 2px solid $White;
+    background-color: $White;
+
     &:hover {
       border: 2px solid $BostonSky;
       color: $BostonSky;
@@ -135,6 +145,8 @@
   &--tint {
     color: $White;
     border: 2px solid $White;
+    background-color: $White;
+
     &:hover {
       border: 2px solid $BostonSkyTint2;
       color: $BostonSkyTint2;
@@ -152,6 +164,7 @@
     line-height: 26px;
     font-weight: 600;
     text-decoration: none;
+    cursor: pointer;
     &::after {
       content: '';
       width: 18px;
@@ -182,6 +195,7 @@
     line-height: 26px;
     font-weight: 600;
     text-decoration: none;
+    cursor: pointer;
     &::after {
       content: '';
       width: 18px;
@@ -214,6 +228,7 @@
     line-height: 22px;
     font-weight: 600;
     text-decoration: none;
+    cursor: pointer;
     &::after {
       content: '';
       width: 18px;
@@ -244,6 +259,7 @@
     line-height: 22px;
     font-weight: 600;
     text-decoration: none;
+    cursor: pointer;
     &::after {
       content: '';
       width: 14px;
