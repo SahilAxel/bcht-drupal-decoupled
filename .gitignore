@@ -147,3 +147,4 @@
 .DS_Store
 
 #Ignore build folder
+web/themes/custom/bcht/build
