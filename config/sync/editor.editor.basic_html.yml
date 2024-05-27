@@ -15,29 +15,12 @@ settings:
     items:
       - bold
       - italic
-      - '|'
+      - underline
       - link
-      - '|'
       - bulletedList
       - numberedList
-      - '|'
-      - blockQuote
-      - drupalInsertImage
-      - '|'
-      - heading
-      - code
-      - '|'
       - sourceEditing
   plugins:
-    ckeditor5_heading:
-      enabled_headings:
-        - heading2
-        - heading3
-        - heading4
-        - heading5
-        - heading6
-    ckeditor5_imageResize:
-      allow_resize: true
     ckeditor5_list:
       properties:
         reversed: false
@@ -58,6 +41,8 @@ settings:
         - '<h4 id>'
         - '<h5 id>'
         - '<h6 id>'
+    ckeditor_link_styles_linkStyles:
+      styles: {  }
 image_upload:
   status: true
   scheme: public

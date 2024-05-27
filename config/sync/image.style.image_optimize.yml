@@ -1,0 +1,7 @@
+uuid: e42fc07b-bed7-4bcc-b8c6-77196a5abace
+langcode: en
+status: true
+dependencies: {  }
+name: image_optimize
+label: 'Image Optimize'
+effects: {  }

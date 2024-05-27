@@ -1,0 +1,36 @@
+uuid: 8134d8bf-c1a5-4b78-ad22-92a78f0e076f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.wysiwig
+    - field.field.media.image.field_media_image
+    - image.style.image_optimize
+    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
+id: media.image.wysiwig
+targetEntityType: media
+bundle: image
+mode: wysiwig
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: image_optimize
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true
