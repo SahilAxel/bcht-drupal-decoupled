@@ -2,13 +2,10 @@ uuid: 96a55556-a7c7-4155-88c2-f2701dddac01
 langcode: en
 status: true
 dependencies:
-  config:
-    - filter.format.basic_html
   module:
     - comment
     - contact
     - file
-    - filter
     - media
     - search
     - shortcut
@@ -28,5 +25,4 @@ permissions:
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
-  - 'use text format basic_html'
   - 'view media'
