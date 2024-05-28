@@ -8,7 +8,6 @@
   font-size: 18px;
   line-height: 22px;
   text-decoration: none;
-  display: inline-block;
   cursor: pointer;
   font-family: $MuseoSans;
   border: none;
@@ -47,7 +46,6 @@
   cursor: pointer;
   text-decoration: none;
   font-family: $MuseoSans;
-  display: inline-block;
   border: none;
   &--default {
     background-color: $BostonPink;
@@ -81,7 +79,6 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
-  display: inline-block;
   width: fit-content;
   font-family: $MuseoSans;
   text-decoration: none;
@@ -125,7 +122,6 @@
   cursor: pointer;
   text-decoration: none;
   border: none;
-  display: inline-block;
   font-family: $MuseoSans;
   &--default {
     color: $BostonPink;

@@ -1,2 +1,9 @@
-!function(o){o.behaviors.global={attach:(o,l)=>{console.log("Hello CI/CD")}}}(Drupal,(jQuery,once));
-//# sourceMappingURL=global.js.map
+(function (Drupal, $) {
+  Drupal.behaviors.global = {
+    attach: function (context, settings) {
+      console.log('Hello World');
+    },
+  };
+})(Drupal, jQuery);
+
+//# sourceMappingURL=../maps/global.js.map
