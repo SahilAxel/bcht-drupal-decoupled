@@ -41,16 +41,6 @@ jobs:
           name: Install NVM and Build Front-End
           command: ./.circleci/scripts/build-front-end
 
-      # - run:
-      #     name: Install Node.js dependencies
-      #     working_directory: web/themes/custom/bcht
-      #     command: npm install
-
-      # - run:
-      #     name: Run Gulp tasks
-      #     working_directory: web/themes/custom/bcht
-      #     command: npx gulp
-
       - persist_to_workspace:
           root: .
           paths:
