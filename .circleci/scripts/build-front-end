@@ -9,7 +9,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 cd ~/repo/web/themes/custom/bcht
-nvm install
+# nvm install
 # nvm use
 npm install
 # sudo npm install gulp -g
