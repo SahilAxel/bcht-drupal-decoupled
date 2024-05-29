@@ -169,6 +169,10 @@
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
+    @include breakpoint(mobile) {
+      font-size: 16px;
+      line-height: 22px;
+    }
     &::after {
       content: '';
       width: 18px;

@@ -1,0 +1,154 @@
+@import './global.scss';
+
+.rich-text {
+  @include breakpoint(mobile) {
+    padding: 30px 17px 0px 18px;
+    width: 100vw;
+  }
+  @include breakpoint(tablet) {
+    padding: 40px 32px 0px 32px;
+    width: 100vw;
+  }
+  @include breakpoint(small-desktop) {
+    padding: 50px 64px 0px 64px;
+    width: 100vw;
+  }
+  @include breakpoint(desktop) {
+    padding: 60px 300px 0px 300px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $BostonBlue;
+  }
+  ol {
+    padding-inline-start: 0px;
+    list-style-position: inside;
+    margin-block-start: 12px;
+    margin-block-end: 12px;
+    li {
+      list-style-type: decimal;
+      ol {
+        padding-inline-start: 35px;
+        li {
+          list-style-type: lower-alpha;
+          ol {
+            padding-inline-start: 70px;
+            li {
+              list-style-type: lower-roman;
+            }
+          }
+        }
+      }
+    }
+  }
+  ul {
+    padding-inline-start: 0px;
+    list-style-position: inside;
+    margin-block-start: 12px;
+    margin-block-end: 12px;
+    li {
+      list-style-type: none;
+      &::before {
+        content: url('../../icons/rectangle.svg');
+        display: inline-block;
+        padding-right: 12px;
+      }
+      ul {
+        padding-inline-start: 35px;
+        li {
+          list-style-type: none;
+          &::before {
+            content: url('../../icons/ellipse.svg');
+            display: inline-block;
+            padding-right: 12px;
+          }
+          ul {
+            padding-inline-start: 70px;
+            li {
+              list-style-type: none;
+              &::before {
+                content: url('../../icons/polygon.svg');
+                display: inline-block;
+                padding-right: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  figure.align-left {
+    padding-right: 32px;
+    img,
+    figcaption {
+      @include breakpoint(mobile) {
+        max-width: 100vw;
+        width: 340px;
+      }
+    }
+  }
+
+  .featured-text {
+    color: $BostonGray;
+    font-size: 20px;
+    line-height: 36px;
+    font-family: $HelveticaRegular;
+    font-weight: 400;
+    text-align: center;
+
+    @include breakpoint(mobile) {
+      line-height: 30px;
+    }
+  }
+  figure {
+    padding-bottom: 32px;
+    padding-top: 16px;
+    margin: 0px;
+    @include breakpoint(mobile) {
+      padding-bottom: 24px;
+      padding-top: 12px;
+    }
+    img {
+      padding-bottom: 8px;
+    }
+    figcaption {
+      color: $BostonGray;
+      font-family: $HelveticaRegular;
+      padding: 6px 0px;
+      font-style: italic;
+      font-size: 14px;
+      line-height: 22px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      @include breakpoint(mobile) {
+        font-size: 12px;
+        padding: 4px 0px;
+        line-height: 22px;
+      }
+      &::before {
+        content: '';
+        width: 3px;
+        background-color: $BostonOcean;
+        height: 34px;
+        display: block;
+        @include breakpoint(mobile) {
+          height: 30px;
+        }
+      }
+    }
+  }
+  img {
+    height: auto;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  p {
+    margin: 0;
+  }
+}

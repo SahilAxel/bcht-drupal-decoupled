@@ -9,3 +9,8 @@ global-styling:
     - core/drupal
     - core/jquery
     - core/once
+
+rich-text:
+  css:
+   theme:
+    build/css/rich-text.css: {}

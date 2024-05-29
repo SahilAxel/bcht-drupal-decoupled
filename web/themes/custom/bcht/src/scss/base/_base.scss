@@ -23,19 +23,41 @@ body {
     li {
       font-family: $HelveticaRegular;
       font-weight: 400;
+      padding: 0px;
       &::marker {
         color: $BostonOcean;
       }
     }
   }
 }
+blockquote {
+  margin: 0px;
+}
 hr {
-  border: 2px solid $BostonOcean;
+  background-color: $BostonSky;
+  height: 2px;
+  border: none;
+  margin: 16px 0px;
+  padding: 0;
+  @include breakpoint(mobile) {
+    height: 3px;
+  }
 }
 p {
   color: $BostonGray;
   font-size: 18px;
   line-height: 28px;
+  padding: 16px 0;
+  font-family: $HelveticaRegular;
+  @include breakpoint(mobile) {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px 0;
+  }
+  .link-blue,
+  .link-pink {
+    font-weight: 700;
+  }
 }
 .link-blue {
   color: $BostonOcean;
@@ -55,7 +77,6 @@ p {
     color: $BostonOcean;
   }
 }
-
 .p1 {
   font-size: 14px;
   line-height: 22px;
