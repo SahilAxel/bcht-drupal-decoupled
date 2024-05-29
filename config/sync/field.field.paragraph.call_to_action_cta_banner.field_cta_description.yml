@@ -1,0 +1,19 @@
+uuid: 48736645-e842-49d1-a282-a2fc9553bffd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_description
+    - paragraphs.paragraphs_type.call_to_action_cta_banner
+id: paragraph.call_to_action_cta_banner.field_cta_description
+field_name: field_cta_description
+entity_type: paragraph
+bundle: call_to_action_cta_banner
+label: 'CTA Description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

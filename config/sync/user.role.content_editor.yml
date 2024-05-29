@@ -5,18 +5,18 @@ dependencies:
   config:
     - filter.format.basic_html
     - filter.format.full_html
+    - media.type.image
     - node.type.article
     - node.type.page
-    - taxonomy.vocabulary.tags
   module:
     - comment
     - contextual
     - file
     - filter
+    - media
     - node
     - path
     - system
-    - taxonomy
     - toolbar
 _core:
   default_config_hash: e_wG1u7SrGaJbY2-Szgbgl-c8T3kdirU3uTNq2c_QJQ
@@ -32,18 +32,19 @@ permissions:
   - 'access toolbar'
   - 'administer url aliases'
   - 'create article content'
+  - 'create image media'
   - 'create page content'
-  - 'create terms in tags'
   - 'create url aliases'
   - 'delete article revisions'
   - 'delete own article content'
   - 'delete own files'
+  - 'delete own image media'
   - 'delete own page content'
   - 'delete page revisions'
   - 'edit own article content'
   - 'edit own comments'
+  - 'edit own image media'
   - 'edit own page content'
-  - 'edit terms in tags'
   - 'revert all revisions'
   - 'use text format basic_html'
   - 'use text format full_html'

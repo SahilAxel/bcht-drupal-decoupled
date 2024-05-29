@@ -1,0 +1,56 @@
+uuid: f8e45a65-f7d7-42f7-8833-b6d7269b47a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_item.field_eyebrow
+    - field.field.paragraph.card_item.field_heading
+    - field.field.paragraph.card_item.field_image
+    - field.field.paragraph.card_item.field_link
+    - paragraphs.paragraphs_type.card_item
+  module:
+    - link
+id: paragraph.card_item.default
+targetEntityType: paragraph
+bundle: card_item
+mode: default
+content:
+  field_eyebrow:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,8 @@
+uuid: 6eedb27e-f7e5-41e8-b303-d62e13ec644b
+langcode: en
+status: true
+dependencies: {  }
+name: Topics
+vid: topic
+description: 'The topic of a page or article'
+weight: 0

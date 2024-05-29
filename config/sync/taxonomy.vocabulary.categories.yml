@@ -1,0 +1,8 @@
+uuid: be016a69-da5a-4522-bcbe-fb6d35c1d0ea
+langcode: en
+status: true
+dependencies: {  }
+name: Categories
+vid: categories
+description: 'The top level category of pages and landing pages'
+weight: 0

@@ -1,0 +1,23 @@
+uuid: 7c68c0f7-f5fe-4e1a-9a32-cf3ab56b861d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout
+    - paragraphs.paragraphs_type.image_beside_text
+  module:
+    - options
+id: paragraph.image_beside_text.field_layout
+field_name: field_layout
+entity_type: paragraph
+bundle: image_beside_text
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: image_on_left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

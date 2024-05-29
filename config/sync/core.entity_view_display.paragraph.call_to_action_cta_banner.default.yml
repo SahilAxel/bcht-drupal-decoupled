@@ -1,0 +1,56 @@
+uuid: 8d678d68-99bd-463d-99a2-438e7bb91fe1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.call_to_action_cta_banner.field_cta_description
+    - field.field.paragraph.call_to_action_cta_banner.field_cta_headline
+    - field.field.paragraph.call_to_action_cta_banner.field_image
+    - field.field.paragraph.call_to_action_cta_banner.field_link
+    - paragraphs.paragraphs_type.call_to_action_cta_banner
+  module:
+    - link
+id: paragraph.call_to_action_cta_banner.default
+targetEntityType: paragraph
+bundle: call_to_action_cta_banner
+mode: default
+content:
+  field_cta_description:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_cta_headline:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

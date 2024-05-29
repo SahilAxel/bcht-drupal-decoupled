@@ -1,0 +1,47 @@
+uuid: 841ddf19-f331-4ec3-9052-93f4b9adc7c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_interior_pages.field_heading
+    - field.field.paragraph.hero_interior_pages.field_image
+    - field.field.paragraph.hero_interior_pages.field_link
+    - paragraphs.paragraphs_type.hero_interior_pages
+  module:
+    - link
+id: paragraph.hero_interior_pages.default
+targetEntityType: paragraph
+bundle: hero_interior_pages
+mode: default
+content:
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,55 @@
+uuid: f3fdff81-9fc2-4083-8b4c-fefd8cca4b97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_item.field_eyebrow
+    - field.field.paragraph.card_item.field_heading
+    - field.field.paragraph.card_item.field_image
+    - field.field.paragraph.card_item.field_link
+    - paragraphs.paragraphs_type.card_item
+  module:
+    - link
+    - media_library
+    - media_library_edit
+id: paragraph.card_item.default
+targetEntityType: paragraph
+bundle: card_item
+mode: default
+content:
+  field_eyebrow:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
+  field_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

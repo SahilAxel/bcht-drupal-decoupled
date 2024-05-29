@@ -1,0 +1,10 @@
+uuid: 5ec3b6bc-14a2-4808-b54b-b572feef0954
+langcode: en
+status: true
+dependencies: {  }
+id: hero_interior_pages
+label: 'Hero (Interior Pages)'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
