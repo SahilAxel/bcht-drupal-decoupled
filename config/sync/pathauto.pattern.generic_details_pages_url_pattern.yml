@@ -1,0 +1,22 @@
+uuid: 8ecf5b0a-bb39-4999-bea7-33309a2943f9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: generic_details_pages_url_pattern
+label: 'Generic Details Pages Url Pattern'
+type: 'canonical_entities:node'
+pattern: '/[node:menu-link:parents:join-path]/[node:title]'
+selection_criteria:
+  ad2b3778-4a82-4b44-9985-3149dc835426:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: ad2b3778-4a82-4b44-9985-3149dc835426
+    context_mapping:
+      node: node
+    bundles:
+      page: page
+selection_logic: and
+weight: -5
+relationships: {  }

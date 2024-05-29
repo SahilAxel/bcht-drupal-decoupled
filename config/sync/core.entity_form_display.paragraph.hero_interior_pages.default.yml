@@ -1,0 +1,46 @@
+uuid: da8ebeaf-2309-4055-a2c2-83de536e3fe8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_interior_pages.field_heading
+    - field.field.paragraph.hero_interior_pages.field_image
+    - field.field.paragraph.hero_interior_pages.field_link
+    - paragraphs.paragraphs_type.hero_interior_pages
+  module:
+    - link
+    - media_library
+    - media_library_edit
+id: paragraph.hero_interior_pages.default
+targetEntityType: paragraph
+bundle: hero_interior_pages
+mode: default
+content:
+  field_heading:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings:
+      media_library_edit:
+        show_edit: '1'
+  field_link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

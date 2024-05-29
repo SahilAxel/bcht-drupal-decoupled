@@ -1,0 +1,10 @@
+uuid: 1afbb377-26c6-4a05-b521-fc8f9ded9f15
+langcode: en
+status: true
+dependencies: {  }
+id: image_beside_text
+label: 'Image Beside Text'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
