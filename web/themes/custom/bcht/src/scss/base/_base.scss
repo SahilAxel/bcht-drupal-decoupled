@@ -1,7 +1,7 @@
 @import '../settings/settings.all';
 
 body {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 24px;
   color: $BostonGray;
   font-weight: 400;
@@ -45,12 +45,12 @@ hr {
 }
 p {
   color: $BostonGray;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 24px;
   padding: 12px 0px;
   font-family: $HelveticaRegular;
   @include breakpoint(desktop) {
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 28px;
     padding: 16px 0px;
   }
@@ -78,53 +78,53 @@ p {
   }
 }
 .p14 {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 22px;
   font-weight: 400;
 }
 .p16 {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 24px;
   font-weight: 400;
   font-family: $HelveticaRegular;
 }
 .p18 {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 24px;
   font-weight: 400;
   font-family: $HelveticaRegular;
   @include breakpoint(desktop) {
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 28px;
   }
 }
 .p20 {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 28px;
   font-weight: 400;
   font-family: $HelveticaRegular;
   @include breakpoint(desktop) {
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 30px;
   }
 }
 .p24 {
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 30px;
   font-weight: 400;
   font-family: $HelveticaRegular;
   @include breakpoint(desktop) {
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 36px;
   }
 }
 .p28 {
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 36px;
   font-weight: 400;
   font-family: $HelveticaRegular;
   @include breakpoint(mobile) {
-    font-size: 28px;
+    font-size: 1.75rem;
     line-height: 42px;
   }
 }
