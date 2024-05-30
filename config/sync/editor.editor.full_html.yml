@@ -55,6 +55,36 @@ settings:
         -
           label: 'Featured Text'
           element: '<p class="featured-text">'
+        -
+          label: Title3
+          element: '<h2 class="t3">'
+        -
+          label: Title4
+          element: '<h3 class="t4">'
+        -
+          label: Title5
+          element: '<h4 class="t5">'
+        -
+          label: Title6
+          element: '<h5 class="t6">'
+        -
+          label: P14
+          element: '<p class="p14">'
+        -
+          label: P16
+          element: '<p class="p16">'
+        -
+          label: P18
+          element: '<p class="p18">'
+        -
+          label: P20
+          element: '<p class="p20">'
+        -
+          label: P24
+          element: '<p class="p24">'
+        -
+          label: P28
+          element: '<p class="p28">'
     ckeditor_link_styles_linkStyles:
       styles:
         -
