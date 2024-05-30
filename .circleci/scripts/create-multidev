@@ -18,7 +18,6 @@ else
   # Create a new multidev site to test on
   terminus -n env:wake "$TERMINUS_SITE.dev"
   terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --clone-content
-  terminus -n connection:set "$TERMINUS_SITE.$TERMINUS_ENV" git
 fi
 
 # Run any database updates
