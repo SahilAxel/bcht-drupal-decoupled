@@ -77,38 +77,54 @@ p {
     color: $BostonOcean;
   }
 }
-.p1 {
+.p14 {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
 }
-.p2 {
+.p16 {
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
   font-family: $HelveticaRegular;
 }
-.p3 {
+.p18 {
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
   font-family: $HelveticaRegular;
+  @include breakpoint(mobile) {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
-.p4 {
+.p20 {
   font-size: 20px;
   line-height: 30px;
   font-weight: 400;
   font-family: $HelveticaRegular;
+  @include breakpoint(mobile) {
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
-.p5 {
+.p24 {
   font-size: 24px;
   line-height: 36px;
   font-weight: 400;
   font-family: $HelveticaRegular;
+  @include breakpoint(mobile) {
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
-.p6 {
+.p28 {
   font-size: 28px;
   line-height: 42px;
   font-weight: 400;
   font-family: $HelveticaRegular;
+  @include breakpoint(mobile) {
+    font-size: 24px;
+    line-height: 36px;
+  }
 }
