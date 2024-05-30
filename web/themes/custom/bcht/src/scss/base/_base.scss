@@ -6,8 +6,8 @@ body {
   color: $BostonGray;
   font-weight: 400;
   font-family: $HelveticaRegular;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -23,7 +23,7 @@ body {
     li {
       font-family: $HelveticaRegular;
       font-weight: 400;
-      padding: 0px;
+      padding: 0;
       &::marker {
         color: $BostonOcean;
       }
@@ -31,14 +31,14 @@ body {
   }
 }
 blockquote {
-  margin: 0px;
+  margin: 0;
 }
 hr {
   background-color: $BostonSky;
   height: 3px;
   border: none;
-  margin: 16px 0px;
-  padding: 0px;
+  margin: 16px 0;
+  padding: 0;
   @include breakpoint(desktop) {
     height: 2px;
   }
@@ -47,12 +47,12 @@ p {
   color: $BostonGray;
   font-size: 1rem;
   line-height: 24px;
-  padding: 12px 0px;
+  padding: 12px 0;
   font-family: $HelveticaRegular;
   @include breakpoint(desktop) {
     font-size: 1.125rem;
     line-height: 28px;
-    padding: 16px 0px;
+    padding: 16px 0;
   }
   .link-blue,
   .link-pink {

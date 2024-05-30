@@ -6,7 +6,6 @@ core_version_requirement: '>=9.2'
 base theme: stable9
 libraries:
   - bcht/global-styling
-  - bcht/rich-text
 regions:
   header: Header
   highlighted: Highlighted
