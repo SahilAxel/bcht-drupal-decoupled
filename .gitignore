@@ -146,5 +146,47 @@
 .idea/
 .DS_Store
 
-#Ignore build folder
-web/themes/custom/bcht/build
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+.bash_history
+
+# Ignore build artifacts
+deployment_identifier
+/deploy
+bin/*
+tmp
+reports
+logs/*
+
+# Ignore configuration files that may contain sensitive information.
+local.settings.php
+settings.ddev.php
+local.drush.yml
+local.site.yml
+local.services.yml
+tests/behat/local.yml
+box/local.config.yml
+/node_modules
+*.local
+.env
+.ssh
+.npm
+
+# Drush, terminus and composer caches
+drush/sites/.checksums
+.cache
+.config
+.drush
+.terminus
+
+# ddev
+.ddev/docker-compose.host-docker-internal.yaml
+.ddev/solr
+
+
+#Ignore custom theme build artifacts
+web/themes/custom/*/node_modules
+web/themes/custom/*/css
+web/themes/custom/*/js
