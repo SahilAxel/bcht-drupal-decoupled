@@ -1,0 +1,12 @@
+uuid: 71c65180-a836-4d8e-9a22-cf928fc15bfd
+langcode: en
+status: true
+dependencies: {  }
+label: Global
+id: global
+description: ''
+aspect_ratio: ''
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

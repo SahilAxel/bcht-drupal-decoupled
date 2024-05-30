@@ -105,6 +105,6 @@ $ git push origin BCHT-1
 
 ### DDEV references
 
-- DDEV Installation: https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/ 
-- DDEV Commands: https://ddev.readthedocs.io/en/stable/users/usage/cli/ 
-- DDEV Troubleshooting: https://ddev.readthedocs.io/en/stable/users/usage/troubleshooting/ 
+- DDEV Installation: https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/
+- DDEV Commands: https://ddev.readthedocs.io/en/stable/users/usage/cli/
+- DDEV Troubleshooting: https://ddev.readthedocs.io/en/stable/users/usage/troubleshooting/
