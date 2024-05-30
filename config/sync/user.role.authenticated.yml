@@ -7,6 +7,7 @@ dependencies:
     - contact
     - file
     - media
+    - paragraphs_type_permissions
     - search
     - shortcut
     - system
@@ -26,3 +27,6 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'view media'
+  - 'view paragraph content accordion'
+  - 'view paragraph content accordion_item'
+  - 'view paragraph content rich_text'

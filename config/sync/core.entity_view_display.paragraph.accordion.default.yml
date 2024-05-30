@@ -33,7 +33,7 @@ content:
     weight: 0
     region: content
   field_link:
-    type: link_separate
+    type: link
     label: hidden
     settings:
       trim_length: null
