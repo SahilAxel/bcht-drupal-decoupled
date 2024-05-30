@@ -10,36 +10,79 @@ h6 {
 }
 
 h1 {
-  font-size: 52px;
-  line-height: 64px;
+  font-size: 2rem;
+  line-height: 42px;
+  @include breakpoint(desktop) {
+    font-size: 3.25rem;
+    line-height: 64px;
+  }
 }
 h2 {
-  font-size: 36px;
+  font-size: 2.25rem;
   line-height: 44px;
 }
+h2 {
+  &.t3 {
+    font-size: 2rem;
+    line-height: 42px;
+  }
+}
+
 h3 {
-  font-size: 32px;
+  font-size: 2rem;
   line-height: 42px;
 }
+h3 {
+  &.t4 {
+    font-size: 1.5rem;
+    line-height: 32px;
+    @include breakpoint(desktop) {
+      font-size: 1.75rem;
+      line-height: 36px;
+    }
+  }
+}
 h4 {
-  font-size: 28px;
+  font-size: 1.75rem;
   line-height: 36px;
 }
+h4 {
+  &.t5 {
+    font-size: 1.25rem;
+    line-height: 26px;
+    @include breakpoint(desktop) {
+      font-size: 1.25rem;
+      line-height: 26px;
+      font-size: 1.5rem;
+      line-height: 32px;
+    }
+  }
+}
 h5 {
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 32px;
 }
+h5 {
+  &.t6 {
+    font-size: 1.125rem;
+    line-height: 24px;
+    @include breakpoint(desktop) {
+      font-size: 1.25rem;
+      line-height: 26px;
+    }
+  }
+}
 h6 {
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 26px;
 }
-.title7 {
-  font-size: 20px;
+.t7 {
+  font-size: 1.25rem;
   font-weight: 700;
   line-height: 26px;
 }
-.title8 {
-  font-size: 16px;
+.t8 {
+  font-size: 1rem;
   font-weight: 700;
   line-height: 22px;
 }

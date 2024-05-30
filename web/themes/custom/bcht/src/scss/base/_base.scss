@@ -1,7 +1,7 @@
 @import '../settings/settings.all';
 
 body {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 24px;
   color: $BostonGray;
   font-weight: 400;
@@ -23,19 +23,41 @@ body {
     li {
       font-family: $HelveticaRegular;
       font-weight: 400;
+      padding: 0;
       &::marker {
         color: $BostonOcean;
       }
     }
   }
 }
+blockquote {
+  margin: 0;
+}
 hr {
-  border: 2px solid $BostonOcean;
+  background-color: $BostonSky;
+  height: 3px;
+  border: none;
+  margin: 16px 0;
+  padding: 0;
+  @include breakpoint(desktop) {
+    height: 2px;
+  }
 }
 p {
   color: $BostonGray;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 1rem;
+  line-height: 24px;
+  padding: 12px 0;
+  font-family: $HelveticaRegular;
+  @include breakpoint(desktop) {
+    font-size: 1.125rem;
+    line-height: 28px;
+    padding: 16px 0;
+  }
+  .link-blue,
+  .link-pink {
+    font-weight: 700;
+  }
 }
 .link-blue {
   color: $BostonOcean;
@@ -55,39 +77,54 @@ p {
     color: $BostonOcean;
   }
 }
-
-.p1 {
-  font-size: 14px;
+.p14 {
+  font-size: 0.875rem;
   line-height: 22px;
   font-weight: 400;
 }
-.p2 {
-  font-size: 16px;
+.p16 {
+  font-size: 1rem;
   line-height: 24px;
   font-weight: 400;
   font-family: $HelveticaRegular;
 }
-.p3 {
-  font-size: 18px;
+.p18 {
+  font-size: 1rem;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: $HelveticaRegular;
+  @include breakpoint(desktop) {
+    font-size: 1.125rem;
+    line-height: 28px;
+  }
+}
+.p20 {
+  font-size: 1.125rem;
   line-height: 28px;
   font-weight: 400;
   font-family: $HelveticaRegular;
+  @include breakpoint(desktop) {
+    font-size: 1.25rem;
+    line-height: 30px;
+  }
 }
-.p4 {
-  font-size: 20px;
+.p24 {
+  font-size: 1.25rem;
   line-height: 30px;
   font-weight: 400;
   font-family: $HelveticaRegular;
+  @include breakpoint(desktop) {
+    font-size: 1.5rem;
+    line-height: 36px;
+  }
 }
-.p5 {
-  font-size: 24px;
+.p28 {
+  font-size: 1.5rem;
   line-height: 36px;
   font-weight: 400;
   font-family: $HelveticaRegular;
-}
-.p6 {
-  font-size: 28px;
-  line-height: 42px;
-  font-weight: 400;
-  font-family: $HelveticaRegular;
+  @include breakpoint(mobile) {
+    font-size: 1.75rem;
+    line-height: 42px;
+  }
 }

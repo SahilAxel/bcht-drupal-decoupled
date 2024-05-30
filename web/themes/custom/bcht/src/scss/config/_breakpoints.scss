@@ -1,3 +1,26 @@
+// Breakpoints
 $mobile: 0 767px;
 $tablet: 768px 1024px;
+$small-desktop: 1025px 1439px;
 $desktop: 1440px;
+
+// Mixin for media queries
+@mixin breakpoint($device) {
+  @if $device == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $device == tablet {
+    @media (min-width: 768px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $device == small-desktop {
+    @media (min-width: 1025px) and (max-width: 1439px) {
+      @content;
+    }
+  } @else if $device == desktop {
+    @media (min-width: 1440px) and (max-width: 1920px) {
+      @content;
+    }
+  }
+}

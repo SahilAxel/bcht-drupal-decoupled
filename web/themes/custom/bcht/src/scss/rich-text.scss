@@ -1,0 +1,168 @@
+@import './global.scss';
+
+.paragraph--type--rich-text {
+  padding: 30px 17px 0 18px;
+  @include breakpoint(tablet) {
+    padding: 40px 32px 0 32px;
+    width: 100vw;
+  }
+  @include breakpoint(small-desktop) {
+    padding: 50px 64px 0 64px;
+    width: 100vw;
+  }
+  @include breakpoint(desktop) {
+    padding: 60px 300px 0 300px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $BostonBlue;
+  }
+  ol {
+    padding-inline-start: 0;
+    list-style-position: inside;
+    margin-block-start: 12px;
+    margin-block-end: 12px;
+    li {
+      list-style-type: decimal;
+      ol {
+        padding-inline-start: 35px;
+        li {
+          list-style-type: lower-alpha;
+          ol {
+            padding-inline-start: 70px;
+            li {
+              list-style-type: lower-roman;
+            }
+          }
+        }
+      }
+    }
+  }
+  ul {
+    padding-inline-start: 0;
+    list-style-position: inside;
+    margin-block-start: 12px;
+    margin-block-end: 12px;
+    li {
+      list-style-type: none;
+      &::before {
+        content: url('../../icons/rectangle.svg');
+        display: inline-block;
+        padding-right: 12px;
+      }
+      ul {
+        padding-inline-start: 35px;
+        li {
+          list-style-type: none;
+          &::before {
+            content: url('../../icons/ellipse.svg');
+            display: inline-block;
+            padding-right: 12px;
+          }
+          ul {
+            padding-inline-start: 70px;
+            li {
+              list-style-type: none;
+              &::before {
+                content: url('../../icons/polygon.svg');
+                display: inline-block;
+                padding-right: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  figure.align-left {
+    padding-right: 32px;
+    @include breakpoint(desktop) {
+      padding-right: 32px;
+    }
+    img,
+    figcaption {
+      min-width: 340px;
+      @include breakpoint(desktop) {
+        max-width: 100%;
+        width: auto;
+      }
+    }
+  }
+  figure.align-right {
+    padding-left: 32px;
+    @include breakpoint(desktop) {
+      padding-left: 32px;
+    }
+    img,
+    figcaption {
+      min-width: 340px;
+      @include breakpoint(desktop) {
+        max-width: 100%;
+        width: auto;
+      }
+    }
+  }
+  .featured-text {
+    color: $BostonGray;
+    font-size: 1.25rem;
+    line-height: 30px;
+    font-family: $HelveticaRegular;
+    font-weight: 400;
+    text-align: center;
+    @include breakpoint(desktop) {
+      font-size: 1.5rem;
+      line-height: 36px;
+    }
+  }
+  figure {
+    padding-bottom: 24px;
+    padding-top: 12px;
+    margin: 0;
+    @include breakpoint(desktop) {
+      padding-bottom: 32px;
+      padding-top: 16px;
+    }
+    img {
+      padding-bottom: 8px;
+    }
+    figcaption {
+      color: $BostonGray;
+      font-family: $HelveticaRegular;
+      font-style: italic;
+      font-size: 0.75rem;
+      padding: 4px 0;
+      line-height: 22px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      @include breakpoint(desktop) {
+        font-size: 0.875rem;
+        line-height: 22px;
+        padding: 6px 0;
+      }
+      &::before {
+        content: '';
+        width: 3px;
+        background-color: $BostonOcean;
+        height: 30px;
+        display: block;
+        @include breakpoint(desktop) {
+          height: 34px;
+        }
+      }
+    }
+  }
+  img {
+    height: auto;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  p {
+    margin: 0;
+  }
+}
