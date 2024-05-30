@@ -17,7 +17,7 @@ mode: default
 content:
   field_cta_description:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -25,7 +25,7 @@ content:
     region: content
   field_cta_headline:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -33,7 +33,7 @@ content:
     region: content
   field_image:
     type: entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
@@ -41,7 +41,7 @@ content:
     weight: 0
     region: content
   field_link:
-    type: link_separate
+    type: link
     label: hidden
     settings:
       trim_length: null
