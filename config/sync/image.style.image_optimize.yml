@@ -1,7 +1,18 @@
 uuid: e42fc07b-bed7-4bcc-b8c6-77196a5abace
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - crop.type.global
+  module:
+    - crop
 name: image_optimize
 label: 'Image Optimize'
-effects: {  }
+effects:
+  89f60460-1007-49b2-b102-0753ea3e9cf3:
+    uuid: 89f60460-1007-49b2-b102-0753ea3e9cf3
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: global
+      automatic_crop_provider: null
