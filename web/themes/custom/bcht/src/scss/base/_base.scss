@@ -35,24 +35,24 @@ blockquote {
 }
 hr {
   background-color: $BostonSky;
-  height: 2px;
+  height: 3px;
   border: none;
   margin: 16px 0px;
   padding: 0;
-  @include breakpoint(mobile) {
-    height: 3px;
+  @include breakpoint(desktop) {
+    height: 2px;
   }
 }
 p {
   color: $BostonGray;
-  font-size: 18px;
-  line-height: 28px;
-  padding: 16px 0;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 12px 0;
   font-family: $HelveticaRegular;
-  @include breakpoint(mobile) {
-    font-size: 16px;
-    line-height: 24px;
-    padding: 12px 0;
+  @include breakpoint(desktop) {
+    font-size: 18px;
+    line-height: 28px;
+    padding: 16px 0;
   }
   .link-blue,
   .link-pink {
@@ -89,42 +89,42 @@ p {
   font-family: $HelveticaRegular;
 }
 .p18 {
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 24px;
   font-weight: 400;
   font-family: $HelveticaRegular;
-  @include breakpoint(mobile) {
-    font-size: 16px;
-    line-height: 24px;
-  }
-}
-.p20 {
-  font-size: 20px;
-  line-height: 30px;
-  font-weight: 400;
-  font-family: $HelveticaRegular;
-  @include breakpoint(mobile) {
+  @include breakpoint(desktop) {
     font-size: 18px;
     line-height: 28px;
   }
 }
+.p20 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  font-family: $HelveticaRegular;
+  @include breakpoint(desktop) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
 .p24 {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  font-family: $HelveticaRegular;
+  @include breakpoint(desktop) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+.p28 {
   font-size: 24px;
   line-height: 36px;
   font-weight: 400;
   font-family: $HelveticaRegular;
   @include breakpoint(mobile) {
-    font-size: 20px;
-    line-height: 30px;
-  }
-}
-.p28 {
-  font-size: 28px;
-  line-height: 42px;
-  font-weight: 400;
-  font-family: $HelveticaRegular;
-  @include breakpoint(mobile) {
-    font-size: 24px;
-    line-height: 36px;
+    font-size: 28px;
+    line-height: 42px;
   }
 }

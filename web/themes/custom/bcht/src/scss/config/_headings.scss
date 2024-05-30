@@ -10,11 +10,11 @@ h6 {
 }
 
 h1 {
-  font-size: 52px;
-  line-height: 64px;
-  @include breakpoint(mobile) {
-    font-size: 32px;
-    line-height: 42px;
+  font-size: 32px;
+  line-height: 42px;
+  @include breakpoint(desktop) {
+    font-size: 52px;
+    line-height: 64px;
   }
 }
 h2 {
@@ -31,11 +31,11 @@ h3 {
   line-height: 42px;
 }
 h3.t4 {
-  font-size: 28px;
-  line-height: 36px;
-  @include breakpoint(mobile) {
-    font-size: 24px;
-    line-height: 32px;
+  font-size: 24px;
+  line-height: 32px;
+  @include breakpoint(desktop) {
+    font-size: 28px;
+    line-height: 36px;
   }
 }
 h4 {
@@ -43,11 +43,13 @@ h4 {
   line-height: 36px;
 }
 h4.t5 {
-  font-size: 24px;
-  line-height: 32px;
-  @include breakpoint(mobile) {
+  font-size: 20px;
+  line-height: 26px;
+  @include breakpoint(desktop) {
     font-size: 20px;
     line-height: 26px;
+    font-size: 24px;
+    line-height: 32px;
   }
 }
 h5 {
@@ -55,11 +57,11 @@ h5 {
   line-height: 32px;
 }
 h5.t6 {
-  font-size: 20px;
-  line-height: 26px;
-  @include breakpoint(mobile) {
-    font-size: 18px;
-    line-height: 24px;
+  font-size: 18px;
+  line-height: 24px;
+  @include breakpoint(desktop) {
+    font-size: 20px;
+    line-height: 26px;
   }
 }
 h6 {
