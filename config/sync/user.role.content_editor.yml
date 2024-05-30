@@ -8,8 +8,10 @@ dependencies:
     - media.type.image
     - node.type.article
     - node.type.page
+    - workflows.workflow.editorial
   module:
     - comment
+    - content_moderation
     - contextual
     - file
     - filter
@@ -49,6 +51,8 @@ permissions:
   - 'delete paragraph content accordion'
   - 'delete paragraph content accordion_item'
   - 'delete paragraph content rich_text'
+  - 'edit any article content'
+  - 'edit any page content'
   - 'edit own article content'
   - 'edit own comments'
   - 'edit own image media'
@@ -57,9 +61,18 @@ permissions:
   - 'update paragraph content accordion'
   - 'update paragraph content accordion_item'
   - 'update paragraph content rich_text'
+  - 'use editorial transition archive'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition draft_to_review'
+  - 'use editorial transition publish'
+  - 'use editorial transition review_to_draft'
+  - 'use editorial transition review_to_publish'
   - 'use text format basic_html'
   - 'use text format full_html'
   - 'view all revisions'
+  - 'view any unpublished content'
   - 'view own unpublished content'
   - 'view paragraph content accordion'
   - 'view the administration theme'
