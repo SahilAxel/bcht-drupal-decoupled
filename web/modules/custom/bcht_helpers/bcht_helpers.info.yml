@@ -1,5 +1,5 @@
 name: 'BCHT Helpers'
 type: module
-description: 'Provide helpers for BCHT.[C'
+description: 'Provide helpers for BCHT.'
 package: BCHT
 core_version_requirement: ^10 || ^11

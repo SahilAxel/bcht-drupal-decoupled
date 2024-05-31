@@ -7,6 +7,7 @@ dependencies:
     - filter.format.full_html
     - media.type.image
     - node.type.article
+    - node.type.landing_page
     - node.type.page
     - workflows.workflow.editorial
   module:
@@ -39,6 +40,7 @@ permissions:
   - 'administer url aliases'
   - 'create article content'
   - 'create image media'
+  - 'create landing_page content'
   - 'create media'
   - 'create page content'
   - 'create paragraph content accordion'
@@ -57,6 +59,7 @@ permissions:
   - 'delete own article content'
   - 'delete own files'
   - 'delete own image media'
+  - 'delete own landing_page content'
   - 'delete own page content'
   - 'delete page revisions'
   - 'delete paragraph content accordion'
@@ -69,10 +72,12 @@ permissions:
   - 'delete paragraph content image_with_caption'
   - 'delete paragraph content rich_text'
   - 'edit any article content'
+  - 'edit any landing_page content'
   - 'edit any page content'
   - 'edit own article content'
   - 'edit own comments'
   - 'edit own image media'
+  - 'edit own landing_page content'
   - 'edit own page content'
   - 'revert all revisions'
   - 'update any media'

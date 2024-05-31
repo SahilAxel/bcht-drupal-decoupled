@@ -1,20 +1,17 @@
 <?php
 
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\node\NodeInterface;
-use Drupal\views\ViewExecutable;
-
 /**
  * @file
  * Primary module hooks for BCHT Helpers module.
  */
 
-function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$args)
-{
+use Drupal\node\NodeInterface;
+use Drupal\views\ViewExecutable;
+
+function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
   if ($view->id() == 'related_content') {
     $node = \Drupal::routeMatch()->getParameter('node');
     if ($node instanceof NodeInterface) {
-      // Assuming 'field_paragraphs' is the paragraph field and 'field_tags' is the taxonomy term reference field
       $paragraphs = $node->get('field_components')->referencedEntities();
       $exposed_input = $view->getExposedInput();
       foreach ($paragraphs as $paragraph) {
