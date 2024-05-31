@@ -1,18 +1,16 @@
-uuid: 079d61f6-907a-4df1-b762-3660108fb9e7
+uuid: cbd29761-c540-4687-9ba8-15c9a289b969
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.article
+    - node.type.landing_page
   module:
     - text
-_core:
-  default_config_hash: 4Wxs1LseZ8JsNwD9uJVIbzZqG35yQXN8Eo1Hub6NMuI
-id: node.article.body
+id: node.landing_page.body
 field_name: body
 entity_type: node
-bundle: article
+bundle: landing_page
 label: Description
 description: ''
 required: false

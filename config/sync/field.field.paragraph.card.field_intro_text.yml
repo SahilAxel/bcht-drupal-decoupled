@@ -1,0 +1,24 @@
+uuid: 71ac3563-98e0-453c-8e71-f187ca83134d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_intro_text
+    - filter.format.basic_html
+    - paragraphs.paragraphs_type.card
+  module:
+    - text
+id: paragraph.card.field_intro_text
+field_name: field_intro_text
+entity_type: paragraph
+bundle: card
+label: 'Intro Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

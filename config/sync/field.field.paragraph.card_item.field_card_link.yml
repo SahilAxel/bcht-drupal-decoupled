@@ -1,14 +1,14 @@
-uuid: 597f089d-fd34-4111-91f8-7decd2749a00
+uuid: d3087766-8b91-4637-94f0-09d1d91413f9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_link
+    - field.storage.paragraph.field_card_link
     - paragraphs.paragraphs_type.card_item
   module:
     - link
-id: paragraph.card_item.field_link
-field_name: field_link
+id: paragraph.card_item.field_card_link
+field_name: field_card_link
 entity_type: paragraph
 bundle: card_item
 label: Link

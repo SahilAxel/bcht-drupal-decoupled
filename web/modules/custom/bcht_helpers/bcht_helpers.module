@@ -1,0 +1,55 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
+use Drupal\views\ViewExecutable;
+
+/**
+ * @file
+ * Primary module hooks for BCHT Helpers module.
+ */
+
+function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$args)
+{
+  if ($view->id() == 'related_content') {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof NodeInterface) {
+      // Assuming 'field_paragraphs' is the paragraph field and 'field_tags' is the taxonomy term reference field
+      $paragraphs = $node->get('field_components')->referencedEntities();
+      $exposed_input = $view->getExposedInput();
+      foreach ($paragraphs as $paragraph) {
+        if ($paragraph->getType() == "card") {
+          $article_type_tid = "";
+          foreach ($paragraph->get('field_article_type')->referencedEntities() as $term) {
+            $article_type_tid = $term->id();
+          }
+          if (!empty($article_type_tid)) {
+            $exposed_input['article_type_tid'] = $article_type_tid;
+          }
+
+          $category_tid = "";
+          foreach ($paragraph->get('field_category')->referencedEntities() as $term) {
+            $category_tid = $term->id();
+          }
+          if (!empty($category_tid)) {
+            $exposed_input['category_tid'] = $category_tid;
+          }
+
+          $topics_tids = [];
+          foreach ($paragraph->get('field_topics')->referencedEntities() as $term) {
+            $topics_tids[] = $term->id();
+          }
+          if (!empty($topics_tids)) {
+            $exposed_input['topics_tid'] = $topics_tids;
+          }
+
+          $content_type = $paragraph->get('field_content_type')->value;
+          if (!empty($content_type)) {
+            $exposed_input['content_type'] = $content_type;
+          }
+        }
+      }
+      $view->setExposedInput($exposed_input);
+    }
+  }
+}

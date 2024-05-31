@@ -1,0 +1,23 @@
+uuid: f5f84d9c-a263-469d-967d-343afea382cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_taxonomy_type
+    - paragraphs.paragraphs_type.card
+id: paragraph.card.field_taxonomy_type
+field_name: field_taxonomy_type
+entity_type: paragraph
+bundle: card
+label: 'Taxonomy Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_vocabulary'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: 2463eabc-0608-4a45-8750-7bda3e7aa71f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_type
+    - paragraphs.paragraphs_type.card
+  module:
+    - options
+id: paragraph.card.field_content_type
+field_name: field_content_type
+entity_type: paragraph
+bundle: card
+label: 'Content Type'
+description: "      Please review the group of taxonomy types associated with each content type then select content types:\r\n<ul>\r\n<li><strong>Generic Details Pages:</strong>Topics and Categories</li>\r\n<li><strong>Articles:</strong>Article Type and Topics</li>\r\n<li><strong>Landing Page:</strong>Topics and Categories</li>\r\n</ul>\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

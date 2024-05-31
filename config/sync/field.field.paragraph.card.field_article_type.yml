@@ -1,0 +1,29 @@
+uuid: 31f37a61-9e7d-4e7c-b690-fefe43aee91d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_article_type
+    - paragraphs.paragraphs_type.card
+    - taxonomy.vocabulary.article_type
+id: paragraph.card.field_article_type
+field_name: field_article_type
+entity_type: paragraph
+bundle: card
+label: 'Article Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      article_type: article_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

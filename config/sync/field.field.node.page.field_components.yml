@@ -7,6 +7,7 @@ dependencies:
     - node.type.page
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.call_to_action_cta_banner
+    - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.image_beside_text
     - paragraphs.paragraphs_type.image_with_caption
     - paragraphs.paragraphs_type.rich_text
@@ -29,6 +30,7 @@ settings:
       rich_text: rich_text
       accordion: accordion
       call_to_action_cta_banner: call_to_action_cta_banner
+      card: card
       image_beside_text: image_beside_text
       image_with_caption: image_with_caption
     negate: 0
@@ -41,6 +43,9 @@ settings:
         enabled: false
       call_to_action_cta_banner:
         weight: 11
+        enabled: true
+      card:
+        weight: 13
         enabled: true
       card_item:
         weight: 12
