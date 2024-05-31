@@ -63,9 +63,8 @@ class ParagraphFormAlter extends FormAlterBase
     $form['subform']['field_topics']['#states'] = [
       'visible' => [
         ':input[name="field_components[0][subform][field_taxonomy_type][topic]"]' => ['checked' => true],
-        ':input[name="field_components[0][subform][field_card_type]"]' => ['value' => 'related_cards']
+      ':input[name="field_components[0][subform][field_card_type]"]' => ['value' => 'related_cards']
       ]
     ];
-    /* devel_dump($form['subform']); */
   }
 }
