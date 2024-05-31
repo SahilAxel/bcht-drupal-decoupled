@@ -1,7 +1,10 @@
-@import 'config/breakpoints';
-@import 'config/colors';
-@import 'config/fonts';
-@import 'config/grid';
-@import 'config/z-index';
-@import 'config/mixins';
-@import 'config/headings';
+// @import '../../../node_modules/breakpoint-sass/stylesheets/breakpoint';
+@import '../config/breakpoints';
+@import '../config/utils';
+@import '../config/colors';
+@import '../config/fonts';
+@import '../config/grid';
+@import '../config/z-index';
+@import '../config/mixins';
+@import '../config/typography-mixins';
+@import '../config/headings';

@@ -1,0 +1,34 @@
+@mixin t4 {
+  font-size: 1.5rem;
+  line-height: 32px;
+
+  @include breakpoint(desktop) {
+    font-size: 1.75rem;
+    line-height: 36px;
+  }
+}
+
+@mixin p20 {
+  font-size: 1.125rem;
+  line-height: 28px;
+  font-weight: 400;
+  font-family: $HelveticaRegular;
+
+  @include breakpoint(desktop) {
+    font-size: 1.25rem;
+    line-height: 30px;
+  }
+}
+
+@mixin p24($weight: 400, $style: normal) {
+  font-size: 1.25rem;
+  line-height: 30px;
+  font-weight: $weight;
+  font-style: $style;
+  font-family: $HelveticaRegular;
+
+  @include breakpoint(desktop) {
+    font-size: 1.5rem;
+    line-height: 36px;
+  }
+}

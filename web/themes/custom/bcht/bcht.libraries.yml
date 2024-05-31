@@ -14,3 +14,10 @@ rich-text:
   css:
     theme:
       build/css/rich-text.css: {}
+
+accordion:
+  css:
+    theme:
+      build/css/components/accordion/accordion.css: {}
+  js:
+    build/js/accordion.js: {}

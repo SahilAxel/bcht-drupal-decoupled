@@ -21,6 +21,7 @@
 # Ignore SimpleTest multi-site environment.
 /web/sites/simpletest
 /web/themes/**/node_modules
+/web/themes/**/build
 
 # Ignore custom modules managed by Composer.
 #

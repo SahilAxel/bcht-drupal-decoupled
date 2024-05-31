@@ -1,7 +1,7 @@
 @import '../settings/settings.all';
 
 body {
-  font-size: 1rem;
+  font-size: $base-font + px;
   line-height: 24px;
   color: $BostonGray;
   font-weight: 400;
@@ -98,26 +98,15 @@ p {
     line-height: 28px;
   }
 }
+
 .p20 {
-  font-size: 1.125rem;
-  line-height: 28px;
-  font-weight: 400;
-  font-family: $HelveticaRegular;
-  @include breakpoint(desktop) {
-    font-size: 1.25rem;
-    line-height: 30px;
-  }
+  @include p20;
 }
+
 .p24 {
-  font-size: 1.25rem;
-  line-height: 30px;
-  font-weight: 400;
-  font-family: $HelveticaRegular;
-  @include breakpoint(desktop) {
-    font-size: 1.5rem;
-    line-height: 36px;
-  }
+  @include p24;
 }
+
 .p28 {
   font-size: 1.5rem;
   line-height: 36px;
