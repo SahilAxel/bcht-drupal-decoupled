@@ -1,0 +1,89 @@
+@import '../../settings/settings.all';
+
+.paragraph--type--hero-interior-pages {
+  position: relative;
+
+  .hero_banner_wrapper {
+    position: relative;
+
+    &.noimage {
+      .hero_no_image {
+        min-height: 48px;
+        background-color: $BostonSkyTint2;
+
+        @include breakpoint(desktop) {
+          min-height: 96px;
+        }
+      }
+    }
+
+    .hero_image {
+      min-height: 160px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+
+      @include breakpoint(desktop) {
+        min-height: 400px;
+      }
+    }
+
+    .hero_banner_content {
+      max-width: 90%;
+      margin: 0 auto;
+      background: $White;
+      position: relative;
+      top: -20px;
+      border-radius: 6px;
+      text-align: center;
+      padding: 20px 20px 0 20px;
+
+      @include breakpoint(desktop) {
+        max-width: 850px;
+        top: -32px;
+        padding: 32px 32px 0px 32px;
+      }
+
+      h1 {
+        color: $BostonBlue;
+        text-transform: capitalize;
+      }
+
+      .cta_group {
+        margin-top: 16px;
+
+        @include breakpoint(desktop) {
+          margin-top: 32px;
+        }
+        span.cta {
+          display: block;
+
+          @include breakpoint(desktop) {
+            display: inline-block;
+          }
+
+          .btn,
+          .btn-transparent {
+            font-size: 16px;
+            line-height: 20.8px;
+            padding: 10px 18px;
+            text-transform: capitalize;
+
+            @include breakpoint(desktop) {
+              font-size: rem(18);
+              line-height: 22px;
+              padding: 15px 25px;
+            }
+          }
+          &.cta_btn_2 {
+            margin-top: 8px;
+            @include breakpoint(desktop) {
+              margin-left: 24px;
+              margin-top: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

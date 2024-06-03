@@ -1,0 +1,59 @@
+@import '../settings/settings.all';
+.region--highlighted {
+  background-color: $BostonPinkTint;
+  position: relative;
+  margin: 0 0 40px;
+  &:after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+  .region--highlighted__inner {
+    padding: 20px 0;
+    color: $BostonBlue;
+  }
+
+  ul:not(.contextual-links) {
+    color: $BostonBlue;
+    display: block;
+    padding: 0;
+    margin: 0;
+    li {
+      display: inline-block;
+      border-right: 1px solid $BostonBlue;
+      @media only screen and (max-width: 767px) {
+        display: block;
+        border-bottom: 1px solid $BostonBlue;
+        border-right: none;
+      }
+      a {
+        display: inline-block;
+        padding: 8px 20px;
+        font-size: 14px;
+        color: $BostonBlue;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
+  padding: 8px;
+  background: $BostonBlue;
+  z-index: 15;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  color: $White;
+  opacity: 1;
+  line-height: 20px;
+  font-size: 20px;
+}
+
+.back-to-top:hover {
+  cursor: pointer;
+}

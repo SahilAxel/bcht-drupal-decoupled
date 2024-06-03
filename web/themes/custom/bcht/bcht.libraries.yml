@@ -21,3 +21,8 @@ accordion:
       build/css/components/accordion/accordion.css: {}
   js:
     build/js/accordion.js: {}
+
+herobanner:
+  css:
+    theme:
+      build/css/components/herobanner/herobanner.css: {}

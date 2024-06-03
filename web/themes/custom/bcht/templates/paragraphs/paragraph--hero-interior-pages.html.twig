@@ -38,19 +38,60 @@
  * @ingroup themeable
  */
 #}
+{{ attach_library('bcht/herobanner') }}
 {%
   set classes = [
     'paragraph',
+    'component__wrapper',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
 {% block paragraph %}
-  {{node_title}}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content }}
-    {% endblock %}
+    {% if content.field_image.0 %}
+      {% set bannerClass = 'imageexist' %}
+    {% else %}
+      {% set bannerClass = 'noimage' %}
+    {% endif %}
+    <div class="hero_banner_wrapper {{ bannerClass }}">
+      {% if content.field_image.0 %}
+        <div class="hero_image" style="background-image: url('{{ file_url(content.field_image[0]['#media'].field_media_image.entity.uri.value) }}');"></div>
+      {% else %}
+        <div class="hero_no_image"></div>
+      {% endif %}
+      <div class="hero_banner_content">
+        {% if content.field_heading.0['#context'].value %}
+          <h1>{{ content.field_heading.0['#context'].value }}</h1>
+        {% else %}
+          <h1>{{ node_title }}</h1>
+        {% endif %}
+        {% if content.field_link.0  or content.field_link.1 %}
+          <div class="cta_group">
+          {% if content.field_link.0 %}
+            <span class="cta cta_btn_1">
+              {% if content.field_link.0['#url'].external %}
+                <a class="btn btn--default" href="{{ content.field_link.0['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_link.0['#title'] }}</a>
+              {% else %}
+                <a class="btn btn--default" href="{{ path(content.field_link.0['#url'].routeName, content.field_link.0['#url'].routeParameters) }}">{{ content.field_link.0['#title'] }}</a>
+              {% endif %}
+            </span>
+          {% endif %}
+          {% if content.field_link.1 %}
+            <span class="cta cta_btn_2">
+              {% if content.field_link.1['#url'].external %}
+                <a class="btn-transparent btn-transparent--default" href="{{ content.field_link.1['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_link.1['#title'] }}</a>
+              {% else %}
+                <a class="btn-transparent btn-transparent--default" href="{{ path(content.field_link.1['#url'].routeName, content.field_link.1['#url'].routeParameters) }}">{{ content.field_link.1['#title'] }}</a>
+              {% endif %}
+            </span>
+          {% endif %}
+          </div>
+        {% endif %}  
+      </div>
+    </div> 
+  {% endblock %}
   </div>
 {% endblock paragraph %}
