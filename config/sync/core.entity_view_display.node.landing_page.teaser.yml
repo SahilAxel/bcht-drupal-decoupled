@@ -1,21 +1,19 @@
-uuid: 9eb5cedd-dfcb-4f4e-8c3a-36053fc50a1a
+uuid: 09f8a90e-43a2-48f2-88da-8633e7e12590
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.article.body
-    - field.field.node.article.field_article_type
-    - field.field.node.article.field_topics
-    - node.type.article
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_categories
+    - field.field.node.landing_page.field_topics
+    - node.type.landing_page
   module:
     - text
     - user
-_core:
-  default_config_hash: V47dEG0Mf8XVUaxi_YEyZGs5PMww1CUJWmih46SpnMM
-id: node.article.teaser
+id: node.landing_page.teaser
 targetEntityType: node
-bundle: article
+bundle: landing_page
 mode: teaser
 content:
   body:
@@ -24,13 +22,15 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 0
+    weight: 101
     region: content
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 100
     region: content
 hidden:
-  field_article_type: true
+  field_categories: true
   field_topics: true
   langcode: true
   search_api_excerpt: true

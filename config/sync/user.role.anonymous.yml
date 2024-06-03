@@ -28,6 +28,8 @@ permissions:
   - 'view paragraph content accordion'
   - 'view paragraph content accordion_item'
   - 'view paragraph content call_to_action_cta_banner'
+  - 'view paragraph content card'
+  - 'view paragraph content card_item'
   - 'view paragraph content hero_interior_pages'
   - 'view paragraph content image_beside_text'
   - 'view paragraph content image_with_caption'

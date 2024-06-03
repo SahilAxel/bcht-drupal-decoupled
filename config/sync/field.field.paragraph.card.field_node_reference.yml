@@ -1,0 +1,33 @@
+uuid: 57a6d7ad-20ed-4c3c-8fdf-ce818d3df245
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_node_reference
+    - node.type.article
+    - node.type.landing_page
+    - node.type.page
+    - paragraphs.paragraphs_type.card
+id: paragraph.card.field_node_reference
+field_name: field_node_reference
+entity_type: paragraph
+bundle: card
+label: 'Node Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      page: page
+      landing_page: landing_page
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

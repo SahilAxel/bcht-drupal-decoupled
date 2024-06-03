@@ -1,0 +1,30 @@
+uuid: 7a6dcd33-3273-4e78-8e8e-0d6c8f4fc235
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_content_type
+field_name: field_content_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: article
+      label: Article
+    -
+      value: page
+      label: 'Generic Details Page'
+    -
+      value: landing_page
+      label: 'Landing Page'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
