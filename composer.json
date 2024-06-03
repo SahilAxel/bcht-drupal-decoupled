@@ -73,7 +73,12 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
-        "enable-patching": true
+        "enable-patching": true,
+        "patches": {
+            "drupal/core": {
+                "#states not working correctly when built from a logical combination of multliple fields": "https://www.drupal.org/files/issues/2024-04-08/fix-core-states-issues.patch"
+            }
+        }
     },
     "autoload": {
         "classmap": ["upstream-configuration/scripts/ComposerScripts.php"]
