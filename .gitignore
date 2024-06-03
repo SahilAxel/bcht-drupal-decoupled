@@ -187,6 +187,9 @@ drush/sites/.checksums
 
 
 #Ignore custom theme build artifacts
-web/themes/custom/*/node_modules
-web/themes/custom/*/css
-web/themes/custom/*/js
+/web/themes/custom/**/node_modules
+/web/themes/custom/**/css
+/web/themes/custom/**/js
+/web/themes/custom/**/maps
+/web/themes/custom/**/images
+/web/themes/custom/**/svg

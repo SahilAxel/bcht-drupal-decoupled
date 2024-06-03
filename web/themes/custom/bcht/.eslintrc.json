@@ -3,17 +3,10 @@
     "plugins": ["prettier"],
     "extends": ["prettier"],
     "rules": {
-      "prettier/prettier": ["error"],
-      "@typescript-eslint/indent": "off",
-      "@typescript-eslint/no-var-requires": [
-        "off",
-        { "devDependencies": ["gulpfile.js"] }
-      ],
-      "@typescript-eslint/explicit-function-return-type": [
-        "off",
-        {
-          "devDependencies": ["gulpfile.js", "gulp-tasks/*.js"]
-        }
-      ]
+      "prettier/prettier": ["error"]
+    },
+    "parserOptions": {
+      "ecmaVersion": 15,
+      "sourceType": "module"
     }
   }
