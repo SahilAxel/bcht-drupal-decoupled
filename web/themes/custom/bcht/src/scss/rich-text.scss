@@ -114,22 +114,17 @@
       padding: 16px 39px 0px 0px;
     }
     .media-embed-resized {
-      min-width: 100%;
+      max-width: 340px;
+      @include breakpoint(desktop) {
+        max-width: 400px;
+        min-width: 100%;
+      }
     }
     figcaption {
       padding: 8px 0px 4px 0px;
       max-width: 98%;
       @include breakpoint(desktop) {
         padding: 14px 0px 20px 0px;
-      }
-    }
-    img {
-      min-width: 340px;
-      min-height: 340px;
-      object-fit: cover;
-      @include breakpoint(desktop) {
-        min-width: 400px;
-        min-height: 400px;
       }
     }
   }
@@ -139,22 +134,17 @@
       padding: 16px 0px 0px 39px;
     }
     .media-embed-resized {
-      min-width: 100%;
+      max-width: 340px;
+      @include breakpoint(desktop) {
+        max-width: 400px;
+        min-width: 100%;
+      }
     }
     figcaption {
       padding: 8px 0px 4px 0px;
       max-width: 98%;
       @include breakpoint(desktop) {
         padding: 14px 0px 20px 0px;
-      }
-    }
-    img {
-      min-width: 340px;
-      min-height: 340px;
-      object-fit: cover;
-      @include breakpoint(desktop) {
-        min-width: 400px;
-        min-height: 400px;
       }
     }
   }
