@@ -7,11 +7,11 @@ use Drupal\pluginformalter\Annotation\ParagraphsFormAlter;
 use Drupal\pluginformalter\Plugin\FormAlterBase;
 
 /**
- * Class MyModuleParagraphsFormAlter.
+ * Class CardParagraphsFormAlter.
  *
  * @ParagraphsFormAlter(
- *   id = "paragraph_form_alter",
- *   label = @Translation("Altering title_text paragraphs form."),
+ *   id = "card_paragraph_form_alter",
+ *   label = @Translation("Altering card paragraphs form."),
  *   paragraph_type = {
  *    "card"
  *   },
@@ -19,7 +19,7 @@ use Drupal\pluginformalter\Plugin\FormAlterBase;
  *
  * @package Drupal\my_module\Plugin\FormAlter
  */
-class ParagraphFormAlter extends FormAlterBase
+class CardParagraphFormAlter extends FormAlterBase
 {
 
   /**

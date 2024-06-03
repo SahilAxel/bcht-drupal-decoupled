@@ -11,6 +11,9 @@ use Drupal\views\ViewExecutable;
 function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
   if ($view->id() == 'related_content') {
     $node = \Drupal::routeMatch()->getParameter('node');
+    /* Fetching the card component taxonomy type and content type filter values and
+     * passing the fetched values in the exposed filter values of related content view
+     */
     if ($node instanceof NodeInterface) {
       $paragraphs = $node->get('field_components')->referencedEntities();
       $exposed_input = $view->getExposedInput();

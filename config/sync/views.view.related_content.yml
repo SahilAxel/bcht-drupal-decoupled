@@ -112,7 +112,20 @@ display:
       cache:
         type: tag
         options: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'No results found for the selcted criteria. Please update the selection criteria in the card component of this page.'
+            format: basic_html
+          tokenize: false
       sorts:
         created:
           id: created
@@ -186,12 +199,13 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vids:
-            - article_type
+          vid: article_type
           type: select
           hierarchy: true
           limit: true
           error_message: true
+          vids:
+            - article_type
         tid_1:
           id: tid_1
           table: taxonomy_index
@@ -235,12 +249,13 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vids:
-            - categories
+          vid: categories
           type: select
           hierarchy: true
           limit: true
           error_message: true
+          vids:
+            - categories
         tid_2:
           id: tid_2
           table: taxonomy_index
@@ -284,12 +299,13 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vids:
-            - topic
+          vid: topic
           type: select
           hierarchy: true
           limit: true
           error_message: true
+          vids:
+            - topic
         type:
           id: type
           table: node_field_data
