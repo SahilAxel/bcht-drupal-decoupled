@@ -56,17 +56,8 @@ settings:
           label: 'Featured Text'
           element: '<p class="featured-text">'
         -
-          label: Title3
-          element: '<h2 class="t3">'
-        -
-          label: Title4
-          element: '<h3 class="t4">'
-        -
-          label: Title5
-          element: '<h4 class="t5">'
-        -
-          label: Title6
-          element: '<h5 class="t6">'
+          label: 'H6 Sub Heading'
+          element: '<h6 class="sub-heading">'
         -
           label: P14
           element: '<p class="p14">'
