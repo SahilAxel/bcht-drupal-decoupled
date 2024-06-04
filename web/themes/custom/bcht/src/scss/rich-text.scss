@@ -115,9 +115,9 @@
     }
     .media-embed-resized {
       max-width: 340px;
+      min-width: 100%;
       @include breakpoint(desktop) {
         max-width: 400px;
-        min-width: 100%;
       }
     }
     figcaption {
@@ -135,9 +135,9 @@
     }
     .media-embed-resized {
       max-width: 340px;
+      min-width: 100%;
       @include breakpoint(desktop) {
         max-width: 400px;
-        min-width: 100%;
       }
     }
     figcaption {
