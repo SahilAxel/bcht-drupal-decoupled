@@ -1,0 +1,20 @@
+uuid: 02c51d7e-1ce9-419d-94e3-d6241901bb52
+langcode: en
+status: true
+dependencies:
+  theme:
+    - bcht
+id: bcht_tabs
+theme: bcht
+region: highlighted
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }
