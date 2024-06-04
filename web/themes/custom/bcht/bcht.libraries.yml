@@ -26,3 +26,8 @@ herobanner:
   css:
     theme:
       build/css/components/herobanner/herobanner.css: {}
+
+cards:
+  css:
+    theme:
+      build/css/components/cards/cards.css: {}

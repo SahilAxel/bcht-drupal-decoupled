@@ -38,9 +38,12 @@
  * @ingroup themeable
  */
 #}
+{{ attach_library('bcht/cards') }}
 {%
   set classes = [
     'paragraph',
+    'component__wrapper',
+    'cards_wrapper',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished'
@@ -48,12 +51,82 @@
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
+
+    {% if content.field_heading.0 or content.field_intro_text.0 %}
+    <div class='cards_top_wrapper'>
+      {% if content.field_heading.0 %}
+      <div class="title">{{ content.field_heading.0|raw }}</div>
+      {% endif %}
+      {% if content.field_intro_text.0 %}
+      <div class="des">{{ content.field_intro_text.0|raw }}</div>
+      {% endif %}
+    </div>
+    {% endif %}
+
+  {# Related cards #}
   {% if paragraph.get('field_card_type').value == 'related_cards' %}
     {{ drupal_view('related_content', 'block_1') }}
+  
+  {# Related cards #}
   {% elseif paragraph.get('field_card_type').value == 'node_reference'%}
     {{ content.field_node_reference }}
+  
+  {# Manual cards #}
   {% elseif paragraph.get('field_card_type').value == 'manual'%}
-    {{ content.field_card_items }}
+    {% if content.field_card_items %}
+
+    {% set cardcount = 0 %}
+    {% for key, item in content.field_card_items  %}
+      {% if  key|first != '#' %}
+        {% set cardcount = cardcount + 1 %}
+      {% endif %}
+    {% endfor %}
+  
+    <div class="cards_item_wrapper {{ 'num_of_card_' ~ cardcount }}">
+      {% for key, item in content.field_card_items  %}
+        {% if  key|first != '#' %}
+          <div class="card__item">
+            {% set noimageclass = '' %}
+            {% if item['#paragraph'].field_image.entity.field_media_image.entity.fileuri %}
+            {% set media_uri = item['#paragraph'].field_image.entity.field_media_image.entity.fileuri|image_style('card_image_412_448') %}
+            <div class="card_image"><img src={{ media_uri }}  alt="Card title - {{ item['#paragraph'].field_heading[0].value|raw }}" /></div>
+            {% else %}
+              {% set noimageclass = 'noimage' %}
+            {% endif %}
+
+            {% if item['#paragraph'].field_eyebrow[0].value or item['#paragraph'].field_heading[0].value or item['#paragraph'].field_card_link[0] %}
+            <div class="card_bottom_wrapper {{ noimageclass }}">
+              {% if item['#paragraph'].field_eyebrow[0].value %}
+              <div class="card_eyebrow">{{ item['#paragraph'].field_eyebrow[0].value|raw }}</div>
+              {% endif %}
+              {% if item['#paragraph'].field_heading[0].value %}
+              <div class="card_title">{{ item['#paragraph'].field_heading[0].value|raw }}</div>
+              {% endif %}
+              {% if item['#paragraph'].field_card_link[0] %}
+                <div class="cta cta_btn">
+                {% if item['#paragraph'].field_card_link[0].url.external %}
+                  <a class="link-arrow-btn link-arrow-btn--default" href="{{ item['#paragraph'].field_card_link[0].uri }}" target="_blank" title="Opens in a new window">{{ item['#paragraph'].field_card_link[0].title }}</a>
+                {% else %}
+                  <a class="link-arrow-btn link-arrow-btn--default" href="{{ path(item['#paragraph'].field_card_link[0].url.routeName, item['#paragraph'].field_card_link[0].url.routeParameters) }}">{{ item['#paragraph'].field_card_link[0].title }}</a>
+                {% endif %}
+                </div>
+              {% endif %}
+
+              {# Box link #}
+              {% if item['#paragraph'].field_card_link[0] %}
+                {% if item['#paragraph'].field_card_link[0].url.external %}
+                  <a class="box_link" href="{{ item['#paragraph'].field_card_link[0].uri }}" target="_blank" title="Opens in a new window">{{ item['#paragraph'].field_card_link[0].title }}</a>
+                {% else %}
+                  <a class="box_link" href="{{ path(item['#paragraph'].field_card_link[0].url.routeName, item['#paragraph'].field_card_link[0].url.routeParameters) }}">{{ item['#paragraph'].field_card_link[0].title }}</a>
+                {% endif %}
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
   {% endif %}
   </div>
 {% endblock paragraph %}
