@@ -1,0 +1,36 @@
+uuid: 54959a73-4c7f-43ac-9666-b20d83c2c57f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.cta_banner_image
+    - field.field.media.image.field_media_image
+    - image.style.image_optimize
+    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
+id: media.image.cta_banner_image
+targetEntityType: media
+bundle: image
+mode: cta_banner_image
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: image_optimize
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

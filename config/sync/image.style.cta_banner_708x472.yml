@@ -1,0 +1,15 @@
+uuid: 8bc601b4-28a2-480d-a5e6-7e2ff600d91f
+langcode: en
+status: true
+dependencies: {  }
+name: cta_banner_708x472
+label: 'CTA Banner 708x472'
+effects:
+  30382274-2fca-4af1-895b-547d73ff36ef:
+    uuid: 30382274-2fca-4af1-895b-547d73ff36ef
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 708
+      height: 472
+      anchor: center-center

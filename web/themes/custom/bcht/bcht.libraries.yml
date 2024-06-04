@@ -36,3 +36,8 @@ image-with-caption:
   css:
     theme:
       build/css/components/image-with-caption.css: {}
+
+cta-banner:
+  css:
+    theme:
+      build/css/components/cta-banner.css: {}

@@ -1,0 +1,78 @@
+@import '../global.scss';
+.paragraph--type--call-to-action-cta-banner {
+  max-height: 472px;
+  max-width: 1900px;
+  margin: 0 auto;
+  .cta-banner--with-image {
+    display: flex;
+    flex-direction: column-reverse;
+    min-width: fit-content;
+    background-color: $BostonPink;
+    @include breakpoint(tablet) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    @include breakpoint(small-desktop) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    &__content {
+      background-color: $BostonPink;
+      width: 100%;
+      padding: 24px 20px 48px;
+      @include breakpoint(tablet) {
+        padding: 51px 24px 51px 78px;
+      }
+      @include breakpoint(small-desktop) {
+        padding: 0px 24px 0px 78px;
+      }
+    }
+    &__image {
+      width: 100%;
+      @include breakpoint(desktop) {
+        max-height: 472px;
+        max-width: 708px;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        @include breakpoint(tablet) {
+          min-height: 472px;
+        }
+      }
+    }
+  }
+  .cta-banner--no-image {
+    background-color: $BostonPink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 48px 20px;
+    text-align: center;
+    @include breakpoint(tablet) {
+      padding: 51px 78px;
+    }
+    @include breakpoint(desktop) {
+      padding: 72px 78px;
+    }
+  }
+  .cta-banner--headline {
+    color: $White;
+    padding: 0px 0px 24px 0px;
+    margin: 0px;
+  }
+  .cta-banner--description {
+    color: $White;
+    padding: 0px 0px 24px 0px;
+    margin: 0px;
+  }
+  .cta-banner__buttons {
+    width: fit-content;
+  }
+}
