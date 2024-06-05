@@ -1,16 +1,16 @@
-uuid: 536df777-f121-4b0d-8f8d-f98531f44be0
+uuid: 2935712e-b66c-4f04-a0d9-353be69a1908
 langcode: en
 status: true
 dependencies:
   module:
-    - link
     - paragraphs
-id: paragraph.field_link
-field_name: field_link
+id: paragraph.field_video_source
+field_name: field_video_source
 entity_type: paragraph
-type: link
-settings: {  }
-module: link
+type: string_long
+settings:
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

@@ -1,0 +1,19 @@
+uuid: 3cfaf045-3eda-4413-9a68-a3121e4f040d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video_source
+    - paragraphs.paragraphs_type.video_embed
+id: paragraph.video_embed.field_video_source
+field_name: field_video_source
+entity_type: paragraph
+bundle: video_embed
+label: 'Video Source'
+description: 'Please refer <a href="https://help.vimeo.com/hc/en-us/articles/12426259908881-How-do-I-embed-my-video" target="_blank">https://help.vimeo.com/hc/en-us/articles/12426259908881-How-do-I-embed-my-video</a> for how to get the embed code and paste in this field'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
