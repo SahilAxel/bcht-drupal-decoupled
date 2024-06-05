@@ -31,3 +31,8 @@ cards:
   css:
     theme:
       build/css/components/cards/cards.css: {}
+
+image-with-caption:
+  css:
+    theme:
+      build/css/components/image-with-caption.css: {}

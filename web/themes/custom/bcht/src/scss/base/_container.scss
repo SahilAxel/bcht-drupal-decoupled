@@ -3,3 +3,12 @@
   max-width: 1440px;
   margin: 0 auto;
 }
+.container-small {
+  max-width: 840px;
+  margin: 0 auto;
+}
+.container::after {
+  content: '';
+  clear: both;
+  display: table;
+}
