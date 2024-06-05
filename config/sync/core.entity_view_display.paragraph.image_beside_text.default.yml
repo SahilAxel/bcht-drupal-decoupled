@@ -64,7 +64,7 @@ content:
     weight: 1
     region: content
   field_layout:
-    type: list_default
+    type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }

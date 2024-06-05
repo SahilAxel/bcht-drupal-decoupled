@@ -1,0 +1,15 @@
+uuid: b88b60bb-8ad8-4c15-b6d7-d342a2b1e13c
+langcode: en
+status: true
+dependencies: {  }
+name: image_beside_text_848_482
+label: Image_beside_text_848_482
+effects:
+  26f681c6-cff8-42f6-98eb-a7dfbfe5ac07:
+    uuid: 26f681c6-cff8-42f6-98eb-a7dfbfe5ac07
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 848
+      height: 482
+      anchor: center-center

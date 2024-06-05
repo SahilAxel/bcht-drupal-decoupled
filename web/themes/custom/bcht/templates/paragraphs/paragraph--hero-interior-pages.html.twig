@@ -68,23 +68,23 @@
         {% else %}
           <h1>{{ node_title }}</h1>
         {% endif %}
-        {% if content.field_link.0  or content.field_link.1 %}
+        {% if content.field_hero_cta_buttons.0  or content.field_hero_cta_buttons.1 %}
           <div class="cta_group">
-          {% if content.field_link.0 %}
+          {% if content.field_hero_cta_buttons.0 %}
             <span class="cta cta_btn_1">
-              {% if content.field_link.0['#url'].external %}
-                <a class="btn btn--default" href="{{ content.field_link.0['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_link.0['#title'] }}</a>
+              {% if content.field_hero_cta_buttons.0['#url'].external %}
+                <a class="btn btn--default" href="{{ content.field_hero_cta_buttons.0['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_hero_cta_buttons.0['#title'] }}</a>
               {% else %}
-                <a class="btn btn--default" href="{{ path(content.field_link.0['#url'].routeName, content.field_link.0['#url'].routeParameters) }}">{{ content.field_link.0['#title'] }}</a>
+                <a class="btn btn--default" href="{{ path(content.field_hero_cta_buttons.0['#url'].routeName, content.field_hero_cta_buttons.0['#url'].routeParameters) }}">{{ content.field_hero_cta_buttons.0['#title'] }}</a>
               {% endif %}
             </span>
           {% endif %}
-          {% if content.field_link.1 %}
+          {% if content.field_hero_cta_buttons.1 %}
             <span class="cta cta_btn_2">
-              {% if content.field_link.1['#url'].external %}
-                <a class="btn-transparent btn-transparent--default" href="{{ content.field_link.1['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_link.1['#title'] }}</a>
+              {% if content.field_hero_cta_buttons.1['#url'].external %}
+                <a class="btn-transparent btn-transparent--default" href="{{ content.field_hero_cta_buttons.1['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_hero_cta_buttons.1['#title'] }}</a>
               {% else %}
-                <a class="btn-transparent btn-transparent--default" href="{{ path(content.field_link.1['#url'].routeName, content.field_link.1['#url'].routeParameters) }}">{{ content.field_link.1['#title'] }}</a>
+                <a class="btn-transparent btn-transparent--default" href="{{ path(content.field_hero_cta_buttons.1['#url'].routeName, content.field_hero_cta_buttons.1['#url'].routeParameters) }}">{{ content.field_hero_cta_buttons.1['#title'] }}</a>
               {% endif %}
             </span>
           {% endif %}
