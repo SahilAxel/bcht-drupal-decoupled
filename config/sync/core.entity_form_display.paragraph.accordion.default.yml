@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.accordion.field_accordion_items
+    - field.field.paragraph.accordion.field_accordion_link
     - field.field.paragraph.accordion.field_heading_text
-    - field.field.paragraph.accordion.field_link
     - paragraphs.paragraphs_type.accordion
   module:
     - link
@@ -33,6 +33,14 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
+  field_accordion_link:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   field_heading_text:
     type: string_textfield
     weight: 0
@@ -40,14 +48,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_link:
-    type: link_default
-    weight: 2
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
     third_party_settings: {  }
 hidden:
   created: true

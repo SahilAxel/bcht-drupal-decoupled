@@ -5,8 +5,8 @@ dependencies:
   config:
     - field.field.paragraph.call_to_action_cta_banner.field_cta_description
     - field.field.paragraph.call_to_action_cta_banner.field_cta_headline
+    - field.field.paragraph.call_to_action_cta_banner.field_cta_link
     - field.field.paragraph.call_to_action_cta_banner.field_image
-    - field.field.paragraph.call_to_action_cta_banner.field_link
     - paragraphs.paragraphs_type.call_to_action_cta_banner
   module:
     - link
@@ -33,6 +33,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_cta_link:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   field_image:
     type: media_library_widget
     weight: 0
@@ -42,14 +50,6 @@ content:
     third_party_settings:
       media_library_edit:
         show_edit: '1'
-  field_link:
-    type: link_default
-    weight: 2
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
 hidden:
   created: true
   status: true

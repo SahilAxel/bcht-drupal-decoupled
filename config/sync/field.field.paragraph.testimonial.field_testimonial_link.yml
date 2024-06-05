@@ -1,0 +1,23 @@
+uuid: c053da41-d273-4d15-bece-2d42d3d23a5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_testimonial_link
+    - paragraphs.paragraphs_type.testimonial
+  module:
+    - link
+id: paragraph.testimonial.field_testimonial_link
+field_name: field_testimonial_link
+entity_type: paragraph
+bundle: testimonial
+label: 'Testimonial Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link
