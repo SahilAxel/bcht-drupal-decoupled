@@ -1,5 +1,14 @@
 @import '../settings/settings.all';
 .container {
-  max-width: 1440px;
+  max-width: 1284px;
   margin: 0 auto;
+}
+.container-small {
+  max-width: 840px;
+  margin: 0 auto;
+}
+.container::after {
+  content: '';
+  clear: both;
+  display: table;
 }

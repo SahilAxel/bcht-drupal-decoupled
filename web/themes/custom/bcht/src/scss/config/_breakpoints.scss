@@ -11,15 +11,15 @@ $desktop: 1440px;
       @content;
     }
   } @else if $device == tablet {
-    @media (min-width: 768px) and (max-width: 1024px) {
+    @media (min-width: 768px) {
       @content;
     }
   } @else if $device == small-desktop {
-    @media (min-width: 1025px) and (max-width: 1439px) {
+    @media (min-width: 1025px) {
       @content;
     }
   } @else if $device == desktop {
-    @media (min-width: 1440px) and (max-width: 1920px) {
+    @media (min-width: 1440px) {
       @content;
     }
   }

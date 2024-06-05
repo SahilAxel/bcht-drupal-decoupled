@@ -23,9 +23,17 @@
   &--white {
     background-color: $White;
     color: $BostonBlue;
+    a {
+      color: $BostonBlue;
+      text-decoration: none;
+      font-family: $MuseoSans;
+    }
     &:hover {
       background-color: $BostonOcean;
       color: $White;
+      a {
+        color: $White;
+      }
     }
   }
   &--tint {

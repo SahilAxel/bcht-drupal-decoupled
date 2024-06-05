@@ -47,12 +47,12 @@ p {
   color: $BostonGray;
   font-size: 1rem;
   line-height: 24px;
-  padding: 12px 0;
+  padding: 12px 0px;
   font-family: $HelveticaRegular;
   @include breakpoint(desktop) {
     font-size: 1.125rem;
     line-height: 28px;
-    padding: 16px 0;
+    padding: 16px 0px;
   }
   .link-blue,
   .link-pink {
