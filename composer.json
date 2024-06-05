@@ -34,7 +34,8 @@
         "drupal/media_library_edit": "^3.0",
         "drupal/image_widget_crop": "^2.4",
         "drupal/pluginformalter": "^1.7",
-        "drupal/twig_tweak": "^3.3"
+        "drupal/twig_tweak": "^3.3",
+        "drupal/maxlength": "^3.0"
     },
     "require-dev": {
         "drupal/core-dev": "^10",

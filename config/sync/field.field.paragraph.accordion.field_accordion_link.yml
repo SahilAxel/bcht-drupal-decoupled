@@ -1,17 +1,17 @@
-uuid: ec7c766c-10ab-41fa-a4f6-8c08fab644f9
+uuid: 999d69b6-70d0-4628-95f9-3a29420171f8
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_link
+    - field.storage.paragraph.field_accordion_link
     - paragraphs.paragraphs_type.accordion
   module:
     - link
-id: paragraph.accordion.field_link
-field_name: field_link
+id: paragraph.accordion.field_accordion_link
+field_name: field_accordion_link
 entity_type: paragraph
 bundle: accordion
-label: Link
+label: 'Accordion Link'
 description: ''
 required: false
 translatable: false

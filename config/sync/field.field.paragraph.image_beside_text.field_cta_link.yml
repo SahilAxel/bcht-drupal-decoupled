@@ -1,17 +1,17 @@
-uuid: ed35075c-adad-4f75-991d-5ab996af24e7
+uuid: 4c58e8c9-2d02-479d-b99f-9034c6b7a856
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_link
+    - field.storage.paragraph.field_cta_link
     - paragraphs.paragraphs_type.image_beside_text
   module:
     - link
-id: paragraph.image_beside_text.field_link
-field_name: field_link
+id: paragraph.image_beside_text.field_cta_link
+field_name: field_cta_link
 entity_type: paragraph
 bundle: image_beside_text
-label: 'CTA Link'
+label: "CTA Link\t"
 description: ''
 required: false
 translatable: false

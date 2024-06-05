@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.image_beside_text.field_cta_link
     - field.field.paragraph.image_beside_text.field_description
     - field.field.paragraph.image_beside_text.field_eyebrow
     - field.field.paragraph.image_beside_text.field_heading
     - field.field.paragraph.image_beside_text.field_image
     - field.field.paragraph.image_beside_text.field_layout
-    - field.field.paragraph.image_beside_text.field_link
     - paragraphs.paragraphs_type.image_beside_text
   module:
     - link
@@ -19,6 +19,18 @@ targetEntityType: paragraph
 bundle: image_beside_text
 mode: default
 content:
+  field_cta_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_description:
     type: text_default
     label: hidden
@@ -57,18 +69,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 5
-    region: content
-  field_link:
-    type: link
-    label: hidden
-    settings:
-      trim_length: null
-      url_only: false
-      url_plain: false
-      rel: '0'
-      target: '0'
-    third_party_settings: {  }
-    weight: 4
     region: content
 hidden:
   search_api_excerpt: true

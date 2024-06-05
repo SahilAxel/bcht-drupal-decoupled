@@ -1,14 +1,14 @@
-uuid: ff6724cb-1497-4878-9392-36fa9a1a5b57
+uuid: 7ebd48ac-71a8-481a-94a3-86670793f588
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_link
+    - field.storage.paragraph.field_cta_link
     - paragraphs.paragraphs_type.call_to_action_cta_banner
   module:
     - link
-id: paragraph.call_to_action_cta_banner.field_link
-field_name: field_link
+id: paragraph.call_to_action_cta_banner.field_cta_link
+field_name: field_cta_link
 entity_type: paragraph
 bundle: call_to_action_cta_banner
 label: Button
