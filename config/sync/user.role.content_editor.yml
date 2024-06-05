@@ -9,6 +9,9 @@ dependencies:
     - node.type.article
     - node.type.landing_page
     - node.type.page
+    - taxonomy.vocabulary.article_type
+    - taxonomy.vocabulary.categories
+    - taxonomy.vocabulary.topic
     - workflows.workflow.editorial
   module:
     - comment
@@ -35,6 +38,7 @@ permissions:
   - 'access contextual links'
   - 'access files overview'
   - 'access media overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
   - 'administer menu'
   - 'administer url aliases'
@@ -53,6 +57,10 @@ permissions:
   - 'create paragraph content image_with_caption'
   - 'create paragraph content rich_text'
   - 'create paragraph content testimonial'
+  - 'create paragraph content video_embed'
+  - 'create terms in article_type'
+  - 'create terms in categories'
+  - 'create terms in topic'
   - 'create url aliases'
   - 'delete any media'
   - 'delete article revisions'
@@ -73,6 +81,10 @@ permissions:
   - 'delete paragraph content image_with_caption'
   - 'delete paragraph content rich_text'
   - 'delete paragraph content testimonial'
+  - 'delete paragraph content video_embed'
+  - 'delete terms in article_type'
+  - 'delete terms in categories'
+  - 'delete terms in topic'
   - 'edit any article content'
   - 'edit any landing_page content'
   - 'edit any page content'
@@ -81,6 +93,9 @@ permissions:
   - 'edit own image media'
   - 'edit own landing_page content'
   - 'edit own page content'
+  - 'edit terms in article_type'
+  - 'edit terms in categories'
+  - 'edit terms in topic'
   - 'revert all revisions'
   - 'update any media'
   - 'update media'
@@ -94,6 +109,7 @@ permissions:
   - 'update paragraph content image_with_caption'
   - 'update paragraph content rich_text'
   - 'update paragraph content testimonial'
+  - 'update paragraph content video_embed'
   - 'use editorial transition archive'
   - 'use editorial transition archived_draft'
   - 'use editorial transition archived_published'
@@ -114,5 +130,6 @@ permissions:
   - 'view paragraph content hero_interior_pages'
   - 'view paragraph content image_beside_text'
   - 'view paragraph content image_with_caption'
+  - 'view paragraph content video_embed'
   - 'view the administration theme'
   - 'view unpublished paragraphs'

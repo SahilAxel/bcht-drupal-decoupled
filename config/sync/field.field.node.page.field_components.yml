@@ -12,6 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.image_with_caption
     - paragraphs.paragraphs_type.rich_text
     - paragraphs.paragraphs_type.testimonial
+    - paragraphs.paragraphs_type.video_embed
   module:
     - entity_reference_revisions
 id: node.page.field_components
@@ -35,6 +36,7 @@ settings:
       image_beside_text: image_beside_text
       image_with_caption: image_with_caption
       testimonial: testimonial
+      video_embed: video_embed
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -65,6 +67,9 @@ settings:
         weight: 2
         enabled: true
       testimonial:
+        weight: 21
+        enabled: true
+      video_embed:
         weight: 20
         enabled: true
 field_type: entity_reference_revisions

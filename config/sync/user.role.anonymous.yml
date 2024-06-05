@@ -35,3 +35,4 @@ permissions:
   - 'view paragraph content image_with_caption'
   - 'view paragraph content rich_text'
   - 'view paragraph content testimonial'
+  - 'view paragraph content video_embed'
