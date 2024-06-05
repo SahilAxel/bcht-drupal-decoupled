@@ -31,15 +31,17 @@ function bcht_preprocess_paragraph(&$variables) {
   // Check if the paragraph type is 'rich-text'.
   if ($paragraph->bundle() == 'rich_text') {
     $variables['#attached']['library'][] = 'bcht/rich-text';
+    $variables['attributes']['class'][] = 'container-small';
   }
   // Check if the paragraph type is 'Image with Caption'.
   if ($variables['paragraph']->bundle() == 'image_with_caption') {
     $variables['#attached']['library'][] = 'bcht/image-with-caption';
+    $variables['attributes']['class'][] = 'container-small';
   }
 
   // Check if the paragraph type is 'accordion'.
   if ($paragraph->bundle() == 'accordion') {
-    $variables['#attached']['library'][] = 'bcht/accordion';
+    $variables['#attached']['library'][] = 'bcht/accordion';  
   }
 
   // Passing node title in hero interior pages component.

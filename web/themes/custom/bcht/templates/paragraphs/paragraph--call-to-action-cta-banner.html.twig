@@ -53,15 +53,14 @@
       {% if content.field_image.0 %}
         <div class="cta-banner--with-image">
           <div class="cta-banner--with-image__content">
-            <h2 class="cta-banner--headline">{{ content.field_cta_headline[0]['#context'].value }}</h2>
-            <p class="cta-banner--description">{{ content.field_cta_description[0]['#context'].value }}</p>
+              <h2 class="cta-banner--headline">{{ content.field_cta_headline[0]['#context'].value }}</h2>
+              <p class="cta-banner--description">{{ content.field_cta_description[0]['#context'].value }}</p>
             <div class="cta-banner__buttons">
-              {% if content.field_link[0]['#url'] is not empty %}
-                <button class="cta-banner__buttons--link btn btn--white">{{ content.field_link[0] }}</button>
-              {% endif %}
-              {% if content.field_link[1]['#url'] is not empty %}
-                <button class="cta-banner__buttons--link btn btn--white">{{ content.field_link[1] }}</button>
-              {% endif %}
+              {% for item in content.field_link %}
+                {% if item['#url'] is not empty %}
+                  <button class="cta-banner__buttons--link btn btn--white">{{ item }}</button>
+                {% endif %}
+              {% endfor %}
             </div>
           </div>
           <div class="cta-banner--with-image__image">
@@ -70,19 +69,19 @@
         </div>
       {% else %}
         <div class="cta-banner--no-image">
-          <h2 class="cta-banner--headline">{{ content.field_cta_headline[0]['#context'].value }}</h2>
-          <p class="cta-banner--description">{{ content.field_cta_description[0]['#context'].value }}</p>
+            <h2 class="cta-banner--headline">{{ content.field_cta_headline[0]['#context'].value }}</h2>
+            <p class="cta-banner--description">{{ content.field_cta_description[0]['#context'].value }}</p>
           <div class="cta-banner__buttons">
-            {% if content.field_link[0]['#url'] is not empty %}
-              <button class="cta-banner__buttons--link btn btn--white">{{ content.field_link[0] }}</button>
-            {% endif %}
-            {% if content.field_link[1]['#url'] is not empty %}
-              <button class="cta-banner__buttons--link btn btn--white">{{ content.field_link[1] }}</button>
-            {% endif %}
+            {% for item in content.field_link %}
+              {% if item['#url'] is not empty %}
+                <button class="cta-banner__buttons--link btn btn--white">{{ item }}</button>
+              {% endif %}
+            {% endfor %}
           </div>
         </div>
       {% endif %}
     {% endblock %}
   </div>
 {% endblock paragraph %}
+
 
