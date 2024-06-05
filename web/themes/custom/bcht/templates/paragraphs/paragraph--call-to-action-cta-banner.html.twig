@@ -55,13 +55,7 @@
           <div class="cta-banner--with-image__content">
               <h2 class="cta-banner--headline">{{ content.field_cta_headline[0]['#context'].value }}</h2>
               <p class="cta-banner--description">{{ content.field_cta_description[0]['#context'].value }}</p>
-            <div class="cta-banner__buttons">
-              {% for item in content.field_link %}
-                {% if item['#url'] is not empty %}
-                  <button class="cta-banner__buttons--link btn btn--white">{{ item }}</button>
-                {% endif %}
-              {% endfor %}
-            </div>
+              <button class="cta-banner--cta-link btn btn--white">{{ content.field_cta_link }}</button>
           </div>
           <div class="cta-banner--with-image__image">
             {{ content.field_image }}
@@ -71,13 +65,7 @@
         <div class="cta-banner--no-image">
             <h2 class="cta-banner--headline">{{ content.field_cta_headline[0]['#context'].value }}</h2>
             <p class="cta-banner--description">{{ content.field_cta_description[0]['#context'].value }}</p>
-          <div class="cta-banner__buttons">
-            {% for item in content.field_link %}
-              {% if item['#url'] is not empty %}
-                <button class="cta-banner__buttons--link btn btn--white">{{ item }}</button>
-              {% endif %}
-            {% endfor %}
-          </div>
+            <button class="cta-banner--cta-link btn btn--white">{{ content.field_cta_link }}</button>    
         </div>
       {% endif %}
     {% endblock %}
