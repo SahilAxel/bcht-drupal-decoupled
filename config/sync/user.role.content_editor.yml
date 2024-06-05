@@ -9,6 +9,9 @@ dependencies:
     - node.type.article
     - node.type.landing_page
     - node.type.page
+    - taxonomy.vocabulary.article_type
+    - taxonomy.vocabulary.categories
+    - taxonomy.vocabulary.topic
     - workflows.workflow.editorial
   module:
     - comment
@@ -35,6 +38,7 @@ permissions:
   - 'access contextual links'
   - 'access files overview'
   - 'access media overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
   - 'administer menu'
   - 'administer url aliases'
@@ -54,6 +58,9 @@ permissions:
   - 'create paragraph content rich_text'
   - 'create paragraph content testimonial'
   - 'create paragraph content video_embed'
+  - 'create terms in article_type'
+  - 'create terms in categories'
+  - 'create terms in topic'
   - 'create url aliases'
   - 'delete any media'
   - 'delete article revisions'
@@ -75,6 +82,9 @@ permissions:
   - 'delete paragraph content rich_text'
   - 'delete paragraph content testimonial'
   - 'delete paragraph content video_embed'
+  - 'delete terms in article_type'
+  - 'delete terms in categories'
+  - 'delete terms in topic'
   - 'edit any article content'
   - 'edit any landing_page content'
   - 'edit any page content'
@@ -83,6 +93,9 @@ permissions:
   - 'edit own image media'
   - 'edit own landing_page content'
   - 'edit own page content'
+  - 'edit terms in article_type'
+  - 'edit terms in categories'
+  - 'edit terms in topic'
   - 'revert all revisions'
   - 'update any media'
   - 'update media'
