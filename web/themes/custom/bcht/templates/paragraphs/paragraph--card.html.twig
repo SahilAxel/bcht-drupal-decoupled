@@ -64,12 +64,13 @@
 
   {# Related cards #}
   {% if paragraph.get('field_card_type').value == 'related_cards' %}
-    {{ drupal_view('related_content', 'block_1') }}
-  
+
+    {{ drupal_view('related_content_wrapper', 'block_1', paragraph.id()) }}
+
   {# Related cards #}
   {% elseif paragraph.get('field_card_type').value == 'node_reference'%}
     {{ content.field_node_reference }}
-  
+
   {# Manual cards #}
   {% elseif paragraph.get('field_card_type').value == 'manual'%}
     {% if content.field_card_items %}
@@ -80,7 +81,7 @@
         {% set cardcount = cardcount + 1 %}
       {% endif %}
     {% endfor %}
-  
+
     <div class="cards_item_wrapper {{ 'num_of_card_' ~ cardcount }}">
       {% for key, item in content.field_card_items  %}
         {% if  key|first != '#' %}
