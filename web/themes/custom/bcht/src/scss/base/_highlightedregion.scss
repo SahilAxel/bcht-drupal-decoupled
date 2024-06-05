@@ -1,0 +1,76 @@
+@import '../settings/settings.all';
+.region--highlighted {
+  background-color: $BostonPink;
+  position: relative;
+  margin: 0 0 40px;
+  &:after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+  .region--highlighted__inner {
+    color: $White;
+  }
+
+  div[data-drupal-messages] {
+    margin: 0;
+    padding: 15px 0;
+    border-top: 1px solid $White;
+    border-bottom: 1px solid $White;
+    a {
+      color: $White !important;
+    }
+  }
+
+  ul:not(.contextual-links) {
+    color: $White;
+    display: block;
+    padding: 0;
+    margin: 0;
+    li {
+      display: inline-block;
+      border-right: 1px solid $White;
+
+      &:first-child {
+        border-left: 1px solid $White;
+      }
+      @media only screen and (max-width: 767px) {
+        display: block;
+        border-bottom: 1px solid $White;
+        border-right: none;
+
+        &:first-child {
+          border-left: none;
+        }
+      }
+      a {
+        display: inline-block;
+        padding: 8px 20px;
+        font-size: 14px;
+        color: $White;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
+  padding: 8px;
+  background: $White;
+  z-index: 15;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  color: $White;
+  opacity: 1;
+  line-height: 20px;
+  font-size: 20px;
+}
+
+.back-to-top:hover {
+  cursor: pointer;
+}

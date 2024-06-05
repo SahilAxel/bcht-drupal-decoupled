@@ -1,0 +1,15 @@
+uuid: e91fab97-c1ad-4bf9-a010-3ce65b54a58f
+langcode: en
+status: true
+dependencies: {  }
+name: card_image_412_448
+label: card_image_412_448
+effects:
+  276e70a2-13c0-443a-a977-7fe508a31261:
+    uuid: 276e70a2-13c0-443a-a977-7fe508a31261
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 412
+      height: 448
+      anchor: center-center

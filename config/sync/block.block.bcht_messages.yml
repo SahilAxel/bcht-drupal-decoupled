@@ -1,0 +1,20 @@
+uuid: 3be7d858-e5f5-4b69-8de0-06543308596a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bcht
+id: bcht_messages
+theme: bcht
+region: highlighted
+weight: 1
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

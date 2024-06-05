@@ -1,0 +1,161 @@
+@import '../../settings/settings.all';
+
+.cards_wrapper {
+  max-width: 1284px;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @include breakpoint(desktop) {
+    padding: 0;
+  }
+
+  .cards_top_wrapper {
+    .title {
+      font-size: rem(24);
+      font-style: normal;
+      font-weight: 700;
+      line-height: 32px;
+      font-family: $MuseoSansBold;
+      color: $BostonBlue;
+      margin-bottom: 24px;
+    }
+    .des {
+      margin-bottom: 32px;
+      p {
+        font-size: rem(20);
+        line-height: 30px;
+        margin-top: 0;
+        padding: 0;
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .cards_item_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    overflow: hidden;
+    justify-content: center;
+
+    .card__item {
+      position: relative;
+      margin-bottom: 24px;
+      flex: 0 0 32%;
+
+      @media only screen and (max-width: 1244px) {
+        flex: 0 0 31.5%;
+      }
+
+      @media only screen and (max-width: 991px) {
+        flex: 0 0 48%;
+      }
+      @media only screen and (max-width: 640px) {
+        flex: 0 0 100%;
+      }
+
+      .card_image {
+        img {
+          max-height: 204px;
+          object-fit: cover;
+          width: 100%;
+          border-radius: 6px 6px 0px 0px;
+
+          @include breakpoint(desktop) {
+            max-height: 247px;
+          }
+        }
+      }
+
+      .card_bottom_wrapper {
+        padding: 32px 24px;
+        border-radius: 0px 0px 6px 6px;
+        border-right: 2px solid $BostonGrayTint;
+        border-bottom: 2px solid $BostonGrayTint;
+        border-left: 2px solid $BostonGrayTint;
+        min-height: 188px;
+        position: relative;
+
+        &.noimage {
+          border-top: 2px solid $BostonGrayTint;
+          border-radius: 6px;
+        }
+
+        @include breakpoint(desktop) {
+          padding: 32px;
+        }
+
+        .card_eyebrow {
+          font-size: rem(13);
+          line-height: 16.25px;
+          text-transform: uppercase;
+          color: $BostonOcean;
+          font-family: $HelveticaBold;
+          margin-bottom: 16px;
+        }
+
+        .card_title {
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 26px;
+          font-family: $MuseoSansBold;
+          color: $BostonGray;
+          margin-bottom: 16px;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          display: -webkit-box;
+          text-transform: capitalize;
+        }
+
+        .cta {
+          position: absolute;
+          bottom: 32px;
+          left: 24px;
+
+          @include breakpoint(desktop) {
+            left: 32px;
+          }
+
+          .link-arrow-btn--default {
+            font-size: rem(16);
+            font-style: normal;
+            font-weight: 600;
+            line-height: 22px;
+            &:after {
+              width: 14px;
+              position: relative;
+              top: 2px;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .card_bottom_wrapper {
+          background-color: $BostonBlue;
+          border-color: $BostonBlue;
+          .card_eyebrow,
+          .card_title,
+          .cta .link-arrow-btn--default {
+            color: $White;
+          }
+          .cta .link-arrow-btn--default:after {
+            background-image: url('../../../../icons/arrow_white.svg');
+          }
+        }
+      }
+
+      .box_link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+    }
+  }
+}
