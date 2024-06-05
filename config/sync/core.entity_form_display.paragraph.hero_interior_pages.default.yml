@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.hero_interior_pages.field_heading
+    - field.field.paragraph.hero_interior_pages.field_hero_cta_buttons
     - field.field.paragraph.hero_interior_pages.field_image
     - field.field.paragraph.hero_interior_pages.field_link
     - paragraphs.paragraphs_type.hero_interior_pages
@@ -24,23 +25,24 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_hero_cta_buttons:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   field_image:
     type: media_library_widget
-    weight: 2
+    weight: 1
     region: content
     settings:
       media_types: {  }
     third_party_settings:
       media_library_edit:
         show_edit: '1'
-  field_link:
-    type: link_default
-    weight: 1
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
 hidden:
   created: true
+  field_link: true
   status: true

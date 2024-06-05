@@ -1,0 +1,23 @@
+uuid: 5d503daa-1f47-4772-acdb-b9241df1826c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hero_cta_buttons
+    - paragraphs.paragraphs_type.hero_interior_pages
+  module:
+    - link
+id: paragraph.hero_interior_pages.field_hero_cta_buttons
+field_name: field_hero_cta_buttons
+entity_type: paragraph
+bundle: hero_interior_pages
+label: 'Hero CTA Buttons'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

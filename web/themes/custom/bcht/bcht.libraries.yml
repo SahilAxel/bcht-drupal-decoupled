@@ -41,3 +41,8 @@ cta-banner:
   css:
     theme:
       build/css/components/cta-banner.css: {}
+
+imagebesidetext:
+  css:
+    theme:
+      build/css/components/imagebesidetext/imagebesidetext.css: {}
