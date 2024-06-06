@@ -31,17 +31,18 @@ function bcht_preprocess_paragraph(&$variables) {
   // Check if the paragraph type is 'rich-text'.
   if ($paragraph->bundle() == 'rich_text') {
     $variables['#attached']['library'][] = 'bcht/rich-text';
-    $variables['attributes']['class'][] = 'container-small';
+    $variables['attributes']['class'][] = 'container-small component__wrapper';
   }
   // Check if the paragraph type is 'Image with Caption'.
   if ($variables['paragraph']->bundle() == 'image_with_caption') {
     $variables['#attached']['library'][] = 'bcht/image-with-caption';
-    $variables['attributes']['class'][] = 'container-small';
+    $variables['attributes']['class'][] = 'container-small component__wrapper';
   }
 
   // Check if the paragraph type is 'accordion'.
   if ($paragraph->bundle() == 'accordion') {
-    $variables['#attached']['library'][] = 'bcht/accordion';  
+    $variables['#attached']['library'][] = 'bcht/accordion';
+    $variables['attributes']['class'][] = 'container-small component__wrapper'; 
   }
 
   // Passing node title in hero interior pages component.
@@ -64,3 +65,10 @@ function bcht_theme_suggestions_views_view_unformatted_alter(array &$suggestions
   $suggestions[] = 'views_view_unformatted__' . $variables['view']->id();
 }
   
+/**
+ * 
+ * @inheritdoc
+ */
+function bcht_preprocess_node(&$variables) {
+  $variables['base_path'] = base_path();
+}

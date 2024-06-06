@@ -65,16 +65,16 @@
         {% if content.field_cta_link.0 and content.field_cta_link['#is_multiple'] == false %}
           <div class="cta cta_btn">
           {% if content.field_cta_link.0['#url'].external %}
-            <a class="link-arrow-btn link-arrow-btn--default" href="{{ content.field_cta_link.0['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_cta_link.0['#title'] }}<span class="arrow-link">arrowlink</span></a>
+            <a class="link-arrow-btn link-arrow-btn--default" href="{{ content.field_cta_link.0['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_cta_link.0['#title'] }}</a>
           {% else %}
-            <a class="link-arrow-btn link-arrow-btn--default" href="{{ path(content.field_cta_link.0['#url'].routeName, content.field_cta_link.0['#url'].routeParameters) }}">{{ content.field_cta_link.0['#title'] }}<span class="arrow-link">arrowlink</span></a>
+            <a class="link-arrow-btn link-arrow-btn--default" href="{{ path(content.field_cta_link.0['#url'].routeName, content.field_cta_link.0['#url'].routeParameters) }}">{{ content.field_cta_link.0['#title'] }}</a>
           {% endif %}
           </div>
         {% endif %}
       </div>
       <div class="right_content_wrapper">
         {% if content.field_image[0]['#media'].field_media_image.entity.uri.value and content.field_image['#is_multiple'] == false %}
-          {% set media_uri = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('image_beside_text_848_482') %}
+          {% set media_uri = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('image_optimize') %}
             <div class="image_content"><img src={{ media_uri }}  alt="Card title - {{ content.field_heading.0|raw }}" /></div>
         {% endif %}
       </div>

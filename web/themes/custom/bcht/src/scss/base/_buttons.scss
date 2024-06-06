@@ -168,10 +168,7 @@
 .link-arrow-btn {
   &--default {
     color: $BostonPink;
-    display: flex;
     font-family: $MuseoSans;
-    width: max-content;
-    gap: 10px;
     font-size: 1rem;
     line-height: 22px;
     font-weight: 600;
@@ -184,17 +181,22 @@
     &::after {
       content: '';
       width: 18px;
-      background-image: url('../../../icons/arrow_pink.svg');
+      background-image: url('../../icons/arrow_pink.svg');
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
+      display: inline-block;
+      height: 20px;
+      position: relative;
+      left: 10px;
+      top: 5px;
     }
     &:hover {
       color: $BostonOcean;
       &::after {
         content: '';
         width: 18px;
-        background-image: url('../../../icons/arrow_ocean.svg');
+        background-image: url('../../icons/arrow_ocean.svg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
@@ -203,10 +205,7 @@
   }
   &--white {
     color: $White;
-    display: flex;
     font-family: $MuseoSans;
-    width: max-content;
-    gap: 10px;
     font-size: 1.25rem;
     line-height: 26px;
     font-weight: 600;
@@ -215,17 +214,22 @@
     &::after {
       content: '';
       width: 18px;
-      background-image: url('../../../icons/arrow_white.svg');
+      background-image: url('../../icons/arrow_white.svg');
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
+      display: inline-block;
+      height: 20px;
+      position: relative;
+      left: 10px;
+      top: 5px;
     }
     &:hover {
       color: $BostonPinkTint;
       &::after {
         content: '';
         width: 18px;
-        background-image: url('../../../icons/arrow_pink_tint.svg');
+        background-image: url('../../icons/arrow_pink_tint.svg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
@@ -236,41 +240,7 @@
 .link-arrow-btn-small {
   &--default {
     color: $BostonPink;
-    display: flex;
     font-family: $MuseoSans;
-    width: max-content;
-    gap: 10px;
-    font-size: 1rem;
-    line-height: 22px;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    &::after {
-      content: '';
-      width: 18px;
-      background-image: url('../../../icons/arrow_pink.svg');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-    &:hover {
-      color: $BostonOcean;
-      &::after {
-        content: '';
-        width: 18px;
-        background-image: url('../../../icons/arrow_ocean.svg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-      }
-    }
-  }
-  &--white {
-    color: $White;
-    display: flex;
-    font-family: $MuseoSans;
-    width: max-content;
-    gap: 10px;
     font-size: 1rem;
     line-height: 22px;
     font-weight: 600;
@@ -279,17 +249,54 @@
     &::after {
       content: '';
       width: 14px;
-      background-image: url('../../../icons/arrow_white.svg');
+      background-image: url('../../icons/arrow_pink.svg');
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
+      display: inline-block;
+      height: 10px;
+      position: relative;
+      left: 10px;
+      top: 0px;
+    }
+    &:hover {
+      color: $BostonOcean;
+      &::after {
+        content: '';
+        background-image: url('../../icons/arrow_ocean.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+  &--white {
+    color: $White;
+    font-family: $MuseoSans;
+    font-size: 1rem;
+    line-height: 22px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    &::after {
+      content: '';
+      width: 14px;
+      background-image: url('../../icons/arrow_white.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: inline-block;
+      height: 20px;
+      position: relative;
+      left: 10px;
+      top: 0px;
     }
     &:hover {
       color: $BostonPinkTint;
       &::after {
         content: '';
         width: 14px;
-        background-image: url('../../../icons/arrow_pink_tint.svg');
+        background-image: url('../../icons/arrow_pink_tint.svg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;

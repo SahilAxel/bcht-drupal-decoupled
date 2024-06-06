@@ -50,26 +50,32 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {% if content.field_image.0 %}
-        <div class="cta-banner--with-image">
+      {% set wrapperClass = 'cta-banner--with-image' %}
+      {% if content.field_image.0  and content.field_image['#is_multiple'] == false %}
+        {% set wrapperClass = 'cta-banner--with-image' %}
+      {% else %}
+        {% set wrapperClass = 'cta-banner--no-image' %}
+      {% endif %}
+      <div class="cta__banner_wraper component__wrapper">
+        <div class="cta-banner--with-image {{ wrapperClass }}">
           <div class="cta-banner--with-image__content">
+              {% if content.field_cta_headline.0 and content.field_cta_headline['#is_multiple'] == false %}
               <h2 class="cta-banner--headline">{{ content.field_cta_headline[0]['#context'].value }}</h2>
+              {% endif %}
+              {% if content.field_cta_description.0 and content.field_cta_description['#is_multiple'] == false %}
               <p class="cta-banner--description">{{ content.field_cta_description[0]['#context'].value }}</p>
+              {% endif %}
+              {% if content.field_cta_link.0 and content.field_cta_link['#is_multiple'] == false %}
               <button class="cta-banner--cta-link btn btn--white">{{ content.field_cta_link }}</button>
+              {% endif %}
           </div>
+          {% if content.field_image.0  and content.field_image['#is_multiple'] == false %}
           <div class="cta-banner--with-image__image">
             {{ content.field_image }}
           </div>
+          {% endif %}
         </div>
-      {% else %}
-        <div class="cta-banner--no-image">
-            <h2 class="cta-banner--headline">{{ content.field_cta_headline[0]['#context'].value }}</h2>
-            <p class="cta-banner--description">{{ content.field_cta_description[0]['#context'].value }}</p>
-            <button class="cta-banner--cta-link btn btn--white">{{ content.field_cta_link }}</button>    
-        </div>
-      {% endif %}
+    </div>  
     {% endblock %}
   </div>
 {% endblock paragraph %}
-
-

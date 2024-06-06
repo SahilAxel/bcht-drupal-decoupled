@@ -112,8 +112,18 @@ p {
   line-height: 36px;
   font-weight: 400;
   font-family: $HelveticaRegular;
-  @include breakpoint(mobile) {
+  @include breakpoint(desktop) {
     font-size: 1.75rem;
     line-height: 42px;
+  }
+}
+
+.component__wrapper {
+  margin-bottom: 24px;
+  @include breakpoint(small-desktop) {
+    margin-bottom: 36px;
+  }
+  @include breakpoint(desktop) {
+    margin-bottom: 48px;
   }
 }
