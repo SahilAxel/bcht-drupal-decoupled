@@ -2,7 +2,7 @@
 
 .paragraph--type--rich-text {
   padding: 0px 18px;
-  @include breakpoint(desktop) {
+  @include breakpoint(small-desktop) {
     padding: 0px;
   }
   h1,
@@ -12,9 +12,9 @@
   h5,
   h6 {
     color: $BostonBlue;
-    padding-top: 24px;
-    @include breakpoint(desktop) {
-      padding-top: 16px;
+    padding-top: 12px;
+    @include breakpoint(small-desktop) {
+      padding-top: 20px;
     }
     &:first-of-type {
       padding-top: 0;
