@@ -1,9 +1,11 @@
 @import '../../settings/settings.all';
 
 .paragraph--type--accordion {
-  padding: 20px;
-  max-width: 840px;
-  margin: 0 auto;
+  padding: 0 18px;
+
+  @include breakpoint(small-desktop) {
+    padding: 0;
+  }
 
   .paragraph--type--accordion-item {
     border-bottom: 1px solid $BostonGrayTint;

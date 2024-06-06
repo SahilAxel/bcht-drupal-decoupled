@@ -5,7 +5,13 @@
 }
 .container-small {
   max-width: 840px;
-  margin: 0 auto;
+  margin: 0 auto 24px;
+  @include breakpoint(small-desktop) {
+    margin: 0 auto 36px;
+  }
+  @include breakpoint(desktop) {
+    margin: 0 auto 48px;
+  }
 }
 .container::after {
   content: '';

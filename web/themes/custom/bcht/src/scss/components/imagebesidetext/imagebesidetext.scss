@@ -4,11 +4,7 @@
   position: relative;
   max-width: 1284px;
   padding: 0 18px;
-  margin: 0 auto 24px;
-
-  @include breakpoint(small-desktop) {
-    margin: 0 auto 48px;
-  }
+  margin: 0 auto;
 
   @include breakpoint(desktop) {
     padding: 0;
@@ -138,8 +134,8 @@
       text-indent: -99999px;
       display: inline-block;
       position: relative;
-      top: -3px;
-      margin-left: 5px;
+      top: -5px;
+      margin-left: 10px;
     }
   }
 
