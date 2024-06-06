@@ -78,6 +78,10 @@
         "patches": {
             "drupal/core": {
                 "#states not working correctly when built from a logical combination of multliple fields": "https://www.drupal.org/files/issues/2024-04-08/fix-core-states-issues.patch"
+            },
+            "drupal/paragraphs": {
+                "Space missing between the word to and the emphasis tag near the add button": "https://git.drupalcode.org/project/paragraphs/-/merge_requests/101.patch",
+                "Dropbutton has no space to the RHS and its highlight covers adjacent text": "https://www.drupal.org/files/issues/2023-10-02/paragraph-dropdown-button-obscure-text-3350747-15.patch"
             }
         }
     },

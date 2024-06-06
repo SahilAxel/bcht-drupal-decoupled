@@ -29,41 +29,41 @@ class CardParagraphFormAlter extends FormAlterBase
   {
     $form['subform']['field_taxonomy_type']['#states'] = [
       'visible' => [
-        ':input[name="field_components[0][subform][field_card_type]"]' => ['value' => 'related_cards']
+        ':input[name="field_components[' . $form['#delta'] .'][subform][field_card_type]"]' => ['value' => 'related_cards']
       ]
     ];
     $form['subform']['field_content_type']['#states'] = [
       'visible' => [
-        ':input[name="field_components[0][subform][field_card_type]"]' => ['value' => 'related_cards']
+        ':input[name="field_components[' . $form['#delta'] .'][subform][field_card_type]"]' => ['value' => 'related_cards']
       ]
     ];
     $form['subform']['field_node_reference']['#states'] = [
       'visible' => [
-        ':input[name="field_components[0][subform][field_card_type]"]' => ['value' => 'node_reference']
+        ':input[name="field_components[' . $form['#delta'] .'][subform][field_card_type]"]' => ['value' => 'node_reference']
       ]
     ];
     $form['subform']['field_card_items']['#states'] = [
       'visible' => [
-        ':input[name="field_components[0][subform][field_card_type]"]' => ['value' => 'manual']
+        ':input[name="field_components[' . $form['#delta'] .'][subform][field_card_type]"]' => ['value' => 'manual']
       ]
     ];
 
     $form['subform']['field_article_type']['#states'] = array(
       'visible' => array(
-        ':input[name="field_components[0][subform][field_taxonomy_type][article_type]"]' => ['checked' => true],
-        ':input[name="field_components[0][subform][field_card_type]"]' => ['value' => 'related_cards']
+        ':input[name="field_components[' . $form['#delta'] .'][subform][field_taxonomy_type][article_type]"]' => ['checked' => true],
+        ':input[name="field_components[' . $form['#delta'] .'][subform][field_card_type]"]' => ['value' => 'related_cards']
       )
     );
     $form['subform']['field_category']['#states'] = [
       'visible' => [
-        ':input[name="field_components[0][subform][field_taxonomy_type][categories]"]' => ['checked' => true],
-        ':input[name="field_components[0][subform][field_card_type]"]' => ['value' => 'related_cards']
+        ':input[name="field_components[' . $form['#delta'] .'][subform][field_taxonomy_type][categories]"]' => ['checked' => true],
+        ':input[name="field_components[' . $form['#delta'] .'][subform][field_card_type]"]' => ['value' => 'related_cards']
       ]
     ];
     $form['subform']['field_topics']['#states'] = [
       'visible' => [
-        ':input[name="field_components[0][subform][field_taxonomy_type][topic]"]' => ['checked' => true],
-      ':input[name="field_components[0][subform][field_card_type]"]' => ['value' => 'related_cards']
+        ':input[name="field_components[' . $form['#delta'] .'][subform][field_taxonomy_type][topic]"]' => ['checked' => true],
+        ':input[name="field_components[' . $form['#delta'] .'][subform][field_card_type]"]' => ['value' => 'related_cards']
       ]
     ];
   }

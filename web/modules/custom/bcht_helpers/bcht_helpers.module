@@ -5,51 +5,91 @@
  * Primary module hooks for BCHT Helpers module.
  */
 
-use Drupal\node\NodeInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\ViewExecutable;
+use Drupal\paragraphs\Entity\Paragraph;
 
-function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$args)
+{
+  /* Fetching the card component taxonomy type and content type filter values and
+   * passing the fetched values in the exposed filter values of related content view
+   */
   if ($view->id() == 'related_content') {
-    $node = \Drupal::routeMatch()->getParameter('node');
-    /* Fetching the card component taxonomy type and content type filter values and
-     * passing the fetched values in the exposed filter values of related content view
-     */
-    if ($node instanceof NodeInterface) {
-      $paragraphs = $node->get('field_components')->referencedEntities();
-      $exposed_input = $view->getExposedInput();
-      foreach ($paragraphs as $paragraph) {
-        if ($paragraph->getType() == "card") {
-          $article_type_tid = "";
-          foreach ($paragraph->get('field_article_type')->referencedEntities() as $term) {
-            $article_type_tid = $term->id();
-          }
-          if (!empty($article_type_tid)) {
-            $exposed_input['article_type_tid'] = $article_type_tid;
-          }
+    if (isset($args[0])) {
+      $paragraphID = $args[0]->__toString();
+      $paragraph = Paragraph::load($paragraphID);
+    }
 
-          $category_tid = "";
-          foreach ($paragraph->get('field_category')->referencedEntities() as $term) {
-            $category_tid = $term->id();
-          }
-          if (!empty($category_tid)) {
-            $exposed_input['category_tid'] = $category_tid;
-          }
 
-          $topics_tids = [];
-          foreach ($paragraph->get('field_topics')->referencedEntities() as $term) {
-            $topics_tids[] = $term->id();
-          }
-          if (!empty($topics_tids)) {
-            $exposed_input['topics_tid'] = $topics_tids;
-          }
+    $exposed_input = $view->getExposedInput();
+    if (!empty($paragraph) && $paragraph->getType() == "card") {
+      $article_type_tid = "";
+      foreach ($paragraph->get('field_article_type')->referencedEntities() as $term) {
+        $article_type_tid = $term->id();
+      }
+      if (!empty($article_type_tid)) {
+        $exposed_input['article_type_tid'] = $article_type_tid;
+      }
 
-          $content_type = $paragraph->get('field_content_type')->value;
-          if (!empty($content_type)) {
-            $exposed_input['content_type'] = $content_type;
+      $category_tid = "";
+      foreach ($paragraph->get('field_category')->referencedEntities() as $term) {
+        $category_tid = $term->id();
+      }
+      if (!empty($category_tid)) {
+        $exposed_input['category_tid'] = $category_tid;
+      }
+
+      $topics_tids = [];
+      foreach ($paragraph->get('field_topics')->referencedEntities() as $term) {
+        $topics_tids[] = $term->id();
+      }
+      if (!empty($topics_tids)) {
+        $exposed_input['topics_tid'] = $topics_tids;
+      }
+
+      $content_type = $paragraph->get('field_content_type')->value;
+      if (!empty($content_type)) {
+        $exposed_input['content_type'] = $content_type;
+      }
+    }
+    $view->setExposedInput($exposed_input);
+  }
+}
+
+function bcht_helpers_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+  // Match any new node or node edit forms.
+  if (preg_match('/node_(.*?)(edit)?_form$/', $form_id)) {
+    array_unshift($form['#validate'], 'bcht_helpers_node_form_validate');
+  }
+}
+
+function bcht_helpers_node_form_validate(&$form, FormStateInterface $form_state)
+{
+  /* Validation for checking if taxonomy type is unchecked and there is value in the
+   * corresponding taxonomy reference field then remove the value from the autocomplete field
+   */
+  $node = $form_state->getFormObject()->getEntity();
+  if ($node->hasField('field_components')) {
+    $paragraphs = $form_state->getValue('field_components');
+    $autocomplete_fields = [
+      'article_type' => 'field_article_type',
+      'topic' => 'field_topics',
+      'categories' => 'field_category',
+    ];
+
+    foreach ($paragraphs as $key => &$paragraph_wrapper) {
+      if (isset($paragraph_wrapper['subform'])) {
+        $paragraph = $paragraph_wrapper['subform'];
+        if (isset($paragraph['field_taxonomy_type'])) {
+          $vocabulary_selector = $paragraph['field_taxonomy_type'];
+          foreach ($autocomplete_fields as $vocab_name => $field_name) {
+            if (!empty($paragraph[$field_name]['target_id']) && !in_array($vocab_name, array_column($vocabulary_selector, 'target_id'))) {
+              $form_state->setValue(['field_components', $key, 'subform', $field_name], []);
+            }
           }
         }
       }
-      $view->setExposedInput($exposed_input);
     }
   }
 }
