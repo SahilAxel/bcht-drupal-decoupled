@@ -43,7 +43,6 @@
   set classes = [
     'paragraph',
 	  'text_image_component_wrapper',
-    'component__wrapper',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
@@ -53,6 +52,7 @@
 {% block paragraph %}
 <div{{attributes.addClass(classes)}}>
 	{% block content %}
+    <div class="component__wrapper">
     <div class="text_image_wrapper">
       <div class="left_content_wrapper">
         {% if content.field_eyebrow.0 and content.field_eyebrow['#is_multiple'] == false %}
@@ -78,6 +78,7 @@
             <div class="image_content"><img src={{ media_uri }}  alt="Card title - {{ content.field_heading.0|raw }}" /></div>
         {% endif %}
       </div>
+    </div>
     </div>
 	{% endblock %}
   </div>
