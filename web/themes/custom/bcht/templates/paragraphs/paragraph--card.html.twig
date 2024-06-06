@@ -42,7 +42,6 @@
 {%
   set classes = [
     'paragraph',
-    'component__wrapper',
     'cards_wrapper',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -51,7 +50,7 @@
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-
+    <div class="component__wrapper cards_inner_wrapper">
     {% if content.field_heading.0 or content.field_intro_text.0 %}
     <div class='cards_top_wrapper'>
       {% if content.field_heading.0 %}
@@ -128,5 +127,5 @@
     </div>
     {% endif %}
   {% endif %}
-  </div>
+  </div></div>
 {% endblock paragraph %}
