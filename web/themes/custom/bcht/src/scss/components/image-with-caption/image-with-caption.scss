@@ -1,0 +1,39 @@
+@import '../../settings/settings.all';
+.paragraph--type--image-with-caption {
+  padding: 0px 18px;
+  @include breakpoint(small-desktop) {
+    padding: 0px;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+  p {
+    color: $BostonGray;
+    font-family: $HelveticaRegular;
+    font-style: italic;
+    font-size: 0.75rem;
+    padding: 8px 0px 4px 0px;
+    line-height: 22px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 0px;
+    @include breakpoint(small-desktop) {
+      font-size: 0.875rem;
+      line-height: 22px;
+      padding: 14px 0px 6px 0px;
+    }
+    &::before {
+      content: '';
+      width: 3px;
+      background-color: $BostonOcean;
+      height: 30px;
+      display: block;
+      @include breakpoint(desktop) {
+        height: 34px;
+      }
+    }
+  }
+}
