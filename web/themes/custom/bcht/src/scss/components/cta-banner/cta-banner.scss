@@ -1,6 +1,5 @@
-@import '../global.scss';
+@import '../../settings/settings.all';
 .paragraph--type--call-to-action-cta-banner {
-  max-height: 472px;
   max-width: 1900px;
   margin: 0 auto;
   .cta-banner--with-image {
@@ -24,6 +23,7 @@
       background-color: $BostonPink;
       width: 100%;
       padding: 24px 20px 48px;
+      flex: 0 0 50%;
       @include breakpoint(tablet) {
         padding: 51px 24px 51px 78px;
       }
@@ -33,10 +33,7 @@
     }
     &__image {
       width: 100%;
-      @include breakpoint(desktop) {
-        max-height: 472px;
-        max-width: 708px;
-      }
+      flex: 0 0 50%;
       img {
         height: 100%;
         width: 100%;

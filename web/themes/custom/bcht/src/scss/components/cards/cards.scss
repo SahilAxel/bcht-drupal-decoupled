@@ -56,13 +56,14 @@
 
       .card_image {
         img {
+          min-height: 204px;
           max-height: 204px;
           object-fit: cover;
           width: 100%;
           border-radius: 6px 6px 0px 0px;
-
           @include breakpoint(desktop) {
             max-height: 247px;
+            min-height: 247px;
           }
         }
       }

@@ -35,12 +35,12 @@ cards:
 image-with-caption:
   css:
     theme:
-      build/css/components/image-with-caption.css: {}
+      build/css/components/image-with-caption/image-with-caption.css: {}
 
 cta-banner:
   css:
     theme:
-      build/css/components/cta-banner.css: {}
+      build/css/components/cta-banner/cta-banner.css: {}
 
 imagebesidetext:
   css:
