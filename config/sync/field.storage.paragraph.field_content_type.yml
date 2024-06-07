@@ -19,7 +19,7 @@ settings:
       label: 'Generic Details Page'
     -
       value: landing_page
-      label: 'Landing Page'
+      label: 'Generic Landing Page'
   allowed_values_function: ''
 module: options
 locked: false

@@ -1,0 +1,22 @@
+uuid: 17039006-2f05-4340-8bb7-e9fbca453135
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: generic_landing_pages_url_pattern
+label: 'Generic Landing Pages Url Pattern'
+type: 'canonical_entities:node'
+pattern: '/[node:menu-link:parents:join-path]/[node:title]'
+selection_criteria:
+  9432efe8-3a05-42be-8954-07a49f7675c8:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 9432efe8-3a05-42be-8954-07a49f7675c8
+    context_mapping:
+      node: node
+    bundles:
+      landing_page: landing_page
+selection_logic: and
+weight: -5
+relationships: {  }
