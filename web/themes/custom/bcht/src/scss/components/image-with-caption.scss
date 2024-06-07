@@ -1,8 +1,8 @@
 @import '../global.scss';
 .paragraph--type--image-with-caption {
-  padding: 12px 17px 0px 18px;
+  padding: 0px 18px;
   @include breakpoint(small-desktop) {
-    padding: 20px 0px 16px 0px;
+    padding: 0px;
   }
   img {
     width: 100%;
