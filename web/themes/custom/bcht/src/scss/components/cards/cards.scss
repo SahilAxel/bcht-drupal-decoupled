@@ -18,15 +18,27 @@
       font-family: $MuseoSansBold;
       color: $BostonBlue;
       margin-bottom: 24px;
+      @include breakpoint(small-desktop) {
+        font-size: rem(28);
+        line-height: 36px;
+      }
     }
     .des {
       margin-bottom: 32px;
+      max-width: 100%;
+      @include breakpoint(tablet) {
+        max-width: 75%;
+      }
       p {
         font-size: rem(20);
         line-height: 30px;
         margin-top: 0;
         padding: 0;
         margin-bottom: 16px;
+        @include breakpoint(small-desktop) {
+          font-size: rem(24);
+          line-height: 36px;
+        }
       }
     }
   }
