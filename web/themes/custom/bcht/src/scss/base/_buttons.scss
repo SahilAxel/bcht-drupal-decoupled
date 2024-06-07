@@ -47,17 +47,17 @@
   &--tint {
     background-color: $White;
     color: $BostonBlue;
+    a {
+      color: $BostonBlue;
+      text-decoration: none;
+      font-family: $MuseoSans;
+    }
     &:hover {
       background-color: $BostonSkyTint2;
       color: $BostonBlue;
       a {
         color: $BostonBlue;
       }
-    }
-    a {
-      color: $BostonBlue;
-      text-decoration: none;
-      font-family: $MuseoSans;
     }
   }
 }
