@@ -1,0 +1,19 @@
+uuid: 810310f0-7374-4d74-92c0-2c438306b1d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_caption_text
+    - paragraphs.paragraphs_type.impact_stats_item
+id: paragraph.impact_stats_item.field_caption_text
+field_name: field_caption_text
+entity_type: paragraph
+bundle: impact_stats_item
+label: 'Caption Text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

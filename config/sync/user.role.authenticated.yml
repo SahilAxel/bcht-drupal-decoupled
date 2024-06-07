@@ -35,6 +35,8 @@ permissions:
   - 'view paragraph content hero_interior_pages'
   - 'view paragraph content image_beside_text'
   - 'view paragraph content image_with_caption'
+  - 'view paragraph content impact_stats'
+  - 'view paragraph content impact_stats_item'
   - 'view paragraph content rich_text'
   - 'view paragraph content testimonial'
   - 'view paragraph content video_embed'
