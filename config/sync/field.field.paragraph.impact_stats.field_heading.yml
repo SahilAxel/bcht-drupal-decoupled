@@ -1,0 +1,19 @@
+uuid: fcac2291-4ecd-450d-b520-16a48752d1be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.impact_stats
+id: paragraph.impact_stats.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: impact_stats
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

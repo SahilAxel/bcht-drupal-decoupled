@@ -1,0 +1,31 @@
+uuid: 5b6280aa-0b84-4fe0-82af-36ea59f158c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.impact_stats_item.field_caption_text
+    - field.field.paragraph.impact_stats_item.field_heading
+    - paragraphs.paragraphs_type.impact_stats_item
+id: paragraph.impact_stats_item.default
+targetEntityType: paragraph
+bundle: impact_stats_item
+mode: default
+content:
+  field_caption_text:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,10 @@
+uuid: 53a7ba66-e018-4864-9f0a-bdff1be73ec4
+langcode: en
+status: true
+dependencies: {  }
+id: impact_stats
+label: 'Impact Stats'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

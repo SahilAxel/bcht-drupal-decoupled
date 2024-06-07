@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.image_beside_text
     - paragraphs.paragraphs_type.image_with_caption
+    - paragraphs.paragraphs_type.impact_stats
     - paragraphs.paragraphs_type.rich_text
     - paragraphs.paragraphs_type.testimonial
     - paragraphs.paragraphs_type.video_embed
@@ -35,8 +36,9 @@ settings:
       card: card
       image_beside_text: image_beside_text
       image_with_caption: image_with_caption
-      testimonial: testimonial
       video_embed: video_embed
+      testimonial: testimonial
+      impact_stats: impact_stats
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -63,6 +65,12 @@ settings:
       image_with_caption:
         weight: 15
         enabled: true
+      impact_stats:
+        weight: 22
+        enabled: true
+      impact_stats_item:
+        weight: 23
+        enabled: false
       rich_text:
         weight: 2
         enabled: true
