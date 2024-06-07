@@ -46,3 +46,8 @@ imagebesidetext:
   css:
     theme:
       build/css/components/imagebesidetext/imagebesidetext.css: {}
+
+impactstate:
+  css:
+    theme:
+      build/css/components/impactstate/impactstate.css: {}
