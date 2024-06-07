@@ -77,11 +77,13 @@
         "enable-patching": true,
         "patches": {
             "drupal/core": {
-                "#states not working correctly when built from a logical combination of multliple fields": "https://www.drupal.org/files/issues/2024-04-08/fix-core-states-issues.patch"
+                "#states not working correctly when built from a logical combination of multliple fields": "https://www.drupal.org/files/issues/2024-04-08/fix-core-states-issues.patch",
+                "Dropdown button display becomes narrow when text is long": "https://git.drupalcode.org/project/drupal/-/merge_requests/4986.patch"
             },
             "drupal/paragraphs": {
                 "Space missing between the word to and the emphasis tag near the add button": "https://git.drupalcode.org/project/paragraphs/-/merge_requests/101.patch",
-                "Dropbutton has no space to the RHS and its highlight covers adjacent text": "https://www.drupal.org/files/issues/2023-10-02/paragraph-dropdown-button-obscure-text-3350747-15.patch"
+                "Dropbutton has no space to the RHS and its highlight covers adjacent text": "https://www.drupal.org/files/issues/2023-10-02/paragraph-dropdown-button-obscure-text-3350747-15.patch",
+                "Paragraph with long label name gets cut off": "https://www.drupal.org/files/issues/2023-03-27/paragraph-long-label-cut-off-3350521-2.patch"
             }
         }
     },
