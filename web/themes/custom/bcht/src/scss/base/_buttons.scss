@@ -15,9 +15,17 @@
   &--default {
     background-color: $BostonPink;
     color: $White;
+    a {
+      color: $White;
+      text-decoration: none;
+      font-family: $MuseoSans;
+    }
     &:hover {
       background-color: $BostonOcean;
       color: $White;
+      a {
+        color: $White;
+      }
     }
   }
   &--white {
@@ -42,6 +50,14 @@
     &:hover {
       background-color: $BostonSkyTint2;
       color: $BostonBlue;
+      a {
+        color: $BostonBlue;
+      }
+    }
+    a {
+      color: $BostonBlue;
+      text-decoration: none;
+      font-family: $MuseoSans;
     }
   }
 }
@@ -60,25 +76,49 @@
   &--default {
     background-color: $BostonPink;
     color: $White;
+    a {
+      color: $White;
+      text-decoration: none;
+      font-family: $MuseoSans;
+    }
     &:hover {
       background-color: $BostonOcean;
       color: $White;
+      a {
+        color: $White;
+      }
     }
   }
   &--white {
     background-color: $White;
     color: $BostonBlue;
+    a {
+      color: $BostonBlue;
+      text-decoration: none;
+      font-family: $MuseoSans;
+    }
     &:hover {
       background-color: $BostonOcean;
       color: $White;
+      a {
+        color: $White;
+      }
     }
   }
   &--tint {
     background-color: $White;
     color: $BostonBlue;
+    a {
+      color: $BostonBlue;
+      text-decoration: none;
+      font-family: $MuseoSans;
+    }
     &:hover {
       background-color: $BostonSkyTint2;
       color: $BostonBlue;
+      a {
+        color: $BostonBlue;
+      }
     }
   }
 }
@@ -97,29 +137,53 @@
   display: inline-block;
   &--default {
     color: $BostonPink;
-    background-color: $White;
+    background-color: transparent;
     border: 2px solid $BostonPink;
+    a {
+      color: $BostonPink;
+      text-decoration: none;
+      font-family: $MuseoSans;
+    }
     &:hover {
       color: $BostonOcean;
       border: 2px solid $BostonOcean;
+      a {
+        color: $BostonOcean;
+      }
     }
   }
   &--white {
     color: $White;
     border: 2px solid $White;
-    background-color: $White;
+    background-color: transparent;
+    a {
+      color: $White;
+      text-decoration: none;
+      font-family: $MuseoSans;
+    }
     &:hover {
       border: 2px solid $BostonSky;
       color: $BostonSky;
+      a {
+        color: $BostonSky;
+      }
     }
   }
   &--tint {
     color: $White;
     border: 2px solid $White;
-    background-color: $White;
+    background-color: transparent;
+    a {
+      color: $White;
+      text-decoration: none;
+      font-family: $MuseoSans;
+    }
     &:hover {
       border: 2px solid $BostonSkyTint2;
       color: $BostonSkyTint2;
+      a {
+        color: $BostonSkyTint2;
+      }
     }
   }
 }
@@ -137,31 +201,54 @@
   display: inline-block;
   &--default {
     color: $BostonPink;
-    background-color: $White;
+    background-color: transparent;
     border: 2px solid $BostonPink;
+    a {
+      color: $BostonPink;
+      text-decoration: none;
+      font-family: $MuseoSans;
+    }
     &:hover {
       color: $BostonOcean;
       border: 2px solid $BostonOcean;
+      a {
+        color: $BostonOcean;
+      }
     }
   }
   &--white {
     color: $White;
     border: 2px solid $White;
-    background-color: $White;
+    background-color: transparent;
+    a {
+      color: $White;
+      text-decoration: none;
+      font-family: $MuseoSans;
+    }
 
     &:hover {
       border: 2px solid $BostonSky;
       color: $BostonSky;
+      a {
+        color: $BostonSky;
+      }
     }
   }
   &--tint {
     color: $White;
     border: 2px solid $White;
-    background-color: $White;
-
+    background-color: transparent;
+    a {
+      color: $White;
+      text-decoration: none;
+      font-family: $MuseoSans;
+    }
     &:hover {
       border: 2px solid $BostonSkyTint2;
-      color: $BostonSkyTint2;
+      color: $White;
+      a {
+        color: $BostonSkyTint2;
+      }
     }
   }
 }
