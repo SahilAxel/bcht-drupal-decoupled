@@ -137,11 +137,15 @@
         -webkit-text-stroke: 2px $BostonBlue;
         -webkit-text-fill-color: $White;
         font-family: $MuseoSansBold;
-        font-size: rem(64);
+        font-size: rem(52);
         font-style: normal;
         font-weight: 700;
-        line-height: 80px;
+        line-height: 65px;
         margin-bottom: 16px;
+        @include breakpoint(small-desktop) {
+          font-size: rem(64);
+          line-height: 80px;
+        }
       }
       .state_caption {
         font-size: rem(16);
