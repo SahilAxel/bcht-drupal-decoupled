@@ -2,6 +2,10 @@
 
 .paragraph--type--hero-interior-pages {
   position: relative;
+  margin-bottom: 12px;
+  @include breakpoint(small-desktop) {
+    margin-bottom: 32px;
+  }
 
   .hero_banner_wrapper {
     position: relative;
