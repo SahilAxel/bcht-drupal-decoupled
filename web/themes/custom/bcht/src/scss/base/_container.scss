@@ -1,7 +1,13 @@
 @import '../settings/settings.all';
 .container {
   max-width: 1284px;
-  margin: 0 auto;
+  margin: 0 auto 24px;
+  @include breakpoint(small-desktop) {
+    margin: 0 auto 32px;
+  }
+  @include breakpoint(desktop) {
+    margin: 0 auto 48px;
+  }
 }
 .container-small {
   max-width: 840px;

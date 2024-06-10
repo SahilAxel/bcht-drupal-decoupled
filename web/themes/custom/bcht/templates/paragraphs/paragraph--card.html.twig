@@ -89,7 +89,7 @@
             {% set noimageclass = '' %}
             {% if item['#paragraph'].field_image.entity.field_media_image.entity.fileuri %}
             {% set media_uri = item['#paragraph'].field_image.entity.field_media_image.entity.fileuri|image_style('image_optimize') %}
-            <div class="card_image"><img src={{ media_uri }}  alt="Card title - {{ item['#paragraph'].field_heading[0].value|raw }}" /></div>
+            <div class="card_image"><img src={{ media_uri }}  alt="{{ 'Card title -' ~  item['#paragraph'].field_heading[0].value|raw }}" /></div>
             {% else %}
               {% set noimageclass = 'noimage' %}
             {% endif %}
