@@ -1,0 +1,19 @@
+uuid: 982cc016-2a66-4eb2-98e8-7323a8b74ade
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_copyright_text_after_year
+    - site_settings.site_setting_entity_type.footer_bottom
+id: site_setting_entity.footer_bottom.field_copyright_text_after_year
+field_name: field_copyright_text_after_year
+entity_type: site_setting_entity
+bundle: footer_bottom
+label: 'Copyright Text After Year'
+description: "<p>This text will be visible after the year in the copyright text in the footer. Please refer to the example below</p>\r\n<p>Copyright <strong>2024</strong>. Children's Hospital Corporation is a 501(c)(3) organization. Your donation is tax-deductible to the fullest extent allowable under the law. </p>\r\n<p>Please Note: Year will be added automatically via backend code</p>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "916410ac3ad6727593fab5103bfbc7ba",
+    "content-hash": "139f237ec416bab18d557f3440f363fd",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2918,6 +2918,65 @@
                 "source": "http://git.drupal.org/project/search_api_solr.git",
                 "issues": "https://www.drupal.org/project/issues/search_api_solr",
                 "chat": "https://drupalchat.me/channel/search"
+            }
+        },
+        {
+            "name": "drupal/site_settings",
+            "version": "2.0.0-alpha4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/site_settings.git",
+                "reference": "2.0.0-alpha4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/site_settings-2.0.0-alpha4.zip",
+                "reference": "2.0.0-alpha4",
+                "shasum": "58d2ba67e8413cf7fe0640bfb6c5c9a2d470e5d8"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/token": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-alpha4",
+                    "datestamp": "1717562157",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "bobi-mel",
+                    "homepage": "https://www.drupal.org/user/3741631"
+                },
+                {
+                    "name": "bohart",
+                    "homepage": "https://www.drupal.org/user/289861"
+                },
+                {
+                    "name": "scott_euser",
+                    "homepage": "https://www.drupal.org/user/3267594"
+                }
+            ],
+            "description": "Provides a site settings entity",
+            "homepage": "https://www.drupal.org/project/site_settings",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/site_settings",
+                "issues": "http://drupal.org/project/issues/site_settings"
             }
         },
         {
@@ -13914,7 +13973,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "pantheon-upstreams/upstream-configuration": 20,
-        "drupal/ckeditor_media_resize": 10
+        "drupal/ckeditor_media_resize": 10,
+        "drupal/site_settings": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,

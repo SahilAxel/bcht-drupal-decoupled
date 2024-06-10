@@ -1,0 +1,19 @@
+uuid: 2b405eae-4883-44fe-8f49-3fce44fb13eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+id: site_setting_entity.field_address
+field_name: field_address
+entity_type: site_setting_entity
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

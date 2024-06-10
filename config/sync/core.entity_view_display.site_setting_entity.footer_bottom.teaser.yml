@@ -1,0 +1,52 @@
+uuid: b35bd7e5-f382-4df6-ac09-a3d9af7a151c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.site_setting_entity.teaser
+    - field.field.site_setting_entity.footer_bottom.field_copyright_text_after_year
+    - field.field.site_setting_entity.footer_bottom.field_copyright_text_before_year
+    - field.field.site_setting_entity.footer_bottom.field_link
+    - site_settings.site_setting_entity_type.footer_bottom
+  module:
+    - link
+id: site_setting_entity.footer_bottom.teaser
+targetEntityType: site_setting_entity
+bundle: footer_bottom
+mode: teaser
+content:
+  field_copyright_text_after_year:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_copyright_text_before_year:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  description: true
+  group: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

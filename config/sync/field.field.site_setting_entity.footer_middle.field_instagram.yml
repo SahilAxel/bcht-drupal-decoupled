@@ -1,0 +1,23 @@
+uuid: 9b140e88-da3e-4bd4-99a5-0bf1d297feb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_instagram
+    - site_settings.site_setting_entity_type.footer_middle
+  module:
+    - link
+id: site_setting_entity.footer_middle.field_instagram
+field_name: field_instagram
+entity_type: site_setting_entity
+bundle: footer_middle
+label: Instagram
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

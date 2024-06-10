@@ -1,0 +1,23 @@
+uuid: 9247262c-51b5-4c44-be3c-0957c86f952c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_link
+    - site_settings.site_setting_entity_type.footer_middle
+  module:
+    - link
+id: site_setting_entity.footer_middle.field_link
+field_name: field_link
+entity_type: site_setting_entity
+bundle: footer_middle
+label: 'CTA Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

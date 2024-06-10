@@ -1,0 +1,5 @@
+_core:
+  default_config_hash: ZgQdWL42GpSmUL9Q-Lzd0ZqJFZB95zaY7VERq6R5O3o
+template_key: site_settings
+loader_plugin: full
+disable_auto_loading: true
