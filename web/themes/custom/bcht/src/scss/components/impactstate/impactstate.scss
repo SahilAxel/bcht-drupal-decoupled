@@ -109,7 +109,8 @@
           flex: 0 0 23%;
           margin-bottom: 0px;
           &:nth-child(1),
-          &:nth-child(2) {
+          &:nth-child(2),
+          &:last-child {
             margin-bottom: 0px;
           }
         }
@@ -117,7 +118,8 @@
           flex: 0 0 23.5%;
           margin-bottom: 0px;
           &:nth-child(1),
-          &:nth-child(2) {
+          &:nth-child(2),
+          &:last-child {
             margin-bottom: 0px;
           }
         }

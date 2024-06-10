@@ -40,7 +40,7 @@ content:
     region: content
   field_event_details:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 3

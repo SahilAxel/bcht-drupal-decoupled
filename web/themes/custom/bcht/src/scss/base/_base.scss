@@ -118,6 +118,11 @@ p {
   }
 }
 
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0);
+}
+
 .component__wrapper {
   margin-bottom: 24px;
   @include breakpoint(small-desktop) {
@@ -125,5 +130,33 @@ p {
   }
   @include breakpoint(desktop) {
     margin-bottom: 48px;
+  }
+}
+
+.event_details_wrapper {
+  position: relative;
+  background-color: $BostonOcean;
+  color: $White;
+  .event_details {
+    max-width: 1284px;
+    padding: 16px 18px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    @include breakpoint(small-desktop) {
+      font-size: rem(24);
+      line-height: 36px;
+    }
+    span {
+      font-weight: 700;
+    }
+    @include breakpoint(small-desktop) {
+      padding: 16px 80px;
+    }
   }
 }
