@@ -9,7 +9,7 @@
     height: auto;
     border-radius: 6px;
   }
-  p {
+  .image-with-caption__description {
     color: $BostonGray;
     font-family: $HelveticaRegular;
     font-style: italic;
@@ -27,6 +27,7 @@
     }
     &::before {
       content: '';
+      min-width: 3px;
       width: 3px;
       background-color: $BostonOcean;
       height: 30px;
