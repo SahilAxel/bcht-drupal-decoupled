@@ -83,7 +83,8 @@
             "drupal/paragraphs": {
                 "Space missing between the word to and the emphasis tag near the add button": "https://git.drupalcode.org/project/paragraphs/-/merge_requests/101.patch",
                 "Dropbutton has no space to the RHS and its highlight covers adjacent text": "https://www.drupal.org/files/issues/2023-10-02/paragraph-dropdown-button-obscure-text-3350747-15.patch",
-                "Paragraph with long label name gets cut off": "https://www.drupal.org/files/issues/2023-03-27/paragraph-long-label-cut-off-3350521-2.patch"
+                "Don't show drag and drop when there are no items to drag": "https://www.drupal.org/files/issues/2024-06-10/hide-drag-drop-for-0-1-items-2907668-18.patch",
+                "Weight fields appear when editing a translation even if the order can't be changed":"https://www.drupal.org/files/issues/2024-03-04/paragraphs_fix_tabledrag_3425348-3.patch"
             }
         }
     },
