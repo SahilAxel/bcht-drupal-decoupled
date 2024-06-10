@@ -45,11 +45,6 @@ function bcht_preprocess_paragraph(&$variables)
     $variables['#attached']['library'][] = 'bcht/rich-text';
     $variables['attributes']['class'][] = 'container-small component__wrapper';
   }
-  // Check if the paragraph type is 'Image with Caption'.
-  if ($variables['paragraph']->bundle() == 'image_with_caption') {
-    $variables['#attached']['library'][] = 'bcht/image-with-caption';
-    $variables['attributes']['class'][] = 'container-small component__wrapper';
-  }
 
   // Check if the paragraph type is 'accordion'.
   if ($paragraph->bundle() == 'accordion') {
