@@ -1,5 +1,13 @@
 @import '../../settings/settings.all';
 .paragraph--type--testimonial {
+  max-width: 1066px;
+  margin: 0 auto 24px;
+  @include breakpoint(small-desktop) {
+    margin: 0 auto 32px;
+  }
+  @include breakpoint(desktop) {
+    margin: 0 auto 48px;
+  }
   .testimonial {
     display: flex;
     flex-direction: column;
@@ -23,6 +31,9 @@
       }
       @include breakpoint(small-desktop) {
         flex: 0 0 60%;
+      }
+      @include breakpoint(desktop) {
+        max-width: 630px;
       }
     }
   }
