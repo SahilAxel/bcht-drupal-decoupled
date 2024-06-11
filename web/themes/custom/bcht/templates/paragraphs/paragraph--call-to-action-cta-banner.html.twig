@@ -66,7 +66,7 @@
                 <p class="cta-banner--description p24">{{ content.field_cta_description[0]['#context'].value }}</p>
               {% endif %}
               {% if content.field_cta_link.0 and content.field_cta_link['#is_multiple'] == false %}
-                <button class="cta-banner--cta-link btn btn--white">{{ content.field_cta_link }}</button>
+                <a class="cta-banner--cta-link btn btn--white" href="{{ content.field_cta_link[0]['#url'].uri }}">{{ content.field_cta_link[0]['#title'] }}</a>
               {% endif %}
           </div>
           {% if content.field_image.0  and content.field_image['#is_multiple'] == false %}
