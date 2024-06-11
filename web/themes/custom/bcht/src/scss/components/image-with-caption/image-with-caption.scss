@@ -25,6 +25,12 @@
       padding: 0px;
       margin: 0px;
       margin-left: 10px;
+      font-size: 0.75rem;
+      line-height: 22px;
+      @include breakpoint(small-desktop) {
+        font-size: 0.875rem;
+        line-height: 22px;
+      }
     }
     @include breakpoint(small-desktop) {
       font-size: 0.875rem;
