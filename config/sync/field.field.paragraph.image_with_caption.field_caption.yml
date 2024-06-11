@@ -13,7 +13,7 @@ field_name: field_caption
 entity_type: paragraph
 bundle: image_with_caption
 label: Caption
-description: ''
+description: 'Try to avoid using the list options in this field as the list might not render properly on the page as per the design.'
 required: false
 translatable: false
 default_value: {  }
