@@ -59,7 +59,7 @@
           </div>
         {% endif %}
         {% if content.field_caption.0 and content.field_caption['#is_multiple'] == false %}
-          <p class="image-with-caption__description">{{ content.field_caption[0]['#text']|striptags }}</p>
+          {{ content.field_caption }}
         {% endif %}
       </div>
     {% endblock %}
