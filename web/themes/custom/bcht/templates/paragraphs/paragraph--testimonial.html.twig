@@ -73,7 +73,7 @@
               {% endif %}  
 
               {% if content.field_testimonial_link.0 and content.field_testimonial_link['#is_multiple'] == false %}
-              <button class="testimonial--content__link link-arrow-btn-small link-arrow-btn-small--white">{{ content.field_testimonial_link }}</button>
+              <a class="testimonial--content__link link-arrow-btn-small link-arrow-btn-small--white" href="{{ content.field_testimonial_link[0]['#url'].uri }}">{{ content.field_testimonial_link[0]['#title'] }}</a>
               {% endif %}
             </div>
           </div>   
