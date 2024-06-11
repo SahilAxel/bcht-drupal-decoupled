@@ -51,3 +51,8 @@ impactstate:
   css:
     theme:
       build/css/components/impactstate/impactstate.css: {}
+
+testimonial:
+  css:
+    theme:
+      build/css/components/testimonial/testimonial.css: {}

@@ -253,6 +253,11 @@
   }
 }
 .link-arrow-btn {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  max-width: fit-content;
   &--default {
     color: $BostonPink;
     font-family: $MuseoSans;
@@ -261,6 +266,19 @@
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
+    a {
+      color: $BostonPink;
+      font-family: $MuseoSans;
+      font-size: 1rem;
+      line-height: 22px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      @include breakpoint(desktop) {
+        font-size: 1.25rem;
+        line-height: 26px;
+      }
+    }
     @include breakpoint(desktop) {
       font-size: 1.25rem;
       line-height: 26px;
@@ -276,10 +294,12 @@
       height: 20px;
       position: relative;
       left: 10px;
-      top: 5px;
     }
     &:hover {
       color: $BostonOcean;
+      a {
+        color: $BostonOcean;
+      }
       &::after {
         content: '';
         width: 18px;
@@ -298,6 +318,15 @@
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
+    a {
+      color: $White;
+      font-family: $MuseoSans;
+      font-size: 1.25rem;
+      line-height: 26px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
     &::after {
       content: '';
       width: 18px;
@@ -309,10 +338,12 @@
       height: 20px;
       position: relative;
       left: 10px;
-      top: 5px;
     }
     &:hover {
       color: $BostonPinkTint;
+      a {
+        color: $BostonPinkTint;
+      }
       &::after {
         content: '';
         width: 18px;
@@ -325,6 +356,11 @@
   }
 }
 .link-arrow-btn-small {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  max-width: fit-content;
   &--default {
     color: $BostonPink;
     font-family: $MuseoSans;
@@ -333,6 +369,15 @@
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
+    a {
+      color: $BostonPink;
+      font-family: $MuseoSans;
+      font-size: 1rem;
+      line-height: 22px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
     &::after {
       content: '';
       width: 14px;
@@ -365,6 +410,15 @@
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
+    a {
+      color: $White;
+      font-family: $MuseoSans;
+      font-size: 1rem;
+      line-height: 22px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
     &::after {
       content: '';
       width: 14px;
@@ -380,6 +434,9 @@
     }
     &:hover {
       color: $BostonPinkTint;
+      a {
+        color: $BostonPinkTint;
+      }
       &::after {
         content: '';
         width: 14px;

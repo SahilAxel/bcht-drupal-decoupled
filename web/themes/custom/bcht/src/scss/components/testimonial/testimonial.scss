@@ -1,0 +1,82 @@
+@import '../../settings/settings.all';
+.paragraph--type--testimonial {
+  max-width: 1066px;
+  margin: 0 auto 24px;
+  @include breakpoint(small-desktop) {
+    margin: 0 auto 32px;
+  }
+  @include breakpoint(desktop) {
+    margin: 0 auto 48px;
+  }
+  .testimonial {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    @include breakpoint(tablet) {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .testimonial--image {
+      height: auto;
+      border-radius: 6px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 236px;
+      @include breakpoint(tablet) {
+        margin-bottom: 0px;
+        flex: 0 0 60%;
+        background-position: center;
+      }
+      @include breakpoint(small-desktop) {
+        flex: 0 0 60%;
+      }
+      @include breakpoint(desktop) {
+        max-width: 630px;
+      }
+    }
+  }
+
+  .testimonial--content {
+    background-color: $BostonBlue;
+    padding: 32px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    flex: 1;
+    &__attribution {
+      color: $BostonPink;
+      padding: 0;
+      margin: 0;
+      padding-bottom: 24px;
+      text-transform: uppercase;
+      color: $BostonSky;
+      font-size: 14px;
+      line-height: 17.5px;
+      font-family: $HelveticaRegular;
+      @include breakpoint(tablet) {
+        font-size: 15px;
+        line-height: 18.75px;
+      }
+    }
+    &__quote {
+      color: $White;
+      padding-bottom: 24px;
+      line-height: 26px;
+      &::before {
+        content: '';
+        background-image: url('../../../../icons/blockquote.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        width: 64px;
+        margin-bottom: 24px;
+        height: 40px;
+      }
+    }
+    &__link {
+      padding: 0;
+    }
+  }
+}
