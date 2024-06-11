@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.call_to_action_cta_banner
   module:
     - link
+    - maxlength
     - media_library
     - media_library_edit
 id: paragraph.call_to_action_cta_banner.default
@@ -40,7 +41,11 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: 30
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: true
   field_image:
     type: media_library_widget
     weight: 0
