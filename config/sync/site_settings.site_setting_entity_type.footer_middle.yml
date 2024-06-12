@@ -1,0 +1,10 @@
+uuid: 045d52b1-ceed-46b2-b457-743c8b91e9cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - site_settings.site_setting_group_entity_type.footer
+id: footer_middle
+label: 'Footer Middle'
+group: footer
+multiple: false

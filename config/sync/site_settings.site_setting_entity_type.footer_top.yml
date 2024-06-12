@@ -1,0 +1,10 @@
+uuid: cc67654c-f640-47a1-88fe-36708697b89d
+langcode: en
+status: true
+dependencies:
+  config:
+    - site_settings.site_setting_group_entity_type.footer
+id: footer_top
+label: 'Footer Top'
+group: footer
+multiple: false

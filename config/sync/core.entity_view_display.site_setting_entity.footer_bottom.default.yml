@@ -1,0 +1,51 @@
+uuid: bf9e8539-666d-488a-b81f-90e3738f9c1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.footer_bottom.field_copyright_text_after_year
+    - field.field.site_setting_entity.footer_bottom.field_copyright_text_before_year
+    - field.field.site_setting_entity.footer_bottom.field_link
+    - site_settings.site_setting_entity_type.footer_bottom
+  module:
+    - link
+id: site_setting_entity.footer_bottom.default
+targetEntityType: site_setting_entity
+bundle: footer_bottom
+mode: default
+content:
+  field_copyright_text_after_year:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_copyright_text_before_year:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  description: true
+  group: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

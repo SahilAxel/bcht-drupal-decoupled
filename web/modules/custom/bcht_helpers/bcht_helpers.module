@@ -62,6 +62,16 @@ function bcht_helpers_form_alter(&$form, FormStateInterface $form_state, $form_i
   if (in_array($form_id, ['node_page_form', 'node_page_edit_form'])) {
     array_unshift($form['#validate'], 'bcht_helpers_node_form_validate');
   }
+
+  if (in_array($form_id, ['site_setting_entity_footer_middle_form', 'site_setting_entity_footer_middle_edit_form'])) {
+    $form['footer_one'] = [
+      '#markup' => '<p>Click <a href="/admin/structure/menu/manage/footer-one" target="_blank">here</a> to manage the footer one menu links.</p>',
+    ];
+
+    $form['footer_two'] = [
+      '#markup' => '<p>Click <a href="/admin/structure/menu/manage/footer-two" target="_blank">here</a> to manage the footer two menu links.</p>',
+    ];
+  }
 }
 
 function bcht_helpers_node_form_validate(&$form, FormStateInterface $form_state)

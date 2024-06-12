@@ -1,0 +1,19 @@
+uuid: 9c7726d8-0417-45b4-9107-fc5ee2b25801
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_address
+    - site_settings.site_setting_entity_type.footer_middle
+id: site_setting_entity.footer_middle.field_address
+field_name: field_address
+entity_type: site_setting_entity
+bundle: footer_middle
+label: Address
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

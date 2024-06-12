@@ -1,0 +1,107 @@
+uuid: cb41ce94-1c6d-4e6c-9d4b-723ac2e53868
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.site_setting_entity.teaser
+    - field.field.site_setting_entity.footer_middle.field_address
+    - field.field.site_setting_entity.footer_middle.field_contact_link
+    - field.field.site_setting_entity.footer_middle.field_facebook
+    - field.field.site_setting_entity.footer_middle.field_instagram
+    - field.field.site_setting_entity.footer_middle.field_link
+    - field.field.site_setting_entity.footer_middle.field_linkedin
+    - field.field.site_setting_entity.footer_middle.field_youtube
+    - site_settings.site_setting_entity_type.footer_middle
+  module:
+    - link
+id: site_setting_entity.footer_middle.teaser
+targetEntityType: site_setting_entity
+bundle: footer_middle
+mode: teaser
+content:
+  field_address:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_contact_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_facebook:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_instagram:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_linkedin:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_youtube:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  description: true
+  group: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

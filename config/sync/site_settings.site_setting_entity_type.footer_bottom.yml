@@ -1,0 +1,10 @@
+uuid: 23aabf56-4771-46ef-8f99-34eaf33c0c35
+langcode: en
+status: true
+dependencies:
+  config:
+    - site_settings.site_setting_group_entity_type.footer
+id: footer_bottom
+label: 'Footer Bottom'
+group: footer
+multiple: false

@@ -1,0 +1,16 @@
+uuid: 910d73ec-8722-4f6c-ab8c-1ab7352e902e
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+  enforced:
+    module:
+      - site_settings
+_core:
+  default_config_hash: wpMV42AGCHbBxS1pqhdRzYdi_1L4ykw45282CWoi9Qg
+id: site_setting_entity.teaser
+label: Teaser
+description: ''
+targetEntityType: site_setting_entity
+cache: true
