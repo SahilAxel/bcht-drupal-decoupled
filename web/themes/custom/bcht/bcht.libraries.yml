@@ -3,6 +3,7 @@ global-styling:
   css:
     theme:
       build/css/global.css: {}
+      build/css/components/footer/footer.css: {}
   js:
     build/js/global.js: {}
   dependencies:

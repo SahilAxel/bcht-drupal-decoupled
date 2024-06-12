@@ -1,0 +1,48 @@
+{% if site_setting_field('footer_top', 'field_logo').0 and site_setting_field('footer_top', 'field_logo')['#is_multiple'] == false %}
+<div class="footer_top">
+  {{ site_setting_field('footer_top', 'field_logo') }}
+</div>
+{% endif %}
+<div class="footer_middle">
+  <div class="first-column">
+    {% if site_setting_field('footer_middle', 'field_address').0 and site_setting_field('footer_middle', 'field_address')['#is_multiple'] == false %}
+    <div class="address">{{ site_setting_field('footer_middle', 'field_address') }}</div>
+    {% endif %}
+    {% if site_setting_field('footer_middle', 'field_contact_link').0 and site_setting_field('footer_middle', 'field_contact_link')['#is_multiple'] == false %}
+    <div class="contact-link">{{ site_setting_field('footer_middle', 'field_contact_link') }}</div>
+    {% endif %}
+  </div>
+  <div class="second-column">
+    {{ drupal_menu('footer') }}
+  </div>
+  <div class="third-column">
+    {{ drupal_menu('footer-two') }}
+  </div>
+  <div class="fourth-column">
+    <div class="social-link-wrapper">
+      <span>{{ 'Follow us'|t }}</span>
+      {% if site_setting_field('footer_middle', 'field_facebook').0 and site_setting_field('footer_middle', 'field_facebook')['#is_multiple'] == false %}
+      <span class="facebook">{{ site_setting_field('footer_middle', 'field_facebook') }}</span>
+      {% endif %}
+      {% if site_setting_field('footer_middle', 'field_youtube').0 and site_setting_field('footer_middle', 'field_youtube')['#is_multiple'] == false %}
+      <span class="youtube">{{ site_setting_field('footer_middle', 'field_youtube') }}</span>
+      {% endif %}
+      {% if site_setting_field('footer_middle', 'field_instagram').0 and site_setting_field('footer_middle', 'field_instagram')['#is_multiple'] == false %}
+      <span class="insta">{{ site_setting_field('footer_middle', 'field_instagram') }}</span>
+      {% endif %}
+      {% if site_setting_field('footer_middle', 'field_linkedin').0 and site_setting_field('footer_middle', 'field_linkedin')['#is_multiple'] == false %}
+      <span class="linkedin">{{ site_setting_field('footer_middle', 'field_linkedin') }}</span>
+      {% endif %}
+    </div>
+    {% if site_setting_field('footer_middle', 'field_link').0 and site_setting_field('footer_middle', 'field_link')['#is_multiple'] == false %}
+    <div class="newsletter-btn">
+      {{ site_setting_field('footer_middle', 'field_link') }}
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% if site_setting_field('footer_bottom', 'field_copyright_text_before_year').0 and site_setting_field('footer_bottom', 'field_copyright_text_before_year')['#is_multiple'] == false %}
+<div class="footer_bottom">
+  {{ site_setting_field('footer_bottom', 'field_copyright_text_before_year') }} {{ "now"|date("Y") }}.{{ site_setting_field('footer_bottom', 'field_copyright_text_after_year') }}&nbsp;&nbsp;|&nbsp;&nbsp;{{ site_setting_field('footer_bottom', 'field_link') }}
+</div>
+{% endif %}

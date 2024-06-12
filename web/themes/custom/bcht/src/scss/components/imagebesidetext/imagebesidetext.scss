@@ -118,6 +118,10 @@
   }
 
   .cta {
+    .link-arrow-btn--default::after {
+      top: 6px;
+    }
+
     .link-arrow-btn {
       display: inline;
 

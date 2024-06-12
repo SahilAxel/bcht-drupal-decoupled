@@ -1,0 +1,299 @@
+@import '../../settings/settings.all';
+
+footer {
+  position: relative;
+  background-color: $BostonBlue;
+  color: $White;
+  float: left;
+  width: 100%;
+  padding: 32px 18px;
+  @include breakpoint(desktop) {
+    padding: 48px 0;
+  }
+
+  .container {
+    margin-bottom: 0;
+  }
+
+  .footer_top {
+    margin-bottom: 24px;
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      @include breakpoint(desktop) {
+        max-width: 417px;
+      }
+    }
+    @include breakpoint(desktop) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .footer_middle {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    position: relative;
+    @include breakpoint(small-desktop) {
+      margin-bottom: 32px;
+      flex-wrap: nowrap;
+    }
+
+    > div {
+      flex: 0 0 100%;
+      padding-right: 15px;
+      @include breakpoint(small-desktop) {
+        flex: 0 0 25%;
+      }
+    }
+
+    .first-column {
+      margin-bottom: 24px;
+      @include breakpoint(small-desktop) {
+        margin-bottom: 0px;
+      }
+    }
+
+    .second-column,
+    .third-column {
+      flex: 0 0 50%;
+      @include breakpoint(small-desktop) {
+        flex: 0 0 25%;
+      }
+    }
+
+    .fourth-column {
+      margin-top: 24px;
+      @include breakpoint(small-desktop) {
+        margin-top: 0px;
+      }
+    }
+
+    .address {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      padding-right: 0;
+      margin-bottom: 4px;
+      @include breakpoint(small-desktop) {
+        font-size: 16px;
+        line-height: 24px;
+        padding-right: 115px;
+        margin-bottom: 32px;
+      }
+    }
+    .contact-link {
+      a {
+        color: $White;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        display: inline-block;
+        text-decoration: underline;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+        @include breakpoint(small-desktop) {
+          font-size: 18px;
+          line-height: 28px;
+        }
+      }
+    }
+
+    ul:not(.contextual-links) {
+      margin-top: 0;
+      padding-left: 0;
+      margin-bottom: 0;
+      li {
+        list-style: none;
+        a {
+          color: $White;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px;
+          display: inline-block;
+          margin-bottom: 4px;
+          text-decoration: underline;
+          @include breakpoint(small-desktop) {
+            font-size: 18px;
+            line-height: 28px;
+            margin-bottom: 23px;
+          }
+          &:hover,
+          &:focus {
+            text-decoration: none;
+          }
+        }
+        &:last-child {
+          a {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .social-link-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 24px;
+      @include breakpoint(desktop) {
+        margin-bottom: 32px;
+      }
+      span {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        display: inline-block;
+        @include breakpoint(small-desktop) {
+          font-size: 18px;
+          line-height: 28px;
+        }
+
+        a {
+          font-size: 0;
+          line-height: 0;
+          &:hover,
+          &:focus {
+            &:after {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+
+      span.facebook {
+        a {
+          position: relative;
+          font-size: 0;
+          &:after {
+            content: '';
+            display: inline-block;
+            background-image: url('../../../../icons/fackbook.svg');
+            height: 24px;
+            width: 24px;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            top: 3px;
+          }
+        }
+      }
+      span.youtube {
+        a {
+          position: relative;
+          font-size: 0;
+          &:after {
+            content: '';
+            display: inline-block;
+            background-image: url('../../../../icons/youtube.svg');
+            height: 18px;
+            width: 24px;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            top: 3px;
+          }
+        }
+      }
+      span.insta {
+        a {
+          position: relative;
+          font-size: 0;
+          &:after {
+            content: '';
+            display: inline-block;
+            background-image: url('../../../../icons/insta.svg');
+            height: 24px;
+            width: 24px;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            top: 3px;
+          }
+        }
+      }
+      span.linkedin {
+        a {
+          position: relative;
+          font-size: 0;
+          &:after {
+            content: '';
+            display: inline-block;
+            background-image: url('../../../../icons/linkedin.svg');
+            height: 24px;
+            width: 24px;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            top: 3px;
+          }
+        }
+      }
+    }
+
+    .newsletter-btn {
+      a {
+        display: inline-block;
+        padding: 15px 25px;
+        border-radius: 6px;
+        background: $White;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 21px;
+        font-family: $MuseoSansBold;
+        text-decoration: none;
+        color: $BostonBlue;
+        &:hover,
+        &:focus {
+          background: $BostonOcean;
+          color: $White;
+        }
+        @include breakpoint(small-desktop) {
+          font-size: 18px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+
+  .footer_bottom {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    font-family: $HelveticaRegular;
+    padding-top: 24px;
+    border-top: 2px solid $BostonOcean;
+    @include breakpoint(desktop) {
+      padding-top: 32px;
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    > div {
+      display: inline-block;
+    }
+
+    a {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      color: $White;
+      display: inline-block;
+      margin-left: 5px;
+      font-family: $HelveticaRegular;
+      @include breakpoint(small-desktop) {
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+  }
+}
