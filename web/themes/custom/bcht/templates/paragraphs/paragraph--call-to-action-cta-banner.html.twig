@@ -66,7 +66,11 @@
                 <p class="cta-banner--description p24">{{ content.field_cta_description[0]['#context'].value }}</p>
               {% endif %}
               {% if content.field_cta_link.0 and content.field_cta_link['#is_multiple'] == false %}
-                <a class="cta-banner--cta-link btn btn--white" href="{{ content.field_cta_link[0]['#url'].uri }}">{{ content.field_cta_link[0]['#title'] }}</a>
+                {% if content.field_cta_link.0['#url'].external %}
+                  <a class="cta-banner--cta-link btn btn--white" href="{{ content.field_cta_link.0['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_cta_link.0['#title'] }}</a>
+                {% else %}
+                  <a class="cta-banner--cta-link btn btn--white" href="{{ path(content.field_cta_link.0['#url'].routeName, content.field_cta_link.0['#url'].routeParameters) }}">{{ content.field_cta_link.0['#title'] }}</a>
+                {% endif %}
               {% endif %}
           </div>
           {% if content.field_image.0  and content.field_image['#is_multiple'] == false %}
