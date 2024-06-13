@@ -57,3 +57,10 @@ testimonial:
   css:
     theme:
       build/css/components/testimonial/testimonial.css: {}
+
+video-embed:
+  css:
+    theme:
+      build/css/components/video-embed/video-embed.css: {}
+  js:
+    build/js/video-embed.js: {}

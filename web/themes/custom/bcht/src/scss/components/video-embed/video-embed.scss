@@ -1,0 +1,201 @@
+@import '../../settings/settings.all';
+.paragraph--type--video-embed {
+  padding: 0px 18px;
+  @include breakpoint(small-desktop) {
+    padding: 0px;
+  }
+  .video-embed--no-text {
+    max-width: 1066px;
+    margin: 0 auto;
+    @include breakpoint(small-desktop) {
+      margin: 0 auto;
+    }
+    .video-embed {
+      position: relative;
+      .video-embed--content {
+        display: none;
+      }
+      @include breakpoint(small-desktop) {
+        max-height: 601px;
+      }
+      .video-player__video {
+        width: 100%;
+        z-index: 1;
+        height: 100%;
+        min-height: 192px;
+        @include breakpoint(small-desktop) {
+          max-height: 601px;
+        }
+        > div {
+          padding: 56% 0 0 0 !important;
+        }
+        iframe {
+          border-radius: 6px;
+          min-height: 192px;
+          @include breakpoint(small-desktop) {
+            max-height: 601px;
+          }
+        }
+        position: relative;
+      }
+      .video-player__overlay {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        border-radius: 6px;
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 6px;
+          aspect-ratio: 16/9;
+        }
+        &::before {
+          content: '';
+          background-image: url('../../../../icons/play_button.svg');
+          display: block;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          height: 50px;
+          width: 50px;
+          position: absolute;
+          z-index: 3;
+          @include breakpoint(desktop) {
+            height: 100px;
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+  .video-embed--with-text {
+    max-width: 1284px;
+    margin: 0 auto 24px;
+    @include breakpoint(small-desktop) {
+      margin: 0 auto 32px;
+    }
+    .video-embed {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      @include breakpoint(small-desktop) {
+        max-height: 479px;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+      .video-player {
+        width: 100%;
+        position: relative;
+      }
+      .video-embed--content {
+        background-color: $White;
+        padding: 32px 24px;
+        border: 2px solid $BostonGrayTint;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include breakpoint(small-desktop) {
+          padding: 64px 32px;
+          margin: 0px;
+          max-width: 412px;
+        }
+        &__icon {
+          padding-bottom: 24px;
+          img {
+            height: 72px;
+            width: 72px;
+            @include breakpoint(desktop) {
+              height: 100px;
+              width: 100px;
+            }
+          }
+        }
+        &__caption {
+          padding: 0px;
+          margin: 0px;
+        }
+        &__heading {
+          padding-bottom: 16px;
+          color: $BostonBlue;
+        }
+        &__link {
+          padding-top: 16px;
+        }
+      }
+      .video-player__video {
+        width: 100%;
+        z-index: 1;
+        height: 100%;
+        min-height: 192px;
+        @include breakpoint(small-desktop) {
+          max-height: 479px;
+        }
+        > div {
+          padding: 56% 0 0 0 !important;
+        }
+        iframe {
+          border-radius: 6px;
+          min-height: 192px;
+          @include breakpoint(small-desktop) {
+            max-height: 479px;
+          }
+        }
+        position: relative;
+      }
+      .video-player__overlay {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        border-radius: 6px;
+        @include breakpoint(desktop) {
+          max-width: 848px;
+          left: 0;
+        }
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 6px;
+          aspect-ratio: 16/9;
+        }
+        &::before {
+          content: '';
+          background-image: url('../../../../icons/play_button.svg');
+          display: block;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          height: 50px;
+          width: 50px;
+          position: absolute;
+          z-index: 3;
+          @include breakpoint(desktop) {
+            height: 100px;
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+}
