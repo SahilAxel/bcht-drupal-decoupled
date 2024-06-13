@@ -56,11 +56,9 @@
 		{# /.layout-content #}
 		{% if page.help %}<div class="help_wrapper">{{ page.help }}</div>{% endif %}
 	</main>
-	{% if page.footer_top or page.footer_bottom %}
-		<footer role="contentinfo">
-		<div class="container">{{ page.footer_top }}{{ page.footer_bottom }}</div>
-		</footer>
-	{% endif %}
+  <footer role="contentinfo">
+    <div class="container">{% include directory ~ '/templates/layouts/footer.html.twig' %}</div>
+  </footer>
   <div class="back-to-top">&#8593;</div>
 </div>
 {# /.layout-container #}

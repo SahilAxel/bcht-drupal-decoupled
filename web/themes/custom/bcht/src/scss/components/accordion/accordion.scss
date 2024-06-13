@@ -73,6 +73,98 @@
       padding-left: 18px;
       padding-right: 91px;
     }
+
+    ol {
+      padding-inline-start: 0;
+      list-style-position: inside;
+      li {
+        padding-bottom: 12px;
+        list-style-type: decimal;
+        &:last-child {
+          padding: 0;
+        }
+        ol {
+          padding-top: 12px;
+          padding-inline-start: 32px;
+          @include breakpoint(desktop) {
+            padding-inline-start: 35px;
+          }
+          li {
+            padding-bottom: 12px;
+            list-style-type: lower-alpha;
+            &:last-child {
+              padding: 0;
+            }
+            ol {
+              padding-inline-start: 16px;
+              @include breakpoint(desktop) {
+                padding-inline-start: 35px;
+              }
+              li {
+                padding-bottom: 12px;
+                list-style-type: lower-roman;
+                &:last-child {
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    ul {
+      padding-inline-start: 0;
+      list-style-position: inside;
+      li {
+        list-style-type: none;
+        padding-bottom: 12px;
+        &:last-child {
+          padding: 0;
+        }
+        &::before {
+          content: url('../../../../icons/rectangle.svg');
+          display: inline-block;
+          padding-right: 12px;
+        }
+        ul {
+          padding-top: 12px;
+          padding-inline-start: 32px;
+          @include breakpoint(desktop) {
+            padding-inline-start: 35px;
+          }
+          li {
+            list-style-type: none;
+            padding-bottom: 12px;
+            &:last-child {
+              padding: 0;
+            }
+            &::before {
+              content: url('../../../../icons/ellipse.svg');
+              display: inline-block;
+              padding-right: 12px;
+            }
+            ul {
+              padding-inline-start: 16px;
+              @include breakpoint(desktop) {
+                padding-inline-start: 35px;
+              }
+              li {
+                list-style-type: none;
+                padding-bottom: 12px;
+                &:last-child {
+                  padding: 0;
+                }
+                &::before {
+                  content: url('../../../../icons/polygon.svg');
+                  display: inline-block;
+                  padding-right: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   .field--name-field-heading-text {
