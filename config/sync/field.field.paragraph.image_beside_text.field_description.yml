@@ -13,7 +13,7 @@ field_name: field_description
 entity_type: paragraph
 bundle: image_beside_text
 label: Description
-description: 'Try to avoid using the list options in this field as the list might not render properly on the page as per the design.'
+description: "<ul><li>Try to avoid using the list options in this field as the list might not render properly on the page as per the design.</li>\r\n<li>Don't use more than 30 characters for the link text of emphasized and button link styles as it might not render properly on the page as per the design.</li></ul>"
 required: false
 translatable: false
 default_value: {  }
