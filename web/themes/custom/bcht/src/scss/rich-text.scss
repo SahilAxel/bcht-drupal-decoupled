@@ -13,11 +13,11 @@
   h6 {
     color: $BostonBlue;
     padding-top: 12px;
-    @include breakpoint(small-desktop) {
-      padding-top: 20px;
-    }
-    &:first-of-type {
+    &:first-child {
       padding-top: 0;
+    }
+    @include breakpoint(small-desktop) {
+      padding-top: 16px;
     }
   }
   ol {
@@ -112,42 +112,46 @@
     }
   }
   figure.align-left {
-    padding: 12px 17px 24px 0px;
-    @include breakpoint(desktop) {
+    padding: 12px 18px 12px 0px;
+
+    @include breakpoint(small-desktop) {
       padding: 16px 39px 0px 0px;
     }
-    .media-embed-resized {
+
+    .field--name-field-media-image {
       max-width: 340px;
-      min-width: 100%;
-      @include breakpoint(desktop) {
+      @include breakpoint(tablet) {
         max-width: 400px;
       }
     }
     figcaption {
-      padding: 8px 0px 4px 0px;
-      max-width: 98%;
-      @include breakpoint(desktop) {
-        padding: 14px 0px 20px 0px;
+      margin: 8px 0px 4px 0px;
+      padding: 0px 0px 0px 10px;
+      max-width: 340px;
+      @include breakpoint(tablet) {
+        margin: 14px 0px 32px 0px;
+        max-width: 400px;
       }
     }
   }
   figure.align-right {
-    padding: 12px 0px 24px 17px;
-    @include breakpoint(desktop) {
+    padding: 12px 0px 12px 17px;
+    @include breakpoint(small-desktop) {
       padding: 16px 0px 0px 39px;
     }
-    .media-embed-resized {
+    .field--name-field-media-image {
       max-width: 340px;
-      min-width: 100%;
-      @include breakpoint(desktop) {
+      @include breakpoint(tablet) {
         max-width: 400px;
       }
     }
     figcaption {
-      padding: 8px 0px 4px 0px;
-      max-width: 98%;
-      @include breakpoint(desktop) {
-        padding: 14px 0px 20px 0px;
+      margin: 8px 0px 4px 0px;
+      padding: 0px 0px 0px 10px;
+      max-width: 340px;
+      @include breakpoint(tablet) {
+        max-width: 400px;
+        margin: 14px 0px 32px 0px;
       }
     }
   }
@@ -169,7 +173,6 @@
     font-family: $HelveticaRegular;
     font-weight: 400;
     text-align: center;
-
     &::before {
       content: '';
       display: none;
@@ -181,7 +184,7 @@
     }
   }
   figure {
-    padding-top: 12px;
+    padding: 12px 0px;
     margin: 0;
     @include breakpoint(desktop) {
       padding: 16px 0px;
@@ -191,25 +194,18 @@
       font-family: $HelveticaRegular;
       font-style: italic;
       font-size: 0.75rem;
-      padding: 8px 0px 4px 0px;
+      margin: 8px 0px 4px 0px;
       line-height: 22px;
       display: flex;
       gap: 10px;
       align-items: center;
+      position: relative;
+      border-left: 3px solid $BostonOcean;
+      padding-left: 10px;
       @include breakpoint(desktop) {
         font-size: 0.875rem;
         line-height: 22px;
-        padding: 14px 0px 0px 0px;
-      }
-      &::before {
-        content: '';
-        width: 3px;
-        background-color: $BostonOcean;
-        height: 30px;
-        display: block;
-        @include breakpoint(desktop) {
-          height: 34px;
-        }
+        margin: 14px 0px 0px 0px;
       }
     }
   }
@@ -223,6 +219,9 @@
     &:last-child {
       margin-bottom: 0;
       padding-bottom: 0;
+    }
+    &:first-child {
+      padding-top: 0;
     }
   }
 }
