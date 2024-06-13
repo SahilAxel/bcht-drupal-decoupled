@@ -13,7 +13,7 @@ field_name: field_caption
 entity_type: paragraph
 bundle: testimonial
 label: 'Quote text'
-description: ''
+description: "Don't use more than 30 characters for the link text of emphasized and button link styles as it might not render properly on the page as per the design"
 required: false
 translatable: false
 default_value: {  }
