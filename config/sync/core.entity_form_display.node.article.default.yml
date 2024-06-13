@@ -35,24 +35,16 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_article_type:
-    type: entity_reference_autocomplete_tags
+    type: options_select
     weight: 10
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_topics:
-    type: entity_reference_autocomplete_tags
+    type: options_select
     weight: 11
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select
