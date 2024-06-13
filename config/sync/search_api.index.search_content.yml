@@ -10,7 +10,16 @@ dependencies:
     - field.storage.node.field_event_details
     - field.storage.node.field_hero
     - field.storage.node.field_topics
+    - field.storage.paragraph.field_caption
+    - field.storage.paragraph.field_caption_text
+    - field.storage.paragraph.field_cta_description
+    - field.storage.paragraph.field_cta_headline
+    - field.storage.paragraph.field_description
+    - field.storage.paragraph.field_heading
+    - field.storage.paragraph.field_heading_text
+    - field.storage.paragraph.field_intro_text
     - field.storage.paragraph.field_rich_text
+    - field.storage.paragraph.field_video_heading
   module:
     - content_moderation
     - node
@@ -94,6 +103,28 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_article_type
+  field_caption:
+    label: 'Components » Paragraph » Caption'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_caption'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_caption
+      module:
+        - paragraphs
+  field_caption_text:
+    label: 'Components » Paragraph » Caption Text'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_caption_text'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_caption_text
+      module:
+        - paragraphs
   field_categories:
     label: Categories
     datasource_id: 'entity:node'
@@ -102,6 +133,39 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_categories
+  field_cta_description:
+    label: 'Components » Paragraph » CTA Description'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_cta_description'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_cta_description
+      module:
+        - paragraphs
+  field_cta_headline:
+    label: 'Components » Paragraph » CTA Headline'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_cta_headline'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_cta_headline
+      module:
+        - paragraphs
+  field_description:
+    label: 'Components » Paragraph » Description'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_description'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_description
+      module:
+        - paragraphs
   field_event_details:
     label: 'Event Details'
     datasource_id: 'entity:node'
@@ -110,6 +174,28 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_event_details
+  field_heading:
+    label: 'Components » Paragraph » Heading'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_heading'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_heading
+      module:
+        - paragraphs
+  field_heading_text:
+    label: 'Components » Paragraph » Heading Text'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_heading_text'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_heading_text
+      module:
+        - paragraphs
   field_hero:
     label: Hero
     datasource_id: 'entity:node'
@@ -118,6 +204,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_hero
+  field_intro_text:
+    label: 'Components » Paragraph » Intro Text'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_intro_text'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_intro_text
+      module:
+        - paragraphs
   field_rich_text:
     label: 'Components » Paragraph » Rich Text'
     datasource_id: 'entity:node'
@@ -137,6 +234,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_topics
+  field_video_heading:
+    label: 'Components » Paragraph » Video Heading'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_video_heading'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_video_heading
+      module:
+        - paragraphs
   moderation_state:
     label: 'Moderation state'
     datasource_id: 'entity:node'
@@ -179,7 +287,7 @@ field_settings:
       module:
         - node
   uid:
-    label: null
+    label: uid
     datasource_id: 'entity:node'
     property_path: uid
     type: integer
@@ -188,6 +296,16 @@ field_settings:
     dependencies:
       module:
         - node
+  uuid:
+    label: 'Components » Paragraph » UUID'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:uuid'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_components
+      module:
+        - paragraphs
 datasource_settings:
   'entity:node':
     bundles:

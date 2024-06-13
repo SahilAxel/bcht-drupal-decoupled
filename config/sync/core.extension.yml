@@ -9,6 +9,7 @@ module:
   big_pipe: 0
   block: 0
   block_content: 0
+  block_field: 0
   breakpoint: 0
   ckeditor5: 0
   ckeditor_html_embed: 0
@@ -53,7 +54,6 @@ module:
   path: 0
   path_alias: 0
   pluginformalter: 0
-  search: 0
   search_api: 0
   search_api_pantheon: 0
   search_api_pantheon_admin: 0
@@ -70,6 +70,7 @@ module:
   toolbar: 0
   twig_tweak: 0
   user: 0
+  views_exposed_filter_blocks: 0
   views_ui: 0
   workflows: 0
   pathauto: 1

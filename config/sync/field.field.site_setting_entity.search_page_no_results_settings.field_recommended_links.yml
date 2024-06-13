@@ -1,0 +1,24 @@
+uuid: 5b8f4a9c-3c17-4d8b-9b15-9be11f8d7780
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_recommended_links
+    - filter.format.basic_html
+    - site_settings.site_setting_entity_type.search_page_no_results_settings
+  module:
+    - text
+id: site_setting_entity.search_page_no_results_settings.field_recommended_links
+field_name: field_recommended_links
+entity_type: site_setting_entity
+bundle: search_page_no_results_settings
+label: 'Recommended Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

@@ -1,0 +1,10 @@
+uuid: be6e9d17-6277-474f-8d11-b7467f41e965
+langcode: en
+status: true
+dependencies:
+  config:
+    - site_settings.site_setting_group_entity_type.search_view_settings
+id: search_page_no_results_settings
+label: 'Search Page No Results Settings'
+group: search_view_settings
+multiple: false

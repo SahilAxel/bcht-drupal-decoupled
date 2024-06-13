@@ -1,0 +1,21 @@
+uuid: a3a43fce-b5e9-4d3f-bc5d-47a6b6fbd7b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+id: site_setting_entity.field_error_message_before
+field_name: field_error_message_before
+entity_type: site_setting_entity
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

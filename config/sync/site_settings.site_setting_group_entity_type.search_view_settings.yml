@@ -1,0 +1,6 @@
+uuid: e869bc16-4b3d-4dfb-ad0a-9d3f03a36f35
+langcode: en
+status: true
+dependencies: {  }
+id: search_view_settings
+label: 'Search View Settings'

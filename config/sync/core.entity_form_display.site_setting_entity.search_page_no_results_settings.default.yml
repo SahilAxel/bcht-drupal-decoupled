@@ -1,0 +1,55 @@
+uuid: 8e758fcc-7bd3-4d0d-9799-abdc86dab9cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.search_page_no_results_settings.field_error_message_after
+    - field.field.site_setting_entity.search_page_no_results_settings.field_error_message_before
+    - field.field.site_setting_entity.search_page_no_results_settings.field_recommended_links
+    - site_settings.site_setting_entity_type.search_page_no_results_settings
+  module:
+    - text
+id: site_setting_entity.search_page_no_results_settings.default
+targetEntityType: site_setting_entity
+bundle: search_page_no_results_settings
+mode: default
+content:
+  field_error_message_after:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_error_message_before:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_recommended_links:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  group:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  name: true
+  user_id: true

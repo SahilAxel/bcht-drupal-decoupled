@@ -8,7 +8,6 @@ dependencies:
     - file
     - media
     - paragraphs_type_permissions
-    - search
     - shortcut
     - system
 _core:
@@ -24,11 +23,11 @@ permissions:
   - 'access site-wide contact form'
   - 'delete own files'
   - 'post comments'
-  - 'search content'
   - 'skip comment approval'
   - 'view media'
   - 'view paragraph content accordion'
   - 'view paragraph content accordion_item'
+  - 'view paragraph content blocks'
   - 'view paragraph content call_to_action_cta_banner'
   - 'view paragraph content card'
   - 'view paragraph content card_item'
