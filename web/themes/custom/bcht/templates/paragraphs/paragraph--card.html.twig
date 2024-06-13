@@ -105,9 +105,9 @@
               {% if item['#paragraph'].field_card_link[0] %}
                 <div class="cta cta_btn">
                 {% if item['#paragraph'].field_card_link[0].url.external %}
-                  <a class="link-arrow-btn link-arrow-btn--default" href="{{ item['#paragraph'].field_card_link[0].uri }}" target="_blank" title="Opens in a new window">{{ item['#paragraph'].field_card_link[0].title }}</a>
+                  <a class="link-arrow-btn link-arrow-btn--default" href="{{ item['#paragraph'].field_card_link[0].uri }}" target="_blank" title="Opens in a new window">{{ item['#paragraph'].field_card_link[0].title ? item['#paragraph'].field_card_link[0].title : 'Read more'|t  }}</a>
                 {% else %}
-                  <a class="link-arrow-btn link-arrow-btn--default" href="{{ path(item['#paragraph'].field_card_link[0].url.routeName, item['#paragraph'].field_card_link[0].url.routeParameters) }}">{{ item['#paragraph'].field_card_link[0].title }}</a>
+                  <a class="link-arrow-btn link-arrow-btn--default" href="{{ path(item['#paragraph'].field_card_link[0].url.routeName, item['#paragraph'].field_card_link[0].url.routeParameters) }}">{{ item['#paragraph'].field_card_link[0].title ? item['#paragraph'].field_card_link[0].title : 'Read more'|t  }}</a>
                 {% endif %}
                 </div>
               {% endif %}

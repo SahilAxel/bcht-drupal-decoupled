@@ -286,6 +286,7 @@
     &::after {
       content: '';
       width: 18px;
+      background-image: url('../../icons/arrow_ocean.svg');
       background-image: url('../../icons/arrow_pink.svg');
       background-position: center;
       background-repeat: no-repeat;
@@ -330,6 +331,7 @@
     &::after {
       content: '';
       width: 18px;
+      background-image: url('../../icons/arrow_pink_tint.svg');
       background-image: url('../../icons/arrow_white.svg');
       background-position: center;
       background-repeat: no-repeat;
@@ -381,6 +383,7 @@
     &::after {
       content: '';
       width: 14px;
+      background-image: url('../../icons/arrow_ocean.svg');
       background-image: url('../../icons/arrow_pink.svg');
       background-position: center;
       background-repeat: no-repeat;
@@ -427,6 +430,7 @@
     &::after {
       content: '';
       width: 14px;
+      background-image: url('../../icons/arrow_pink_tint.svg');
       background-image: url('../../icons/arrow_white.svg');
       background-position: center;
       background-repeat: no-repeat;

@@ -6,7 +6,7 @@
     margin: 0 auto 32px;
   }
   @include breakpoint(desktop) {
-    margin: 0 auto 48px;
+    margin: 0 auto 32px;
   }
 }
 .container-small {
@@ -16,7 +16,7 @@
     margin: 0 auto 32px;
   }
   @include breakpoint(desktop) {
-    margin: 0 auto 48px;
+    margin: 0 auto 32px;
   }
 }
 .container::after {

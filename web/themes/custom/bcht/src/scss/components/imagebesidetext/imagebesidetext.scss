@@ -119,7 +119,7 @@
 
   .cta {
     .link-arrow-btn--default::after {
-      top: 6px;
+      top: 4px;
     }
 
     .link-arrow-btn {
@@ -154,10 +154,14 @@
       object-fit: cover;
       width: 100%;
       border-radius: 6px;
-
+      max-width: 100%;
       @include breakpoint(tablet) {
         max-height: 482px;
         margin-bottom: 0;
+        max-width: 99%;
+      }
+      @include breakpoint(small-desktop) {
+        max-width: 100%;
       }
     }
   }
