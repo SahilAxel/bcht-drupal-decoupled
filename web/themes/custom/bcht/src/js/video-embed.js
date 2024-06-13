@@ -7,45 +7,48 @@
           const videoContainer = element.querySelector('.video-player__video');
 
           if (overlay && videoContainer) {
-            overlay.addEventListener('click', () => {
-              overlay.style.display = 'none';
+            overlay.addEventListener('click', handleOverlayClick);
+            videoContainer.addEventListener('click', handleVideoContainerClick);
+          }
 
-              const video = videoContainer.querySelector('video');
-              if (video) {
-                video.play();
-              } else {
-                const iframe = videoContainer.querySelector('iframe');
-                if (iframe) {
-                  const iframeSrc = iframe.src;
-                  iframe.src =
-                    iframeSrc +
-                    (iframeSrc.includes('?') ? '&' : '?') +
-                    'autoplay=1';
-                }
-              }
-            });
+          function handleOverlayClick() {
+            overlay.style.display = 'none';
+            playVideo();
+          }
 
-            videoContainer.addEventListener('click', () => {
-              const video = videoContainer.querySelector('video');
-              if (video) {
-                if (video.paused) {
-                  video.play();
-                } else {
-                  video.pause();
-                }
-              } else {
-                const iframe = videoContainer.querySelector('iframe');
-                if (iframe) {
-                  const iframeSrc = iframe.src;
-                  const isPlaying = iframeSrc.includes('autoplay=1');
-                  if (isPlaying) {
-                    iframe.src = iframeSrc.replace('autoplay=1', 'autoplay=0');
-                  } else {
-                    iframe.src = iframeSrc.replace('autoplay=0', 'autoplay=1');
-                  }
-                }
+          function handleVideoContainerClick() {
+            toggleVideo();
+          }
+
+          function playVideo() {
+            const video = videoContainer.querySelector('video');
+            if (video) {
+              video.play();
+            } else {
+              const iframe = videoContainer.querySelector('iframe');
+              if (iframe) {
+                iframe.src = appendAutoplay(iframe.src, true);
               }
-            });
+            }
+          }
+
+          function toggleVideo() {
+            const video = videoContainer.querySelector('video');
+            if (video) {
+              video.paused ? video.play() : video.pause();
+            } else {
+              const iframe = videoContainer.querySelector('iframe');
+              if (iframe) {
+                const isPlaying = iframe.src.includes('autoplay=1');
+                iframe.src = appendAutoplay(iframe.src, !isPlaying);
+              }
+            }
+          }
+
+          function appendAutoplay(src, autoplay) {
+            const url = new URL(src);
+            url.searchParams.set('autoplay', autoplay ? '1' : '0');
+            return url.toString();
           }
         },
       );
