@@ -116,6 +116,9 @@
     @include breakpoint(tablet) {
       padding: 16px 39px 0px 0px;
     }
+    .media-embed-resized {
+      width: 100% !important;
+    }
     .field--name-field-media-image {
       @include breakpoint(tablet) {
         max-width: 400px;
@@ -138,6 +141,9 @@
     padding: 12px 0px 12px 0px;
     @include breakpoint(tablet) {
       padding: 16px 0px 0px 39px;
+    }
+    .media-embed-resized {
+      width: 100% !important;
     }
     .field--name-field-media-image {
       @include breakpoint(tablet) {
