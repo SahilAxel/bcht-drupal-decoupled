@@ -112,14 +112,11 @@
     }
   }
   figure.align-left {
-    padding: 12px 18px 12px 0px;
-
-    @include breakpoint(small-desktop) {
+    padding: 12px 0px 12px 0px;
+    @include breakpoint(tablet) {
       padding: 16px 39px 0px 0px;
     }
-
     .field--name-field-media-image {
-      max-width: 340px;
       @include breakpoint(tablet) {
         max-width: 400px;
       }
@@ -127,20 +124,22 @@
     figcaption {
       margin: 8px 0px 4px 0px;
       padding: 0px 0px 0px 10px;
-      max-width: 340px;
+      max-width: 100%;
       @include breakpoint(tablet) {
-        margin: 14px 0px 32px 0px;
+        margin: 14px 0px 16px 0px;
         max-width: 400px;
+      }
+      @include breakpoint(desktop) {
+        margin: 14px 0px 32px 0px;
       }
     }
   }
   figure.align-right {
-    padding: 12px 0px 12px 17px;
-    @include breakpoint(small-desktop) {
+    padding: 12px 0px 12px 0px;
+    @include breakpoint(tablet) {
       padding: 16px 0px 0px 39px;
     }
     .field--name-field-media-image {
-      max-width: 340px;
       @include breakpoint(tablet) {
         max-width: 400px;
       }
@@ -148,9 +147,12 @@
     figcaption {
       margin: 8px 0px 4px 0px;
       padding: 0px 0px 0px 10px;
-      max-width: 340px;
+      max-width: 100%;
       @include breakpoint(tablet) {
         max-width: 400px;
+        margin: 14px 0px 16px 0px;
+      }
+      @include breakpoint(desktop) {
         margin: 14px 0px 32px 0px;
       }
     }
