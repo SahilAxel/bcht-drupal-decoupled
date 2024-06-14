@@ -1,0 +1,10 @@
+uuid: a18cdaab-aadc-4d86-8590-b16542be9ff8
+langcode: en
+status: true
+dependencies:
+  config:
+    - site_settings.site_setting_group_entity_type.header
+id: header_bottom
+label: 'Header Bottom'
+group: header
+multiple: false

@@ -1,0 +1,13 @@
+diff --git a/src/Entity/SiteSettingEntityType.php b/src/Entity/SiteSettingEntityType.php
+index b6dd6a2..00b2952 100755
+--- a/src/Entity/SiteSettingEntityType.php
++++ b/src/Entity/SiteSettingEntityType.php
+@@ -29,7 +29,7 @@ use Drupal\site_settings\SiteSettingEntityTypeInterface;
+  *     "group",
+  *     "multiple",
+  *   },
+- *   admin_permission = "administer site configuration",
++ *   admin_permission = "access site settings overview",
+  *   bundle_of = "site_setting_entity",
+  *   entity_keys = {
+  *     "id" = "id",

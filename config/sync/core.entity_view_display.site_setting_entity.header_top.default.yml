@@ -1,0 +1,33 @@
+uuid: fea08ef4-4cd8-4fbc-a98b-3251d4e88c9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.header_top.field_cta_link
+    - site_settings.site_setting_entity_type.header_top
+  module:
+    - link
+id: site_setting_entity.header_top.default
+targetEntityType: site_setting_entity
+bundle: header_top
+mode: default
+content:
+  field_cta_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: nofollow
+      target: _blank
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  group: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

@@ -1,0 +1,23 @@
+uuid: c9ddbb9c-9d7c-4f6c-a8e8-f3a4c9322da3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_cta_link
+    - site_settings.site_setting_entity_type.header_top
+  module:
+    - link
+id: site_setting_entity.header_top.field_cta_link
+field_name: field_cta_link
+entity_type: site_setting_entity
+bundle: header_top
+label: 'CTA Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

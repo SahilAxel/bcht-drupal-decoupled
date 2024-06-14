@@ -7,7 +7,7 @@ dependencies:
 id: bcht_tabs
 theme: bcht
 region: highlighted
-weight: 0
+weight: -1
 provider: null
 plugin: local_tasks_block
 settings:

@@ -1,0 +1,29 @@
+uuid: 45da00e0-5585-4d31-885f-661f77a9cde6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.site_setting_entity.teaser
+    - field.field.site_setting_entity.header_bottom.field_logo
+    - site_settings.site_setting_entity_type.header_bottom
+id: site_setting_entity.header_bottom.teaser
+targetEntityType: site_setting_entity
+bundle: header_bottom
+mode: teaser
+content:
+  field_logo:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  group: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_id: true
