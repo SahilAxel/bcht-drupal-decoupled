@@ -1,7 +1,7 @@
 @import '../../settings/settings.all';
 .paragraph--type--video-embed {
   padding: 0px 18px;
-  @include breakpoint(small-desktop) {
+  @include breakpoint(desktop) {
     padding: 0px;
   }
   .video-embed--no-text {
