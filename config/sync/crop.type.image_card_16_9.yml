@@ -1,0 +1,12 @@
+uuid: 1c6ce34a-5db1-4103-b7c2-f8ca3e973dc3
+langcode: en
+status: true
+dependencies: {  }
+label: 'Image Card 16:9'
+id: image_card_16_9
+description: 'Image Card 16:9 (412 x 247)'
+aspect_ratio: '16:9'
+soft_limit_width: 412
+soft_limit_height: 247
+hard_limit_width: 420
+hard_limit_height: 255

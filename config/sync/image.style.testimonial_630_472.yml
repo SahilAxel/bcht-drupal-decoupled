@@ -1,0 +1,18 @@
+uuid: 18372a63-e837-4daa-a4c8-c07402293a5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.testimonial_4_3
+  module:
+    - crop
+name: testimonial_630_472
+label: 'Testimonial 630x472'
+effects:
+  8632b24b-132b-4db1-8613-d754da903438:
+    uuid: 8632b24b-132b-4db1-8613-d754da903438
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: testimonial_4_3
+      automatic_crop_provider: null

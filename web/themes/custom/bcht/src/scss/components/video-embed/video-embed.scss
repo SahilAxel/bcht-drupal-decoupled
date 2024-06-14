@@ -15,9 +15,6 @@
       .video-embed--content {
         display: none;
       }
-      @include breakpoint(small-desktop) {
-        max-height: 601px;
-      }
       .video-player__video {
         width: 100%;
         z-index: 1;
@@ -32,9 +29,6 @@
         iframe {
           border-radius: 6px;
           min-height: 192px;
-          @include breakpoint(small-desktop) {
-            max-height: 601px;
-          }
         }
         position: relative;
       }

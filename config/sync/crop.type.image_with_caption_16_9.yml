@@ -1,0 +1,12 @@
+uuid: 4ac4998d-c2e3-4937-af97-3324605806c3
+langcode: en
+status: true
+dependencies: {  }
+label: 'Image with caption 16:9'
+id: image_with_caption_16_9
+description: 'Image with caption 16:9 (848 x 475)'
+aspect_ratio: '16:9'
+soft_limit_width: 848
+soft_limit_height: 475
+hard_limit_width: 850
+hard_limit_height: 477

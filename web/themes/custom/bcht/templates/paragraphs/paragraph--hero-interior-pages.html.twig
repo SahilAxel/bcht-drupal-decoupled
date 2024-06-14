@@ -57,7 +57,7 @@
     {% endif %}
     <div class="hero_banner_wrapper {{ bannerClass }}">
       {% if content.field_image.0 and content.field_image['#is_multiple'] == false %}
-        {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('image_optimize') %}
+        {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('hero_banner_interior_pages_16_9') %}
         <div class="hero_image" style="background-image: url('{{ image_url }}');"></div>
       {% else %}
         <div class="hero_no_image"></div>

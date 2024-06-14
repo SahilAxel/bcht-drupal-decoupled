@@ -7,9 +7,11 @@ dependencies:
     - field.field.paragraph.call_to_action_cta_banner.field_cta_headline
     - field.field.paragraph.call_to_action_cta_banner.field_cta_link
     - field.field.paragraph.call_to_action_cta_banner.field_image
+    - image.style.image_cta_banner_3_2
     - paragraphs.paragraphs_type.call_to_action_cta_banner
   module:
     - link
+    - media
 id: paragraph.call_to_action_cta_banner.default
 targetEntityType: paragraph
 bundle: call_to_action_cta_banner
@@ -44,11 +46,13 @@ content:
     weight: 3
     region: content
   field_image:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     label: hidden
     settings:
-      view_mode: cta_banner_image
-      link: false
+      image_link: ''
+      image_style: image_cta_banner_3_2
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content

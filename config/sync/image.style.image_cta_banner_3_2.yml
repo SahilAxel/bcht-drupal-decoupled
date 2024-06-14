@@ -1,0 +1,18 @@
+uuid: 0341a082-d93d-471c-a3e4-1c983e6b5115
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.image_cta_banner_3_2
+  module:
+    - crop
+name: image_cta_banner_3_2
+label: 'Image CTA Banner 3:2'
+effects:
+  ab443ebf-aa2e-4ddd-9808-b891dd559fc4:
+    uuid: ab443ebf-aa2e-4ddd-9808-b891dd559fc4
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: image_cta_banner_3_2
+      automatic_crop_provider: null

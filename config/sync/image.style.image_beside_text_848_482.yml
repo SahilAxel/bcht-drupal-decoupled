@@ -1,15 +1,18 @@
 uuid: b88b60bb-8ad8-4c15-b6d7-d342a2b1e13c
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - crop.type.image_beside_text_16_9
+  module:
+    - crop
 name: image_beside_text_848_482
 label: Image_beside_text_848_482
 effects:
-  26f681c6-cff8-42f6-98eb-a7dfbfe5ac07:
-    uuid: 26f681c6-cff8-42f6-98eb-a7dfbfe5ac07
-    id: image_scale_and_crop
+  f3b17c9a-3b8c-4f9c-a035-052cb2cbe7b0:
+    uuid: f3b17c9a-3b8c-4f9c-a035-052cb2cbe7b0
+    id: crop_crop
     weight: 1
     data:
-      width: 848
-      height: 482
-      anchor: center-center
+      crop_type: image_beside_text_16_9
+      automatic_crop_provider: null

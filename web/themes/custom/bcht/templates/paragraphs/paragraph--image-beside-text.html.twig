@@ -74,7 +74,7 @@
       </div>
       <div class="right_content_wrapper">
         {% if content.field_image[0]['#media'].field_media_image.entity.uri.value and content.field_image['#is_multiple'] == false %}
-          {% set media_uri = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('image_optimize') %}
+          {% set media_uri = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('image_beside_text_848_482') %}
             <div class="image_content"><img src={{ media_uri }}  alt="Card title - {{ content.field_heading.0|raw }}" /></div>
         {% endif %}
       </div>

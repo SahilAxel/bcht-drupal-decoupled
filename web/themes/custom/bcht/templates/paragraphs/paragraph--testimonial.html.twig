@@ -60,7 +60,7 @@
         <div class="testimonial__wrapper {{ wrapperClass }}">
           <div class="testimonial"> 
               {% if content.field_image.0  and content.field_image['#is_multiple'] == false %}
-              {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('image_optimize') %}
+              {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('testimonial_630_472') %}
                 <div class="testimonial--image" style="background-image: url('{{ image_url }}');"></div>
               {% endif %}     
               <div class="testimonial--content">
@@ -73,7 +73,12 @@
               {% endif %}  
 
               {% if content.field_testimonial_link.0 and content.field_testimonial_link['#is_multiple'] == false %}
-              <a class="testimonial--content__link link-arrow-btn-small link-arrow-btn-small--white" href="{{ content.field_testimonial_link[0]['#url'].uri }}">{{ content.field_testimonial_link[0]['#title'] }}</a>
+                {% if content.field_testimonial_link.0['#url'].external %}
+                 <a class="testimonial--content__link link-arrow-btn-small link-arrow-btn-small--white" href="{{ content.field_testimonial_link.0['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_testimonial_link.0['#title'] }}</a>
+                {% else %}
+                  <a class="testimonial--content__link link-arrow-btn-small link-arrow-btn-small--white" href="{{ path(content.field_testimonial_link.0['#url'].routeName, content.field_testimonial_link.0['#url'].routeParameters) }}">{{ content.field_testimonial_link.0['#title'] }}</a>
+                {% endif %}
+
               {% endif %}
             </div>
           </div>   
