@@ -89,7 +89,7 @@
                 "Weight fields appear when editing a translation even if the order can't be changed":"https://www.drupal.org/files/issues/2024-03-04/paragraphs_fix_tabledrag_3425348-3.patch"
             },
             "drupal/site_settings": {
-                "Modify permission for site settings type for content editor role": "patches/modify-permission-for-site-settings-types.patch"
+                "Modify permission for site settings type for content editor role": "https://git.drupalcode.org/project/site_settings/-/merge_requests/30.patch"
             }
         }
     },

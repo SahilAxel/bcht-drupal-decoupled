@@ -72,6 +72,18 @@ function bcht_helpers_form_alter(&$form, FormStateInterface $form_state, $form_i
       '#markup' => '<p>Click <a href="/admin/structure/menu/manage/footer-two" target="_blank">here</a> to manage the footer two menu links.</p>',
     ];
   }
+
+  if (in_array($form_id, ['site_setting_entity_header_top_form', 'site_setting_entity_header_top_edit_form'])) {
+    $form['utility_menu'] = [
+      '#markup' => '<p>Click <a href="/admin/structure/menu/manage/utitlity-menu" target="_blank">here</a> to manage the utitlity menu links.</p>',
+    ];
+  }
+
+  if (in_array($form_id, ['site_setting_entity_header_bottom_form', 'site_setting_entity_header_bottom_edit_form'])) {
+    $form['main_menu'] = [
+      '#markup' => '<p>Click <a href="/admin/structure/menu/manage/main-navigation" target="_blank">here</a> to manage the main menu links.</p>',
+    ];
+  }
 }
 
 function bcht_helpers_node_form_validate(&$form, FormStateInterface $form_state)
