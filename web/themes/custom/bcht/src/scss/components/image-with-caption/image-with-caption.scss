@@ -11,7 +11,7 @@
     border-radius: 6px;
   }
 
-  .field--name-field-caption {
+  .caption-text-wrapper {
     color: $BostonGray;
     font-family: $HelveticaRegular;
     font-style: italic;
@@ -34,6 +34,103 @@
         line-height: 22px;
       }
     }
+
+    ol {
+      padding-inline-start: 0;
+      list-style-position: inside;
+      padding-left: 10px;
+      margin-bottom: 0;
+      li {
+        padding-bottom: 12px;
+        list-style-type: decimal;
+        &:last-child {
+          padding: 0;
+        }
+        ol {
+          padding-top: 12px;
+          padding-inline-start: 32px;
+          @include breakpoint(desktop) {
+            padding-inline-start: 35px;
+          }
+          li {
+            padding-bottom: 12px;
+            list-style-type: lower-alpha;
+            &:last-child {
+              padding: 0;
+            }
+            ol {
+              padding-inline-start: 16px;
+              @include breakpoint(desktop) {
+                padding-inline-start: 35px;
+              }
+              li {
+                padding-bottom: 12px;
+                list-style-type: lower-roman;
+                &:last-child {
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    ul {
+      padding-inline-start: 0;
+      list-style-position: inside;
+      padding-left: 10px;
+      margin-bottom: 0;
+      li {
+        list-style-type: none;
+        padding-bottom: 12px;
+        &:last-child {
+          padding: 0;
+        }
+        &::before {
+          content: url('../../../../icons/rectangle.svg');
+          display: inline-block;
+          padding-right: 12px;
+        }
+        ul {
+          padding-top: 12px;
+          padding-inline-start: 32px;
+          @include breakpoint(desktop) {
+            padding-inline-start: 35px;
+          }
+          li {
+            list-style-type: none;
+            padding-bottom: 12px;
+            &:last-child {
+              padding: 0;
+            }
+            &::before {
+              content: url('../../../../icons/ellipse.svg');
+              display: inline-block;
+              padding-right: 12px;
+            }
+            ul {
+              padding-inline-start: 16px;
+              @include breakpoint(desktop) {
+                padding-inline-start: 35px;
+              }
+              li {
+                list-style-type: none;
+                padding-bottom: 12px;
+                &:last-child {
+                  padding: 0;
+                }
+                &::before {
+                  content: url('../../../../icons/polygon.svg');
+                  display: inline-block;
+                  padding-right: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
     @include breakpoint(small-desktop) {
       font-size: 0.875rem;
       line-height: 22px;

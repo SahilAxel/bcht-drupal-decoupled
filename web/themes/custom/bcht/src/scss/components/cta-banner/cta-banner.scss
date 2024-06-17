@@ -38,8 +38,11 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
+        min-height: 250px;
+        max-height: 250px;
         @include breakpoint(tablet) {
           min-height: 472px;
+          max-height: 472px;
         }
       }
     }

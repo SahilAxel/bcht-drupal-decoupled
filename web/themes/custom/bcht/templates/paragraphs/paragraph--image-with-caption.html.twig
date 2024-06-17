@@ -59,7 +59,9 @@
           </div>
         {% endif %}
         {% if content.field_caption.0 and content.field_caption['#is_multiple'] == false %}
-          {{ content.field_caption }}
+          <div class="caption-text-wrapper">
+            {{ content.field_caption.0['#text']|raw }}
+          </div>
         {% endif %}
       </div>
     {% endblock %}

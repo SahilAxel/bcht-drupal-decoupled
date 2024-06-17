@@ -1,5 +1,5 @@
 (function (Drupal, $, once) {
-  Drupal.behaviors.global = {
+  Drupal.behaviors.videoembed = {
     attach: function (context) {
       once('video-embed', '.video-embed__wrapper', context).forEach(
         (element) => {
