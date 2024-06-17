@@ -1,0 +1,8 @@
+uuid: 6b13be01-e595-4cef-b1db-0523c8a30235
+langcode: en
+status: true
+dependencies: {  }
+id: main-navigation
+label: 'Main Navigation'
+description: 'Main navigation links'
+locked: false

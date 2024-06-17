@@ -1,0 +1,25 @@
+uuid: 873cdfe6-4880-445a-944c-3f24b49e2ea9
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main-navigation
+  module:
+    - system
+  theme:
+    - bcht
+id: bcht_headermainnavigation
+theme: bcht
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:main-navigation'
+settings:
+  id: 'system_menu_block:main-navigation'
+  label: 'Header Main Navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility: {  }

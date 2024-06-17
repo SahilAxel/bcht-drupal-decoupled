@@ -1,0 +1,28 @@
+uuid: 016bd42d-3fd2-40e1-86c5-22610c522dc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.header_bottom.field_logo
+    - site_settings.site_setting_entity_type.header_bottom
+id: site_setting_entity.header_bottom.default
+targetEntityType: site_setting_entity
+bundle: header_bottom
+mode: default
+content:
+  field_logo:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  group: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

@@ -1,0 +1,10 @@
+uuid: 8d7241f8-b4c8-4a27-b2fa-9a432755e626
+langcode: en
+status: true
+dependencies:
+  config:
+    - site_settings.site_setting_group_entity_type.header
+id: header_top
+label: 'Header Top'
+group: header
+multiple: false

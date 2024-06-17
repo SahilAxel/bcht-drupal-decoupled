@@ -1,0 +1,34 @@
+uuid: 250c4591-cde4-4d84-b866-774ea23202e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.site_setting_entity.teaser
+    - field.field.site_setting_entity.header_top.field_cta_link
+    - site_settings.site_setting_entity_type.header_top
+  module:
+    - link
+id: site_setting_entity.header_top.teaser
+targetEntityType: site_setting_entity
+bundle: header_top
+mode: teaser
+content:
+  field_cta_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  group: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: footer-two
 label: 'Footer Two'
-description: ''
+description: 'Footer right menu links'
 locked: false
