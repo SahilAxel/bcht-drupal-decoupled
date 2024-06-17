@@ -5,8 +5,10 @@ dependencies:
   config:
     - field.field.paragraph.image_with_caption.field_caption
     - field.field.paragraph.image_with_caption.field_image
+    - image.style.image_with_caption_848_475
     - paragraphs.paragraphs_type.image_with_caption
   module:
+    - media
     - text
 id: paragraph.image_with_caption.default
 targetEntityType: paragraph
@@ -21,11 +23,13 @@ content:
     weight: 1
     region: content
   field_image:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     label: hidden
     settings:
-      view_mode: default
-      link: false
+      image_link: ''
+      image_style: image_with_caption_848_475
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content

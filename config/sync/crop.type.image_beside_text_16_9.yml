@@ -1,0 +1,12 @@
+uuid: 123fc441-3dd2-4bf6-b25e-f7e7e9a30d96
+langcode: en
+status: true
+dependencies: {  }
+label: 'Image Beside Text 16:9'
+id: image_beside_text_16_9
+description: 'Image Beside Text 16:9 (848 x 485)'
+aspect_ratio: '16:9'
+soft_limit_width: 848
+soft_limit_height: 483
+hard_limit_width: 860
+hard_limit_height: 500

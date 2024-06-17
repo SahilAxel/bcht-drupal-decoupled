@@ -1,4 +1,5 @@
 @import '../settings/settings.all';
+@import '../config/fonts';
 
 body {
   font-size: $base-font + px;
@@ -14,8 +15,10 @@ body {
   a {
     color: $BostonPink;
     text-decoration: underline;
+    transition: all 0.3s ease;
     &:hover {
       color: $BostonOcean;
+      transition: all 0.3s ease;
     }
   }
   ul,

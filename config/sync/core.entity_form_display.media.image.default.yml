@@ -31,7 +31,12 @@ content:
       preview_image_style: thumbnail
       crop_preview_image_style: crop_thumbnail
       crop_list:
-        - global
+        - hero_banner_interior_pages_16_9
+        - image_beside_text_16_9
+        - image_card_16_9
+        - image_cta_banner_3_2
+        - image_with_caption_16_9
+        - testimonial_4_3
       crop_types_required: {  }
       warn_multiple_usages: true
       show_crop_area: true
