@@ -12,7 +12,7 @@ field_name: field_content_type
 entity_type: paragraph
 bundle: card
 label: 'Content Type'
-description: "Please review the group of taxonomy types associated with each content type then select content types:\r\n<ul>\r\n<li><strong>Generic Details Pages:</strong>Topics and Categories</li>\r\n<li><strong>Articles:</strong>Article Type and Topics</li>\r\n<li><strong>Generic Landing Page:</strong>Topics and Categories</li>\r\n</ul>\r\n"
+description: "Please review the group of taxonomy types associated with each content type then select content types:\r\n<ul>\r\n<li><strong>Generic Details Pages:</strong>Topics and Categories</li>\r\n<li><strong>Articles:</strong>Article Type and Topics</li>\r\n<li><strong>Generic Landing Page:</strong>Topics and Categories</li>\r\n<li><strong>Event:</strong>There is no taxonomy term field in event content type. So don't select any taxonomy term if event cards are to be shown</li>\r\n</ul>\r\n"
 required: false
 translatable: false
 default_value: {  }

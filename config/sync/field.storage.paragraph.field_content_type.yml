@@ -20,6 +20,9 @@ settings:
     -
       value: landing_page
       label: 'Generic Landing Page'
+    -
+      value: event
+      label: Event
   allowed_values_function: ''
 module: options
 locked: false

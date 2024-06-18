@@ -76,6 +76,7 @@
     <div class="card_image"><img src={{ default_media_uri }}  alt="Card image" /></div>
 {% endif %}
 <div class="card_bottom_wrapper {{ noimageclass }}">
+{{ eyebrow_node }}
   <div class="card_title">{{ label|raw }}</div>
   <div class="cta cta_btn">
     <a class="link-arrow-btn link-arrow-btn--default" href="{{ url }}" >{{ 'Read more'|t }}</a>

@@ -115,3 +115,32 @@ function bcht_helpers_node_form_validate(&$form, FormStateInterface $form_state)
     }
   }
 }
+
+function bcht_helpers_preprocess_node(&$variables) {
+
+  $node = $variables['node'];
+  if ($variables['view_mode'] == "card" || $variables['view_mode'] == "search_result") {
+    $nodeType = $node->getType();
+    $eyebrowText = "";
+    if ($nodeType == 'article') {
+      $eyebrowText = bcht_helpers_get_term_name($node, 'field_article_type');
+    } elseif ($nodeType == 'page' || $nodeType == "landing_page") {
+      $eyebrowText = bcht_helpers_get_term_name($node, 'field_categories');
+    } elseif ($nodeType == 'event') {
+      $eyebrowText = "Event";
+    } elseif ($nodeType == 'listing_page') {
+      $eyebrowText == "Listing Page";
+    }
+    $variables['eyebrow_node'] = $eyebrowText;
+  }
+}
+
+function bcht_helpers_get_term_name($node, $fieldName) {
+  $termStorage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  $termId = $node->get($fieldName)->target_id;
+  if ($termId != null) {
+    return $termStorage->load($termId)->getName();
+  } else {
+    return(null);
+  }
+}
