@@ -1,0 +1,26 @@
+uuid: b4372c16-e727-47b6-a5ef-fb0e27ab7ffc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_block_reference
+    - paragraphs.paragraphs_type.blocks
+  module:
+    - block_field
+id: paragraph.blocks.field_block_reference
+field_name: field_block_reference
+entity_type: paragraph
+bundle: blocks
+label: 'Block Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: blocks
+  selection_settings:
+    plugin_ids:
+      'views_block:search-block_1': 'views_block:search-block_1'
+      'views_exposed_filter_block:search-block_1': 'views_exposed_filter_block:search-block_1'
+field_type: block_field

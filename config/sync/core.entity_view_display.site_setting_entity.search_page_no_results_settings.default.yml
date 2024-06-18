@@ -1,0 +1,46 @@
+uuid: 60e723c4-8413-44ae-846f-cb66207d80a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.search_page_no_results_settings.field_error_message_after
+    - field.field.site_setting_entity.search_page_no_results_settings.field_error_message_before
+    - field.field.site_setting_entity.search_page_no_results_settings.field_recommended_links
+    - site_settings.site_setting_entity_type.search_page_no_results_settings
+  module:
+    - text
+id: site_setting_entity.search_page_no_results_settings.default
+targetEntityType: site_setting_entity
+bundle: search_page_no_results_settings
+mode: default
+content:
+  field_error_message_after:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_error_message_before:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_recommended_links:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  description: true
+  group: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_components
     - node.type.landing_page
     - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.blocks
     - paragraphs.paragraphs_type.call_to_action_cta_banner
     - paragraphs.paragraphs_type.card
     - paragraphs.paragraphs_type.image_beside_text
@@ -36,6 +37,7 @@ settings:
       card: card
       image_beside_text: image_beside_text
       image_with_caption: image_with_caption
+      blocks: blocks
       video_embed: video_embed
       testimonial: testimonial
       impact_stats: impact_stats
@@ -47,6 +49,9 @@ settings:
       accordion_item:
         weight: 5
         enabled: false
+      blocks:
+        weight: 17
+        enabled: true
       call_to_action_cta_banner:
         weight: 11
         enabled: true

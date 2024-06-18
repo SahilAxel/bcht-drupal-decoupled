@@ -1,8 +1,9 @@
-uuid: f4be6fce-c110-4850-8376-b1903318521c
+uuid: 3489ea21-9056-4d36-a31b-0564440811dd
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_result
     - field.field.node.landing_page.body
     - field.field.node.landing_page.field_categories
     - field.field.node.landing_page.field_components
@@ -11,16 +12,19 @@ dependencies:
     - node.type.landing_page
   module:
     - entity_reference_revisions
+    - text
     - user
-id: node.landing_page.default
+id: node.landing_page.search_result
 targetEntityType: node
 bundle: landing_page
-mode: default
+mode: search_result
 content:
-  content_moderation_control:
+  body:
+    type: text_default
+    label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 0
     region: content
   field_categories:
     type: entity_reference_label
@@ -28,16 +32,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 6
-    region: content
-  field_components:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_hero:
     type: entity_reference_revisions_entity_view
@@ -46,7 +41,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_topics:
     type: entity_reference_label
@@ -54,18 +49,11 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  search_api_excerpt:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
 hidden:
-  body: true
+  content_moderation_control: true
+  field_components: true
   langcode: true
+  links: true
+  search_api_excerpt: true

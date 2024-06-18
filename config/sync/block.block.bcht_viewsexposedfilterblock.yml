@@ -1,0 +1,21 @@
+uuid: 816a42d0-bec1-4986-8390-cb385c976141
+langcode: en
+status: true
+dependencies:
+  module:
+    - views_exposed_filter_blocks
+  theme:
+    - bcht
+id: bcht_viewsexposedfilterblock
+theme: bcht
+region: header
+weight: 0
+provider: null
+plugin: views_exposed_filter_blocks_block
+settings:
+  id: views_exposed_filter_blocks_block
+  label: 'Views exposed filter block'
+  label_display: '0'
+  provider: views_exposed_filter_blocks
+  view_display: 'search:block_1'
+visibility: {  }

@@ -1,0 +1,21 @@
+uuid: 4dd5e84e-988d-47b4-81e5-cb7ff9c10665
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+  theme:
+    - bcht
+id: search_view_no_results_block
+theme: bcht
+region: disable
+weight: 0
+provider: null
+plugin: single_rendered_site_settings_block
+settings:
+  id: single_rendered_site_settings_block
+  label: 'Rendered site settings block'
+  label_display: '0'
+  provider: site_settings
+  setting: search_page_no_results_settings
+visibility: {  }

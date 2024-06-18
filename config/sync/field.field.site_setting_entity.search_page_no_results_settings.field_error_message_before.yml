@@ -1,0 +1,19 @@
+uuid: f699d0d6-e5c6-4adb-acef-fe6eb1f4c991
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_error_message_before
+    - site_settings.site_setting_entity_type.search_page_no_results_settings
+id: site_setting_entity.search_page_no_results_settings.field_error_message_before
+field_name: field_error_message_before
+entity_type: site_setting_entity
+bundle: search_page_no_results_settings
+label: 'Error Message Before Search Value'
+description: "<p>This text will be visible before the search value in the no result error message. Please refer to the example below</p>\r\n<p>We’re sorry, your search for <strong>“search value”</strong> didn’t return any results. </p>\r\n<p>Please Note: Search Value will be added automatically via backend code</p>"
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

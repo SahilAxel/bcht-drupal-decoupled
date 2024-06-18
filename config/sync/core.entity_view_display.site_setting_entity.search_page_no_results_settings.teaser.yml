@@ -1,0 +1,47 @@
+uuid: 8ea71948-32f9-404d-9cd7-ccd5e9e4df1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.site_setting_entity.teaser
+    - field.field.site_setting_entity.search_page_no_results_settings.field_error_message_after
+    - field.field.site_setting_entity.search_page_no_results_settings.field_error_message_before
+    - field.field.site_setting_entity.search_page_no_results_settings.field_recommended_links
+    - site_settings.site_setting_entity_type.search_page_no_results_settings
+  module:
+    - text
+id: site_setting_entity.search_page_no_results_settings.teaser
+targetEntityType: site_setting_entity
+bundle: search_page_no_results_settings
+mode: teaser
+content:
+  field_error_message_after:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_error_message_before:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_recommended_links:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  description: true
+  group: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_id: true
