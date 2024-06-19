@@ -1,0 +1,57 @@
+<div class="header_top_wrapper">
+  <div class="container">
+    <div class="header_top__container">
+
+      <div class="search__icon">{{ 'search button'|t }}</div>
+
+      <div class="search__wrapper">
+        {{ drupal_entity('block', 'bcht_viewsexposedfilterblock') }}
+      </div>
+
+      <div class="utitlity-menu">
+      {{ drupal_menu('utitlity-menu') }}
+      </div>
+  
+      {% if site_setting_field('header_top', 'field_cta_link').0 and site_setting_field('header_top', 'field_cta_link')['#is_multiple'] == false %}
+        <div class="cta-btn">{{ site_setting_field('header_top', 'field_cta_link').0 }}</div>
+      {% endif %}
+    </div>  
+  </div>
+</div>
+<div class="header_bottom_wrapper">
+  <div class="container">
+    <div class="header_bottom__container">
+      {% if site_setting_field('header_bottom', 'field_logo').0 and site_setting_field('header_bottom', 'field_logo')['#is_multiple'] == false %}
+        <div class="header_logo">
+          {{ site_setting_field('header_bottom', 'field_logo') }}
+        </div>
+      {% endif %}
+
+      <div class="main-menu">
+        {{ drupal_menu('main-navigation') }}
+      </div>
+
+      <div id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>  
+  </div>
+</div>
+<div class="mobile-menu-wrapper">
+  {% if site_setting_field('header_top', 'field_cta_link').0 and site_setting_field('header_top', 'field_cta_link')['#is_multiple'] == false %}
+    <div class="cta-btn">{{ site_setting_field('header_top', 'field_cta_link').0 }}</div>
+  {% endif %}
+  <div class="main-menu">
+    {{ drupal_menu('main-navigation') }}
+  </div>
+  <div class="mobile_bottom_wrapper">
+    <div class="utitlity-menu">
+      {{ drupal_menu('utitlity-menu') }}
+    </div>
+    <div class="search__wrapper">
+      {{ drupal_entity('block', 'bcht_viewsexposedfilterblock') }}
+    </div>
+  </div>
+</div>

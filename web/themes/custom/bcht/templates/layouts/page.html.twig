@@ -44,12 +44,12 @@
  */
 #}
 <div class="layout-container">
-	<header role="banner" class="clearfix header_wrapper">
+	<header role="header" class="clearfix header_wrapper">
 		<div class="main-header">
-			<div class="container">{{ page.header }}</div>
+			{% include directory ~ '/templates/layouts/header.html.twig' %}
 		</div>
 	</header>
-	<main role="main">
+	<main role="main" class="main-content-wrapper">
 		<a id="main-content" tabindex="-1"></a>
 		{# link is in html.html.twig #}
 		<div class="layout-content">{{ page.content }}</div>
