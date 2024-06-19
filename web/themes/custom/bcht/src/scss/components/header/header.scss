@@ -343,6 +343,10 @@ header {
               padding: 22px 12px;
             }
 
+            &.primary-nav__menu-link--active-trail {
+              color: $BostonPink;
+            }
+
             &.primary-nav__menu-link--has-children {
               border-left: 2px solid $White;
               border-right: 2px solid $White;
@@ -422,6 +426,10 @@ header {
                 font-family: $HelveticaRegular;
                 margin-bottom: 16px;
                 padding: 0;
+                &.is-active {
+                  text-decoration: underline;
+                  color: $BostonBlue;
+                }
                 &:after {
                   display: none;
                 }
@@ -549,6 +557,10 @@ header {
           text-decoration: none;
           padding: 18px 0px;
 
+          &.primary-nav__menu-link--active-trail {
+            color: $BostonPink;
+          }
+
           &.primary-nav__menu-link--has-children {
             border-left: 2px solid $White;
             border-right: 2px solid $White;
@@ -597,6 +609,10 @@ header {
               font-family: $HelveticaRegular;
               margin-bottom: 16px;
               padding: 0;
+              &.is-active {
+                text-decoration: underline;
+                color: $BostonBlue;
+              }
               &:after {
                 display: none;
               }

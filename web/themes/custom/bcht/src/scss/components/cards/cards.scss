@@ -40,6 +40,17 @@
           line-height: 36px;
         }
       }
+      ul,
+      ol {
+        li {
+          font-size: rem(20);
+          line-height: 30px;
+          @include breakpoint(small-desktop) {
+            font-size: rem(24);
+            line-height: 36px;
+          }
+        }
+      }
     }
   }
 
