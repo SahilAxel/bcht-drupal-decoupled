@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
 use Drupal\views\ViewExecutable;
 use Drupal\paragraphs\Entity\Paragraph;
 
@@ -59,7 +60,7 @@ function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$
 function bcht_helpers_form_alter(&$form, FormStateInterface $form_state, $form_id)
 {
   // Match any new node or node edit forms.
-  if (in_array($form_id, ['node_page_form', 'node_page_edit_form'])) {
+  if ((preg_match('/node_(.*?)(edit)?_form$/', $form_id))) {
     array_unshift($form['#validate'], 'bcht_helpers_node_form_validate');
   }
 
@@ -92,8 +93,7 @@ function bcht_helpers_node_form_validate(&$form, FormStateInterface $form_state)
    * corresponding taxonomy reference field then remove the value from the autocomplete field
    */
   $node = $form_state->getFormObject()->getEntity();
-
-  if ($node->hasField('field_components')) {
+  if ($node instanceof Node && $node->hasField('field_components')) {
     $paragraphs = $form_state->getValue('field_components');
     $autocomplete_fields = [
       'article_type' => 'field_article_type',
@@ -115,11 +115,33 @@ function bcht_helpers_node_form_validate(&$form, FormStateInterface $form_state)
       }
     }
   }
+
+  if ($node instanceof Node && $node->hasField('field_related_content')) {
+    $paragraphs = $form_state->getValue('field_related_content');
+    $autocomplete_fields = [
+      'article_type' => 'field_article_type',
+      'topic' => 'field_topics',
+    ];
+
+    foreach ($paragraphs as $key => &$paragraph_wrapper) {
+      if (isset($paragraph_wrapper['subform'])) {
+        $paragraph = $paragraph_wrapper['subform'];
+        if (isset($paragraph['field_taxonomy_type'])) {
+          $vocabulary_selector = $paragraph['field_taxonomy_type'];
+          foreach ($autocomplete_fields as $vocab_name => $field_name) {
+            if (count($paragraph[$field_name]) > 0 && !in_array($vocab_name, array_column($vocabulary_selector, 'target_id'))) {
+              $form_state->setValue(['field_related_content', $key, 'subform', $field_name], []);
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 function bcht_helpers_preprocess_node(&$variables) {
-
   $node = $variables['node'];
+  /* Fetching value for eyebrow text to be shown in cards and listing views */
   if ($variables['view_mode'] == "card" || $variables['view_mode'] == "search_result") {
     $nodeType = $node->getType();
     $eyebrowText = "";
@@ -142,6 +164,6 @@ function bcht_helpers_get_term_name($node, $fieldName) {
   if ($termId != null) {
     return $termStorage->load($termId)->getName();
   } else {
-    return(null);
+    return (null);
   }
 }

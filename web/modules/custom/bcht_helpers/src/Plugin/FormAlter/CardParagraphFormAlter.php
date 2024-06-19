@@ -3,6 +3,7 @@
 namespace Drupal\bcht_helpers\Plugin\FormAlter;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
 use Drupal\pluginformalter\Annotation\ParagraphsFormAlter;
 use Drupal\pluginformalter\Plugin\FormAlterBase;
 
@@ -66,5 +67,35 @@ class CardParagraphFormAlter extends FormAlterBase
         ':input[name="field_components[' . $form['#delta'] .'][subform][field_card_type]"]' => ['value' => 'related_cards']
       ]
     ];
+
+    $parent = $form_state->getFormObject()->getEntity();
+    if ($parent instanceof Node) {
+      if ($parent->getType() == "article") {
+        $form['subform']['field_heading']['#access'] = false;
+        $form['subform']['field_intro_text']['#access'] = false;
+        $form['subform']['field_card_type']['#access'] = false;
+        $form['subform']['field_content_type']['#access'] = false;
+        $form['subform']['field_node_reference']['#access'] = false;
+        $form['subform']['field_card_items']['#access'] = false;
+        $form['subform']['field_category']['#access'] = false;
+
+        if (isset($form['subform']['field_taxonomy_type']['widget']['#options']['categories'])) {
+          unset($form['subform']['field_taxonomy_type']['widget']['#options']['categories']);
+        }
+
+        $form['subform']['field_article_type']['#states'] = array(
+          'visible' => array(
+            ':input[name="field_related_content[0][subform][field_taxonomy_type][article_type]"]' => ['checked' => true],
+          )
+        );
+
+        $form['subform']['field_topics']['#states'] = [
+          'visible' => [
+            ':input[name="field_related_content[0][subform][field_taxonomy_type][topic]"]' => ['checked' => true],
+          ]
+        ];
+
+      }
+    }
   }
 }

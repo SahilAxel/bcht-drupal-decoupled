@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.article
     - node.type.event
     - node.type.landing_page
     - node.type.page
@@ -86,6 +87,7 @@ type_settings:
       weight: 1
   entity_types:
     node:
+      - article
       - event
       - landing_page
       - page

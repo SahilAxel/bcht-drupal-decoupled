@@ -6,6 +6,10 @@ dependencies:
     - core.entity_view_mode.node.rss
     - field.field.node.article.body
     - field.field.node.article.field_article_type
+    - field.field.node.article.field_components
+    - field.field.node.article.field_description_text
+    - field.field.node.article.field_hero
+    - field.field.node.article.field_related_content
     - field.field.node.article.field_topics
     - node.type.article
   module:
@@ -17,12 +21,21 @@ targetEntityType: node
 bundle: article
 mode: rss
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   links:
     weight: 100
     region: content
 hidden:
   body: true
   field_article_type: true
+  field_components: true
+  field_description_text: true
+  field_hero: true
+  field_related_content: true
   field_topics: true
   langcode: true
   search_api_excerpt: true
