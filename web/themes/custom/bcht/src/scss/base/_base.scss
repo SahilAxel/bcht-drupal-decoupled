@@ -40,10 +40,11 @@ hr {
   background-color: $BostonSky;
   height: 3px;
   border: none;
-  margin: 16px 0;
+  margin: 12px 0px;
   padding: 0;
   @include breakpoint(desktop) {
     height: 2px;
+    margin: 16px 0px;
   }
 }
 p {
