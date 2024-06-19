@@ -5,6 +5,7 @@
   @include breakpoint(small-desktop) {
     padding: 0px;
   }
+
   h1,
   h2,
   h3,
@@ -16,13 +17,17 @@
     &:first-child {
       padding-top: 0;
     }
-    @include breakpoint(small-desktop) {
+    @include breakpoint(desktop) {
       padding-top: 16px;
     }
   }
   ol {
     padding-inline-start: 0;
     list-style-position: inside;
+    margin: 12px 0px;
+    @include breakpoint(desktop) {
+      margin: 16px 0px;
+    }
     li {
       padding-bottom: 12px;
       list-style-type: decimal;
@@ -32,6 +37,7 @@
       ol {
         padding-top: 12px;
         padding-inline-start: 32px;
+        margin: 0px;
         @include breakpoint(desktop) {
           padding-inline-start: 35px;
         }
@@ -43,6 +49,7 @@
           }
           ol {
             padding-inline-start: 16px;
+            margin: 0px;
             @include breakpoint(desktop) {
               padding-inline-start: 35px;
             }
@@ -61,6 +68,10 @@
   ul {
     padding-inline-start: 0;
     list-style-position: inside;
+    margin: 12px 0px;
+    @include breakpoint(desktop) {
+      margin: 16px 0px;
+    }
     li {
       list-style-type: none;
       padding-bottom: 12px;
@@ -75,6 +86,7 @@
       ul {
         padding-top: 12px;
         padding-inline-start: 32px;
+        margin: 0px;
         @include breakpoint(desktop) {
           padding-inline-start: 35px;
         }
@@ -91,6 +103,7 @@
           }
           ul {
             padding-inline-start: 16px;
+            margin: 0px;
             @include breakpoint(desktop) {
               padding-inline-start: 35px;
             }
@@ -181,6 +194,7 @@
     font-family: $HelveticaRegular;
     font-weight: 400;
     text-align: center;
+    padding: 12px 0px !important;
     &::before {
       content: '';
       display: none;
@@ -189,6 +203,7 @@
     @include breakpoint(desktop) {
       font-size: 1.5rem;
       line-height: 36px;
+      padding: 16px 0px !important;
     }
   }
   figure {
@@ -231,5 +246,13 @@
     &:first-child {
       padding-top: 0;
     }
+  }
+  p:has(
+      .link-arrow-btn--default,
+      .link-arrow-btn--white,
+      .link-arrow-btn-small--default,
+      .link-arrow-btn-small--white
+    ) {
+    padding-top: 0px;
   }
 }
