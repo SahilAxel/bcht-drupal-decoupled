@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.article.field_components
     - field.field.node.article.field_description_text
     - field.field.node.article.field_hero
+    - field.field.node.article.field_publication_date
     - field.field.node.article.field_related_content
     - field.field.node.article.field_topics
     - node.type.article
@@ -46,7 +47,9 @@ hidden:
   field_article_type: true
   field_components: true
   field_description_text: true
+  field_publication_date: true
   field_related_content: true
   field_topics: true
   langcode: true
+  published_at: true
   search_api_excerpt: true

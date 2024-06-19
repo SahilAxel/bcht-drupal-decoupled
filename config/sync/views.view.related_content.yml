@@ -412,241 +412,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_1:
-    id: block_1
-    display_title: Block
-    display_plugin: block
-    position: 1
-    display_options:
-      filters:
-        status:
-          id: status
-          table: node_field_data
-          field: status
-          entity_type: node
-          entity_field: status
-          plugin_id: boolean
-          value: '1'
-          group: 1
-          expose:
-            operator: ''
-        tid:
-          id: tid
-          table: taxonomy_index
-          field: tid
-          relationship: none
-          group_type: group
-          admin_label: 'Article Type'
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
-          group: 2
-          exposed: true
-          expose:
-            operator_id: tid_op
-            label: 'Article Type'
-            description: ''
-            use_operator: false
-            operator: tid_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: article_type_tid
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          vid: article_type
-          type: select
-          hierarchy: true
-          limit: true
-          error_message: true
-          vids:
-            - article_type
-        tid_1:
-          id: tid_1
-          table: taxonomy_index
-          field: tid
-          relationship: none
-          group_type: group
-          admin_label: Category
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
-          group: 2
-          exposed: true
-          expose:
-            operator_id: tid_1_op
-            label: Category
-            description: ''
-            use_operator: false
-            operator: tid_1_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: category_tid
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          vid: categories
-          type: select
-          hierarchy: true
-          limit: true
-          error_message: true
-          vids:
-            - categories
-        tid_2:
-          id: tid_2
-          table: taxonomy_index
-          field: tid
-          relationship: none
-          group_type: group
-          admin_label: Topics
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
-          group: 2
-          exposed: true
-          expose:
-            operator_id: tid_2_op
-            label: Topics
-            description: ''
-            use_operator: false
-            operator: tid_2_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: topics_tid
-            required: false
-            remember: false
-            multiple: true
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: true
-          vid: topic
-          type: select
-          hierarchy: true
-          limit: true
-          error_message: true
-          vids:
-            - topic
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          operator: in
-          value: {  }
-          group: 3
-          exposed: true
-          expose:
-            operator_id: type_op
-            label: 'Content type'
-            description: ''
-            use_operator: false
-            operator: type_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: type
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-          2: AND
-          3: AND
-      defaults:
-        filters: false
-        filter_groups: false
-      exposed_block: true
-      display_extenders: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
-  block_2:
-    id: block_2
-    display_title: 'Block 2'
+  article_related_content:
+    id: article_related_content
+    display_title: 'Article Related Content'
     display_plugin: block
     position: 2
     display_options:
@@ -903,6 +671,240 @@ display:
         arguments: false
         filters: false
         filter_groups: false
+      display_description: ''
+      exposed_block: true
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_1:
+    id: block_1
+    display_title: 'Cards Component Content'
+    display_plugin: block
+    position: 1
+    display_options:
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: 'Article Type'
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 2
+          exposed: true
+          expose:
+            operator_id: tid_op
+            label: 'Article Type'
+            description: ''
+            use_operator: false
+            operator: tid_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: article_type_tid
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: article_type
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+          vids:
+            - article_type
+        tid_1:
+          id: tid_1
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: Category
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 2
+          exposed: true
+          expose:
+            operator_id: tid_1_op
+            label: Category
+            description: ''
+            use_operator: false
+            operator: tid_1_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: category_tid
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: categories
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+          vids:
+            - categories
+        tid_2:
+          id: tid_2
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: Topics
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 2
+          exposed: true
+          expose:
+            operator_id: tid_2_op
+            label: Topics
+            description: ''
+            use_operator: false
+            operator: tid_2_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: topics_tid
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          vid: topic
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+          vids:
+            - topic
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value: {  }
+          group: 3
+          exposed: true
+          expose:
+            operator_id: type_op
+            label: 'Content type'
+            description: ''
+            use_operator: false
+            operator: type_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: type
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+          2: AND
+          3: AND
+      defaults:
+        filters: false
+        filter_groups: false
+      display_description: ''
       exposed_block: true
       display_extenders: {  }
     cache_metadata:

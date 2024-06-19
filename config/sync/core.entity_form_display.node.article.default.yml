@@ -1,4 +1,4 @@
-uuid: 8f1d9c84-d989-48fe-a389-5b8ddfdd4d4b
+uuid: bf8f2c65-866e-46c8-9c09-0e34396bd039
 langcode: en
 status: true
 dependencies:
@@ -8,16 +8,16 @@ dependencies:
     - field.field.node.article.field_components
     - field.field.node.article.field_description_text
     - field.field.node.article.field_hero
+    - field.field.node.article.field_publication_date
     - field.field.node.article.field_related_content
     - field.field.node.article.field_topics
     - node.type.article
+    - workflows.workflow.editorial
   module:
     - content_moderation
     - paragraphs
     - path
     - text
-_core:
-  default_config_hash: ewbd6G2uX456-bgwseM2Q-KQG3RkASoyHmTh-XR3oLU
 id: node.article.default
 targetEntityType: node
 bundle: article
@@ -47,7 +47,7 @@ content:
     third_party_settings: {  }
   field_components:
     type: paragraphs
-    weight: 6
+    weight: 5
     region: content
     settings:
       title: Paragraph
@@ -91,7 +91,7 @@ content:
     third_party_settings: {  }
   field_related_content:
     type: paragraphs
-    weight: 5
+    weight: 6
     region: content
     settings:
       title: Paragraph
@@ -171,4 +171,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_publication_date: true

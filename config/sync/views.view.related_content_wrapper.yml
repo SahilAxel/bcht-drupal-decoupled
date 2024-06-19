@@ -291,25 +291,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_1:
-    id: block_1
-    display_title: Block
-    display_plugin: block
-    position: 1
-    display_options:
-      display_extenders: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
-  block_2:
-    id: block_2
-    display_title: 'Block 2'
+  article_related_content_wrapper:
+    id: article_related_content_wrapper
+    display_title: 'Article Related Content Wrapper'
     display_plugin: block
     position: 2
     display_options:
@@ -390,7 +374,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{{ drupal_view('related_content', 'block_2', id) }}"
+            text: "{{ drupal_view('related_content', 'article_related_content', id) }}"
             make_link: false
             path: ''
             absolute: false
@@ -485,6 +469,24 @@ display:
           admin_label: 'field_related_content: Paragraph'
           plugin_id: standard
           required: true
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_1:
+    id: block_1
+    display_title: 'Cards Component Related Content Wrapper'
+    display_plugin: block
+    position: 1
+    display_options:
+      display_description: ''
       display_extenders: {  }
     cache_metadata:
       max-age: -1

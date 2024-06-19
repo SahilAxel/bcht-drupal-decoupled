@@ -10,8 +10,7 @@ use Drupal\node\Entity\Node;
 use Drupal\views\ViewExecutable;
 use Drupal\paragraphs\Entity\Paragraph;
 
-function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$args)
-{
+function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
   /* Fetching the card component taxonomy type and content type filter values and
    * passing the fetched values in the exposed filter values of related content view
    */
@@ -57,8 +56,7 @@ function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$
   }
 }
 
-function bcht_helpers_form_alter(&$form, FormStateInterface $form_state, $form_id)
-{
+function bcht_helpers_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Match any new node or node edit forms.
   if ((preg_match('/node_(.*?)(edit)?_form$/', $form_id))) {
     array_unshift($form['#validate'], 'bcht_helpers_node_form_validate');
@@ -87,8 +85,7 @@ function bcht_helpers_form_alter(&$form, FormStateInterface $form_state, $form_i
   }
 }
 
-function bcht_helpers_node_form_validate(&$form, FormStateInterface $form_state)
-{
+function bcht_helpers_node_form_validate(&$form, FormStateInterface $form_state) {
   /* Validation for checking if taxonomy type is unchecked and there is value in the
    * corresponding taxonomy reference field then remove the value from the autocomplete field
    */
@@ -165,5 +162,15 @@ function bcht_helpers_get_term_name($node, $fieldName) {
     return $termStorage->load($termId)->getName();
   } else {
     return (null);
+  }
+}
+
+function bcht_helpers_node_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->getType() == "article") {
+    $timezone = date_default_timezone_get();
+    if (empty($entity->get('field_publication_date')->getValue()) && ($entity->status->value == true)) {
+      $date = new \DateTime('now', new \DateTimeZone($timezone));
+      $entity->set('field_publication_date', $date->format('Y-m-d\TH:i:s'));
+    }
   }
 }
