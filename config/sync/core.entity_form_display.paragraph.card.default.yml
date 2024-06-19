@@ -23,14 +23,10 @@ bundle: card
 mode: default
 content:
   field_article_type:
-    type: entity_reference_autocomplete_tags
+    type: options_select
     weight: 4
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_card_items:
     type: paragraphs
@@ -59,14 +55,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_category:
-    type: entity_reference_autocomplete_tags
+    type: options_select
     weight: 6
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_content_type:
     type: options_select
@@ -107,14 +99,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_topics:
-    type: entity_reference_autocomplete_tags
+    type: options_select
     weight: 5
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
