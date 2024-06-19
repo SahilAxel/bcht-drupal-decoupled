@@ -12,6 +12,7 @@ use Drupal\menu_link_content\Plugin\Menu\MenuLinkContent;
 use Drupal\block\Entity\Block;
 use \Drupal\Core\Template\Attribute;
 use Drupal\node\NodeInterface;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
@@ -80,4 +81,15 @@ function bcht_theme_suggestions_views_view_unformatted_alter(array &$suggestions
 function bcht_preprocess_node(&$variables)
 {
   $variables['base_path'] = base_path();
+}
+
+/**
+ *
+ * @inheritdoc
+ */
+function bcht_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+  if ($form['#id'] == "views-exposed-form-search-block-1") {
+    $form['#attributes']['class'][] = "search-form-wrapper";
+  }
 }
