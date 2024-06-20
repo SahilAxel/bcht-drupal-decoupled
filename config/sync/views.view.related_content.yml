@@ -683,8 +683,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_1:
-    id: block_1
+  cards_component_related_content:
+    id: cards_component_related_content
     display_title: 'Cards Component Content'
     display_plugin: block
     position: 1
