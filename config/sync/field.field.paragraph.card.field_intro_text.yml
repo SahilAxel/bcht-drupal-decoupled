@@ -13,7 +13,7 @@ field_name: field_intro_text
 entity_type: paragraph
 bundle: card
 label: 'Intro Text'
-description: "<ul><li>Try to avoid using the list options in this field as the list might not render properly on the page as per the design.</li>\r\n<li>Don't use more than 30 characters for the link text of emphasized and button link styles as it might not render properly on the page as per the design.</li></ul>"
+description: "<ul><li>Try to avoid using the list options in this field as the list might not render properly on the page as per the design.</li>\r\n<li>Please consider using less than 30 characters for the Emphasized Link text style and the Button Link style as using more characters for them might result into the improper display and might not match the design.</li></ul>"
 required: false
 translatable: false
 default_value: {  }

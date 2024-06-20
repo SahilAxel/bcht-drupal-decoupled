@@ -6,6 +6,11 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
     - field.field.node.article.field_article_type
+    - field.field.node.article.field_components
+    - field.field.node.article.field_description_text
+    - field.field.node.article.field_hero
+    - field.field.node.article.field_publication_date
+    - field.field.node.article.field_related_content
     - field.field.node.article.field_topics
     - node.type.article
   module:
@@ -26,11 +31,22 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   links:
     weight: 100
     region: content
 hidden:
   field_article_type: true
+  field_components: true
+  field_description_text: true
+  field_hero: true
+  field_publication_date: true
+  field_related_content: true
   field_topics: true
   langcode: true
+  published_at: true
   search_api_excerpt: true

@@ -6,9 +6,15 @@ dependencies:
     - core.entity_view_mode.node.search_result
     - field.field.node.article.body
     - field.field.node.article.field_article_type
+    - field.field.node.article.field_components
+    - field.field.node.article.field_description_text
+    - field.field.node.article.field_hero
+    - field.field.node.article.field_publication_date
+    - field.field.node.article.field_related_content
     - field.field.node.article.field_topics
     - node.type.article
   module:
+    - entity_reference_revisions
     - text
     - user
 _core:
@@ -23,29 +29,34 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
-  field_article_type:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
+  content_moderation_control:
+    settings: {  }
     third_party_settings: {  }
-    weight: 111
+    weight: -20
     region: content
-  field_topics:
-    type: entity_reference_label
+  field_hero:
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      link: true
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    weight: 104
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
 hidden:
+  field_article_type: true
+  field_components: true
+  field_description_text: true
+  field_publication_date: true
+  field_related_content: true
+  field_topics: true
   langcode: true
+  published_at: true
   search_api_excerpt: true

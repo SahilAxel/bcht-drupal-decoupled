@@ -5,9 +5,16 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_article_type
+    - field.field.node.article.field_components
+    - field.field.node.article.field_description_text
+    - field.field.node.article.field_hero
+    - field.field.node.article.field_publication_date
+    - field.field.node.article.field_related_content
     - field.field.node.article.field_topics
     - node.type.article
   module:
+    - datetime
+    - entity_reference_revisions
     - text
     - user
 _core:
@@ -24,27 +31,62 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_article_type:
-    type: entity_reference_label
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_components:
+    type: entity_reference_revisions_entity_view
     label: above
     settings:
-      link: true
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    weight: 111
+    weight: 4
     region: content
-  field_topics:
-    type: entity_reference_label
+  field_description_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_hero:
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      link: true
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    weight: 104
+    weight: 1
+    region: content
+  field_publication_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: short
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_related_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 2
     region: content
 hidden:
+  field_article_type: true
+  field_topics: true
   langcode: true
+  published_at: true
   search_api_excerpt: true
