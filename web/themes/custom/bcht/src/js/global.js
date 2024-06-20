@@ -144,9 +144,11 @@
       $(once('menuToggle', '#menuToggle', context)).click(function () {
         if ($(this).hasClass('active')) {
           $(this).removeClass('active');
+          $('body').removeClass('mobile-menu-open');
           $('.mobile-menu-wrapper').slideUp();
         } else {
           $(this).addClass('active');
+          $('body').addClass('mobile-menu-open');
           $('.mobile-menu-wrapper').slideDown();
         }
       });
