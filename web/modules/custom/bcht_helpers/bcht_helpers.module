@@ -7,8 +7,8 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
-use Drupal\views\ViewExecutable;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\views\ViewExecutable;
 
 function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
   /* Fetching the card component taxonomy type and content type filter values and
@@ -19,7 +19,6 @@ function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$
       $paragraphID = $args[0]->__toString();
       $paragraph = Paragraph::load($paragraphID);
     }
-
 
     $exposed_input = $view->getExposedInput();
     if (!empty($paragraph) && $paragraph->getType() == "card") {
@@ -86,48 +85,46 @@ function bcht_helpers_form_alter(&$form, FormStateInterface $form_state, $form_i
 }
 
 function bcht_helpers_node_form_validate(&$form, FormStateInterface $form_state) {
-  /* Validation for checking if taxonomy type is unchecked and there is value in the
-   * corresponding taxonomy reference field then remove the value from the autocomplete field
-   */
   $node = $form_state->getFormObject()->getEntity();
-  if ($node instanceof Node && $node->hasField('field_components')) {
-    $paragraphs = $form_state->getValue('field_components');
-    $autocomplete_fields = [
-      'article_type' => 'field_article_type',
-      'topic' => 'field_topics',
-      'categories' => 'field_category',
-    ];
+  if ($node instanceof Node) {
+    // Validation for cards component if taxonomy type is not selected then its select field should also be empty.
+    if ($node->hasField('field_components')) {
+      $card_taxonomy_fields = [
+        'article_type' => 'field_article_type',
+        'topic' => 'field_topics',
+        'categories' => 'field_category',
+      ];
+      bcht_helpers_taxonomy_type_field_validate($form_state, $node, 'field_components', $card_taxonomy_fields);
+    }
 
-    foreach ($paragraphs as $key => &$paragraph_wrapper) {
-      if (isset($paragraph_wrapper['subform'])) {
-        $paragraph = $paragraph_wrapper['subform'];
-        if (isset($paragraph['field_taxonomy_type'])) {
-          $vocabulary_selector = $paragraph['field_taxonomy_type'];
-          foreach ($autocomplete_fields as $vocab_name => $field_name) {
-            if (count($paragraph[$field_name]) > 0 && !in_array($vocab_name, array_column($vocabulary_selector, 'target_id'))) {
-              $form_state->setValue(['field_components', $key, 'subform', $field_name], []);
-            }
-          }
-        }
-      }
+    // Validation for cards component(in article content type related content field) if taxonomy type is not selected then its select field should also be empty.
+    if ($node->hasField('field_related_content')) {
+      $related_taxonomy_fields = [
+        'article_type' => 'field_article_type',
+        'topic' => 'field_topics',
+      ];
+      bcht_helpers_taxonomy_type_field_validate($form_state, $node, 'field_related_content', $related_taxonomy_fields);
     }
   }
+}
 
-  if ($node instanceof Node && $node->hasField('field_related_content')) {
-    $paragraphs = $form_state->getValue('field_related_content');
-    $autocomplete_fields = [
-      'article_type' => 'field_article_type',
-      'topic' => 'field_topics',
-    ];
-
+/**
+ * Validation for checking if taxonomy type is unchecked in cards paragraph and
+ * there is value in the corresponding taxonomy reference field then remove the value from the select field.
+ */
+function bcht_helpers_taxonomy_type_field_validate(&$form_state, $node, $paragraph_field, $fields) {
+  if ($node->hasField($paragraph_field)) {
+    $paragraphs = $form_state->getValue($paragraph_field);
+    // Loop through all the paragraphs added in the field.
     foreach ($paragraphs as $key => &$paragraph_wrapper) {
       if (isset($paragraph_wrapper['subform'])) {
         $paragraph = $paragraph_wrapper['subform'];
         if (isset($paragraph['field_taxonomy_type'])) {
           $vocabulary_selector = $paragraph['field_taxonomy_type'];
-          foreach ($autocomplete_fields as $vocab_name => $field_name) {
+          // Loop through the taxonomy types and respective taxonomy term reference fields and remove the values from taxonomy term field if that taxonomy type is not selected.
+          foreach ($fields as $vocab_name => $field_name) {
             if (count($paragraph[$field_name]) > 0 && !in_array($vocab_name, array_column($vocabulary_selector, 'target_id'))) {
-              $form_state->setValue(['field_related_content', $key, 'subform', $field_name], []);
+              $form_state->setValue([$paragraph_field, $key, 'subform', $field_name], []);
             }
           }
         }
@@ -144,11 +141,14 @@ function bcht_helpers_preprocess_node(&$variables) {
     $eyebrowText = "";
     if ($nodeType == 'article') {
       $eyebrowText = bcht_helpers_get_term_name($node, 'field_article_type');
-    } elseif ($nodeType == 'page' || $nodeType == "landing_page") {
+    }
+    elseif ($nodeType == 'page' || $nodeType == "landing_page") {
       $eyebrowText = bcht_helpers_get_term_name($node, 'field_categories');
-    } elseif ($nodeType == 'event') {
+    }
+    elseif ($nodeType == 'event') {
       $eyebrowText = "Event";
-    } elseif ($nodeType == 'listing_page') {
+    }
+    elseif ($nodeType == 'listing_page') {
       $eyebrowText == "Listing Page";
     }
     $variables['eyebrow_node'] = $eyebrowText;
@@ -158,19 +158,18 @@ function bcht_helpers_preprocess_node(&$variables) {
 function bcht_helpers_get_term_name($node, $fieldName) {
   $termStorage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
   $termId = $node->get($fieldName)->target_id;
-  if ($termId != null) {
+  if ($termId != NULL) {
     return $termStorage->load($termId)->getName();
-  } else {
-    return (null);
   }
+  return (NULL);
 }
 
 function bcht_helpers_node_presave(\Drupal\Core\Entity\EntityInterface $entity) {
   if ($entity->getType() == "article") {
-    $timezone = date_default_timezone_get();
-    if (empty($entity->get('field_publication_date')->getValue()) && ($entity->status->value == true)) {
-      $date = new \DateTime('now', new \DateTimeZone($timezone));
-      $entity->set('field_publication_date', $date->format('Y-m-d\TH:i:s'));
+    if (empty($entity->get('field_publication_date')->getValue()) && ($entity->status->value === TRUE)) {
+      $current_time = \Drupal::time()->getCurrentTime();
+      $dateTime = \Drupal::service('date.formatter')->format($current_time, 'html_datetime_custom');
+      $entity->set('field_publication_date', $dateTime);
     }
   }
 }

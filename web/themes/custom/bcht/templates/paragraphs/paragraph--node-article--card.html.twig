@@ -39,8 +39,7 @@
  */
 #}
 {{ attach_library('bcht/cards') }}
-{%
-  set classes = [
+{% set classes = [
     'paragraph',
     'cards_wrapper',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
@@ -49,9 +48,8 @@
   ]
 %}
 {% block paragraph %}
-	<div{{attributes.addClass(classes)}}>
-		<div
-			class="component__wrapper cards_inner_wrapper">
+	<div{{ attributes.addClass(classes) }}>
+		<div class="component__wrapper cards_inner_wrapper">
 			{# Related cards #}
 			{{ drupal_view('related_content_wrapper', 'article_related_content_wrapper', paragraph.id()) }}
 		</div>

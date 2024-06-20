@@ -15,7 +15,7 @@ field_name: body
 entity_type: node
 bundle: page
 label: Description
-description: "Don't use more than 30 characters for the link text of emphasized and button link styles as it might not render properly on the page as per the design"
+description: 'Please consider using less than 30 characters for the Emphasized Link text style and the Button Link style as using more characters for them might result into the improper display and might not match the design.'
 required: false
 translatable: true
 default_value: {  }
