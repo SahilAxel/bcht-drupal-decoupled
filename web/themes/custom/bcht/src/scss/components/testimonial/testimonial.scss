@@ -51,7 +51,7 @@
       padding: 0;
       margin: 0;
       text-transform: uppercase;
-      color: $BostonSky;
+      color: $BostonSkyTint1;
       font-size: 14px;
       line-height: 17.5px;
       font-family: $HelveticaRegular;
@@ -87,6 +87,10 @@
     }
     &__link {
       padding-top: 24px;
+      @include breakpoint(tablet) {
+        font-size: 1.25rem;
+        line-height: 26px;
+      }
     }
   }
 }
