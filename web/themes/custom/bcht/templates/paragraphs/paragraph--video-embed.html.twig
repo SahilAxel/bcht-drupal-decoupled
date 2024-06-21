@@ -52,42 +52,42 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {% set wrapperClass = 'video-embed--with-text' %}
-      {% if content.field_video_heading.0 and content.field_video_heading['#is_multiple'] == false %}
-        {% set wrapperClass = 'video-embed--with-text' %}
-      {% else %}
-        {% set wrapperClass = 'video-embed--no-text' %}
+      {% set hasTextContent = false %}
+      {% if content.field_icon.0 or content.field_video_heading.0 or content.field_video_caption.0 or content.field_link.0 %}
+        {% set hasTextContent = true %}
       {% endif %}
+      {% set wrapperClass = hasTextContent ? 'video-embed--with-text' : 'video-embed--no-text' %}    
       <div class="video-embed__wrapper {{ wrapperClass }}">
         <div class="video-embed">
           {% if content.field_video_source.0 and content.field_video_source['#is_multiple'] == false %}
             <div class="video-player">
-              {% if content.field_image.0  and content.field_image['#is_multiple'] == false %}
-              {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('image_optimize') %}
+              {% if content.field_image.0 and content.field_image['#is_multiple'] == false %}
+                {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('image_optimize') %}
                 <div class="video-player__overlay" id="overlay" style="background-image: url('{{ image_url }}');"></div>
               {% endif %}
               <div class="video-player__video" id="videoContainer">{{ content.field_video_source[0]['#context'].value|raw }}</div> 
             </div>
           {% endif %}
+          
           <div class="video-embed--content">
-            {% if content.field_icon.0 and content.field_icon['#is_multiple'] == false %}
+            {% if content.field_icon.0 %}
               <div class="video-embed--content__icon">{{ content.field_icon }}</div>
             {% endif %}
 
-            {% if content.field_video_heading.0 and content.field_video_heading['#is_multiple'] == false %}
+            {% if content.field_video_heading.0 %}
               <h2 class="video-embed--content__heading">{{ content.field_video_heading[0]['#context'].value }}</h2>
             {% endif %}
 
-            {% if content.field_video_caption.0 and content.field_video_caption['#is_multiple'] == false %}
+            {% if content.field_video_caption.0 %}
               <p class="video-embed--content__caption">{{ content.field_video_caption[0]['#context'].value }}</p>
             {% endif %}
 
-            {% if content.field_link.0 and content.field_link['#is_multiple'] == false %}
+            {% if content.field_link.0 %}
               <div>
                 {% if content.field_link.0['#url'].external %}
-                 <a class="video-embed--content__link link-arrow-btn-small link-arrow-btn-small--default" href="{{ content.field_link.0['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_link.0['#title'] }}</a>
+                  <a class="video-embed--content__link link-arrow-btn link-arrow-btn--default" href="{{ content.field_link.0['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_link.0['#title'] }}</a>
                 {% else %}
-                  <a class="video-embed--content__link link-arrow-btn-small link-arrow-btn-small--default" href="{{ path(content.field_link.0['#url'].routeName, content.field_link.0['#url'].routeParameters) }}">{{ content.field_link.0['#title'] }}</a>
+                  <a class="video-embed--content__link link-arrow-btn link-arrow-btn--default" href="{{ path(content.field_link.0['#url'].routeName, content.field_link.0['#url'].routeParameters) }}">{{ content.field_link.0['#title'] }}</a>
                 {% endif %}
               </div>
             {% endif %}
