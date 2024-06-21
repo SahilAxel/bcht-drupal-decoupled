@@ -10,7 +10,7 @@ field_name: field_video_source
 entity_type: paragraph
 bundle: video_embed
 label: 'Video Source'
-description: 'Please refer <a href="https://help.vimeo.com/hc/en-us/articles/12426259908881-How-do-I-embed-my-video" target="_blank">https://help.vimeo.com/hc/en-us/articles/12426259908881-How-do-I-embed-my-video</a> for how to get the embed code and paste in this field'
+description: "<ul>\r\n<li>Please refer <a href=\"https://help.vimeo.com/hc/en-us/articles/12426259908881-How-do-I-embed-my-video\" target=\"_blank\">https://help.vimeo.com/hc/en-us/articles/12426259908881-How-do-I-embed-my-video</a> for how to get the embed code and paste in this field</li>\r\n<li>When embedding a video, ensure \"responsive\" is selected under show options. Do not preselect fixed width or height in the embed code (for best results, avoid specifying fixed dimensions).</li>\r\n<li>For optimal results, deselect \"show link text\" below the video or manually remove the p tag from the embed code.</li>\r\n<li>Please consider adding the embed code of Vimeo only as we have validated the video source working with Vimeo for now, other video source we might have to validate before adding here</li>\r\n</ul>\r\n"
 required: true
 translatable: false
 default_value: {  }

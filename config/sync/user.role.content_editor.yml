@@ -107,7 +107,6 @@ permissions:
   - 'delete paragraph content impact_stats_item'
   - 'delete paragraph content rich_text'
   - 'delete paragraph content testimonial'
-  - 'delete paragraph content video_embed'
   - 'delete search_page_no_results_settings site setting'
   - 'delete site setting entities'
   - 'delete terms in article_type'
