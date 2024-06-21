@@ -87,10 +87,6 @@
     }
     &__link {
       padding-top: 24px;
-      @include breakpoint(tablet) {
-        font-size: 1.25rem;
-        line-height: 26px;
-      }
     }
   }
 }

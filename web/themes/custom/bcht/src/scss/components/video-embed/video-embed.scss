@@ -12,9 +12,6 @@
     }
     .video-embed {
       position: relative;
-      .video-embed--content {
-        display: none;
-      }
       .video-player__video {
         width: 100%;
         z-index: 1;
@@ -28,6 +25,9 @@
         }
         iframe {
           border-radius: 6px;
+          height: 100%;
+          width: 100%;
+          aspect-ratio: 16 / 9;
           min-height: 192px;
         }
         position: relative;
@@ -101,9 +101,14 @@
         flex-direction: column;
         justify-content: center;
         @include breakpoint(small-desktop) {
+          max-width: 412px;
+          flex: 0 0 33%;
+          padding: 0px 24px;
+        }
+        @include breakpoint(desktop) {
           padding: 64px 32px;
           margin: 0px;
-          max-width: 412px;
+          flex: 0 0 33%;
         }
         &__icon {
           padding-bottom: 24px;
@@ -142,6 +147,9 @@
         iframe {
           border-radius: 6px;
           min-height: 192px;
+          height: 100%;
+          width: 100%;
+          aspect-ratio: 16 / 9;
           @include breakpoint(small-desktop) {
             max-height: 479px;
           }
