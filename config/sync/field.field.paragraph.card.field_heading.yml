@@ -10,7 +10,7 @@ field_name: field_heading
 entity_type: paragraph
 bundle: card
 label: Heading
-description: ''
+description: 'Character limit: 55 characters'
 required: false
 translatable: false
 default_value: {  }

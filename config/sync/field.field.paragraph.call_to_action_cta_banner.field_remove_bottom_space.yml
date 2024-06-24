@@ -1,0 +1,21 @@
+uuid: 01f79187-4229-4a15-a638-c3afc9431c01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_remove_bottom_space
+    - paragraphs.paragraphs_type.call_to_action_cta_banner
+id: paragraph.call_to_action_cta_banner.field_remove_bottom_space
+field_name: field_remove_bottom_space
+entity_type: paragraph
+bundle: call_to_action_cta_banner
+label: 'Remove space from bottom'
+description: 'Check this field when this component is to be placed on the bottom of the page to remove spacing from bottom.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

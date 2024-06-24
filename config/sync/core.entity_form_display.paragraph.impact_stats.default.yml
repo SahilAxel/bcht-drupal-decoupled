@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.impact_stats.field_impact_stats_items
     - paragraphs.paragraphs_type.impact_stats
   module:
+    - maxlength
     - paragraphs
     - text
 id: paragraph.impact_stats.default
@@ -22,7 +23,11 @@ content:
     settings:
       rows: 5
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: 75
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: true
   field_heading:
     type: string_textfield
     weight: 0

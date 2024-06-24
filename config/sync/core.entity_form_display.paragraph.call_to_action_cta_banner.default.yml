@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.call_to_action_cta_banner.field_cta_headline
     - field.field.paragraph.call_to_action_cta_banner.field_cta_link
     - field.field.paragraph.call_to_action_cta_banner.field_image
+    - field.field.paragraph.call_to_action_cta_banner.field_remove_bottom_space
     - paragraphs.paragraphs_type.call_to_action_cta_banner
   module:
     - link
@@ -63,6 +64,13 @@ content:
     third_party_settings:
       media_library_edit:
         show_edit: '1'
+  field_remove_bottom_space:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
 hidden:
   created: true
   status: true
