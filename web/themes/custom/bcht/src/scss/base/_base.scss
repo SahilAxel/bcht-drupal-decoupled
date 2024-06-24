@@ -1,6 +1,10 @@
 @import '../settings/settings.all';
 @import '../config/fonts';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-size: $base-font + px;
   line-height: 24px;
@@ -12,6 +16,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
   a {
     color: $BostonPink;
     text-decoration: underline;
@@ -60,7 +65,12 @@ p {
   }
   .link-blue,
   .link-pink {
-    font-weight: 700;
+    font-family: $HelveticaBold;
+  }
+  strong,
+  b {
+    font-family: $HelveticaBold;
+    font-weight: normal;
   }
 }
 .link-blue {
@@ -147,19 +157,19 @@ p {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-family: Helvetica;
+    font-family: $HelveticaRegular;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 30px;
-    @include breakpoint(small-desktop) {
+    @include breakpoint(desktop) {
       font-size: rem(24);
       line-height: 36px;
     }
     span {
-      font-weight: 700;
+      font-family: $HelveticaBold;
     }
-    @include breakpoint(small-desktop) {
+    @include breakpoint(desktop) {
       padding: 16px 80px;
     }
   }

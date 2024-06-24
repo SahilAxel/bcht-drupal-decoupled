@@ -2,7 +2,7 @@
 
 .cards_wrapper {
   max-width: 1284px;
-  padding: 0 15px;
+  padding: 0 18px;
   margin: 0 auto;
 
   @include breakpoint(desktop) {
@@ -28,6 +28,9 @@
       max-width: 100%;
       @include breakpoint(tablet) {
         max-width: 75%;
+      }
+      @include breakpoint(small-desktop) {
+        margin-bottom: 48px;
       }
       p {
         font-size: rem(20);
@@ -79,16 +82,23 @@
       position: relative;
       margin-bottom: 24px;
       flex: 0 0 32%;
+      width: 32%;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
 
       @media only screen and (max-width: 1244px) {
         flex: 0 0 31.5%;
+        width: 31.5%;
       }
 
       @media only screen and (max-width: 991px) {
         flex: 0 0 48%;
+        width: 48%;
       }
       @media only screen and (max-width: 640px) {
         flex: 0 0 100%;
+        width: 100%;
       }
 
       .card_image {
@@ -111,8 +121,10 @@
         border-right: 2px solid $BostonGrayTint;
         border-bottom: 2px solid $BostonGrayTint;
         border-left: 2px solid $BostonGrayTint;
-        min-height: 188px;
         position: relative;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
 
         &.noimage {
           border-top: 2px solid $BostonGrayTint;
@@ -130,6 +142,11 @@
           color: $BostonOcean;
           font-family: $HelveticaBold;
           margin-bottom: 16px;
+          word-wrap: break-word;
+          @include breakpoint(small-desktop) {
+            font-size: rem(15);
+            line-height: 18.75px;
+          }
         }
 
         .card_title {
@@ -141,29 +158,30 @@
           color: $BostonGray;
           margin-bottom: 16px;
           -webkit-box-orient: vertical;
-          -webkit-line-clamp: 2;
+          -webkit-line-clamp: 3;
           overflow: hidden;
           display: -webkit-box;
           text-transform: capitalize;
+          @include breakpoint(small-desktop) {
+            font-size: rem(24);
+            line-height: 32px;
+          }
         }
 
         .cta {
-          position: absolute;
-          bottom: 32px;
-          left: 24px;
-
-          @include breakpoint(desktop) {
-            left: 32px;
-          }
-
+          position: relative;
+          bottom: 0;
+          left: 0;
+          margin-top: auto;
           .link-arrow-btn--default {
             font-size: rem(16);
             font-style: normal;
             font-weight: 600;
             line-height: 22px;
+            display: block;
             &:after {
               width: 14px;
-              top: 1px;
+              top: 5px;
             }
           }
         }
