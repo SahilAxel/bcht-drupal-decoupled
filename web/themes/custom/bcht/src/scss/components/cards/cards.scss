@@ -142,6 +142,7 @@
           color: $BostonOcean;
           font-family: $HelveticaBold;
           margin-bottom: 16px;
+          word-wrap: break-word;
           @include breakpoint(small-desktop) {
             font-size: rem(15);
             line-height: 18.75px;
@@ -157,7 +158,7 @@
           color: $BostonGray;
           margin-bottom: 16px;
           -webkit-box-orient: vertical;
-          -webkit-line-clamp: 2;
+          -webkit-line-clamp: 3;
           overflow: hidden;
           display: -webkit-box;
           text-transform: capitalize;
