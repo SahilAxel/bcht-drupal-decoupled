@@ -2,25 +2,21 @@
   Drupal.behaviors.global = {
     attach: function (context) {
       // Main menu dark bg js
-      var lastScrollTop = 50;
+      var lastScrollTop = 80;
       $(window).scroll(function () {
         var st = $(this).scrollTop();
         if (st > lastScrollTop) {
           // downscroll code
           $('.header_wrapper').addClass('hideupperHeader');
-          $headerHeight = $('.header_wrapper').height();
-          $('.main-content-wrapper').css('padding-top', $headerHeight);
         } else {
           // upscroll code
           $('.header_wrapper').removeClass('hideupperHeader');
-          $headerHeight = $('.header_wrapper').height();
-          $('.main-content-wrapper').css('padding-top', $headerHeight);
         }
         lastScrollTop = st;
       });
       $headerHeight = $('.header_wrapper').height();
       $('.main-content-wrapper').css('padding-top', $headerHeight);
-      $(window).resize(function () {
+      $(window).on('resize', function () {
         $headerHeight = $('.header_wrapper').height();
         $('.main-content-wrapper').css('padding-top', $headerHeight);
       });

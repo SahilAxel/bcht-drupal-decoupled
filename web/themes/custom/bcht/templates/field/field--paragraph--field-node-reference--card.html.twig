@@ -37,10 +37,12 @@
  * @see template_preprocess_field()
  */
 #}
+{% set cardcount = items|length %}
 {%
   set classes = [
     'field cards_item_wrapper',
     label_display == 'inline' ? 'clearfix',
+    'num_of_card_' ~ cardcount,
   ]
 %}
 {%
