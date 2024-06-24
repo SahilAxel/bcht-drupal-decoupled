@@ -55,83 +55,20 @@ settings:
         -
           label: 'Featured Text'
           element: '<p class="featured-text">'
-        -
-          label: 'H6 Sub Heading'
-          element: '<h6 class="sub-heading">'
-        -
-          label: P14
-          element: '<p class="p14">'
-        -
-          label: P16
-          element: '<p class="p16">'
-        -
-          label: P18
-          element: '<p class="p18">'
-        -
-          label: P20
-          element: '<p class="p20">'
-        -
-          label: P24
-          element: '<p class="p24">'
-        -
-          label: P28
-          element: '<p class="p28">'
     ckeditor_link_styles_linkStyles:
       styles:
         -
-          label: 'Inline Link - Pink'
+          label: 'Inline Link'
           element: '<a class="link-pink">'
         -
-          label: 'Inline Link - Blue'
-          element: '<a class="link-blue">'
-        -
-          label: 'Emphasized Link - Default'
+          label: 'Emphasized Link'
           element: '<a class="link-arrow-btn link-arrow-btn--default">'
         -
-          label: 'Emphasized Link - White'
-          element: '<a class="link-arrow-btn link-arrow-btn--white">'
-        -
-          label: 'Emphasized Link Small- Default'
-          element: '<a class="link-arrow-btn-small link-arrow-btn-small--default">'
-        -
-          label: 'Emphasized Link Small- White'
-          element: '<a class="link-arrow-btn-small link-arrow-btn-small--white">'
-        -
-          label: 'Primary Button - Dark'
+          label: 'Primary Button'
           element: '<a class="btn btn--default">'
         -
-          label: 'Primary Button - Light'
-          element: '<a class="btn btn--white">'
-        -
-          label: 'Primary Button - Medium'
-          element: '<a class="btn btn--tint">'
-        -
-          label: 'Primary Button Small - Dark'
-          element: '<a class="btn-small btn-small--default">'
-        -
-          label: 'Primary Button Small - Light'
-          element: '<a class="btn-small btn-small--white">'
-        -
-          label: 'Primary Button Small - Medium'
-          element: '<a class="btn-small btn-small--tint">'
-        -
-          label: 'Secondary Button - Dark'
+          label: 'Secondary Button'
           element: '<a class="btn-transparent btn-transparent--default">'
-        -
-          label: 'Secondary Button - Light'
-          element: '<a class="btn-transparent btn-transparent--white">'
-        -
-          label: 'Secondary Button - Medium'
-          element: '<a class="btn-transparent btn-transparent--tint">'
-        -
-          label: 'Secondary Button Small - Dark'
-          element: '<a class="btn-transparent-small btn-transparent-small--default">'
-        -
-          label: 'Secondary Button Small - Light'
-          element: '<a class="btn-transparent-small btn-transparent-small--white">'
-        -
-          label: 'Secondary Button Small - Medium'
-          element: '<a class="btn-transparent-small btn-transparent-small--tint">'
     ckeditor_media_resize_mediaResize:
       apply_image_styles: true
       image_styles:
@@ -139,6 +76,9 @@ settings:
         - cke_media_resize_medium
         - cke_media_resize_large
         - cke_media_resize_xl
+    linkit_extension:
+      linkit_enabled: true
+      linkit_profile: default
     media_media:
       allow_view_mode_override: false
 image_upload:
