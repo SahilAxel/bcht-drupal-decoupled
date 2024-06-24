@@ -1,6 +1,6 @@
 {% if site_setting_field('footer_top', 'field_logo').0 and site_setting_field('footer_top', 'field_logo')['#is_multiple'] == false %}
 <div class="footer_top">
-  <a href="/" rel="home" title="{{ "Boston Children's Hospital Trust"|t }}">
+  <a href="{{ path('<front>') }}" rel="home" title="{{ "Boston Children's Hospital Trust"|t }}">
   {{ site_setting_field('footer_top', 'field_logo') }}
   </a>
 </div>
