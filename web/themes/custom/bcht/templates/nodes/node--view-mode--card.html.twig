@@ -79,9 +79,9 @@
   {% if eyebrow_node %}
     <div class="card_eyebrow">{{ eyebrow_node|raw }}</div>
   {% endif %}
-  <div class="card_title">{{ label|raw }}</div>
+  <div class="card_title">{{ node.title.value|raw }}</div>
   <div class="cta cta_btn">
-    <a class="link-arrow-btn link-arrow-btn--default" href="{{ url }}" >{{ 'Read more'|t }}</a>
+    <a class="link-arrow-btn link-arrow-btn--default" tabindex="-1" href="{{ url }}" >{{ 'Read more'|t }}</a>
   </div>
 </div>
-<a class="box_link" href="{{ url }}">{{ 'Read more'|t }}</a>
+<a class="box_link" href="{{ url }}" aria-label="{{ 'Read more about '|t ~ node.title.value|raw }}">{{ 'Read more about '|t ~ node.title.value|raw }}</a>

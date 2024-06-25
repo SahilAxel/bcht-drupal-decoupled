@@ -15,7 +15,8 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
-<div class="cards_item_wrapper">
+{% set cardcount = rows|length %}
+<div class="cards_item_wrapper {{ 'num_of_card_' ~ cardcount }}">
 {% for row in rows %}
   {%
     set row_classes = [

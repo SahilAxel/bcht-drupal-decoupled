@@ -147,6 +147,18 @@ p {
   }
 }
 
+.bx--skip-to-content {
+  &.visually-hidden.focusable {
+    &:focus {
+      visibility: visible;
+      background: $BostonBlue;
+      position: absolute !important;
+      z-index: 99;
+      color: $White;
+    }
+  }
+}
+
 .event_details_wrapper {
   position: relative;
   background-color: $BostonOcean;

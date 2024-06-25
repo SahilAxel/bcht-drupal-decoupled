@@ -87,9 +87,25 @@
       });
       $('.search-form-wrapper form').each(function () {
         if ($(this).find('.reset').length == 0) {
-          $(this).append('<span class="reset">Reset</span>');
+          $(this).append(
+            '<span class="reset" tabindex="0" role="button" aria-label="Reset and Close Search">Reset</span>',
+          );
+        }
+        if (
+          $(this).find('input.form-text').attr('aria-label') !== 'undefined' &&
+          $(this).find('input.form-text').attr('aria-label') !== false
+        ) {
+          $(this)
+            .find('input.form-text')
+            .attr('aria-label', $(this).find('input.form-text').attr('id'));
         }
       });
+      $(
+        '.mobile_bottom_wrapper .search-form-wrapper form .js-form-type-textfield label',
+      ).attr('for', 'mobile-search');
+      $('.mobile_bottom_wrapper .search-form-wrapper form input.form-text')
+        .attr('aria-label', 'mobile-search')
+        .attr('id', 'mobile-search');
       $(
         once('searchclear', $('header .search__wrapper form .reset'), context),
       ).click(function () {
@@ -97,6 +113,21 @@
         $('header .header_top_wrapper .search__wrapper').removeClass('active');
         $('header .header_top_wrapper .search__wrapper').css('display', 'none');
         $('.search__wrapper input:text').val('');
+      });
+      $(
+        once('searchclearr', $('header .search__wrapper form .reset'), context),
+      ).keypress(function (e) {
+        if (e.which == 13) {
+          $('header .header_top_wrapper .search__icon').removeClass('active');
+          $('header .header_top_wrapper .search__wrapper').removeClass(
+            'active',
+          );
+          $('header .header_top_wrapper .search__wrapper').css(
+            'display',
+            'none',
+          );
+          $('.search__wrapper input:text').val('');
+        }
       });
 
       //Search JS
@@ -110,6 +141,25 @@
             $(this).addClass('active');
             $(this).next('.search__wrapper').addClass('active');
             $(this).next('.search__wrapper').css('display', 'block');
+            $('.header_top__container .search__wrapper input:text').focus();
+          }
+        },
+      );
+      $(once('search__wrapperr', $('.search__icon'), context)).keypress(
+        function (e) {
+          if (e.which == 13) {
+            if ($(this).hasClass('active')) {
+              $('.search__icon').removeClass('active');
+              $('.search__wrapper').removeClass('active');
+              $('.search__icon')
+                .next('.search__wrapper')
+                .css('display', 'none');
+            } else {
+              $(this).addClass('active');
+              $(this).next('.search__wrapper').addClass('active');
+              $(this).next('.search__wrapper').css('display', 'block');
+              $('.header_top__container .search__wrapper input:text').focus();
+            }
           }
         },
       );
@@ -135,6 +185,17 @@
           ).css('display', 'none');
         }
       });
+      $(document).on('click', function (event) {
+        // Close search box
+        if (
+          !$(event.target).closest('.search__wrapper').length &&
+          !$(event.target).closest('.search__icon').length
+        ) {
+          $('.search__icon').removeClass('active');
+          $('.search__wrapper').removeClass('active');
+          $('.search__icon').next('.search__wrapper').css('display', 'none');
+        }
+      });
 
       //Mobile menu JS
       $(once('menuToggle', '#menuToggle', context)).click(function () {
@@ -149,6 +210,7 @@
         }
       });
 
+      //******************** */
       // Back to top JS
       var $backToTop = $('.back-to-top');
       $backToTop.hide();
@@ -161,6 +223,11 @@
       });
       $(once('backToTop', $backToTop, context)).click(function () {
         $('html, body').animate({ scrollTop: 0 }, 500);
+      });
+      $(once('backToTopkeypress', $backToTop, context)).keypress(function (e) {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+          $('html, body').animate({ scrollTop: 0 }, 500);
+        }
       });
     },
   };
