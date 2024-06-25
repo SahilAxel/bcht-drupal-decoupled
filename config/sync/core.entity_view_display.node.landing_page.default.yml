@@ -22,14 +22,6 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  field_categories:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 6
-    region: content
   field_components:
     type: entity_reference_revisions_entity_view
     label: hidden
@@ -48,14 +40,6 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_topics:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -68,4 +52,6 @@ content:
     region: content
 hidden:
   body: true
+  field_categories: true
+  field_topics: true
   langcode: true
