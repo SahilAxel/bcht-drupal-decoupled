@@ -10,7 +10,7 @@ field_name: field_heading_text
 entity_type: paragraph
 bundle: accordion
 label: 'Heading Text'
-description: ''
+description: 'Character limit: 55 characters'
 required: false
 translatable: false
 default_value: {  }

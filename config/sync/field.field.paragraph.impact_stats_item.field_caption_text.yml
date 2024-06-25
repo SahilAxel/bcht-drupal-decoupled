@@ -10,7 +10,7 @@ field_name: field_caption_text
 entity_type: paragraph
 bundle: impact_stats_item
 label: 'Caption Text'
-description: ''
+description: 'Character limit: 30 characters'
 required: true
 translatable: false
 default_value: {  }
