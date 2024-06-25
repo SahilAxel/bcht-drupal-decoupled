@@ -10,15 +10,22 @@ dependencies:
     - field.storage.node.field_event_details
     - field.storage.node.field_hero
     - field.storage.node.field_topics
+    - field.storage.paragraph.field_accordion_items
     - field.storage.paragraph.field_caption
     - field.storage.paragraph.field_caption_text
+    - field.storage.paragraph.field_card_items
+    - field.storage.paragraph.field_card_link
     - field.storage.paragraph.field_cta_description
     - field.storage.paragraph.field_cta_headline
     - field.storage.paragraph.field_description
+    - field.storage.paragraph.field_eyebrow
     - field.storage.paragraph.field_heading
     - field.storage.paragraph.field_heading_text
+    - field.storage.paragraph.field_hero_cta_buttons
+    - field.storage.paragraph.field_impact_stats_items
     - field.storage.paragraph.field_intro_text
     - field.storage.paragraph.field_rich_text
+    - field.storage.paragraph.field_video_caption
     - field.storage.paragraph.field_video_heading
   module:
     - content_moderation
@@ -26,7 +33,6 @@ dependencies:
     - paragraphs
     - search_api
     - search_api_solr
-    - taxonomy
 third_party_settings:
   search_api_solr:
     finalize: false
@@ -125,6 +131,18 @@ field_settings:
         - field.storage.paragraph.field_caption_text
       module:
         - paragraphs
+  field_caption_text_1:
+    label: 'Components » Paragraph » Impact Stats Items » Paragraph » Caption Text'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_impact_stats_items:entity:field_caption_text'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_caption_text
+        - field.storage.paragraph.field_impact_stats_items
+      module:
+        - paragraphs
   field_categories:
     label: Categories
     datasource_id: 'entity:node'
@@ -166,6 +184,18 @@ field_settings:
         - field.storage.paragraph.field_description
       module:
         - paragraphs
+  field_description_1:
+    label: 'Components » Paragraph » Accordion Items » Paragraph » Description'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_accordion_items:entity:field_description'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_accordion_items
+        - field.storage.paragraph.field_description
+      module:
+        - paragraphs
   field_event_details:
     label: 'Event Details'
     datasource_id: 'entity:node'
@@ -174,6 +204,29 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_event_details
+  field_eyebrow:
+    label: 'Components » Paragraph » Eyebrow'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_eyebrow'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_eyebrow
+      module:
+        - paragraphs
+  field_eyebrow_1:
+    label: 'Components » Paragraph » Card Items » Paragraph » Eyebrow'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_card_items:entity:field_eyebrow'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_card_items
+        - field.storage.paragraph.field_eyebrow
+      module:
+        - paragraphs
   field_heading:
     label: 'Components » Paragraph » Heading'
     datasource_id: 'entity:node'
@@ -183,6 +236,53 @@ field_settings:
       config:
         - field.storage.node.field_components
         - field.storage.paragraph.field_heading
+      module:
+        - paragraphs
+  field_heading_1:
+    label: 'Components » Paragraph » Accordion Items » Paragraph » Heading'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_accordion_items:entity:field_heading'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_accordion_items
+        - field.storage.paragraph.field_heading
+      module:
+        - paragraphs
+  field_heading_2:
+    label: 'Hero » Paragraph » Heading'
+    datasource_id: 'entity:node'
+    property_path: 'field_hero:entity:field_heading'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_hero
+        - field.storage.paragraph.field_heading
+      module:
+        - paragraphs
+  field_heading_3:
+    label: 'Components » Paragraph » Card Items » Paragraph » Heading'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_card_items:entity:field_heading'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_card_items
+        - field.storage.paragraph.field_heading
+      module:
+        - paragraphs
+  field_heading_4:
+    label: 'Components » Paragraph » Impact Stats Items » Paragraph » Heading'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_impact_stats_items:entity:field_heading'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_heading
+        - field.storage.paragraph.field_impact_stats_items
       module:
         - paragraphs
   field_heading_text:
@@ -196,14 +296,6 @@ field_settings:
         - field.storage.paragraph.field_heading_text
       module:
         - paragraphs
-  field_hero:
-    label: Hero
-    datasource_id: 'entity:node'
-    property_path: field_hero
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_hero
   field_intro_text:
     label: 'Components » Paragraph » Intro Text'
     datasource_id: 'entity:node'
@@ -234,6 +326,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_topics
+  field_video_caption:
+    label: 'Components » Paragraph » Video Caption'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_video_caption'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_video_caption
+      module:
+        - paragraphs
   field_video_heading:
     label: 'Components » Paragraph » Video Heading'
     datasource_id: 'entity:node'
@@ -278,6 +381,29 @@ field_settings:
     dependencies:
       module:
         - node
+  title_1:
+    label: 'Components » Paragraph » Card Items » Paragraph » Link » Link text'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_card_items:entity:field_card_link:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_card_items
+        - field.storage.paragraph.field_card_link
+      module:
+        - paragraphs
+  title_2:
+    label: 'Hero » Paragraph » Hero CTA Buttons » Link text'
+    datasource_id: 'entity:node'
+    property_path: 'field_hero:entity:field_hero_cta_buttons:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_hero
+        - field.storage.paragraph.field_hero_cta_buttons
+      module:
+        - paragraphs
   type:
     label: 'Content type'
     datasource_id: 'entity:node'
@@ -308,13 +434,6 @@ field_settings:
         - paragraphs
 datasource_settings:
   'entity:node':
-    bundles:
-      default: true
-      selected: {  }
-    languages:
-      default: true
-      selected: {  }
-  'entity:taxonomy_term':
     bundles:
       default: true
       selected: {  }
