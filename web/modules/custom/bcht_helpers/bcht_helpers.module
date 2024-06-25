@@ -5,6 +5,7 @@
  * Primary module hooks for BCHT Helpers module.
  */
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
@@ -59,6 +60,14 @@ function bcht_helpers_form_alter(&$form, FormStateInterface $form_state, $form_i
   // Match any new node or node edit forms.
   if ((preg_match('/node_(.*?)(edit)?_form$/', $form_id))) {
     array_unshift($form['#validate'], 'bcht_helpers_node_form_validate');
+
+    $node = $form_state->getFormObject()->getEntity();
+    // Hide publication date field if publication date is not selected.
+    if ($node instanceof Node && $node->getType() == "article") {
+      if (empty($node->get('field_publication_date')->value)) {
+        $form['field_publication_date']['#access'] = FALSE;
+      }
+    }
   }
 
   if (in_array($form_id, ['site_setting_entity_footer_middle_form', 'site_setting_entity_footer_middle_edit_form'])) {
@@ -164,7 +173,7 @@ function bcht_helpers_get_term_name($node, $fieldName) {
   return (NULL);
 }
 
-function bcht_helpers_node_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+function bcht_helpers_node_presave(EntityInterface $entity) {
   if ($entity->getType() == "article") {
     if (empty($entity->get('field_publication_date')->getValue()) && ($entity->status->value === TRUE)) {
       $current_time = \Drupal::time()->getCurrentTime();
