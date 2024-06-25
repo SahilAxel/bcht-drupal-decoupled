@@ -91,12 +91,21 @@
             '<span class="reset" tabindex="0" role="button" aria-label="Reset and Close Search">Reset</span>',
           );
         }
-        if ($(this).find('input.form-text').attr('aria-label') !== 'undefined' && $(this).find('input.form-text').attr('aria-label') !== false) {
-          $(this).find('input.form-text').attr('aria-label',$(this).find('input.form-text').attr('id'));
+        if (
+          $(this).find('input.form-text').attr('aria-label') !== 'undefined' &&
+          $(this).find('input.form-text').attr('aria-label') !== false
+        ) {
+          $(this)
+            .find('input.form-text')
+            .attr('aria-label', $(this).find('input.form-text').attr('id'));
         }
       });
-      $('.mobile_bottom_wrapper .search-form-wrapper form .js-form-type-textfield label').attr('for', 'mobile-search');
-      $('.mobile_bottom_wrapper .search-form-wrapper form input.form-text').attr('aria-label', 'mobile-search').attr('id', 'mobile-search');
+      $(
+        '.mobile_bottom_wrapper .search-form-wrapper form .js-form-type-textfield label',
+      ).attr('for', 'mobile-search');
+      $('.mobile_bottom_wrapper .search-form-wrapper form input.form-text')
+        .attr('aria-label', 'mobile-search')
+        .attr('id', 'mobile-search');
       $(
         once('searchclear', $('header .search__wrapper form .reset'), context),
       ).click(function () {
@@ -123,7 +132,7 @@
 
       //Search JS
       $(once('search__wrapper', $('.search__icon'), context)).click(
-        function (e) {
+        function () {
           if ($(this).hasClass('active')) {
             $('.search__icon').removeClass('active');
             $('.search__wrapper').removeClass('active');
