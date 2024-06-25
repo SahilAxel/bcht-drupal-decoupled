@@ -63,7 +63,6 @@
   {% else %}
     {% for item in items %}
       <div
-        role="region"
         class="accordion-description"
       >
         <div {{ attributes.addClass(classes, 'field__item') }}>{{ item.content['#text']|raw }}</div>
