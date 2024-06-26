@@ -5,15 +5,23 @@
         (element) => {
           const overlay = element.querySelector('.video-player__overlay');
           const videoContainer = element.querySelector('.video-player__video');
+          const iframetag = videoContainer.querySelector('iframe');
+          $(iframetag).attr('tabindex', '-1');
 
           if (overlay && videoContainer) {
             overlay.addEventListener('click', handleOverlayClick);
             videoContainer.addEventListener('click', handleVideoContainerClick);
+            $(overlay).keypress(function (e) {
+              if (e.key === 'Enter' || e.keyCode === 13) {
+                handleOverlayClick();
+              }
+            });
           }
 
           function handleOverlayClick() {
             overlay.style.display = 'none';
             playVideo();
+            $(iframetag).attr('tabindex', '0');
           }
 
           function handleVideoContainerClick() {
