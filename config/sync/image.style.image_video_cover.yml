@@ -1,0 +1,18 @@
+uuid: 21dde0c2-1276-479c-a516-e815c098a3b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.image_video_cover_16_9
+  module:
+    - crop
+name: image_video_cover
+label: 'Image video cover'
+effects:
+  86768139-3048-48af-b9e2-c7694fc66d37:
+    uuid: 86768139-3048-48af-b9e2-c7694fc66d37
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: image_video_cover_16_9
+      automatic_crop_provider: null
