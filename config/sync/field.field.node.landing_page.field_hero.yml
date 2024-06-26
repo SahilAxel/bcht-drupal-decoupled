@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_hero
     - node.type.landing_page
     - paragraphs.paragraphs_type.hero_interior_pages
+    - paragraphs.paragraphs_type.homepage_hero
   module:
     - entity_reference_revisions
 id: node.landing_page.field_hero
@@ -23,6 +24,7 @@ settings:
   handler_settings:
     target_bundles:
       hero_interior_pages: hero_interior_pages
+      homepage_hero: homepage_hero
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -30,6 +32,9 @@ settings:
         enabled: false
       accordion_item:
         weight: 10
+        enabled: false
+      blocks:
+        weight: 18
         enabled: false
       call_to_action_cta_banner:
         weight: 11
@@ -42,6 +47,9 @@ settings:
         enabled: false
       hero_interior_pages:
         weight: 13
+        enabled: true
+      homepage_hero:
+        weight: 23
         enabled: true
       image_beside_text:
         weight: 14
