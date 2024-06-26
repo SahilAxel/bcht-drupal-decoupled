@@ -32,6 +32,7 @@ permissions:
   - 'view paragraph content card'
   - 'view paragraph content card_item'
   - 'view paragraph content hero_interior_pages'
+  - 'view paragraph content homepage_hero'
   - 'view paragraph content image_beside_text'
   - 'view paragraph content image_with_caption'
   - 'view paragraph content impact_stats'
