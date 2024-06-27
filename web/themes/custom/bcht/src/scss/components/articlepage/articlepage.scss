@@ -48,7 +48,6 @@
         margin-left: 0;
         border-radius: 0px 6px 6px 6px;
         @include breakpoint(tablet) {
-          min-height: 400px;
           max-width: 740px;
           margin: -40px auto 0;
           border-radius: 6px;
