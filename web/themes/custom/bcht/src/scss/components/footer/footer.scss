@@ -273,7 +273,7 @@ footer {
     font-family: $HelveticaRegular;
     padding-top: 24px;
     border-top: 1px solid $White;
-    @include breakpoint(desktop) {
+    @include breakpoint(small-desktop) {
       padding-top: 32px;
       font-size: 14px;
       line-height: 22px;
