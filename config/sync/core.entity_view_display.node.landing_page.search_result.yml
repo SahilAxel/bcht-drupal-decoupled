@@ -51,9 +51,13 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
 hidden:
   content_moderation_control: true
   field_components: true
   langcode: true
   links: true
-  search_api_excerpt: true
