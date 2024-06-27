@@ -126,4 +126,13 @@
       }
     }
   }
+
+  .container-small.paragraph--type--rich-text {
+    @include breakpoint(tablet) {
+      max-width: 740px;
+    }
+    @include breakpoint(small-desktop) {
+      max-width: 848px;
+    }
+  }
 }
