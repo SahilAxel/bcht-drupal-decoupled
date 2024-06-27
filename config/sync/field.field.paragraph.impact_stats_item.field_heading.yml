@@ -10,7 +10,7 @@ field_name: field_heading
 entity_type: paragraph
 bundle: impact_stats_item
 label: 'Statistic text'
-description: 'Character limit: 10 characters'
+description: 'Suggested character limit: 10 characters'
 required: true
 translatable: false
 default_value: {  }

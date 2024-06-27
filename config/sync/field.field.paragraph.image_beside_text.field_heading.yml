@@ -10,7 +10,7 @@ field_name: field_heading
 entity_type: paragraph
 bundle: image_beside_text
 label: Heading
-description: 'Character limit: 45 characters'
+description: 'Suggested character limit: 45 characters'
 required: true
 translatable: false
 default_value: {  }
