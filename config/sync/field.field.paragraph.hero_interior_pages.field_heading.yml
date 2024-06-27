@@ -10,7 +10,7 @@ field_name: field_heading
 entity_type: paragraph
 bundle: hero_interior_pages
 label: Heading
-description: "<ul><li>Character limit: 55 characters</li><li>Please note: Heading being a optional field here if left empty then it will fetch the value of page title for Heading</li></ul>"
+description: '<ul><li>Suggested character limit: 55 characters</li><li>Please note: Heading being a optional field here if left empty then it will fetch the value of page title for Heading</li></ul>'
 required: false
 translatable: false
 default_value: {  }

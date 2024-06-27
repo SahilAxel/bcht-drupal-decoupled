@@ -10,7 +10,7 @@ field_name: field_heading
 entity_type: paragraph
 bundle: testimonial
 label: 'Quote attribution'
-description: 'Character limit: 30 characters'
+description: 'Suggested character limit: 30 characters'
 required: false
 translatable: false
 default_value: {  }

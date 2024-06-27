@@ -10,7 +10,7 @@ field_name: field_eyebrow
 entity_type: paragraph
 bundle: card_item
 label: Eyebrow
-description: 'Character limit: 20 characters'
+description: 'Suggested character limit: 20 characters'
 required: false
 translatable: false
 default_value: {  }
