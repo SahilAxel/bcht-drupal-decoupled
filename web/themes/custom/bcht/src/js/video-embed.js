@@ -7,6 +7,16 @@
           const videoContainer = element.querySelector('.video-player__video');
           const iframetag = videoContainer.querySelector('iframe');
           $(iframetag).attr('tabindex', '-1');
+          if ($(window).width() < 1025) {
+            $(overlay).attr('tabindex', '-1');
+          }
+          $(window).on('resize', function () {
+            if ($(window).width() < 1025) {
+              $(overlay).attr('tabindex', '-1');
+            } else {
+              $(overlay).attr('tabindex', '0');
+            }
+          });
 
           if (overlay && videoContainer) {
             overlay.addEventListener('click', handleOverlayClick);

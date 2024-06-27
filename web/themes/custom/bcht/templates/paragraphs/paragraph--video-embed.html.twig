@@ -59,16 +59,6 @@
       {% set wrapperClass = hasTextContent ? 'video-embed--with-text' : 'video-embed--no-text' %}    
       <div class="video-embed__wrapper {{ wrapperClass }}">
         <div class="video-embed">
-          {% if content.field_video_source.0 and content.field_video_source['#is_multiple'] == false %}
-            <div class="video-player">
-              {% if content.field_image.0 and content.field_image['#is_multiple'] == false %}
-                {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('image_video_cover') %}
-                <div class="video-player__overlay" id="overlay" tabindex="0" role="button" aria-label="Click here to play video" style="background-image: url('{{ image_url }}');"></div>
-              {% endif %}
-              <div class="video-player__video" id="videoContainer" tabindex="-1">{{ content.field_video_source[0]['#context'].value|raw }}</div> 
-            </div>
-          {% endif %}
-          
           <div class="video-embed--content">
             {% if content.field_icon.0 %}
               <div class="video-embed--content__icon">{{ content.field_icon }}</div>
@@ -92,6 +82,18 @@
               </div>
             {% endif %}
           </div>
+
+          {% if content.field_video_source.0 and content.field_video_source['#is_multiple'] == false %}
+            <div class="video-player">
+              {% if content.field_image.0 and content.field_image['#is_multiple'] == false %}
+                {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('image_video_cover') %}
+                <div class="video-player__overlay" id="overlay" tabindex="0" role="button" aria-label="Click here to play video" style="background-image: url('{{ image_url }}');"></div>
+              {% endif %}
+              <div class="video-player__video" id="videoContainer" tabindex="-1">{{ content.field_video_source[0]['#context'].value|raw }}</div> 
+            </div>
+          {% endif %}
+          
+          
         </div>
       </div>
     {% endblock %}

@@ -1,7 +1,14 @@
 @import '../../settings/settings.all';
 .paragraph--type--call-to-action-cta-banner {
-  max-width: 1900px;
+  max-width: 2100px;
   margin: 0 auto;
+
+  .component__wrapper {
+    &.remove_bottom_space {
+      margin-bottom: 0 !important;
+    }
+  }
+
   .cta-banner--with-image {
     display: flex;
     flex-direction: column-reverse;

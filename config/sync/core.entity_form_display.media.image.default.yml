@@ -31,6 +31,7 @@ content:
       preview_image_style: thumbnail
       crop_preview_image_style: crop_thumbnail
       crop_list:
+        - hero_banner_article_page_16_9
         - hero_banner_interior_pages_16_9
         - image_beside_text_16_9
         - image_card_16_9

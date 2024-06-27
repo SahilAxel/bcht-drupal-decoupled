@@ -60,7 +60,7 @@
         {% endif %}
         <h2>{{ content.field_heading.0|raw }}</h2>
         {% if content.field_description.0 and content.field_description['#is_multiple'] == false %}
-          <div class="text_content">{{ content.field_description.0|raw }}</div>
+          <div class="text_content richtext">{{ content.field_description.0|raw }}</div>
         {% endif %}
         {% if content.field_cta_link.0 and content.field_cta_link['#is_multiple'] == false %}
           <div class="cta cta_btn">

@@ -67,8 +67,8 @@
  *
  */
 #}
+{{ attach_library('bcht/articlepage') }}
 <article{{ attributes }}>
-
   {{ title_prefix }}
   {% if label and not page %}
     <h2{{ title_attributes }}>
@@ -94,6 +94,6 @@
   {% endif %}
 
   <div{{ content_attributes }}>
-    {{ content|without('field_hero') }}
+    {{ content|without('field_hero','field_publication_date','body','field_description_text') }}
   </div>
 </article>

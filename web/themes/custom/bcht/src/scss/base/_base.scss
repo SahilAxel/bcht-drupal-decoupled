@@ -188,6 +188,9 @@ p {
 }
 
 .richtext {
+  a {
+    font-family: $HelveticaBold;
+  }
   ol {
     padding-inline-start: 0;
     list-style-position: inside;

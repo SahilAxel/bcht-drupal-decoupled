@@ -47,6 +47,7 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
+{% set parentNode = paragraph.parentEntity %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
@@ -57,12 +58,23 @@
     {% endif %}
     <div class="hero_banner_wrapper {{ bannerClass }}">
       {% if content.field_image.0 and content.field_image['#is_multiple'] == false %}
-        {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('hero_banner_interior_pages_16_9') %}
+        {# publication_date for the article content type #}
+        {% if parentNode.bundle == 'article' %}
+          {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('hero_banner_article_page') %}
+        {% else %}
+          {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('hero_banner_interior_pages_16_9') %}
+        {% endif %}
+
         <div class="hero_image" style="background-image: url('{{ image_url }}');"></div>
       {% else %}
         <div class="hero_no_image"></div>
       {% endif %}
       <div class="hero_banner_content">
+        {# publication_date for the article content type #}
+        {% if parentNode.bundle == 'article' %}
+          <div class="publication_date">{{ drupal_field('field_publication_date', 'node', nid).0['#text'] }}</div>
+        {% endif %}
+
         {% if content.field_heading.0['#context'].value and content.field_heading['#is_multiple'] == false %}
           <h1>{{ content.field_heading.0['#context'].value }}</h1>
         {% else %}
@@ -90,7 +102,13 @@
             </span>
           {% endif %}
           </div>
-        {% endif %}  
+        {% endif %}
+
+        {# description for the article content type #}
+        {% if parentNode.bundle == 'article' %}
+          <div class="banner_description richtext">{{ drupal_field('field_description_text', 'node', nid) }}</div>
+        {% endif %}
+
       </div>
     </div> 
   {% endblock %}

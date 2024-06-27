@@ -1,0 +1,138 @@
+@import '../../settings/settings.all';
+
+.page-node-type-article {
+  position: relative;
+
+  // Hero banner component
+  .paragraph--type--hero-interior-pages {
+    margin-bottom: 0;
+    .hero_banner_wrapper {
+      .hero_image {
+        min-height: 211px;
+        @include breakpoint(tablet) {
+          min-height: 400px;
+        }
+        @include breakpoint(small-desktop) {
+          min-height: 812px;
+        }
+      }
+
+      .hero_banner_content h1 {
+        font-size: 32px;
+        line-height: 42px;
+        text-transform: initial;
+        @include breakpoint(small-desktop) {
+          font-size: 36px;
+          line-height: 44px;
+        }
+      }
+
+      .publication_date {
+        font-family: $HelveticaBold;
+        font-size: 14px;
+        line-height: 17.5px;
+        text-transform: uppercase;
+        color: $BostonOcean;
+        margin-bottom: 30px;
+        @include breakpoint(small-desktop) {
+          font-size: 15px;
+          line-height: 18.75px;
+        }
+      }
+
+      .hero_banner_content {
+        top: 0;
+        margin-top: -40px;
+        text-align: left;
+        padding: 32px 40px 0px 18px;
+        margin-left: 0;
+        border-radius: 0px 6px 6px 6px;
+        @include breakpoint(tablet) {
+          min-height: 400px;
+          max-width: 740px;
+          margin: -40px auto 0;
+          border-radius: 6px;
+          padding: 32px 25px 0px 25px;
+        }
+        @include breakpoint(small-desktop) {
+          margin-top: -180px;
+          padding: 72px 109px 0px 109px;
+          max-width: 1066px;
+        }
+      }
+    }
+  }
+
+  .banner_description {
+    margin-top: 18px;
+    margin-bottom: 32px;
+    p {
+      font-size: rem(24);
+      line-height: 32px;
+      font-family: $MuseoSansBold;
+      color: $BostonGray;
+      margin: 0px;
+      @include breakpoint(small-desktop) {
+        font-size: rem(28);
+        line-height: 36px;
+      }
+    }
+    a {
+      font-family: $MuseoSansBold;
+    }
+    ul,
+    ol {
+      li {
+        font-size: rem(24);
+        line-height: 32px;
+        font-family: $MuseoSansBold;
+        color: $BostonGray;
+        @include breakpoint(small-desktop) {
+          font-size: rem(28);
+          line-height: 36px;
+        }
+      }
+    }
+    ul {
+      li {
+        &:before {
+          position: relative;
+          top: -7px;
+        }
+      }
+    }
+  }
+
+  .banner_description_body {
+    margin-bottom: 24px;
+    @include breakpoint(small-desktop) {
+      margin-bottom: 32px;
+    }
+    p {
+      &:first-child {
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+    ul,
+    ol {
+      li {
+        font-size: rem(16);
+        line-height: 24px;
+        @include breakpoint(desktop) {
+          font-size: rem(18);
+          line-height: 28px;
+        }
+      }
+    }
+  }
+
+  .container-small.paragraph--type--rich-text {
+    @include breakpoint(tablet) {
+      max-width: 740px;
+    }
+    @include breakpoint(small-desktop) {
+      max-width: 848px;
+    }
+  }
+}
