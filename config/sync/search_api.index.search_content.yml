@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_article_type
     - field.storage.node.field_categories
     - field.storage.node.field_components
+    - field.storage.node.field_description_text
     - field.storage.node.field_event_details
     - field.storage.node.field_hero
     - field.storage.node.field_topics
@@ -17,14 +18,19 @@ dependencies:
     - field.storage.paragraph.field_card_link
     - field.storage.paragraph.field_cta_description
     - field.storage.paragraph.field_cta_headline
+    - field.storage.paragraph.field_cta_link
     - field.storage.paragraph.field_description
     - field.storage.paragraph.field_eyebrow
     - field.storage.paragraph.field_heading
     - field.storage.paragraph.field_heading_text
     - field.storage.paragraph.field_hero_cta_buttons
+    - field.storage.paragraph.field_hero_heading
     - field.storage.paragraph.field_impact_stats_items
     - field.storage.paragraph.field_intro_text
+    - field.storage.paragraph.field_link
     - field.storage.paragraph.field_rich_text
+    - field.storage.paragraph.field_sub_heading
+    - field.storage.paragraph.field_testimonial_link
     - field.storage.paragraph.field_video_caption
     - field.storage.paragraph.field_video_heading
   module:
@@ -86,7 +92,7 @@ description: ''
 read_only: false
 field_settings:
   body:
-    label: Description
+    label: 'Body Text'
     datasource_id: 'entity:node'
     property_path: body
     type: text
@@ -196,6 +202,14 @@ field_settings:
         - field.storage.paragraph.field_description
       module:
         - paragraphs
+  field_description_text:
+    label: 'Description Text'
+    datasource_id: 'entity:node'
+    property_path: field_description_text
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_description_text
   field_event_details:
     label: 'Event Details'
     datasource_id: 'entity:node'
@@ -296,6 +310,17 @@ field_settings:
         - field.storage.paragraph.field_heading_text
       module:
         - paragraphs
+  field_hero_heading:
+    label: 'Hero » Paragraph » Heading'
+    datasource_id: 'entity:node'
+    property_path: 'field_hero:entity:field_hero_heading'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_hero
+        - field.storage.paragraph.field_hero_heading
+      module:
+        - paragraphs
   field_intro_text:
     label: 'Components » Paragraph » Intro Text'
     datasource_id: 'entity:node'
@@ -316,6 +341,17 @@ field_settings:
       config:
         - field.storage.node.field_components
         - field.storage.paragraph.field_rich_text
+      module:
+        - paragraphs
+  field_sub_heading:
+    label: 'Hero » Paragraph » Sub Heading'
+    datasource_id: 'entity:node'
+    property_path: 'field_hero:entity:field_sub_heading'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_hero
+        - field.storage.paragraph.field_sub_heading
       module:
         - paragraphs
   field_topics:
@@ -402,6 +438,39 @@ field_settings:
       config:
         - field.storage.node.field_hero
         - field.storage.paragraph.field_hero_cta_buttons
+      module:
+        - paragraphs
+  title_3:
+    label: 'Components » Paragraph » Button » Link text'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_cta_link:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_cta_link
+      module:
+        - paragraphs
+  title_4:
+    label: 'Components » Paragraph » CTA Buttons » Link text'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_link:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_link
+      module:
+        - paragraphs
+  title_5:
+    label: 'Components » Paragraph » Testimonial Link » Link text'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_testimonial_link:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_testimonial_link
       module:
         - paragraphs
   type:
