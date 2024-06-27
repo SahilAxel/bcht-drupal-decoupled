@@ -66,7 +66,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: short
+      format_type: bcht_article
     third_party_settings: {  }
     weight: 6
     region: content

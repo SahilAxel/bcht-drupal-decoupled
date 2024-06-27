@@ -1,0 +1,8 @@
+uuid: 98a99177-0bb1-4fbf-a557-34cbd725e8bf
+langcode: en
+status: true
+dependencies: {  }
+id: bcht_article
+label: 'BCHT Article'
+locked: false
+pattern: 'F d, Y'

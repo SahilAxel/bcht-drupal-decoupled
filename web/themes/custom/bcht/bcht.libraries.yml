@@ -65,3 +65,8 @@ video-embed:
       build/css/components/video-embed/video-embed.css: {}
   js:
     build/js/video-embed.js: {}
+
+articlepage:
+  css:
+    theme:
+      build/css/components/articlepage/articlepage.css: {}

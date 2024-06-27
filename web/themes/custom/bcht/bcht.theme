@@ -39,6 +39,10 @@ function bcht_theme_suggestions_node_alter(array &$suggestions, array $variables
  */
 function bcht_preprocess_paragraph(&$variables)
 {
+  if ($node = \Drupal::request()->attributes->get('node')) {
+    $variables['nid'] = $node->id();
+  }
+  
   $paragraph = $variables['paragraph'];
 
   // Check if the paragraph type is 'rich-text'.

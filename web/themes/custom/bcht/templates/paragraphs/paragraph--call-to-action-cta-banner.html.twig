@@ -56,7 +56,11 @@
       {% else %}
         {% set wrapperClass = 'cta-banner--no-image' %}
       {% endif %}
-      <div class="cta__banner_wraper component__wrapper">
+      {% set remove_bottom_space = '' %}
+      {% if content.field_remove_bottom_space.0['#markup'] == 1 %}
+        {% set remove_bottom_space = 'remove_bottom_space' %}
+      {% endif %}
+      <div class="cta__banner_wraper component__wrapper {{ remove_bottom_space }}">
         <div class="cta-banner--with-image {{ wrapperClass }}">
           <div class="cta-banner--with-image__content">
               {% if content.field_cta_headline.0 and content.field_cta_headline['#is_multiple'] == false %}
