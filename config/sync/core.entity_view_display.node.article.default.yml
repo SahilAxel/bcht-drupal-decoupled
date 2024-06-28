@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_article_type
+    - field.field.node.article.field_call_to_action_cta_banner
     - field.field.node.article.field_components
     - field.field.node.article.field_description_text
     - field.field.node.article.field_hero
@@ -35,6 +36,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: -20
+    region: content
+  field_call_to_action_cta_banner:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_components:
     type: entity_reference_revisions_entity_view
