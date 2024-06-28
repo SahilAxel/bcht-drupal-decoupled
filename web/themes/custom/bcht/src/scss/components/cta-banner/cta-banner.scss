@@ -68,6 +68,9 @@
     @include breakpoint(desktop) {
       padding: 72px 78px;
     }
+    .cta-banner--with-image__content {
+      padding: 0;
+    }
   }
   .cta-banner--headline {
     color: $White;

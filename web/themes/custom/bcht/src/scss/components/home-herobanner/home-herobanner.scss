@@ -91,13 +91,8 @@
       }
 
       .cta_group {
-        margin-top: 12px;
         position: relative;
         display: block;
-
-        @include breakpoint(small-desktop) {
-          margin-top: 32px;
-        }
         span.cta {
           display: inline-block;
 
