@@ -2,9 +2,9 @@
 
 .paragraph--type--hero-interior-pages {
   position: relative;
-  margin-bottom: 12px;
+  margin-bottom: 32px;
   @include breakpoint(small-desktop) {
-    margin-bottom: 32px;
+    margin-bottom: 64px;
   }
 
   .hero_banner_wrapper {
@@ -37,21 +37,21 @@
       margin: 0 auto;
       background: $White;
       position: relative;
-      top: -20px;
+      top: 0px;
       border-radius: 6px;
       text-align: center;
       padding: 20px 20px 0 20px;
-      margin: 0 18px;
+      margin: -20px 18px 0;
       @include breakpoint(tablet) {
         max-width: 740px;
-        margin: auto;
+        margin: -20px auto 0;
       }
 
       @include breakpoint(small-desktop) {
         max-width: 850px;
-        top: -32px;
+        top: 0;
         padding: 32px 32px 0px 32px;
-        margin: auto;
+        margin: -32px auto 0;
       }
 
       h1 {

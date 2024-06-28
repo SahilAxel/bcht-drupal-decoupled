@@ -43,6 +43,7 @@
   set classes = [
     'paragraph',
 	  'text_image_component_wrapper',
+    'check_component_type_below',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',

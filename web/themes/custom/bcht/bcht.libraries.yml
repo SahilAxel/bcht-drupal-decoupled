@@ -70,3 +70,8 @@ articlepage:
   css:
     theme:
       build/css/components/articlepage/articlepage.css: {}
+
+home-herobanner:
+  css:
+    theme:
+      build/css/components/home-herobanner/home-herobanner.css: {}

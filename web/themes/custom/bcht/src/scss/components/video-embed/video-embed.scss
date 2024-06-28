@@ -74,9 +74,9 @@
   }
   .video-embed--with-text {
     max-width: 1284px;
-    margin: 0 auto 24px;
+    margin: 0 auto;
     @include breakpoint(small-desktop) {
-      margin: 0 auto 32px;
+      margin: 0 auto;
     }
     .video-embed {
       position: relative;

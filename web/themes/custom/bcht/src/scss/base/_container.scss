@@ -1,24 +1,26 @@
 @import '../settings/settings.all';
 .container {
   max-width: 1284px;
-  margin: 0 auto 24px;
+  margin: 0 auto 32px;
   @include breakpoint(small-desktop) {
-    margin: 0 auto 32px;
-  }
-  @include breakpoint(desktop) {
-    margin: 0 auto 32px;
+    margin: 0 auto 64px;
   }
 }
 .container-small {
   max-width: 840px;
-  margin: 0 auto 24px;
+  margin: 0 auto 32px;
   @include breakpoint(small-desktop) {
-    margin: 0 auto 32px;
+    margin: 0 auto 64px;
   }
-  @include breakpoint(desktop) {
-    margin: 0 auto 32px;
+
+  &.similar_component_type_below_reduce_space {
+    margin: 0 auto 24px;
+    @include breakpoint(small-desktop) {
+      margin: 0 auto 32px;
+    }
   }
 }
+
 .container::after {
   content: '';
   clear: both;
