@@ -1,0 +1,12 @@
+uuid: f3c4c6bf-185d-47ae-94b5-ca500e1d7e85
+langcode: en
+status: true
+dependencies: {  }
+label: 'Home banner desktop'
+id: home_banner_desktop_16_9
+description: 'Home banner desktop 16:9 (1440 x 732)'
+aspect_ratio: '16:9'
+soft_limit_width: 1440
+soft_limit_height: 732
+hard_limit_width: 1460
+hard_limit_height: 752

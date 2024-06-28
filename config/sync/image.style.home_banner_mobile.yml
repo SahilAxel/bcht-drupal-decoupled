@@ -1,0 +1,32 @@
+uuid: 45ab9c2a-8dc3-4965-b7a5-be23f916a2f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.home_banner_mobile_9_16
+  module:
+    - crop
+name: home_banner_mobile
+label: 'Home banner mobile'
+effects:
+  8f75510f-4f44-48c1-8775-92f6035089b3:
+    uuid: 8f75510f-4f44-48c1-8775-92f6035089b3
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: home_banner_mobile_9_16
+      automatic_crop_provider: null
+  03fda59c-5573-4aef-aa6a-33d332210b58:
+    uuid: 03fda59c-5573-4aef-aa6a-33d332210b58
+    id: image_convert
+    weight: -8
+    data:
+      extension: webp
+  e86fbf14-a7e7-4436-baba-e84316f38fd5:
+    uuid: e86fbf14-a7e7-4436-baba-e84316f38fd5
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 375
+      height: 700
+      anchor: center-center

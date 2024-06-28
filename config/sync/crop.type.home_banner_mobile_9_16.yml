@@ -1,0 +1,12 @@
+uuid: 1bd005a8-600a-4ce9-9184-7cc82117d4d2
+langcode: en
+status: true
+dependencies: {  }
+label: 'Home banner mobile'
+id: home_banner_mobile_9_16
+description: 'Home banner mobile 9:16 (375 x 700)'
+aspect_ratio: '9:16'
+soft_limit_width: 375
+soft_limit_height: 700
+hard_limit_width: 385
+hard_limit_height: 710

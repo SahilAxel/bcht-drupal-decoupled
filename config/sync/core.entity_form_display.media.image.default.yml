@@ -33,6 +33,8 @@ content:
       crop_list:
         - hero_banner_article_page_16_9
         - hero_banner_interior_pages_16_9
+        - home_banner_desktop_16_9
+        - home_banner_mobile_9_16
         - image_beside_text_16_9
         - image_card_16_9
         - image_cta_banner_3_2
