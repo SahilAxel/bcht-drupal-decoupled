@@ -138,12 +138,17 @@ p {
 }
 
 .component__wrapper {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   @include breakpoint(small-desktop) {
-    margin-bottom: 32px;
+    margin-bottom: 64px;
   }
-  @include breakpoint(desktop) {
-    margin-bottom: 48px;
+}
+.similar_component_type_below {
+  .component__wrapper {
+    margin-bottom: 24px;
+    @include breakpoint(small-desktop) {
+      margin-bottom: 48px;
+    }
   }
 }
 

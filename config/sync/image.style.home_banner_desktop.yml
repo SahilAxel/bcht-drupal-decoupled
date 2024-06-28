@@ -1,0 +1,32 @@
+uuid: f4c97597-7fc4-4695-8951-6a3b24d00e46
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.home_banner_desktop_16_9
+  module:
+    - crop
+name: home_banner_desktop
+label: 'Home banner desktop'
+effects:
+  27133d94-b534-45d2-9ea5-fc341258042d:
+    uuid: 27133d94-b534-45d2-9ea5-fc341258042d
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: home_banner_desktop_16_9
+      automatic_crop_provider: null
+  451e9085-e86f-482e-9c33-0b980c0b0591:
+    uuid: 451e9085-e86f-482e-9c33-0b980c0b0591
+    id: image_convert
+    weight: -8
+    data:
+      extension: webp
+  2dabbd54-ad4f-4cee-8eb9-3cf30c7be737:
+    uuid: 2dabbd54-ad4f-4cee-8eb9-3cf30c7be737
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 1440
+      height: 732
+      anchor: center-center

@@ -59,7 +59,7 @@
       {% set wrapperClass = hasTextContent ? 'video-embed--with-text' : 'video-embed--no-text' %}    
       <div class="video-embed__wrapper {{ wrapperClass }}">
         <div class="video-embed">
-          <div class="video-embed--content">
+          <div class="video-embed--content desktop-layout">
             {% if content.field_icon.0 %}
               <div class="video-embed--content__icon">{{ content.field_icon }}</div>
             {% endif %}
@@ -93,6 +93,29 @@
             </div>
           {% endif %}
           
+          <div class="video-embed--content mobile-layout">
+            {% if content.field_icon.0 %}
+              <div class="video-embed--content__icon">{{ content.field_icon }}</div>
+            {% endif %}
+
+            {% if content.field_video_heading.0 %}
+              <h2 class="video-embed--content__heading">{{ content.field_video_heading[0]['#context'].value }}</h2>
+            {% endif %}
+
+            {% if content.field_video_caption.0 %}
+              <p class="video-embed--content__caption">{{ content.field_video_caption[0]['#context'].value }}</p>
+            {% endif %}
+
+            {% if content.field_link.0 %}
+              <div>
+                {% if content.field_link.0['#url'].external %}
+                  <a class="video-embed--content__link link-arrow-btn link-arrow-btn--default" href="{{ content.field_link.0['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_link.0['#title'] }}</a>
+                {% else %}
+                  <a class="video-embed--content__link link-arrow-btn link-arrow-btn--default" href="{{ path(content.field_link.0['#url'].routeName, content.field_link.0['#url'].routeParameters) }}">{{ content.field_link.0['#title'] }}</a>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
           
         </div>
       </div>

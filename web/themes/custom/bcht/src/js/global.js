@@ -2,17 +2,19 @@
   Drupal.behaviors.global = {
     attach: function (context) {
       // Main menu dark bg js
-      var lastScrollTop = 80;
+      var lastScrollTop = 60;
       $(window).scroll(function () {
-        var st = $(this).scrollTop();
-        if (st > lastScrollTop) {
-          // downscroll code
-          $('.header_wrapper').addClass('hideupperHeader');
-        } else {
-          // upscroll code
-          $('.header_wrapper').removeClass('hideupperHeader');
+        if ($(this).scrollTop() > 60) {
+          var st = $(this).scrollTop();
+          if (st > lastScrollTop) {
+            // downscroll code
+            $('.header_wrapper').addClass('hideupperHeader');
+          } else {
+            // upscroll code
+            $('.header_wrapper').removeClass('hideupperHeader');
+          }
+          lastScrollTop = st;
         }
-        lastScrollTop = st;
       });
       $headerHeight = $('.header_wrapper').height();
       $('.main-content-wrapper').css('padding-top', $headerHeight);
@@ -209,6 +211,48 @@
           $('.mobile-menu-wrapper').slideDown();
         }
       });
+
+      //******************** */
+      // Check if similar component in the next div
+      if (
+        $('.field--name-field-components .check_component_type_below').length >
+        0
+      ) {
+        $(
+          once(
+            'check_component_type_below',
+            '.check_component_type_below',
+            context,
+          ),
+        ).each(function () {
+          // console.log($(this).parent());
+          if (
+            $(this)
+              .parent()
+              .next()
+              .find('.paragraph')
+              .hasClass('check_component_type_below')
+          ) {
+            $(this).addClass('similar_component_type_below');
+          }
+        });
+      }
+      if ($('.field--name-field-components .check_next_component').length > 0) {
+        $(once('check_next_component', '.check_next_component', context)).each(
+          function () {
+            // console.log($(this).parent());
+            if (
+              $(this)
+                .parent()
+                .next()
+                .find('.paragraph')
+                .hasClass('check_next_component')
+            ) {
+              $(this).addClass('similar_component_type_below_reduce_space');
+            }
+          },
+        );
+      }
 
       //******************** */
       // Back to top JS

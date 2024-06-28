@@ -1,0 +1,138 @@
+@import '../../settings/settings.all';
+
+.paragraph--type--homepage-hero {
+  position: relative;
+  margin-bottom: 32px;
+  @include breakpoint(small-desktop) {
+    margin-bottom: 64px;
+  }
+
+  .hero_banner_wrapper {
+    position: relative;
+    min-height: 700px;
+    @include breakpoint(tablet) {
+      min-height: 732px;
+    }
+
+    .hero_image {
+      position: relative;
+      img {
+        width: 100%;
+        object-fit: cover;
+        min-height: 700px;
+        @include breakpoint(tablet) {
+          min-height: 732px;
+        }
+      }
+    }
+
+    .hero_banner_content {
+      position: absolute;
+      background: $White;
+      top: 20px;
+      left: 18px;
+      border-radius: 6px;
+      text-align: left;
+      padding: 20px;
+      width: calc(100% - 36px);
+      display: block;
+      max-width: calc(100% - 36px);
+      z-index: 1;
+      @include breakpoint(tablet) {
+        max-width: 630px;
+        width: 630px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      @include breakpoint(small-desktop) {
+        max-width: 1284px;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        background: transparent;
+        transform: translate(-50%, -50%);
+        padding-left: 18px;
+        .hero_banner_content_inner {
+          max-width: 630px;
+          background: $White;
+          padding: 40px;
+          border-radius: 6px;
+        }
+      }
+      @include breakpoint(desktop) {
+        max-width: 1284px;
+        width: 1284px;
+        padding-left: 0;
+      }
+
+      h1 {
+        color: $BostonBlue;
+        text-transform: capitalize;
+        font-size: (36px);
+        line-height: 44px;
+        margin-bottom: 20px;
+        @include breakpoint(small-desktop) {
+          font-size: (52px);
+          line-height: 64px;
+        }
+      }
+
+      .sub_heading {
+        font-family: $HelveticaRegular;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        margin-bottom: 20px;
+        @include breakpoint(small-desktop) {
+          font-size: (24px);
+          line-height: 36px;
+        }
+      }
+
+      .cta_group {
+        margin-top: 12px;
+        position: relative;
+        display: block;
+
+        @include breakpoint(small-desktop) {
+          margin-top: 32px;
+        }
+        span.cta {
+          display: inline-block;
+
+          @include breakpoint(small-desktop) {
+            display: inline-block;
+          }
+
+          .btn,
+          .btn-transparent {
+            font-size: 16px;
+            line-height: 20.8px;
+            padding: 10px 18px;
+            text-transform: capitalize;
+
+            @include breakpoint(small-desktop) {
+              font-size: rem(18);
+              line-height: 22px;
+              padding: 15px 25px;
+            }
+          }
+          &.cta_btn_1 {
+            margin-right: 20px;
+            @include breakpoint(small-desktop) {
+              margin-right: 0;
+            }
+          }
+          &.cta_btn_2 {
+            margin-top: 8px;
+            @include breakpoint(small-desktop) {
+              margin-left: 24px;
+              margin-top: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

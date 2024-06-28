@@ -114,13 +114,19 @@
       > .state__item {
         flex: 0 0 100%;
         width: 100%;
+        margin-bottom: 24px;
+        &:last-child {
+          margin-bottom: 0px;
+        }
         @include breakpoint(tablet) {
           flex: 0 0 48%;
           width: 48%;
           &:nth-child(1),
-          &:nth-child(2),
-          &:last-child {
+          &:nth-child(2) {
             margin-bottom: 24px;
+          }
+          &:nth-last-child(2) {
+            margin-bottom: 0;
           }
         }
         @include breakpoint(small-desktop) {

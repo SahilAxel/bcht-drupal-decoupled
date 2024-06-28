@@ -74,16 +74,15 @@
   }
   .video-embed--with-text {
     max-width: 1284px;
-    margin: 0 auto 24px;
+    margin: 0 auto;
     @include breakpoint(small-desktop) {
-      margin: 0 auto 32px;
+      margin: 0 auto;
     }
     .video-embed {
       position: relative;
       display: flex;
       flex-direction: column;
       gap: 24px;
-      flex-direction: column-reverse;
       @include breakpoint(small-desktop) {
         max-height: 479px;
         display: flex;
@@ -111,6 +110,21 @@
           margin: 0px;
           flex: 0 0 33%;
         }
+
+        &.mobile-layout {
+          display: flex;
+          @include breakpoint(small-desktop) {
+            display: none;
+          }
+        }
+
+        &.desktop-layout {
+          display: none;
+          @include breakpoint(small-desktop) {
+            display: flex;
+          }
+        }
+
         &__icon {
           padding-bottom: 24px;
           img {

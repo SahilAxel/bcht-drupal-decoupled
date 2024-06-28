@@ -48,7 +48,7 @@ function bcht_preprocess_paragraph(&$variables)
   // Check if the paragraph type is 'rich-text'.
   if ($paragraph->bundle() == 'rich_text') {
     $variables['#attached']['library'][] = 'bcht/rich-text';
-    $variables['attributes']['class'][] = 'container-small component__wrapper';
+    $variables['attributes']['class'][] = 'container-small component__wrapper check_next_component';
   }
 
   // Check if the paragraph type is 'accordion'.
