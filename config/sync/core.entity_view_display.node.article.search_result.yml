@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.search_result
     - field.field.node.article.body
     - field.field.node.article.field_article_type
+    - field.field.node.article.field_call_to_action_cta_banner
     - field.field.node.article.field_components
     - field.field.node.article.field_description_text
     - field.field.node.article.field_hero
@@ -52,6 +53,7 @@ content:
     region: content
 hidden:
   field_article_type: true
+  field_call_to_action_cta_banner: true
   field_components: true
   field_description_text: true
   field_publication_date: true

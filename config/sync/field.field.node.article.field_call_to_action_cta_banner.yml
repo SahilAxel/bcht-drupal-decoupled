@@ -1,20 +1,20 @@
-uuid: efa6d4e7-5854-4ea8-a266-a8497865af63
+uuid: d2952025-83bf-4dfd-8b35-6207c8a0f7dd
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_related_content
+    - field.storage.node.field_call_to_action_cta_banner
     - node.type.article
-    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.call_to_action_cta_banner
   module:
     - entity_reference_revisions
-id: node.article.field_related_content
-field_name: field_related_content
+id: node.article.field_call_to_action_cta_banner
+field_name: field_call_to_action_cta_banner
 entity_type: node
 bundle: article
-label: 'Related Content Cards'
-description: ''
-required: true
+label: "Call-to-Action (CTA) Banner\t"
+description: 'Add a Call-to-Action (CTA) Banner component here if it is to be shown after the related articles component at the bottom of the article.'
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -22,7 +22,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      card: card
+      call_to_action_cta_banner: call_to_action_cta_banner
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -36,10 +36,10 @@ settings:
         enabled: false
       call_to_action_cta_banner:
         weight: 19
-        enabled: false
+        enabled: true
       card:
         weight: 20
-        enabled: true
+        enabled: false
       card_item:
         weight: 21
         enabled: false
@@ -50,16 +50,16 @@ settings:
         weight: 23
         enabled: false
       image_beside_text:
-        weight: 23
-        enabled: false
-      image_with_caption:
         weight: 24
         enabled: false
-      impact_stats:
+      image_with_caption:
         weight: 25
         enabled: false
-      impact_stats_item:
+      impact_stats:
         weight: 26
+        enabled: false
+      impact_stats_item:
+        weight: 27
         enabled: false
       rich_text:
         weight: 28
