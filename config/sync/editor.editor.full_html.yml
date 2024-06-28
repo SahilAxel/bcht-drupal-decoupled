@@ -58,17 +58,14 @@ settings:
     ckeditor_link_styles_linkStyles:
       styles:
         -
-          label: 'Inline Link'
-          element: '<a class="link-pink">'
-        -
-          label: 'Emphasized Link'
-          element: '<a class="link-arrow-btn link-arrow-btn--default">'
-        -
           label: 'Primary Button'
           element: '<a class="btn btn--default">'
         -
           label: 'Secondary Button'
           element: '<a class="btn-transparent btn-transparent--default">'
+        -
+          label: 'Emphasized Link'
+          element: '<a class="link-arrow-btn link-arrow-btn--default">'
     ckeditor_media_resize_mediaResize:
       apply_image_styles: true
       image_styles:
