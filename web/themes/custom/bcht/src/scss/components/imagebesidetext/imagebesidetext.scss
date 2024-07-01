@@ -51,19 +51,23 @@
 
     .left_content_wrapper {
       flex: 0 0 100%;
+      width: 100%;
     }
     .right_content_wrapper {
       flex: 0 0 100%;
       margin-left: auto;
+      width: 100%;
     }
 
     @include breakpoint(tablet) {
       .left_content_wrapper {
-        flex: 0 0 30%;
+        flex: 0 0 32%;
+        width: 32%;
       }
       .right_content_wrapper {
-        flex: 0 0 68%;
+        flex: 0 0 66%;
         margin-left: auto;
+        width: 66%;
       }
     }
   }

@@ -75,6 +75,9 @@
 
         @media only screen and (max-width: 991px) {
           margin-bottom: 24px;
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
 
         @media only screen and (max-width: 640px) {
@@ -95,6 +98,10 @@
       flex-direction: column;
       align-items: stretch;
 
+      &:nth-last-child(-n + 3) {
+        margin-bottom: 0;
+      }
+
       @media only screen and (max-width: 1244px) {
         flex: 0 0 31.5%;
         width: 31.5%;
@@ -103,6 +110,12 @@
       @media only screen and (max-width: 991px) {
         flex: 0 0 48%;
         width: 48%;
+        &:nth-last-of-type(-n + 3) {
+          margin-bottom: 24px;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
       @media only screen and (max-width: 640px) {
         flex: 0 0 100%;
