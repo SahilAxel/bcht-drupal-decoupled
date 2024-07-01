@@ -2,7 +2,7 @@ uuid: 1c6ce34a-5db1-4103-b7c2-f8ca3e973dc3
 langcode: en
 status: true
 dependencies: {  }
-label: 'Image Card 16:9'
+label: 'Image Card'
 id: image_card_16_9
 description: 'Image Card 16:9 (412 x 247)'
 aspect_ratio: '16:9'

@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.image_with_caption.field_caption
     - field.field.paragraph.image_with_caption.field_image
-    - image.style.image_with_caption_848_475
+    - image.style.image_with_caption
     - paragraphs.paragraphs_type.image_with_caption
   module:
     - media
@@ -27,7 +27,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: image_with_caption_848_475
+      image_style: image_with_caption
       image_loading:
         attribute: lazy
     third_party_settings: {  }

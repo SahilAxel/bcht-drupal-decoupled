@@ -1,0 +1,32 @@
+uuid: b88b60bb-8ad8-4c15-b6d7-d342a2b1e13c
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.image_beside_text_16_9
+  module:
+    - crop
+name: image_beside_text
+label: 'Image beside text'
+effects:
+  f3b17c9a-3b8c-4f9c-a035-052cb2cbe7b0:
+    uuid: f3b17c9a-3b8c-4f9c-a035-052cb2cbe7b0
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: image_beside_text_16_9
+      automatic_crop_provider: null
+  86ab20d0-891f-489f-8bf4-37eea1649284:
+    uuid: 86ab20d0-891f-489f-8bf4-37eea1649284
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 848
+      height: 482
+      anchor: center-center
+  e584b36b-2a73-4013-b52a-20b3d3f6e784:
+    uuid: e584b36b-2a73-4013-b52a-20b3d3f6e784
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

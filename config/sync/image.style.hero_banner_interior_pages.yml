@@ -1,0 +1,32 @@
+uuid: a8ea3a0b-e4c0-4ec2-8f48-54512143f3dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.hero_banner_interior_pages_16_9
+  module:
+    - crop
+name: hero_banner_interior_pages
+label: 'Hero banner (Interior Pages)'
+effects:
+  05fa4788-3b7c-4d61-b48a-474d5b565516:
+    uuid: 05fa4788-3b7c-4d61-b48a-474d5b565516
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: hero_banner_interior_pages_16_9
+      automatic_crop_provider: null
+  c39ed5a0-a8e9-490b-a626-5c5e0535d60b:
+    uuid: c39ed5a0-a8e9-490b-a626-5c5e0535d60b
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1440
+      height: 400
+      anchor: center-center
+  be520744-1999-4520-8e5f-5d926c3ed4f4:
+    uuid: be520744-1999-4520-8e5f-5d926c3ed4f4
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

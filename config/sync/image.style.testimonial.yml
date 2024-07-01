@@ -6,7 +6,7 @@ dependencies:
     - crop.type.testimonial_4_3
   module:
     - crop
-name: testimonial_630_472
+name: testimonial
 label: 'Testimonial 630x472'
 effects:
   8632b24b-132b-4db1-8613-d754da903438:
@@ -16,3 +16,17 @@ effects:
     data:
       crop_type: testimonial_4_3
       automatic_crop_provider: null
+  63df8372-41b7-4644-908f-24d932aa39a1:
+    uuid: 63df8372-41b7-4644-908f-24d932aa39a1
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 630
+      height: 426
+      anchor: center-center
+  c3a897ab-adb6-49a0-aba9-cca403891e4f:
+    uuid: c3a897ab-adb6-49a0-aba9-cca403891e4f
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

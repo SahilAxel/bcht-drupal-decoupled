@@ -12,13 +12,21 @@ effects:
   e003b14f-c326-4d53-aeb8-65397e771634:
     uuid: e003b14f-c326-4d53-aeb8-65397e771634
     id: crop_crop
-    weight: 1
+    weight: -10
     data:
       crop_type: hero_banner_article_page_16_9
       automatic_crop_provider: null
   65c5e780-693d-4188-8ea3-0bd34dc9a0da:
     uuid: 65c5e780-693d-4188-8ea3-0bd34dc9a0da
     id: image_convert
-    weight: 2
+    weight: -8
     data:
       extension: webp
+  082de6d4-072c-4851-a017-187c1e87bf81:
+    uuid: 082de6d4-072c-4851-a017-187c1e87bf81
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 1440
+      height: 812
+      anchor: center-center

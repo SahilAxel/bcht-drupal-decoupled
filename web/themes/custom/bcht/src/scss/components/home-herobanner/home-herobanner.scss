@@ -10,8 +10,10 @@
   .hero_banner_wrapper {
     position: relative;
     min-height: 700px;
+    max-height: 700px;
     @include breakpoint(tablet) {
       min-height: 732px;
+      max-height: 732px;
     }
 
     .hero_image {
@@ -20,8 +22,10 @@
         width: 100%;
         object-fit: cover;
         min-height: 700px;
+        max-height: 700px;
         @include breakpoint(tablet) {
           min-height: 732px;
+          max-height: 732px;
         }
       }
     }

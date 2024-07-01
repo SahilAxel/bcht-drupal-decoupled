@@ -1,0 +1,32 @@
+uuid: f8a59eab-2826-47da-8946-7a79b80e5304
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.image_with_caption_16_9
+  module:
+    - crop
+name: image_with_caption
+label: 'Image with caption'
+effects:
+  89dbacc6-1560-47f5-85b2-5cb423cff9f6:
+    uuid: 89dbacc6-1560-47f5-85b2-5cb423cff9f6
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: image_with_caption_16_9
+      automatic_crop_provider: null
+  f32dc18f-7349-4509-b945-1c0b772c93a5:
+    uuid: f32dc18f-7349-4509-b945-1c0b772c93a5
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 848
+      height: 478
+      anchor: center-center
+  44bcdcf4-a8a9-4bd1-87ed-0c9f13b56cdb:
+    uuid: 44bcdcf4-a8a9-4bd1-87ed-0c9f13b56cdb
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp
