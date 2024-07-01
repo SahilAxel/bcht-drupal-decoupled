@@ -60,7 +60,7 @@
         <div class="testimonial__wrapper component__wrapper {{ wrapperClass }}">
           <div class="testimonial"> 
               {% if content.field_image.0  and content.field_image['#is_multiple'] == false %}
-              {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('testimonial_630_472') %}
+              {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('testimonial') %}
                 <div class="testimonial--image" style="background-image: url('{{ image_url }}');"></div>
               {% endif %}     
               <div class="testimonial--content">

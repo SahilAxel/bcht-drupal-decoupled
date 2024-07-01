@@ -16,3 +16,17 @@ effects:
     data:
       crop_type: image_video_cover_16_9
       automatic_crop_provider: null
+  81b3e877-3db6-480b-9ed3-7c0607719cbb:
+    uuid: 81b3e877-3db6-480b-9ed3-7c0607719cbb
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1090
+      height: 606
+      anchor: center-center
+  808db13e-0c8b-449f-950e-84ae951f2e41:
+    uuid: 808db13e-0c8b-449f-950e-84ae951f2e41
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

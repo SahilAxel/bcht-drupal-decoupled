@@ -2,7 +2,7 @@ uuid: 8471454a-7925-4d7f-8f81-65d3bd208bf2
 langcode: en
 status: true
 dependencies: {  }
-label: 'Testimonial 4:3'
+label: 'Testimonial Image'
 id: testimonial_4_3
 description: 'Testimonial 4:3 (630 x 472)'
 aspect_ratio: '4:3'

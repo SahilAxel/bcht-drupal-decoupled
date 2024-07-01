@@ -2,7 +2,7 @@ uuid: 94b1abd9-658a-4b01-a576-ee43b4c8811b
 langcode: en
 status: true
 dependencies: {  }
-label: 'Hero Banner Article Page 16:9'
+label: 'Hero Banner Article Page'
 id: hero_banner_article_page_16_9
 description: 'Hero Banner Article Page 16:9 (1440 x 812)'
 aspect_ratio: '16:9'

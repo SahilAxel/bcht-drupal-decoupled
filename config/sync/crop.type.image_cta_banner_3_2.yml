@@ -2,7 +2,7 @@ uuid: ed9da404-c489-4b4e-a0ce-a7daf8b0f85d
 langcode: en
 status: true
 dependencies: {  }
-label: 'Image CTA Banner 3:2'
+label: 'Image CTA Banner'
 id: image_cta_banner_3_2
 description: 'Image CTA Banner 3:2 (708 x 472)'
 aspect_ratio: '3:2'

@@ -7,7 +7,7 @@ dependencies:
   module:
     - crop
 name: image_cta_banner_3_2
-label: 'Image CTA Banner 3:2'
+label: 'Image CTA Banner'
 effects:
   ab443ebf-aa2e-4ddd-9808-b891dd559fc4:
     uuid: ab443ebf-aa2e-4ddd-9808-b891dd559fc4
@@ -16,3 +16,17 @@ effects:
     data:
       crop_type: image_cta_banner_3_2
       automatic_crop_provider: null
+  be9f3abb-8f8d-48e6-a898-a016036cbe2d:
+    uuid: be9f3abb-8f8d-48e6-a898-a016036cbe2d
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 708
+      height: 472
+      anchor: center-center
+  c59b5936-633c-40d1-8173-9abb3d8b628f:
+    uuid: c59b5936-633c-40d1-8173-9abb3d8b628f
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

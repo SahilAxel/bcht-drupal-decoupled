@@ -62,7 +62,7 @@
         {% if parentNode.bundle == 'article' %}
           {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('hero_banner_article_page') %}
         {% else %}
-          {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('hero_banner_interior_pages_16_9') %}
+          {% set image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('hero_banner_interior_pages') %}
         {% endif %}
 
         <div class="hero_image" style="background-image: url('{{ image_url }}');"></div>

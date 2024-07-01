@@ -27,7 +27,7 @@
       margin-bottom: 32px;
       max-width: 100%;
       @include breakpoint(tablet) {
-        max-width: 75%;
+        max-width: 1044px;
       }
       @include breakpoint(small-desktop) {
         margin-bottom: 48px;
@@ -68,12 +68,20 @@
     &.num_of_card_2,
     &.num_of_card_3 {
       .card__item {
-        margin-bottom: 24px;
-        @include breakpoint(small-desktop) {
+        margin-bottom: 0;
+        @media only screen and (max-width: 1244px) {
           margin-bottom: 0;
         }
-        &:last-child {
-          margin-bottom: 0;
+
+        @media only screen and (max-width: 991px) {
+          margin-bottom: 24px;
+        }
+
+        @media only screen and (max-width: 640px) {
+          margin-bottom: 24px;
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
       }
     }
