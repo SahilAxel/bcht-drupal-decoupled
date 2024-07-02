@@ -82,7 +82,8 @@
         "patches": {
             "drupal/core": {
                 "#states not working correctly when built from a logical combination of multliple fields": "https://www.drupal.org/files/issues/2024-04-08/fix-core-states-issues.patch",
-                "Dropdown button display becomes narrow when text is long": "https://git.drupalcode.org/project/drupal/-/merge_requests/4986.patch"
+                "Dropdown button display becomes narrow when text is long": "https://git.drupalcode.org/project/drupal/-/merge_requests/4986.patch",
+                "State required asterisk doesn't show": "https://www.drupal.org/files/issues/2023-08-18/2912092-67-10-1-x.patch"
             },
             "drupal/paragraphs": {
                 "Space missing between the word to and the emphasis tag near the add button": "https://git.drupalcode.org/project/paragraphs/-/merge_requests/101.patch",

@@ -6,11 +6,15 @@
  */
 
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\views\ViewExecutable;
 
+/**
+ * Implements hook_views_pre_view().
+ */
 function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
   /* Fetching the card component taxonomy type and content type filter values and
    * passing the fetched values in the exposed filter values of related content view
@@ -56,6 +60,9 @@ function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$
   }
 }
 
+/**
+ * Implements hook_form_alter().
+ */
 function bcht_helpers_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Match any new node or node edit forms.
   if ((preg_match('/node_(.*?)(edit)?_form$/', $form_id))) {
@@ -93,6 +100,9 @@ function bcht_helpers_form_alter(&$form, FormStateInterface $form_state, $form_i
   }
 }
 
+/**
+ * Custom node form validate function
+ */
 function bcht_helpers_node_form_validate(&$form, FormStateInterface $form_state) {
   $node = $form_state->getFormObject()->getEntity();
   if ($node instanceof Node) {
@@ -142,6 +152,9 @@ function bcht_helpers_taxonomy_type_field_validate(&$form_state, $node, $paragra
   }
 }
 
+/**
+ * Implements hook_preprocess_node().
+ */
 function bcht_helpers_preprocess_node(&$variables) {
   $node = $variables['node'];
   /* Fetching value for eyebrow text to be shown in cards and listing views */
@@ -164,6 +177,9 @@ function bcht_helpers_preprocess_node(&$variables) {
   }
 }
 
+/**
+ * Function for taxonomy term names from node term reference field.
+ */
 function bcht_helpers_get_term_name($node, $fieldName) {
   $termStorage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
   $termId = $node->get($fieldName)->target_id;
@@ -173,12 +189,30 @@ function bcht_helpers_get_term_name($node, $fieldName) {
   return (NULL);
 }
 
+/**
+ * Implements hook_node_presave().
+ */
 function bcht_helpers_node_presave(EntityInterface $entity) {
   if ($entity->getType() == "article") {
+
+    // Set article publication when article is published for first time.
     if (empty($entity->get('field_publication_date')->getValue()) && ($entity->status->value === TRUE)) {
       $current_time = \Drupal::time()->getCurrentTime();
       $dateTime = \Drupal::service('date.formatter')->format($current_time, 'html_datetime_custom');
       $entity->set('field_publication_date', $dateTime);
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_bundle_field_info_alter().
+ */
+function bcht_helpers_entity_bundle_field_info_alter(&$fields, EntityTypeInterface $entity_type, $bundle) {
+  // Check if the entity type is 'paragraph' and the bundle is 'featured_events'.
+  if ($entity_type->getBundleEntityType() == "paragraphs_type" && $bundle == 'featured_events') {
+    if (isset($fields['field_featured_event_type']) && isset($fields['field_image'])) {
+      // Custom validation constraint for image field.
+      $fields['field_image']->addConstraint('FeaturedEventImageValidation');
     }
   }
 }

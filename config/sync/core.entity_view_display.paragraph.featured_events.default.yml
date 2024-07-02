@@ -1,0 +1,87 @@
+uuid: 961e740b-46e5-421f-a781-d6f559339884
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.featured_events.field_card_link
+    - field.field.paragraph.featured_events.field_event_description
+    - field.field.paragraph.featured_events.field_event_reference
+    - field.field.paragraph.featured_events.field_eyebrow
+    - field.field.paragraph.featured_events.field_featured_event_type
+    - field.field.paragraph.featured_events.field_heading
+    - field.field.paragraph.featured_events.field_image
+    - image.style.image_cta_banner_3_2
+    - paragraphs.paragraphs_type.featured_events
+  module:
+    - link
+    - media
+    - options
+id: paragraph.featured_events.default
+targetEntityType: paragraph
+bundle: featured_events
+mode: default
+content:
+  field_card_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_event_description:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_event_reference:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_eyebrow:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_featured_event_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_heading:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: image_cta_banner_3_2
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

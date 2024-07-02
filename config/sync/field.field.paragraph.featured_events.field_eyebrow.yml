@@ -1,0 +1,19 @@
+uuid: 1feab7b8-8fef-420d-8732-61dd6cf9e5ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_eyebrow
+    - paragraphs.paragraphs_type.featured_events
+id: paragraph.featured_events.field_eyebrow
+field_name: field_eyebrow
+entity_type: paragraph
+bundle: featured_events
+label: Eyebrow
+description: 'Suggested character limit: 20 characters'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

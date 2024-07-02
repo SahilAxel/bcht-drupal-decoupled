@@ -1,0 +1,11 @@
+uuid: 295c98cd-bf25-4126-973f-41cc9a7f4750
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.featured_content
+label: 'Featured Content'
+description: ''
+targetEntityType: node
+cache: true

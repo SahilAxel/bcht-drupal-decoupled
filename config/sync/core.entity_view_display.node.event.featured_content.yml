@@ -1,0 +1,47 @@
+uuid: 7a4c8c9a-5780-4626-8736-e737b38a2adb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.featured_content
+    - field.field.node.event.body
+    - field.field.node.event.field_components
+    - field.field.node.event.field_event_details
+    - field.field.node.event.field_hero
+    - node.type.event
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.event.featured_content
+targetEntityType: node
+bundle: event
+mode: featured_content
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_hero:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  content_moderation_control: true
+  field_components: true
+  field_event_details: true
+  langcode: true
+  search_api_excerpt: true

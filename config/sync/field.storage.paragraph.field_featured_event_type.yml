@@ -1,0 +1,27 @@
+uuid: c0dae31c-5f60-4044-bc6b-c1f6609783f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_featured_event_type
+field_name: field_featured_event_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: event_reference
+      label: 'Event Reference (Inherit)'
+    -
+      value: manual
+      label: Manual
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -8,6 +8,7 @@ dependencies:
     - paragraphs.paragraphs_type.accordion
     - paragraphs.paragraphs_type.call_to_action_cta_banner
     - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.featured_events_listing
     - paragraphs.paragraphs_type.image_beside_text
     - paragraphs.paragraphs_type.image_with_caption
     - paragraphs.paragraphs_type.impact_stats
@@ -39,6 +40,7 @@ settings:
       video_embed: video_embed
       testimonial: testimonial
       impact_stats: impact_stats
+      featured_events_listing: featured_events_listing
     negate: 0
     target_bundles_drag_drop:
       accordion:
@@ -46,6 +48,9 @@ settings:
         enabled: true
       accordion_item:
         weight: -25
+        enabled: false
+      blocks:
+        weight: 20
         enabled: false
       call_to_action_cta_banner:
         weight: -24
@@ -56,8 +61,17 @@ settings:
       card_item:
         weight: -23
         enabled: false
+      featured_events:
+        weight: 24
+        enabled: false
+      featured_events_listing:
+        weight: 25
+        enabled: true
       hero_interior_pages:
         weight: -21
+        enabled: false
+      homepage_hero:
+        weight: 27
         enabled: false
       image_beside_text:
         weight: -20
