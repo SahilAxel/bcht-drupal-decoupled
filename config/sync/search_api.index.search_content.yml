@@ -20,7 +20,9 @@ dependencies:
     - field.storage.paragraph.field_cta_headline
     - field.storage.paragraph.field_cta_link
     - field.storage.paragraph.field_description
+    - field.storage.paragraph.field_event_description
     - field.storage.paragraph.field_eyebrow
+    - field.storage.paragraph.field_featured_events
     - field.storage.paragraph.field_heading
     - field.storage.paragraph.field_heading_text
     - field.storage.paragraph.field_hero_cta_buttons
@@ -210,6 +212,18 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_description_text
+  field_event_description:
+    label: 'Components » Paragraph » Featured Events » Paragraph » Description'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_featured_events:entity:field_event_description'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_event_description
+        - field.storage.paragraph.field_featured_events
+      module:
+        - paragraphs
   field_event_details:
     label: 'Event Details'
     datasource_id: 'entity:node'
@@ -239,6 +253,18 @@ field_settings:
         - field.storage.node.field_components
         - field.storage.paragraph.field_card_items
         - field.storage.paragraph.field_eyebrow
+      module:
+        - paragraphs
+  field_eyebrow_2:
+    label: 'Components » Paragraph » Featured Events » Paragraph » Eyebrow'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_featured_events:entity:field_eyebrow'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_eyebrow
+        - field.storage.paragraph.field_featured_events
       module:
         - paragraphs
   field_heading:
@@ -297,6 +323,18 @@ field_settings:
         - field.storage.node.field_components
         - field.storage.paragraph.field_heading
         - field.storage.paragraph.field_impact_stats_items
+      module:
+        - paragraphs
+  field_heading_5:
+    label: 'Components » Paragraph » Featured Events » Paragraph » Heading'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_featured_events:entity:field_heading'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_featured_events
+        - field.storage.paragraph.field_heading
       module:
         - paragraphs
   field_heading_text:
@@ -471,6 +509,18 @@ field_settings:
       config:
         - field.storage.node.field_components
         - field.storage.paragraph.field_testimonial_link
+      module:
+        - paragraphs
+  title_6:
+    label: 'Components » Paragraph » Featured Events » Paragraph » Link » Link text'
+    datasource_id: 'entity:node'
+    property_path: 'field_components:entity:field_featured_events:entity:field_card_link:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_components
+        - field.storage.paragraph.field_card_link
+        - field.storage.paragraph.field_featured_events
       module:
         - paragraphs
   type:

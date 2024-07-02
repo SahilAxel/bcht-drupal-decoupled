@@ -1,0 +1,10 @@
+uuid: 7f999614-66b7-4af5-a834-5c16625082f6
+langcode: en
+status: true
+dependencies: {  }
+id: featured_events_listing
+label: 'Featured Events Listing'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

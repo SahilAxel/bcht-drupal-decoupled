@@ -1,0 +1,28 @@
+uuid: 91ee8c57-5c49-4187-8432-201e642b8786
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_link
+    - paragraphs.paragraphs_type.featured_events_listing
+  module:
+    - link
+id: paragraph.featured_events_listing.field_cta_link
+field_name: field_cta_link
+entity_type: paragraph
+bundle: featured_events_listing
+label: 'Component button CTA'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    attributes: {  }
+    uri: 'internal:/events'
+    title: 'View All Events'
+    options: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

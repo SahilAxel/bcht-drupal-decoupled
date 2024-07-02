@@ -1,0 +1,21 @@
+uuid: afe21025-e1d1-431b-bc78-599e779d00f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_featured_event_type
+    - paragraphs.paragraphs_type.featured_events
+  module:
+    - options
+id: paragraph.featured_events.field_featured_event_type
+field_name: field_featured_event_type
+entity_type: paragraph
+bundle: featured_events
+label: 'Featured Event Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

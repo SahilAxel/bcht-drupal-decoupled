@@ -31,6 +31,8 @@ permissions:
   - 'view paragraph content call_to_action_cta_banner'
   - 'view paragraph content card'
   - 'view paragraph content card_item'
+  - 'view paragraph content featured_events'
+  - 'view paragraph content featured_events_listing'
   - 'view paragraph content hero_interior_pages'
   - 'view paragraph content homepage_hero'
   - 'view paragraph content image_beside_text'

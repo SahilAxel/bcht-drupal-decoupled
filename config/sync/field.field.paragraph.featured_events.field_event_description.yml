@@ -1,0 +1,19 @@
+uuid: 31052db6-c205-4b01-ad9d-16a3ffabe616
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_event_description
+    - paragraphs.paragraphs_type.featured_events
+id: paragraph.featured_events.field_event_description
+field_name: field_event_description
+entity_type: paragraph
+bundle: featured_events
+label: Description
+description: 'Suggested character limit: 130 characters'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
