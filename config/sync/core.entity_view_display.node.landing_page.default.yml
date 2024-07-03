@@ -11,16 +11,24 @@ dependencies:
     - node.type.landing_page
   module:
     - entity_reference_revisions
+    - text
     - user
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page
 mode: default
 content:
-  content_moderation_control:
+  body:
+    type: text_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 3
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_components:
     type: entity_reference_revisions_entity_view
@@ -38,20 +46,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
-  search_api_excerpt:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
 hidden:
-  body: true
   field_categories: true
   field_topics: true
   langcode: true
+  search_api_excerpt: true

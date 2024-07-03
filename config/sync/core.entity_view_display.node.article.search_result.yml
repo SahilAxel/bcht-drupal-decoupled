@@ -25,17 +25,12 @@ targetEntityType: node
 bundle: article
 mode: search_result
 content:
-  body:
+  field_description_text:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
-    region: content
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_hero:
     type: entity_reference_revisions_entity_view
@@ -44,18 +39,19 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   search_api_excerpt:
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
 hidden:
+  body: true
+  content_moderation_control: true
   field_article_type: true
   field_call_to_action_cta_banner: true
   field_components: true
-  field_description_text: true
   field_publication_date: true
   field_related_content: true
   field_topics: true

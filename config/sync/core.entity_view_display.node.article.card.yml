@@ -16,6 +16,7 @@ dependencies:
     - node.type.article
   module:
     - entity_reference_revisions
+    - text
     - user
 _core:
   default_config_hash: br6izr-iGEu--JvNbCJNtOBpRnxpFLXfoV5y61U9Nqc
@@ -24,10 +25,12 @@ targetEntityType: node
 bundle: article
 mode: card
 content:
-  content_moderation_control:
+  field_description_text:
+    type: text_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 1
     region: content
   field_hero:
     type: entity_reference_revisions_entity_view
@@ -41,14 +44,14 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   body: true
+  content_moderation_control: true
   field_article_type: true
   field_call_to_action_cta_banner: true
   field_components: true
-  field_description_text: true
   field_publication_date: true
   field_related_content: true
   field_topics: true

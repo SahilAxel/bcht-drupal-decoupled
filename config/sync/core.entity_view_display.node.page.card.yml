@@ -12,6 +12,7 @@ dependencies:
     - node.type.page
   module:
     - entity_reference_revisions
+    - text
     - user
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
@@ -20,22 +21,25 @@ targetEntityType: node
 bundle: page
 mode: card
 content:
-  content_moderation_control:
-    settings: {  }
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_hero:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden:
-  body: true
+  content_moderation_control: true
   field_categories: true
   field_components: true
   field_topics: true
