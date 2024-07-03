@@ -5,6 +5,7 @@ global-styling:
       build/css/global.css: {}
       build/css/components/header/header.css: {}
       build/css/components/footer/footer.css: {}
+      build/css/components/search-result-page/search-result-page.css: {}
   js:
     build/js/global.js: {}
   dependencies:

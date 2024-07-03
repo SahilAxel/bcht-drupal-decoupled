@@ -1,0 +1,20 @@
+{% set imageclass = 'noimage' %}
+{% if content.field_hero[0]["#paragraph"].field_image.entity.field_media_image.entity.fileuri and content.field_hero['#is_multiple'] == false %}
+  {% set imageclass = 'hasimage' %}
+{% endif %}
+
+<div class="search-result-item {{ imageclass }}">
+	{% if content.field_hero[0]["#paragraph"].field_image.entity.field_media_image.entity.fileuri and content.field_hero['#is_multiple'] == false %}
+		{% set media_uri = content.field_hero[0]["#paragraph"].field_image.entity.field_media_image.entity.fileuri|image_style('card_image') %}
+		<div class="card_image"><img src={{ media_uri }} alt="{{ 'Card title - ' ~ node.title.value|raw }}"/></div>
+	{% endif %}
+	<div class="card_content_wrapper">
+		{% if eyebrow_node %}
+			<div class="card_eyebrow">{{ eyebrow_node|raw }}</div>
+		{% endif %}
+		<div class="card_title">
+			<a href="{{ url }}" tabindex="-1" >{{ node.title.value|raw }}</a>
+		</div>
+	</div>
+  <a class="box_link" href="{{ url }}" aria-label="{{ 'Learn more about '|t ~ node.title.value|raw }}">{{ 'Learn more about '|t ~ node.title.value|raw }}</a>
+</div>
