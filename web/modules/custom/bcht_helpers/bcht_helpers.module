@@ -190,6 +190,39 @@ function bcht_helpers_get_term_name($node, $fieldName) {
 }
 
 /**
+ * Implements hook_node_insert().
+ */
+function bcht_helpers_node_insert(EntityInterface $entity) {
+  $firstSentence = "";
+  $bodyField = $entity->get('body')->getValue();
+
+  // Updating summary field with first sentence of body field or description text field(article) if the summary is not added.
+  if ($entity->getType() == "article") {
+    $descriptionField = $entity->get('field_description_text')->getValue();
+    // Check that description field is not empty and has value and also summary is empty.
+    if (!empty($descriptionField) && isset($descriptionField[0]['value']) && empty($bodyField[0]['summary'])) {
+      $descriptionText = strip_tags($descriptionField[0]['value']);
+      // Fetching the first sentence from the description text string.
+      $firstSentence = preg_replace('/(.*?[?!.](?=\s|$)).*/', '\\1', $descriptionText);
+    }
+  }
+  else {
+    // Check that body field is not empty and has value and also summary is empty.
+    if (!empty($bodyField) && isset($bodyField[0]['value']) && empty($bodyField[0]['summary'])) {
+      $bodyText = strip_tags($bodyField[0]['value']);
+      // Fetching the first sentence from the body text string.
+      $firstSentence = preg_replace('/(.*?[?!.](?=\s|$)).*/', '\\1', $bodyText);
+    }
+  }
+  // Set the first sentence as summary and save the node.
+  if ($firstSentence != "") {
+    $bodyField[0]['summary'] = $firstSentence;
+    $entity->set('body', $bodyField);
+    $entity->save();
+  }
+}
+
+/**
  * Implements hook_node_presave().
  */
 function bcht_helpers_node_presave(EntityInterface $entity) {

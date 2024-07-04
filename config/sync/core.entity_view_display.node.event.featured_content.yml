@@ -19,9 +19,10 @@ bundle: event
 mode: featured_content
 content:
   body:
-    type: text_default
+    type: text_summary_or_trimmed
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 600
     third_party_settings: {  }
     weight: 1
     region: content

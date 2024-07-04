@@ -12,16 +12,20 @@ dependencies:
     - node.type.landing_page
   module:
     - entity_reference_revisions
+    - text
     - user
 id: node.landing_page.card
 targetEntityType: node
 bundle: landing_page
 mode: card
 content:
-  content_moderation_control:
-    settings: {  }
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
   field_categories:
     type: entity_reference_label
@@ -38,7 +42,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   field_topics:
     type: entity_reference_label
@@ -51,10 +55,10 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
 hidden:
-  body: true
+  content_moderation_control: true
   field_components: true
   langcode: true
   search_api_excerpt: true

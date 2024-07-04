@@ -11,6 +11,7 @@ dependencies:
     - node.type.page
   module:
     - entity_reference_revisions
+    - text
     - user
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
@@ -19,10 +20,17 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
-  content_moderation_control:
+  body:
+    type: text_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_components:
     type: entity_reference_revisions_entity_view
@@ -31,7 +39,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_hero:
     type: entity_reference_revisions_entity_view
@@ -40,15 +48,14 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
 hidden:
-  body: true
   field_categories: true
   field_topics: true
   langcode: true

@@ -30,12 +30,12 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 4
     region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_call_to_action_cta_banner:
     type: entity_reference_revisions_entity_view
@@ -44,7 +44,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_components:
     type: entity_reference_revisions_entity_view
@@ -53,7 +53,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_description_text:
     type: text_default
@@ -78,7 +78,7 @@ content:
       timezone_override: ''
       format_type: bcht_article
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_related_content:
     type: entity_reference_revisions_entity_view
@@ -87,7 +87,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   links:
     settings: {  }

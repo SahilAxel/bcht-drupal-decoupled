@@ -16,7 +16,7 @@ entity_type: node
 bundle: page
 label: 'Body Text'
 description: 'Please consider using less than 30 characters for the Emphasized Link text style and the Button Link style as using more characters for them might result into the improper display and might not match the design.'
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
