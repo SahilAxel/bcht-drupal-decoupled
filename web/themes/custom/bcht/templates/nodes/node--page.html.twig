@@ -93,7 +93,11 @@
     {{ drupal_region('highlighted', 'bcht') }}
   {% endif %}
 
+  <div class="content-body paragraph--type--rich-text container-small component__wrapper check_next_component">
+    {{ content.body|raw }}
+  </div>
+
   <div{{ content_attributes }}>
-    {{ content|without('field_hero') }}
+    {{ content|without('field_hero', 'body') }}
   </div>
 </article>

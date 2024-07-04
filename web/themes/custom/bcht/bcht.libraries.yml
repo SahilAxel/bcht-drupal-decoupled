@@ -5,6 +5,7 @@ global-styling:
       build/css/global.css: {}
       build/css/components/header/header.css: {}
       build/css/components/footer/footer.css: {}
+      build/css/rich-text.css: {}
       build/css/components/search-result-page/search-result-page.css: {}
   js:
     build/js/global.js: {}
@@ -76,3 +77,10 @@ home-herobanner:
   css:
     theme:
       build/css/components/home-herobanner/home-herobanner.css: {}
+
+featuredevent-listing:
+  css:
+    theme:
+      build/css/components/featuredevent-listing/featuredevent-listing.css: {}
+  js:
+    build/js/featuredevent-listing.js: {}
