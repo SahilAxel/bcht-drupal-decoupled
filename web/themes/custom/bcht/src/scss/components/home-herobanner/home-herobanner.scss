@@ -42,6 +42,7 @@
       display: block;
       max-width: calc(100% - 36px);
       z-index: 1;
+      word-wrap: break-word;
       @include breakpoint(tablet) {
         max-width: 630px;
         width: 630px;
@@ -87,7 +88,7 @@
         font-style: normal;
         font-weight: 400;
         line-height: 30px;
-        margin-bottom: 20px;
+        margin-bottom: 12px;
         @include breakpoint(small-desktop) {
           font-size: (24px);
           line-height: 36px;
@@ -97,6 +98,12 @@
       .cta_group {
         position: relative;
         display: block;
+
+        @include breakpoint(small-desktop) {
+          display: flex;
+          align-items: baseline;
+        }
+
         span.cta {
           display: inline-block;
 
@@ -118,16 +125,23 @@
             }
           }
           &.cta_btn_1 {
-            margin-right: 20px;
+            margin-right: 18px;
+            margin-top: 8px;
+            a {
+              border: 2px solid $BostonPink;
+              &:hover,
+              &:focus {
+                border-color: $BostonOcean;
+              }
+            }
             @include breakpoint(small-desktop) {
-              margin-right: 0;
+              margin-right: 20px;
             }
           }
           &.cta_btn_2 {
             margin-top: 8px;
             @include breakpoint(small-desktop) {
-              margin-left: 24px;
-              margin-top: 0px;
+              margin-left: 0px;
             }
           }
         }

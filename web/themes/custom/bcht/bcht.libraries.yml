@@ -76,3 +76,10 @@ home-herobanner:
   css:
     theme:
       build/css/components/home-herobanner/home-herobanner.css: {}
+
+featuredevent-listing:
+  css:
+    theme:
+      build/css/components/featuredevent-listing/featuredevent-listing.css: {}
+  js:
+    build/js/featuredevent-listing.js: {}

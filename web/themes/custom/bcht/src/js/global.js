@@ -240,7 +240,6 @@
       if ($('.field--name-field-components .check_next_component').length > 0) {
         $(once('check_next_component', '.check_next_component', context)).each(
           function () {
-            // console.log($(this).parent());
             if (
               $(this)
                 .parent()
@@ -251,6 +250,15 @@
               $(this).addClass('similar_component_type_below_reduce_space');
             }
           },
+        );
+      }
+      if (
+        $('.field--name-field-components .field__item:first-of-type')
+          .find('.paragraph')
+          .hasClass('check_next_component')
+      ) {
+        $('.content-body').addClass(
+          'similar_component_type_below_reduce_space',
         );
       }
 

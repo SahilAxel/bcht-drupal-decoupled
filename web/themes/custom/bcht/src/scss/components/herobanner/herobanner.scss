@@ -85,6 +85,15 @@
               padding: 15px 25px;
             }
           }
+          &.cta_btn_1 {
+            a {
+              border: 2px solid $BostonPink;
+              &:hover,
+              &:focus {
+                border-color: $BostonOcean;
+              }
+            }
+          }
           &.cta_btn_2 {
             margin-top: 8px;
             @include breakpoint(small-desktop) {

@@ -68,6 +68,7 @@
  */
 #}
 {{ attach_library('bcht/articlepage') }}
+{{ attach_library('bcht/rich-text') }}
 <article{{ attributes }}>
   {{ title_prefix }}
   {% if label and not page %}
@@ -92,6 +93,10 @@
   {% if logged_in  %}
     {{ drupal_region('highlighted', 'bcht') }}
   {% endif %}
+
+  <div class="content-body paragraph--type--rich-text container-small component__wrapper check_next_component">
+    {{ content.body|raw }}
+  </div>
 
   <div{{ content_attributes }}>
     {{ content|without('field_hero','field_publication_date','body','field_description_text') }}

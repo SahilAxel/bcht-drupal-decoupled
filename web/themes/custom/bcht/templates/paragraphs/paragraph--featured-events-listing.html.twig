@@ -1,0 +1,139 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('bcht/featuredevent-listing') }}
+{% set classes = [
+    'paragraph',
+    'featured-event-listing-wrapper',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+	<div{{ attributes.addClass(classes) }}>
+		<div class="component__wrapper featuredevents_inner_wrapper">
+			{% if content.field_heading.0 and content.field_heading['#is_multiple'] == false %}
+				<div class='featuredevents_top_wrapper'>
+					{% if content.field_heading.0 and content.field_heading['#is_multiple'] == false %}
+						<div class="title">{{ content.field_heading.0|raw }}</div>
+					{% endif %}
+				</div>
+			{% endif %}
+
+      {% if content.field_featured_events %}
+        {% set cardcount = 0 %}
+        {% for key, item in content.field_featured_events %}
+          {% if key|first != '#' %}
+            {% set cardcount = cardcount + 1 %}
+          {% endif %}
+        {% endfor %}
+
+        <div class="featuredevents_item_wrapper {{ 'num_of_card_' ~ cardcount }}">
+          {% for key, item in content.field_featured_events %}
+            {% if key|first != '#' %}
+
+                {# event_reference #}
+                {% if item['#paragraph'].field_featured_event_type[0].value == 'event_reference' %}
+                  {% set eyebrow = '' %}
+                  {% if item['#paragraph'].field_eyebrow[0].value %}
+                    {% set eyebrow = item['#paragraph'].field_eyebrow[0].value|raw %}
+                  {% endif %}
+                  <div class="featuredevents_item event_reference" attr-eyebrow="{{ eyebrow }}">
+                    {{ drupal_entity('node', item['#paragraph'].field_event_reference[0].target_id, 'featured_content') }}
+                  </div>
+
+                {# Manual #}
+                {% else %}
+                  <div class="featuredevents_item">
+                    <div class="featuredevent_content_wrapper {{ noimageclass }}">
+                      {% if item['#paragraph'].field_eyebrow[0].value %}
+												<div class="card_eyebrow">{{ item['#paragraph'].field_eyebrow[0].value|raw }}</div>
+											{% endif %}
+											{% if item['#paragraph'].field_heading[0].value %}
+												<div class="card_title">{{ item['#paragraph'].field_heading[0].value|raw }}</div>
+											{% endif %}
+                      {% if item['#paragraph'].field_event_description[0].value %}
+												<div class="card_des">{{ item['#paragraph'].field_event_description[0].value|raw }}</div>
+											{% endif %}
+                      {% if item['#paragraph'].field_card_link[0] %}
+												<div class="cta cta_btn">
+													{% if item['#paragraph'].field_card_link[0].url.external %}
+														<a class="link-arrow-btn link-arrow-btn--default" tabindex="-1" href="{{ item['#paragraph'].field_card_link[0].uri }}" target="_blank" title="Opens in a new window">{{ item['#paragraph'].field_card_link[0].title ? item['#paragraph'].field_card_link[0].title : 'Learn more'|t }}</a>
+													{% else %}
+														<a class="link-arrow-btn link-arrow-btn--default" tabindex="-1" href="{{ path(item['#paragraph'].field_card_link[0].url.routeName, item['#paragraph'].field_card_link[0].url.routeParameters) }}">{{ item['#paragraph'].field_card_link[0].title ? item['#paragraph'].field_card_link[0].title : 'Learn more'|t }}</a>
+													{% endif %}
+												</div>
+											{% endif %}
+                    </div>
+                    {% set noimageclass = '' %}
+                    {% if item['#paragraph'].field_image.entity.field_media_image.entity.fileuri %}
+                      {% set media_uri = item['#paragraph'].field_image.entity.field_media_image.entity.fileuri|image_style('featured_event') %}
+                      <div class="card_image"><img src={{ media_uri }} alt="{{ 'Card title -' ~ item['#paragraph'].field_heading[0].value|raw }}"/></div>
+                    {% else %}
+                      {% set noimageclass = 'noimage' %}
+                    {% endif %}
+
+                    {# Box link #}
+                    {% if item['#paragraph'].field_card_link[0] %}
+                      {% if item['#paragraph'].field_card_link[0].url.external %}
+                        <a class="box_link" tabindex="0" href="{{ item['#paragraph'].field_card_link[0].uri }}" target="_blank" title="Opens in a new window" aria-label="{{ 'Learn more about '|t ~ item['#paragraph'].field_heading[0].value }}">{{ item['#paragraph'].field_card_link[0].title }}</a>
+                      {% else %}
+                        <a class="box_link" tabindex="0" href="{{ path(item['#paragraph'].field_card_link[0].url.routeName, item['#paragraph'].field_card_link[0].url.routeParameters) }}" aria-label="{{ 'Learn more about '|t ~ item['#paragraph'].field_heading[0].value }}">{{ item['#paragraph'].field_card_link[0].title }}</a>
+                      {% endif %}
+                    {% endif %}
+                  </div>
+                {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% if content.field_cta_link.0 and content.field_cta_link['#is_multiple'] == false %}
+        <div class="featuredevents_link">
+        {% if content.field_cta_link.0['#url'].external %}
+          <a class="btn btn--default" href="{{ content.field_cta_link.0['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_cta_link.0['#title'] }}</a>
+        {% else %}
+          <a class="btn btn--default" href="{{ path(content.field_cta_link.0['#url'].routeName, content.field_cta_link.0['#url'].routeParameters) }}">{{ content.field_cta_link.0['#title'] }}</a>
+        {% endif %}
+        </div>
+      {% endif %}
+		</div>
+	</div>
+{% endblock paragraph %}

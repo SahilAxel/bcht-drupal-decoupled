@@ -67,6 +67,7 @@
  *
  */
 #}
+{{ attach_library('bcht/rich-text') }}
 <article{{ attributes }}>
   {{ title_prefix }}
   {% if label and not page %}
@@ -100,7 +101,11 @@
     </div>  
   {% endif %}
 
+  <div class="content-body paragraph--type--rich-text container-small component__wrapper check_next_component">
+    {{ content.body|raw }}
+  </div>
+
   <div{{ content_attributes }}>
-    {{ content|without('field_hero', 'field_event_details') }}
+    {{ content|without('field_hero', 'field_event_details', 'body') }}
   </div>
 </article>

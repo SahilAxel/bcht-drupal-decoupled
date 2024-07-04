@@ -1,0 +1,32 @@
+uuid: d3215ae5-fc6a-4af5-9873-ada4818ccb22
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.image_featured_event
+  module:
+    - crop
+name: featured_event
+label: 'Featured Event'
+effects:
+  7e4e3b41-a6eb-4138-8efe-825a4a3c31c5:
+    uuid: 7e4e3b41-a6eb-4138-8efe-825a4a3c31c5
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: image_featured_event
+      automatic_crop_provider: null
+  177fff62-84af-4347-a98a-eac2d23b5e0c:
+    uuid: 177fff62-84af-4347-a98a-eac2d23b5e0c
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 303
+      height: 297
+      anchor: center-center
+  71758929-504f-49a3-879b-41303a131a51:
+    uuid: 71758929-504f-49a3-879b-41303a131a51
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp
