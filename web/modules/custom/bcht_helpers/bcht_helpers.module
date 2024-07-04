@@ -61,21 +61,23 @@ function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$
 }
 
 /**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function bcht_helpers_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  array_unshift($form['#validate'], 'bcht_helpers_node_form_validate');
+  $node = $form_state->getFormObject()->getEntity();
+  // Hide publication date field if publication date is not selected.
+  if ($node instanceof Node && $node->getType() == "article") {
+    if (empty($node->get('field_publication_date')->value)) {
+      $form['field_publication_date']['#access'] = FALSE;
+    }
+  }
+}
+
+/**
  * Implements hook_form_alter().
  */
 function bcht_helpers_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // Match any new node or node edit forms.
-  if ((preg_match('/node_(.*?)(edit)?_form$/', $form_id))) {
-    array_unshift($form['#validate'], 'bcht_helpers_node_form_validate');
-
-    $node = $form_state->getFormObject()->getEntity();
-    // Hide publication date field if publication date is not selected.
-    if ($node instanceof Node && $node->getType() == "article") {
-      if (empty($node->get('field_publication_date')->value)) {
-        $form['field_publication_date']['#access'] = FALSE;
-      }
-    }
-  }
 
   if (in_array($form_id, ['site_setting_entity_footer_middle_form', 'site_setting_entity_footer_middle_edit_form'])) {
     $form['footer_one'] = [
@@ -101,7 +103,7 @@ function bcht_helpers_form_alter(&$form, FormStateInterface $form_state, $form_i
 }
 
 /**
- * Custom node form validate function
+ * Custom node form validate function.
  */
 function bcht_helpers_node_form_validate(&$form, FormStateInterface $form_state) {
   $node = $form_state->getFormObject()->getEntity();
