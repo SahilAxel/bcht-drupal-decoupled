@@ -18,7 +18,7 @@ translatable: false
 default_value:
   -
     attributes: {  }
-    uri: 'internal:/events'
+    uri: 'internal:#'
     title: 'View All Events'
     options: {  }
 default_value_callback: ''
