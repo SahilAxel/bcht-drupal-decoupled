@@ -12,7 +12,10 @@ storage: folder
 folder: ../config/local
 module:
   devel: 0
+  field_ui: 0
+  views_ui: 0
 theme: {  }
 complete_list:
   - search_api.server.pantheon_solr8
+  - system.performance
 partial_list: {  }
