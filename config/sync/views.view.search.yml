@@ -116,7 +116,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 5
+          quantity: 7
       exposed_form:
         type: basic
         options:

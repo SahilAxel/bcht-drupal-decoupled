@@ -40,6 +40,7 @@ dependencies:
     - node
     - paragraphs
     - search_api
+    - search_api_exclude
     - search_api_solr
 third_party_settings:
   search_api_solr:
@@ -597,6 +598,7 @@ processor_settings:
       h3: 2
       strong: 2
   language_with_fallback: {  }
+  node_exclude: {  }
   rendered_item: {  }
   solr_date_range:
     weights:
@@ -606,8 +608,6 @@ processor_settings:
       preprocess_index: 0
     boosts:
       'entity:node':
-        datasource_boost: 1.0
-      'entity:taxonomy_term':
         datasource_boost: 1.0
 tracker_settings:
   default:
