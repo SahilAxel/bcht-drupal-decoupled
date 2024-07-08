@@ -15,6 +15,12 @@
 		<div class="card_title">
 			<a href="{{ url }}" tabindex="-1" >{{ node.title.value|raw }}</a>
 		</div>
+    {% if content.body.0['#text'] %}
+      <div class="card_des">{{ content.body.0['#text']|striptags|length > 130 ? content.body.0['#text']|striptags|slice(0, 130) ~ '…' : content.body.0['#text']|striptags }}</div>
+    {% endif %}
+    {% if content.field_publication_date %}
+      <div class="publication_date">{{ content.field_publication_date }}</div>
+    {% endif %}
 	</div>
   <a class="box_link" href="{{ url }}" aria-label="{{ 'Learn more about '|t ~ node.title.value|raw }}">{{ 'Learn more about '|t ~ node.title.value|raw }}</a>
 </div>
