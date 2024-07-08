@@ -27,6 +27,14 @@
       $('header .main-menu ul.primary-nav__menu--level-2').each(function () {
         $(this).attr('aria-hidden', 'false');
       });
+      // Check if more than 5 link on the first level
+      const menulinks = $(
+        'header .header_bottom_wrapper .main-menu li.primary-nav__menu-item--level-1',
+      ).length;
+      if (menulinks > 5) {
+        $('header .header_bottom_wrapper').addClass('morelinks');
+      }
+
       $(
         'header .main-menu ul li a.primary-nav__menu-link--level-1.primary-nav__menu-link--has-children',
       ).each(function () {

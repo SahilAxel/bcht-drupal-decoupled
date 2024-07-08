@@ -307,6 +307,23 @@ header {
       height: 75px;
     }
 
+    &.morelinks {
+      .header_bottom__container {
+        flex-wrap: wrap;
+        @media only screen and (max-width: 1130px) {
+          flex-wrap: nowrap;
+        }
+      }
+      .header_logo {
+        padding: 10px 0;
+        flex: 0 0 100%;
+        @media only screen and (max-width: 1130px) {
+          padding: 0;
+          flex: 0 0 22%;
+        }
+      }
+    }
+
     .header_bottom__container {
       display: flex;
       flex-wrap: nowrap;
