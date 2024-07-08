@@ -134,7 +134,7 @@ header {
     background-color: $BostonBlue;
     display: none;
     &.active {
-      width: 630px;
+      width: 610px;
     }
     form {
       display: flex;
@@ -250,8 +250,8 @@ header {
         line-height: 0;
         background: url('../../../../icons/pink_cross.svg');
         background: url('../../../../icons/blue_cross.svg');
-        width: 24px;
-        height: 36px;
+        width: 28px;
+        height: 28px;
         margin-left: 20px;
         background-repeat: no-repeat;
         background-position: center;
@@ -264,8 +264,8 @@ header {
           background: url('../../../../icons/pink_cross.svg');
           background-repeat: no-repeat;
           background-position: center;
-          width: 24px;
-          height: 36px;
+          width: 28px;
+          height: 28px;
         }
       }
     }
