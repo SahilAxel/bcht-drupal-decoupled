@@ -104,8 +104,8 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
+            next: Next
+            previous: Prev
             first: ''
             last: ''
           expose:
@@ -303,6 +303,7 @@ display:
           preserve_facet_query_args: false
           query_tags: {  }
       relationships: {  }
+      css_class: search-result-page-wrapper
       link_display: custom_url
       link_url: /search
       header:
