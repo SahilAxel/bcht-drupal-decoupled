@@ -63,7 +63,7 @@ header {
 
     .header_top__container {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       justify-content: flex-end;
       align-items: center;
       position: relative;
@@ -99,6 +99,7 @@ header {
   }
 
   .cta-btn {
+    min-width: 157px;
     a {
       display: inline-block;
       padding: 9px 16px;
@@ -308,19 +309,8 @@ header {
     }
 
     &.morelinks {
-      .header_bottom__container {
-        flex-wrap: wrap;
-        @media only screen and (max-width: 1130px) {
-          flex-wrap: nowrap;
-        }
-      }
-      .header_logo {
-        padding: 10px 0;
-        flex: 0 0 100%;
-        @media only screen and (max-width: 1130px) {
-          padding: 0;
-          flex: 0 0 22%;
-        }
+      .main-menu ul li a.primary-nav__menu-link--has-children:after {
+        width: 24px;
       }
     }
 
@@ -362,14 +352,11 @@ header {
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
+        margin-left: 15px;
         li {
           padding: 0;
           list-style-type: none;
           position: relative;
-
-          // &.primary-nav__menu-item--level-1:nth-child(1n + 6) {
-          //   display: none;
-          // }
 
           a {
             display: inline-block;
@@ -383,6 +370,13 @@ header {
             color: $BostonBlue;
             text-decoration: none;
             padding: 28px 18px;
+
+            &.primary-nav__menu-link--level-1 {
+              display: flex;
+              align-items: center;
+              flex-wrap: nowrap;
+              height: 80px;
+            }
 
             @media screen and (min-width: 1131px) and (max-width: 1300px) {
               font-size: 14px;
@@ -404,12 +398,12 @@ header {
                 display: inline-block;
                 background: url('../../../../icons/menu_dropdown.svg');
                 height: 10px;
-                width: 12px;
+                width: 14px;
                 background-repeat: no-repeat;
                 background-position: center;
-                margin-left: 6px;
+                margin-left: 8px;
                 position: relative;
-                top: 1px;
+                top: 0px;
                 transition: all 0.3s ease;
               }
 
@@ -463,6 +457,7 @@ header {
             width: 326px;
             border-radius: 0px 0px 6px 6px;
             transition: all 0.3s ease;
+            margin-left: 0;
             li {
               a {
                 display: block;
@@ -497,6 +492,15 @@ header {
             ul {
               left: auto;
               right: 0;
+            }
+          }
+
+          @media only screen and (max-width: 1320px) {
+            &.primary-nav__menu-item--has-children:nth-last-child(2) {
+              ul {
+                left: auto;
+                right: 0;
+              }
             }
           }
         }
