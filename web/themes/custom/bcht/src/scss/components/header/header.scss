@@ -309,8 +309,26 @@ header {
     }
 
     &.morelinks {
-      .main-menu ul li a.primary-nav__menu-link--has-children:after {
-        width: 24px;
+      .main-menu ul li a.primary-nav__menu-link--has-children {
+        font-size: 14px;
+        line-height: 18px;
+        align-items: flex-start;
+        padding: 24px 18px;
+        span {
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          display: -webkit-box;
+        }
+        @media only screen and (max-width: 1320px) {
+          font-size: 12px;
+          line-height: 16px;
+          padding: 24px 10px;
+        }
+        &:after {
+          width: 24px;
+          top: 2px;
+        }
       }
     }
 
