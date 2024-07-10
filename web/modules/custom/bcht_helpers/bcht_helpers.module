@@ -204,16 +204,18 @@ function bcht_helpers_node_insert(EntityInterface $entity) {
     // Check that description field is not empty and has value and also summary is empty.
     if (!empty($descriptionField) && isset($descriptionField[0]['value']) && empty($bodyField[0]['summary'])) {
       $descriptionText = strip_tags($descriptionField[0]['value']);
+      $descriptionText = html_entity_decode($descriptionText, ENT_QUOTES | ENT_HTML5, 'UTF-8');
       // Fetching the first sentence from the description text string.
-      $firstSentence = preg_replace('/(.*?[?!.](?=\s|$)).*/', '\\1', $descriptionText);
+      $firstSentence = preg_replace('/(.*?[.?!]).*/', '\\1', $descriptionText);
     }
   }
   else {
     // Check that body field is not empty and has value and also summary is empty.
     if (!empty($bodyField) && isset($bodyField[0]['value']) && empty($bodyField[0]['summary'])) {
       $bodyText = strip_tags($bodyField[0]['value']);
+      $bodyText = html_entity_decode($bodyText, ENT_QUOTES | ENT_HTML5, 'UTF-8');
       // Fetching the first sentence from the body text string.
-      $firstSentence = preg_replace('/(.*?[?!.](?=\s|$)).*/', '\\1', $bodyText);
+      $firstSentence = preg_replace('/(.*?[.?!]).*/', '\\1', $bodyText);
     }
   }
   // Set the first sentence as summary and save the node.
