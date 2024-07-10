@@ -1,0 +1,24 @@
+uuid: 280cdebd-7e29-4373-8709-a088140b3a5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_no_results_message
+    - filter.format.basic_html
+    - site_settings.site_setting_entity_type.article_listing_no_results_setti
+  module:
+    - text
+id: site_setting_entity.article_listing_no_results_setti.field_no_results_message
+field_name: field_no_results_message
+entity_type: site_setting_entity
+bundle: article_listing_no_results_setti
+label: 'No Results Message'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

@@ -1,0 +1,6 @@
+uuid: e41cab05-e5f8-4453-bdb0-e4e4788ec8a9
+langcode: en
+status: true
+dependencies: {  }
+id: article_listing_view_settings
+label: 'Article Listing View Settings'
