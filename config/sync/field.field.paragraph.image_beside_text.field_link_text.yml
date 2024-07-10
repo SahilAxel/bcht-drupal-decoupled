@@ -1,16 +1,16 @@
-uuid: 9a427fc5-7e2c-48d2-9c74-d229dba3eb9d
+uuid: 3d6397af-1cd9-487f-b287-516c54f3d8d2
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_heading
+    - field.storage.paragraph.field_link_text
     - paragraphs.paragraphs_type.image_beside_text
-id: paragraph.image_beside_text.field_heading
-field_name: field_heading
+id: paragraph.image_beside_text.field_link_text
+field_name: field_link_text
 entity_type: paragraph
 bundle: image_beside_text
-label: Heading
-description: 'Suggested character limit: 45 characters'
+label: 'Link Text'
+description: ''
 required: false
 translatable: false
 default_value: {  }
