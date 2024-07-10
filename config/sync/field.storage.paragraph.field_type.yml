@@ -1,0 +1,27 @@
+uuid: 94445c7c-c4e1-4e4d-bb52-afb5c2c87732
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_type
+field_name: field_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: manual
+      label: Manual
+    -
+      value: article_reference
+      label: 'Article Reference'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,25 @@
+uuid: 94a54185-6e2a-4cd1-9614-7641bc0c186a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_article_reference
+    - paragraphs.paragraphs_type.image_beside_text
+id: paragraph.image_beside_text.field_article_reference
+field_name: field_article_reference
+entity_type: paragraph
+bundle: image_beside_text
+label: 'Article Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: node_reference
+      display_name: entity_reference_3
+      arguments: {  }
+field_type: entity_reference

@@ -249,7 +249,14 @@ function bcht_helpers_entity_bundle_field_info_alter(&$fields, EntityTypeInterfa
   if ($entity_type->getBundleEntityType() == "paragraphs_type" && $bundle == 'featured_events') {
     if (isset($fields['field_featured_event_type']) && isset($fields['field_image'])) {
       // Custom validation constraint for image field.
-      $fields['field_image']->addConstraint('FeaturedEventImageValidation');
+      $fields['field_image']->addConstraint('ParagraphImageValidation', ['paragraph_type' => $bundle]);
+    }
+  }
+
+  if ($entity_type->getBundleEntityType() == "paragraphs_type" && $bundle == 'image_beside_text') {
+    if (isset($fields['field_type']) && isset($fields['field_image'])) {
+      // Custom validation constraint for image field.
+      $fields['field_image']->addConstraint('ParagraphImageValidation', ['paragraph_type' => $bundle]);
     }
   }
 }

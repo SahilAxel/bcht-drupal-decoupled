@@ -1,0 +1,21 @@
+uuid: c2de28cf-5e42-49ef-b387-67067c287d95
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_type
+    - paragraphs.paragraphs_type.image_beside_text
+  module:
+    - options
+id: paragraph.image_beside_text.field_type
+field_name: field_type
+entity_type: paragraph
+bundle: image_beside_text
+label: Type
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
