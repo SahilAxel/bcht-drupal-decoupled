@@ -21,6 +21,8 @@ settings:
   selection: blocks
   selection_settings:
     plugin_ids:
+      'views_block:articles_listing-block_1': 'views_block:articles_listing-block_1'
       'views_block:search-block_1': 'views_block:search-block_1'
+      'views_exposed_filter_block:articles_listing-block_1': 'views_exposed_filter_block:articles_listing-block_1'
       'views_exposed_filter_block:search-block_1': 'views_exposed_filter_block:search-block_1'
 field_type: block_field
