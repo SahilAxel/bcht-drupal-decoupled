@@ -1,0 +1,28 @@
+uuid: 255d1a15-81c1-463c-bdc2-4c70c8e945a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.article_listing_no_results_setti.field_no_results_message
+    - site_settings.site_setting_entity_type.article_listing_no_results_setti
+  module:
+    - text
+id: site_setting_entity.article_listing_no_results_setti.default
+targetEntityType: site_setting_entity
+bundle: article_listing_no_results_setti
+mode: default
+content:
+  field_no_results_message:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  group: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

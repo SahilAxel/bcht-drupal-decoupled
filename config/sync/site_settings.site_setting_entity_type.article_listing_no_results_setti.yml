@@ -1,0 +1,10 @@
+uuid: 5ccda012-b35b-435f-9b60-728de4d6aabe
+langcode: en
+status: true
+dependencies:
+  config:
+    - site_settings.site_setting_group_entity_type.article_listing_view_settings
+id: article_listing_no_results_setti
+label: 'Article Listing No Results Settings'
+group: article_listing_view_settings
+multiple: false

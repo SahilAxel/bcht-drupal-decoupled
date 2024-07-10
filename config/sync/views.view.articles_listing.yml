@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - block.block.articles_listing_view_no_results_block
     - core.entity_view_mode.node.search_result
     - node.type.article
     - taxonomy.vocabulary.article_type
@@ -147,7 +148,20 @@ display:
       cache:
         type: tag
         options: {  }
-      empty: {  }
+      empty:
+        entity_block:
+          id: entity_block
+          table: views
+          field: entity_block
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: entity
+          empty: true
+          target: articles_listing_view_no_results_block
+          view_mode: default
+          tokenize: true
+          bypass_access: false
       sorts:
         created:
           id: created

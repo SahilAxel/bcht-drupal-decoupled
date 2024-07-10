@@ -1,0 +1,29 @@
+uuid: 8f56f7ea-ffeb-4f34-ba7b-0a4576320eb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.site_setting_entity.teaser
+    - field.field.site_setting_entity.article_listing_no_results_setti.field_no_results_message
+    - site_settings.site_setting_entity_type.article_listing_no_results_setti
+  module:
+    - text
+id: site_setting_entity.article_listing_no_results_setti.teaser
+targetEntityType: site_setting_entity
+bundle: article_listing_no_results_setti
+mode: teaser
+content:
+  field_no_results_message:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  description: true
+  group: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_id: true
