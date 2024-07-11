@@ -407,7 +407,19 @@
       ).click(function () {
         $('.search-form-wrapper input:text').val('');
         $('.search-form-wrapper input:text').focus();
+        $(this).addClass('hidden');
       });
+      $('.search-form-wrapper input:text').on(
+        'change paste keyup',
+        function () {
+          console.log($(this).val());
+          if ($(this).val().length > 0) {
+            $('.search-form-wrapper form .reset').removeClass('hidden');
+          } else {
+            $('.search-form-wrapper form .reset').addClass('hidden');
+          }
+        },
+      );
 
       //******************** */
       // js for page scroll if query parameters avilable in the URL

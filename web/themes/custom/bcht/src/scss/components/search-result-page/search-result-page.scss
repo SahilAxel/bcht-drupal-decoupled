@@ -146,6 +146,9 @@
           position: absolute;
           right: 12.5%;
           cursor: pointer;
+          &.hidden {
+            display: none;
+          }
           &:hover,
           &:focus {
             background: url('../../../../icons/blue_cross.svg');
