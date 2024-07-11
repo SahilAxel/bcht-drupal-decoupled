@@ -282,7 +282,6 @@
             context,
           ),
         ).each(function () {
-          // console.log($(this).parent());
           if (
             $(this)
               .parent()
