@@ -1,0 +1,6 @@
+<div class="no_result_found_wraper">
+  <div class="headline">{{ site_setting_field('search_page_no_results_settings', 'field_error_message_before').0|raw|default('We’re sorry, your search for'|t) }} “<span class="search-text">searchtext</span>” {{ site_setting_field('search_page_no_results_settings', 'field_error_message_after').0|raw|default('didn’t return any results.'|t) }}</div>
+  {% if site_setting_field('search_page_no_results_settings', 'field_recommended_links').0 and site_setting_field('search_page_no_results_settings', 'field_recommended_links')['#is_multiple'] == false %}
+    <div class="no-result-bottom-wrapper richtext">{{ site_setting_field('search_page_no_results_settings', 'field_recommended_links').0|raw }}</div>
+  {% endif %}
+</div>

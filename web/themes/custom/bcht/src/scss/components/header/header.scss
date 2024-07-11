@@ -394,6 +394,12 @@ header {
               align-items: center;
               flex-wrap: nowrap;
               height: 80px;
+              &:hover {
+                color: $BostonPink;
+              }
+              &:focus-visible {
+                z-index: 2;
+              }
             }
 
             @media screen and (min-width: 1131px) and (max-width: 1300px) {
@@ -538,7 +544,7 @@ header {
   height: 28px;
   margin-left: auto;
   background: $White;
-  padding: 5px 3px 8px;
+  padding: 5px 2px 8px;
 
   @media only screen and (max-width: 1130px) {
     display: block;
@@ -648,7 +654,9 @@ header {
               top: 1px;
               transition: all 0.3s ease;
             }
-
+            &:focus-visible {
+              z-index: 4;
+            }
             &.active {
               color: $BostonPink;
               position: relative;

@@ -2,12 +2,55 @@
 
 .pager {
   position: relative;
-  margin: 16px 0;
+  margin: 32px 0 16px;
   float: left;
   width: 100%;
   padding: 0 18px;
   @include breakpoint(small-desktop) {
     padding: 0;
+    margin: 64px 0 16px;
+  }
+
+  &.more-pager-link {
+    ul.pager__items {
+      li.pager__item {
+        display: none;
+
+        &.is-active,
+        &.pager__item--first,
+        &.pager__item--last,
+        &.pager__item--previous,
+        &.pager__item--next {
+          display: block;
+        }
+        &.is-active + .pager__item {
+          display: block;
+        }
+        &:has(+ .is-active) {
+          display: block !important;
+        }
+        &.hidden {
+          display: none !important;
+        }
+      }
+      li.pager__item[attr-kay='1'],
+      li.pager__item[attr-kay='2'],
+      li.pager__item[attr-kay='3'],
+      li.pager__item[attr-kay='4'] {
+        display: block;
+      }
+    }
+
+    &.preve-morelink {
+      ul.pager__items {
+        li.pager__item[attr-kay='1'],
+        li.pager__item[attr-kay='2'],
+        li.pager__item[attr-kay='3'],
+        li.pager__item[attr-kay='4'] {
+          display: none;
+        }
+      }
+    }
   }
 
   ul.pager__items {
@@ -27,8 +70,6 @@
 
       a {
         display: inline-block;
-        height: 30px;
-        width: 30px;
         background-color: $White;
         font-size: 14px;
         line-height: 22px;
@@ -41,11 +82,11 @@
         flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
+        margin: 0 8px;
         @include breakpoint(small-desktop) {
           font-size: rem(16);
           line-height: 24px;
-          height: 33px;
-          width: 34px;
+          margin: 0 12px;
         }
         &:hover {
           color: $BostonOcean;
@@ -54,13 +95,15 @@
       }
 
       @include breakpoint(small-desktop) {
-        margin: 0 3px;
+        margin: 0;
       }
 
       &.is-active {
         a {
           background-color: $BostonPink;
           color: $White;
+          height: 30px;
+          width: 30px;
           &:hover {
             text-decoration: none;
           }
@@ -68,8 +111,6 @@
       }
 
       &.pager__item--ellipsis {
-        height: 20px;
-        width: 20px;
         display: flex;
         flex-wrap: nowrap;
         justify-content: center;
@@ -77,20 +118,25 @@
         position: relative;
         top: 0px;
         color: $BostonPink;
+        margin: 0 8px;
+        @include breakpoint(small-desktop) {
+          margin: 0 12px;
+        }
       }
 
       &.pager__item--previous {
-        margin-right: 10px;
+        margin-right: 4px;
         margin-left: 0;
         position: relative;
         overflow: visible;
         @include breakpoint(small-desktop) {
-          margin-right: 24px;
+          margin-right: 12px;
         }
         a {
           font-weight: 400;
           font-family: $HelveticaRegular;
           color: $BostonGray;
+          margin: 0;
           &:hover {
             text-decoration: none;
             color: $BostonOcean;
@@ -104,7 +150,7 @@
           background-repeat: no-repeat;
           background-size: contain;
           display: inline-block;
-          height: 10px;
+          height: 11px;
           position: absolute;
           left: -22px;
           top: 45%;
@@ -117,23 +163,25 @@
             background-repeat: no-repeat;
             background-size: contain;
             display: inline-block;
-            height: 10px;
+            height: 11px;
           }
         }
       }
 
       &.pager__item--next {
-        margin-left: 10px;
+        margin-left: 4px;
         margin-right: 0;
         position: relative;
         overflow: visible;
         @include breakpoint(small-desktop) {
-          margin-right: 24px;
+          margin-right: 0px;
+          margin-left: 12px;
         }
         a {
           font-weight: 400;
           font-family: $HelveticaRegular;
           color: $BostonGray;
+          margin: 0;
           &:hover {
             text-decoration: none;
             color: $BostonOcean;
@@ -147,7 +195,7 @@
           background-repeat: no-repeat;
           background-size: contain;
           display: inline-block;
-          height: 10px;
+          height: 11px;
           position: absolute;
           right: -22px;
           top: 45%;
@@ -160,7 +208,7 @@
             background-repeat: no-repeat;
             background-size: contain;
             display: inline-block;
-            height: 10px;
+            height: 11px;
           }
         }
       }

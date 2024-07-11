@@ -29,7 +29,6 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: 24px;
-    overflow: hidden;
     justify-content: center;
     position: relative;
 
@@ -142,8 +141,8 @@
           display: -webkit-box;
           text-transform: capitalize;
           @include breakpoint(small-desktop) {
-            font-size: rem(24);
-            line-height: 32px;
+            font-size: rem(28);
+            line-height: 36px;
           }
         }
 
@@ -171,9 +170,16 @@
             font-weight: 600;
             line-height: 22px;
             display: block;
+            @include breakpoint(small-desktop) {
+              font-size: rem(20);
+              line-height: 26px;
+            }
             &:after {
               width: 14px;
               top: 5px;
+              @include breakpoint(small-desktop) {
+                width: 18px;
+              }
             }
           }
         }
@@ -203,6 +209,9 @@
         width: 100%;
         height: 100%;
         z-index: 1;
+        &:focus-visible {
+          z-index: 4;
+        }
       }
     }
   }
@@ -211,5 +220,15 @@
     text-align: center;
     width: 100%;
     margin-top: 32px;
+    .btn--default {
+      font-size: rem(16);
+      line-height: 20.8px;
+      padding: 10px 18px;
+      @include breakpoint(small-desktop) {
+        font-size: rem(18);
+        line-height: 22px;
+        padding: 15px 25px;
+      }
+    }
   }
 }

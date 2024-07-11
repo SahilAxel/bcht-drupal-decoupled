@@ -56,7 +56,10 @@
               line-height: 28px;
               font-family: $HelveticaRegular;
               color: $BostonGray;
+              overflow: visible;
               font-style: italic;
+              position: relative;
+              top: 2px;
             }
             &::-moz-placeholder {
               /* Firefox 19+ */
@@ -67,6 +70,8 @@
               font-family: $HelveticaRegular;
               color: $BostonGray;
               font-style: italic;
+              position: relative;
+              top: 2px;
             }
             &:-ms-input-placeholder {
               /* IE 10+ */
@@ -77,6 +82,8 @@
               font-family: $HelveticaRegular;
               color: $BostonGray;
               font-style: italic;
+              position: relative;
+              top: 2px;
             }
             &:-moz-placeholder {
               /* Firefox 18- */
@@ -87,6 +94,8 @@
               font-family: $HelveticaRegular;
               color: $BostonGray;
               font-style: italic;
+              position: relative;
+              top: 2px;
             }
           }
         }
@@ -98,9 +107,9 @@
             line-height: 0;
             background: url('../../../../icons/ocean_search.svg');
             background: url('../../../../icons/pink_search.svg');
-            width: 36px;
-            height: 52px;
-            margin-left: 10px;
+            width: 23px;
+            height: 21px;
+            margin-left: 16px;
             background-repeat: no-repeat;
             background-position: center;
             position: relative;
@@ -114,6 +123,8 @@
               background: url('../../../../icons/ocean_search.svg');
               background-repeat: no-repeat;
               background-position: center;
+              width: 23px;
+              height: 21px;
             }
           }
           #edit-reset {
@@ -126,22 +137,22 @@
           line-height: 0;
           background: url('../../../../icons/blue_cross.svg');
           background: url('../../../../icons/pink_cross.svg');
-          width: 24px;
-          height: 36px;
+          width: 28px;
+          height: 28px;
           margin-left: 20px;
           background-repeat: no-repeat;
           background-position: center;
           display: inline-block;
           position: absolute;
-          right: 11.5%;
+          right: 12.5%;
           cursor: pointer;
           &:hover,
           &:focus {
             background: url('../../../../icons/blue_cross.svg');
             background-repeat: no-repeat;
             background-position: center;
-            width: 24px;
-            height: 36px;
+            width: 28px;
+            height: 28px;
           }
         }
       }
@@ -185,7 +196,9 @@
     position: relative;
     &:last-of-type {
       border-bottom: 2px solid $BostonGrayTint;
-      margin-bottom: 16px;
+    }
+    &:last-child {
+      margin-bottom: 0;
     }
     .search-result-item {
       display: flex;
@@ -339,6 +352,9 @@
       width: 100%;
       height: 100%;
       font-size: 0;
+      &:focus-visible {
+        z-index: 4;
+      }
     }
   }
 
@@ -358,5 +374,50 @@
     margin-bottom: 0px;
     padding: 0;
     text-align: center;
+  }
+}
+
+.no_result_found_wraper {
+  .headline {
+    font-family: $HelveticaRegular;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+    color: #404040;
+    margin-bottom: 12px;
+    @include breakpoint(small-desktop) {
+      font-size: rem(28);
+      line-height: 42px;
+      margin-bottom: 20px;
+    }
+  }
+  .no-result-bottom-wrapper {
+    p {
+      font-size: rem(16);
+      line-height: 24px;
+      margin: 0;
+      padding-top: 0;
+      padding-bottom: 12px;
+      @include breakpoint(small-desktop) {
+        font-size: rem(18);
+        line-height: 28px;
+        padding-bottom: 20px;
+      }
+    }
+    ol,
+    ul {
+      margin-top: 0;
+      margin-bottom: 12px;
+      li {
+        font-size: rem(16);
+        line-height: 24px;
+        @include breakpoint(small-desktop) {
+          font-size: rem(18);
+          line-height: 28px;
+          margin-bottom: 20px;
+        }
+      }
+    }
   }
 }
