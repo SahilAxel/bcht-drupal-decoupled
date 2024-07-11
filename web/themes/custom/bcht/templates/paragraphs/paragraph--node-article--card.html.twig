@@ -50,6 +50,11 @@
 {% block paragraph %}
 	<div{{ attributes.addClass(classes) }}>
 		<div class="component__wrapper cards_inner_wrapper">
+      {% if content.field_heading.0 %}
+				<div class='cards_top_wrapper'>
+					<div class="title">{{ content.field_heading.0|raw }}</div>
+        </div>  
+			{% endif %}
 			{# Related cards #}
 			{{ drupal_view('related_content_wrapper', 'article_related_content_wrapper', paragraph.id()) }}
 		</div>
