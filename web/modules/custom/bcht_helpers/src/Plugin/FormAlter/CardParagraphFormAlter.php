@@ -71,8 +71,7 @@ class CardParagraphFormAlter extends FormAlterBase {
     $parent = $form_state->getFormObject()->getEntity();
     if ($parent instanceof Node) {
       if ($parent->getType() == "article") {
-        // Disabling the form fields not needed in the article cotnent type related content field.
-        $form['subform']['field_heading']['#access'] = FALSE;
+        // Disabling the form fields not needed in the article content type related content field.
         $form['subform']['field_intro_text']['#access'] = FALSE;
         $form['subform']['field_card_type']['#access'] = FALSE;
         $form['subform']['field_content_type']['#access'] = FALSE;
