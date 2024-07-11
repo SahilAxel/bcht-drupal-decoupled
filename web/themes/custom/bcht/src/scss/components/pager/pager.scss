@@ -2,12 +2,55 @@
 
 .pager {
   position: relative;
-  margin: 16px 0;
+  margin: 32px 0 16px;
   float: left;
   width: 100%;
   padding: 0 18px;
   @include breakpoint(small-desktop) {
     padding: 0;
+    margin: 64px 0 16px;
+  }
+
+  &.more-pager-link {
+    ul.pager__items {
+      li.pager__item {
+        display: none;
+
+        &.is-active,
+        &.pager__item--first,
+        &.pager__item--last,
+        &.pager__item--previous,
+        &.pager__item--next {
+          display: block;
+        }
+        &.is-active + .pager__item {
+          display: block;
+        }
+        &:has(+ .is-active) {
+          display: block !important;
+        }
+        &.hidden {
+          display: none !important;
+        }
+      }
+      li.pager__item[attr-kay='1'],
+      li.pager__item[attr-kay='2'],
+      li.pager__item[attr-kay='3'],
+      li.pager__item[attr-kay='4'] {
+        display: block;
+      }
+    }
+
+    &.preve-morelink {
+      ul.pager__items {
+        li.pager__item[attr-kay='1'],
+        li.pager__item[attr-kay='2'],
+        li.pager__item[attr-kay='3'],
+        li.pager__item[attr-kay='4'] {
+          display: none;
+        }
+      }
+    }
   }
 
   ul.pager__items {
@@ -44,7 +87,7 @@
         @include breakpoint(small-desktop) {
           font-size: rem(16);
           line-height: 24px;
-          height: 33px;
+          height: 34px;
           width: 34px;
         }
         &:hover {
@@ -54,10 +97,14 @@
       }
 
       @include breakpoint(small-desktop) {
-        margin: 0 3px;
+        margin: 0;
       }
 
       &.is-active {
+        margin: 0 7px;
+        @include breakpoint(small-desktop) {
+          margin: 0 11px;
+        }
         a {
           background-color: $BostonPink;
           color: $White;
@@ -80,12 +127,12 @@
       }
 
       &.pager__item--previous {
-        margin-right: 10px;
+        margin-right: 2px;
         margin-left: 0;
         position: relative;
         overflow: visible;
         @include breakpoint(small-desktop) {
-          margin-right: 24px;
+          margin-right: 10px;
         }
         a {
           font-weight: 400;
@@ -104,9 +151,9 @@
           background-repeat: no-repeat;
           background-size: contain;
           display: inline-block;
-          height: 10px;
+          height: 11px;
           position: absolute;
-          left: -22px;
+          left: -20px;
           top: 45%;
           transform: translateY(-50%) rotate(180deg);
         }
@@ -117,18 +164,19 @@
             background-repeat: no-repeat;
             background-size: contain;
             display: inline-block;
-            height: 10px;
+            height: 11px;
           }
         }
       }
 
       &.pager__item--next {
-        margin-left: 10px;
+        margin-left: 2px;
         margin-right: 0;
         position: relative;
         overflow: visible;
         @include breakpoint(small-desktop) {
           margin-right: 24px;
+          margin-left: 10px;
         }
         a {
           font-weight: 400;
@@ -147,9 +195,9 @@
           background-repeat: no-repeat;
           background-size: contain;
           display: inline-block;
-          height: 10px;
+          height: 11px;
           position: absolute;
-          right: -22px;
+          right: -20px;
           top: 45%;
           transform: translateY(-50%);
         }
@@ -160,7 +208,7 @@
             background-repeat: no-repeat;
             background-size: contain;
             display: inline-block;
-            height: 10px;
+            height: 11px;
           }
         }
       }

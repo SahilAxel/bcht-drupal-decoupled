@@ -56,7 +56,19 @@
         @include breakpoint(small-desktop) {
           margin-top: -180px;
           padding: 72px 109px 0px 109px;
+          max-width: 1010px;
+        }
+        @include breakpoint(desktop) {
           max-width: 1066px;
+        }
+      }
+
+      &.noimage {
+        .hero_no_image {
+          min-height: 80px;
+          @include breakpoint(small-desktop) {
+            min-height: 351px;
+          }
         }
       }
     }
