@@ -380,7 +380,6 @@
               context,
             ),
           ).each(function () {
-            console.log($(this));
             if ($(this).hasClass('pager__item--ellipsis')) {
               $('.pager.more-pager-link').addClass('preve-morelink');
             }
@@ -409,6 +408,18 @@
         $('.search-form-wrapper input:text').val('');
         $('.search-form-wrapper input:text').focus();
       });
+
+      //******************** */
+      // js for page scroll if query parameters avilable in the URL
+      const currURL = $(location).attr('href');
+      if (currURL.indexOf('?search=') != -1) {
+        var searchwrappertop =
+          $(
+            '.main-content-wrapper .paragraph--type--blocks .search-form-wrapper',
+          ).offset().top - 140;
+        $('html, body').animate({ scrollTop: searchwrappertop }, 500);
+        return false;
+      }
     },
   };
 })(Drupal, jQuery, once);
