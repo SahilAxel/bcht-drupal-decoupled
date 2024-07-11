@@ -241,33 +241,33 @@
           $('.mobile-menu-wrapper').slideDown();
         }
       });
-      $(once('menuTogglekeypress', '#menuToggle', context)).keypress(function (
-        e,
-      ) {
-        if (e.which == 13) {
-          if ($(this).hasClass('active')) {
-            $(this).removeClass('active');
-            $('body').removeClass('mobile-menu-open');
-            $('.mobile-menu-wrapper').slideUp();
-            $(
-              '.mobile-menu-wrapper .main-menu ul li a.primary-nav__menu-link--level-1.primary-nav__menu-link--has-children',
-            ).removeClass('active');
-            $(
-              '.mobile-menu-wrapper .main-menu ul li a.primary-nav__menu-link--level-1.primary-nav__menu-link--has-children',
-            ).attr('aria-expanded', 'false');
-            $(
-              '.mobile-menu-wrapper .main-menu ul.primary-nav__menu--level-2',
-            ).attr('aria-hidden', 'false');
-            $(
-              '.mobile-menu-wrapper .main-menu ul.primary-nav__menu--level-2',
-            ).css('display', 'none');
-          } else {
-            $(this).addClass('active');
-            $('body').addClass('mobile-menu-open');
-            $('.mobile-menu-wrapper').slideDown();
+      $(once('menuTogglekeypress', $('#menuToggle'), context)).keypress(
+        function (e) {
+          if (e.which == 13) {
+            if ($(this).hasClass('active')) {
+              $(this).removeClass('active');
+              $('body').removeClass('mobile-menu-open');
+              $('.mobile-menu-wrapper').slideUp();
+              $(
+                '.mobile-menu-wrapper .main-menu ul li a.primary-nav__menu-link--level-1.primary-nav__menu-link--has-children',
+              ).removeClass('active');
+              $(
+                '.mobile-menu-wrapper .main-menu ul li a.primary-nav__menu-link--level-1.primary-nav__menu-link--has-children',
+              ).attr('aria-expanded', 'false');
+              $(
+                '.mobile-menu-wrapper .main-menu ul.primary-nav__menu--level-2',
+              ).attr('aria-hidden', 'false');
+              $(
+                '.mobile-menu-wrapper .main-menu ul.primary-nav__menu--level-2',
+              ).css('display', 'none');
+            } else {
+              $(this).addClass('active');
+              $('body').addClass('mobile-menu-open');
+              $('.mobile-menu-wrapper').slideDown();
+            }
           }
-        }
-      });
+        },
+      );
 
       //******************** */
       // Check if similar component in the next div
