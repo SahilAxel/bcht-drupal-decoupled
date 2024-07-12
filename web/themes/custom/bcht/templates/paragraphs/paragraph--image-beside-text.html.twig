@@ -54,32 +54,43 @@
 <div{{attributes.addClass(classes)}}>
 	{% block content %}
     <div class="component__wrapper">
-    <div class="text_image_wrapper">
-      <div class="left_content_wrapper">
-        {% if content.field_eyebrow.0 and content.field_eyebrow['#is_multiple'] == false %}
-          <div class="text_eyebrow">{{ content.field_eyebrow.0|raw }}</div>
-        {% endif %}
-        <h2>{{ content.field_heading.0|raw }}</h2>
-        {% if content.field_description.0 and content.field_description['#is_multiple'] == false %}
-          <div class="text_content richtext">{{ content.field_description.0|raw }}</div>
-        {% endif %}
-        {% if content.field_cta_link.0 and content.field_cta_link['#is_multiple'] == false %}
-          <div class="cta cta_btn">
-          {% if content.field_cta_link.0['#url'].external %}
-            <a class="link-arrow-btn link-arrow-btn--default" href="{{ content.field_cta_link.0['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_cta_link.0['#title'] }}</a>
-          {% else %}
-            <a class="link-arrow-btn link-arrow-btn--default" href="{{ path(content.field_cta_link.0['#url'].routeName, content.field_cta_link.0['#url'].routeParameters) }}">{{ content.field_cta_link.0['#title'] }}</a>
+    {% if paragraph.get('field_type').value == 'article_reference' %}
+      {# Node reff #}
+      {% set likText = '' %}
+      {% if content.field_link_text.0['#context'].value %}
+        {% set likText = content.field_link_text.0['#context'].value %}
+      {% endif %}
+      <div class="text_image_wrapper_node_reff" attr-linktext='{{ likText }}'>
+      {{ drupal_entity('node', content.field_article_reference.0['#plain_text'], 'image_beside_text') }}
+      </div>
+    {% else %}
+      <div class="text_image_wrapper">
+        <div class="left_content_wrapper">
+          {% if content.field_eyebrow.0 and content.field_eyebrow['#is_multiple'] == false %}
+            <div class="text_eyebrow">{{ content.field_eyebrow.0|raw }}</div>
           {% endif %}
-          </div>
-        {% endif %}
+          <h2>{{ content.field_heading.0|raw }}</h2>
+          {% if content.field_description.0 and content.field_description['#is_multiple'] == false %}
+            <div class="text_content richtext">{{ content.field_description.0|raw }}</div>
+          {% endif %}
+          {% if content.field_cta_link.0 and content.field_cta_link['#is_multiple'] == false %}
+            <div class="cta cta_btn">
+            {% if content.field_cta_link.0['#url'].external %}
+              <a class="link-arrow-btn link-arrow-btn--default" href="{{ content.field_cta_link.0['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_cta_link.0['#title'] }}</a>
+            {% else %}
+              <a class="link-arrow-btn link-arrow-btn--default" href="{{ path(content.field_cta_link.0['#url'].routeName, content.field_cta_link.0['#url'].routeParameters) }}">{{ content.field_cta_link.0['#title'] }}</a>
+            {% endif %}
+            </div>
+          {% endif %}
+        </div>
+        <div class="right_content_wrapper">
+          {% if content.field_image[0]['#media'].field_media_image.entity.uri.value and content.field_image['#is_multiple'] == false %}
+            {% set media_uri = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('image_beside_text') %}
+              <div class="image_content"><img src={{ media_uri }}  alt="Card title - {{ content.field_heading.0|raw }}" /></div>
+          {% endif %}
+        </div>
       </div>
-      <div class="right_content_wrapper">
-        {% if content.field_image[0]['#media'].field_media_image.entity.uri.value and content.field_image['#is_multiple'] == false %}
-          {% set media_uri = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('image_beside_text') %}
-            <div class="image_content"><img src={{ media_uri }}  alt="Card title - {{ content.field_heading.0|raw }}" /></div>
-        {% endif %}
-      </div>
-    </div>
+    {% endif %}
     </div>
 	{% endblock %}
   </div>

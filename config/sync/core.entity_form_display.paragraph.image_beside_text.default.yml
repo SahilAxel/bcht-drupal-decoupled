@@ -91,16 +91,13 @@ content:
     weight: 7
     region: content
     settings:
-      size: 60
+      size: 30
       placeholder: ''
-    third_party_settings: {  }
-  field_remove_bottom_space:
-    type: boolean_checkbox
-    weight: 9
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: 30
+        maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
+        maxlength_js_enforce: true
   field_type:
     type: options_buttons
     weight: 0
@@ -109,4 +106,5 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_remove_bottom_space: true
   status: true

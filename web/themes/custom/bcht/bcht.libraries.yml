@@ -84,3 +84,10 @@ featuredevent-listing:
       build/css/components/featuredevent-listing/featuredevent-listing.css: {}
   js:
     build/js/featuredevent-listing.js: {}
+
+article-listing-filter:
+  css:
+    theme:
+      build/css/components/article-listing-filter/article-listing-filter.css: {}
+  js:
+    build/js/article-listing-filter.js: {}

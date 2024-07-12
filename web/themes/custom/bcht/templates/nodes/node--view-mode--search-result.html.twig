@@ -15,8 +15,16 @@
 		<div class="card_title">
 			<a href="{{ url }}" tabindex="-1" >{{ node.title.value|raw }}</a>
 		</div>
-    {% if content.body.0['#text'] %}
-      <div class="card_des">{{ content.body.0['#text']|striptags|length > 130 ? content.body.0['#text']|striptags|slice(0, 130) ~ '…' : content.body.0['#text']|striptags }}</div>
+    {% if node.type.value.0.target_id == 'article' %}
+      {% if content.field_description_text.0 %}
+        <div class="card_des">{{ content.field_description_text.0['#text']|striptags|length > 150 ? content.field_description_text.0['#text']|striptags|raw|replace({'&nbsp;' : ' '})|slice(0, 150) ~ '…' : content.field_description_text.0['#text']|striptags }}</div>
+      {% else %}
+        <div class="card_des">{{ content.body.0['#text']|striptags|length > 150 ? content.body.0['#text']|striptags|slice(0, 150) ~ '…' : content.body.0['#text']|striptags }}</div>
+      {% endif %}
+    {% else %}
+      {% if content.body.0['#text'] %}
+        <div class="card_des no-date">{{ content.body.0['#text']|striptags|length > 150 ? content.body.0['#text']|striptags|slice(0, 150) ~ '…' : content.body.0['#text']|striptags }}</div>
+      {% endif %}
     {% endif %}
     {% if content.field_publication_date %}
       <div class="publication_date">{{ content.field_publication_date }}</div>

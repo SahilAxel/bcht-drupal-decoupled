@@ -364,6 +364,11 @@
             $('.pager.more-pager-link .pager__item--last').attr(
               'attr-lastpager',
             ) - 1;
+          const lastth3pagger =
+            $('.pager.more-pager-link .pager__item--last').attr(
+              'attr-lastpager',
+            ) - 3;
+          console.log(lastth3pagger);
           if (
             $(
               '.pager.more-pager-link ul.pager__items li.pager__item.is-active',
@@ -372,6 +377,13 @@
             $('.pager.more-pager-link ul.pager__items li.pager__item.is-active')
               .next('.pager__item')
               .addClass('hidden');
+          }
+          if (
+            $(
+              '.pager.more-pager-link ul.pager__items li.pager__item.is-active',
+            ).attr('attr-kay') == lastth3pagger
+          ) {
+            $('.pager.more-pager-link').addClass('last3active');
           }
           $(
             once(
@@ -422,15 +434,37 @@
       );
 
       //******************** */
+      // js for image beside text node reff
+      if ($('.text_image_wrapper_node_reff').length > 0) {
+        $('.text_image_wrapper_node_reff').each(function () {
+          if ($(this).attr('attr-linktext')) {
+            $(this)
+              .find('.image_beside_link')
+              .html($(this).attr('attr-linktext'));
+          }
+        });
+      }
+
+      //******************** */
       // js for page scroll if query parameters avilable in the URL
       const currURL = $(location).attr('href');
       if (currURL.indexOf('?search=') != -1) {
+        $('body').addClass('search-result-page');
         var searchwrappertop =
           $(
             '.main-content-wrapper .paragraph--type--blocks .search-form-wrapper',
           ).offset().top - 140;
-        $('html, body').animate({ scrollTop: searchwrappertop }, 500);
+        $(once('searchanimate', $('html, body'), context)).animate(
+          { scrollTop: searchwrappertop },
+          200,
+        );
         return false;
+      }
+      if (
+        currURL.indexOf('?search=') != -1 ||
+        currURL.indexOf('/search') != -1
+      ) {
+        $('body').addClass('search-result-page');
       }
     },
   };

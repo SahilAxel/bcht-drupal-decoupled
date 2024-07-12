@@ -1,0 +1,21 @@
+<div class="text_image_wrapper">
+  <div class="left_content_wrapper">
+    <div class="text_eyebrow">{{ content.field_article_type.0|raw }}</div>
+    <h2>{{ node.title.value|raw }}</h2>
+    {% if content.field_description_text.0 and content.field_description_text['#is_multiple'] == false %}
+      <div class="text_content richtext">{{ content.field_description_text.0|raw }}</div>
+    {% endif %}
+    <div class="cta cta_btn">
+      <a class="link-arrow-btn link-arrow-btn--default image_beside_link" href="{{ url }}" >{{ 'Learn more'|t }}</a>
+    </div>
+  </div>
+  <div class="right_content_wrapper">
+    {% if content.field_hero[0]["#paragraph"].field_image.entity.field_media_image.entity.fileuri and content.field_hero['#is_multiple'] == false %}
+      {% set media_uri = content.field_hero[0]["#paragraph"].field_image.entity.field_media_image.entity.fileuri|image_style('image_beside_text') %}
+      <div class="image_content"><img src={{ media_uri }}  alt="Card title - {{ node.title.value|raw }}" /></div>
+    {% else %}
+      {% set default_media_uri = base_path ~ directory ~ '/images/cards-default.png' %}
+      <div class="image_content"><img src={{ default_media_uri }}  alt="Card image" /></div>
+    {% endif %}
+  </div>
+</div>
