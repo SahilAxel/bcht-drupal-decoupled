@@ -24,11 +24,9 @@ bundle: image_beside_text
 mode: default
 content:
   field_article_reference:
-    type: entity_reference_entity_view
+    type: entity_reference_entity_id
     label: hidden
-    settings:
-      view_mode: image_beside_text
-      link: false
+    settings: {  }
     third_party_settings: {  }
     weight: 7
     region: content

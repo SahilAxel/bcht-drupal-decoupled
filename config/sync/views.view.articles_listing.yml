@@ -122,7 +122,7 @@ display:
               reset_button_always_show: false
             filter:
               field_article_type_target_id:
-                plugin_id: default
+                plugin_id: bef
                 advanced:
                   sort_options: false
                   rewrite:
@@ -131,8 +131,11 @@ display:
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: true
               field_topics_target_id:
-                plugin_id: default
+                plugin_id: bef
                 advanced:
                   sort_options: false
                   rewrite:
@@ -141,6 +144,9 @@ display:
                   collapsible: false
                   collapsible_disable_automatic_open: false
                   is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: true
       access:
         type: perm
         options:
@@ -313,6 +319,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      css_class: 'search-result-page-wrapper article-result-page-wrapper'
       link_display: custom_url
       link_url: /articles
       header: {  }
