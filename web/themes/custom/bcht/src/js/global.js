@@ -444,7 +444,6 @@
           }
         });
       }
-      text_image_wrapper_node_reff;
 
       //******************** */
       // js for page scroll if query parameters avilable in the URL
