@@ -42,6 +42,9 @@ function bcht_preprocess_paragraph(&$variables)
   if ($node = \Drupal::request()->attributes->get('node')) {
     $variables['nid'] = $node->id();
   }
+  if ($node = \Drupal::request()->attributes->get('node_preview')) {
+    $variables['nid'] = $node->id();
+  }
   
   $paragraph = $variables['paragraph'];
 

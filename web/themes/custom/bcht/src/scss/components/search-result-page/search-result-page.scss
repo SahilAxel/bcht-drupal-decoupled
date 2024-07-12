@@ -1,6 +1,12 @@
 @import '../../settings/settings.all';
 @import '../pager/pager.scss';
 
+body.search-result-page {
+  .content-body {
+    display: none;
+  }
+}
+
 // Search result
 .main-content-wrapper {
   .paragraph--type--blocks {
@@ -222,9 +228,6 @@
         @include breakpoint(tablet) {
           padding: 48px 24px;
         }
-        .card_des {
-          margin-bottom: 0;
-        }
         .card_content_wrapper {
           flex: 0 0 100%;
         }
@@ -302,6 +305,9 @@
         line-height: 24px;
         margin-bottom: 16px;
         color: $BostonGray;
+        &.no-date {
+          margin-bottom: 0;
+        }
         @include breakpoint(small-desktop) {
           font-size: 18px;
           line-height: 28px;
@@ -309,11 +315,15 @@
       }
 
       .publication_date {
-        font-size: 16px;
+        font-size: 14px;
         font-style: normal;
         font-weight: 400;
-        line-height: 24px;
+        line-height: 22px;
         color: $BostonGray;
+        @include breakpoint(small-desktop) {
+          font-size: 16px;
+          line-height: 24px;
+        }
       }
 
       &:hover {
@@ -372,7 +382,7 @@
     font-family: $HelveticaRegular;
     color: $BostonGray;
     background: $White;
-    margin-top: 0px;
+    margin-top: 16px;
     z-index: 2;
     margin-bottom: 0px;
     padding: 0;

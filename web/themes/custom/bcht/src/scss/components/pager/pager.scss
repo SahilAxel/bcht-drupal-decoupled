@@ -2,13 +2,13 @@
 
 .pager {
   position: relative;
-  margin: 32px 0 16px;
+  margin: 32px 0 0px;
   float: left;
   width: 100%;
   padding: 0 18px;
   @include breakpoint(small-desktop) {
     padding: 0;
-    margin: 64px 0 16px;
+    margin: 64px 0 0px;
   }
 
   &.more-pager-link {
@@ -48,6 +48,17 @@
         li.pager__item[attr-kay='3'],
         li.pager__item[attr-kay='4'] {
           display: none;
+        }
+      }
+    }
+
+    &.last3active {
+      ul.pager__items {
+        li.pager__item--last {
+          display: none !important;
+        }
+        li.pager__item:nth-last-child(-n + 4) {
+          display: block;
         }
       }
     }
