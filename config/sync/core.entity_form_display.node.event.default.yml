@@ -7,9 +7,12 @@ dependencies:
     - field.field.node.event.field_components
     - field.field.node.event.field_event_details
     - field.field.node.event.field_hero
+    - field.field.node.event.field_metatags
     - node.type.event
+    - workflows.workflow.editorial
   module:
     - content_moderation
+    - metatag
     - paragraphs
     - path
     - text
@@ -77,6 +80,14 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_metatags:
+    type: metatag_firehose
+    weight: 26
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   langcode:
     type: language_select

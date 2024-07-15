@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.landing_page.field_categories
     - field.field.node.landing_page.field_components
     - field.field.node.landing_page.field_hero
+    - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_topics
     - node.type.landing_page
   module:
@@ -60,5 +61,6 @@ content:
 hidden:
   content_moderation_control: true
   field_components: true
+  field_metatags: true
   langcode: true
   search_api_excerpt: true

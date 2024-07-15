@@ -1,0 +1,21 @@
+uuid: 9524aa17-3234-4119-94c8-594cc172c10f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
+id: global
+label: Global
+tags:
+  canonical_url: '[current-page:url]'
+  image_src: /themes/custom/bcht/images/bcht-meta.png
+  og_image: /themes/custom/bcht/images/bcht-meta.png
+  og_image_url: /themes/custom/bcht/images/bcht-meta.png
+  og_title: '[current-page:title]'
+  og_url: '[current-page:url]'
+  title: '[current-page:title]'
+  twitter_cards_creator: '@helpkids'
+  twitter_cards_image: /themes/custom/bcht/images/bcht-meta.png
+  twitter_cards_site: '[site:name]'
+  twitter_cards_title: '[current-page:title]'
+  twitter_cards_type: summary_large_image

@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\views\ViewExecutable;
 
@@ -257,6 +258,35 @@ function bcht_helpers_entity_bundle_field_info_alter(&$fields, EntityTypeInterfa
     if (isset($fields['field_type']) && isset($fields['field_image'])) {
       // Custom validation constraint for image field.
       $fields['field_image']->addConstraint('ParagraphImageValidation', ['paragraph_type' => $bundle]);
+    }
+  }
+}
+
+/**
+ * Implements hook_metatags_alter().
+ */
+function bcht_helpers_metatags_alter(array &$metatags, array &$context) {
+  $entity = $context["entity"];
+  if ($entity instanceof NodeInterface && !$entity->get('field_hero')->isEmpty()) {
+    // Fetch url alias set as front page in the site settings and compare it with the raw url of the entity.
+    $frontPageSettings = \Drupal::service('config.factory')->get('system.site')->get("page.front");
+    $nodeRawUrl = \Drupal::service('path_alias.manager')->getPathByAlias($entity->toUrl()->toString());
+    $siteUrl = \Drupal::request()->getSchemeAndHttpHost();
+    // If front page url and entity url is the same then the current page is home page so update the conanocial url to the site url.
+    if ($frontPageSettings === $nodeRawUrl) {
+      $metatags['canonical_url'] = $siteUrl;
+      $metatags['og_url'] = $siteUrl;
+    }
+    // Fetch hero paragraph of the node and global metatag settings to get the fallback image url for the image metatags.
+    $heroImageParagraphs = $entity->get("field_hero")->getValue();
+    $globalSettings = \Drupal::service('config.factory')->get('metatag.metatag_defaults.global')->get("tags");
+    foreach ($heroImageParagraphs as $paragraph_entity) {
+      // Load paragraph using the paragraph id and set the image metatags to the fallback image url if image field is empty
+      $paragraph = \Drupal::entityTypeManager()->getStorage('paragraph')->load($paragraph_entity['target_id']);
+      if ($paragraph->get("field_image")->isEmpty()) {
+        $metatags['image_src'] = $siteUrl . $globalSettings['twitter_cards_image'];
+        $metatags['twitter_cards_image'] = $globalSettings['twitter_cards_image'];
+      }
     }
   }
 }
