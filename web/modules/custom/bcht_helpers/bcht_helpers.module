@@ -271,9 +271,9 @@ function bcht_helpers_metatags_alter(array &$metatags, array &$context) {
     // Fetch url alias set as front page in the site settings and compare it with the raw url of the entity.
     $frontPageSettings = \Drupal::service('config.factory')->get('system.site')->get("page.front");
     $nodeRawUrl = \Drupal::service('path_alias.manager')->getPathByAlias($entity->toUrl()->toString());
+    $siteUrl = \Drupal::request()->getSchemeAndHttpHost();
     // If front page url and entity url is the same then the current page is home page so update the conanocial url to the site url.
     if ($frontPageSettings === $nodeRawUrl) {
-      $siteUrl = \Drupal::request()->getSchemeAndHttpHost();
       $metatags['canonical_url'] = $siteUrl;
       $metatags['og_url'] = $siteUrl;
     }
@@ -284,7 +284,7 @@ function bcht_helpers_metatags_alter(array &$metatags, array &$context) {
       // Load paragraph using the paragraph id and set the image metatags to the fallback image url if image field is empty
       $paragraph = \Drupal::entityTypeManager()->getStorage('paragraph')->load($paragraph_entity['target_id']);
       if ($paragraph->get("field_image")->isEmpty()) {
-        $metatags['image_src'] = $globalSettings['twitter_cards_image'];
+        $metatags['image_src'] = $siteUrl . $globalSettings['twitter_cards_image'];
         $metatags['twitter_cards_image'] = $globalSettings['twitter_cards_image'];
       }
     }
