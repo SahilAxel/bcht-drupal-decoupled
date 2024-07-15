@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.event.field_components
     - field.field.node.event.field_event_details
     - field.field.node.event.field_hero
+    - field.field.node.event.field_metatags
     - node.type.event
   module:
     - entity_reference_revisions
@@ -44,5 +45,6 @@ hidden:
   content_moderation_control: true
   field_components: true
   field_event_details: true
+  field_metatags: true
   langcode: true
   search_api_excerpt: true

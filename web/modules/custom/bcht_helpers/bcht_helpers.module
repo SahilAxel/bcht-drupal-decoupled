@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\views\ViewExecutable;
 
@@ -257,6 +258,24 @@ function bcht_helpers_entity_bundle_field_info_alter(&$fields, EntityTypeInterfa
     if (isset($fields['field_type']) && isset($fields['field_image'])) {
       // Custom validation constraint for image field.
       $fields['field_image']->addConstraint('ParagraphImageValidation', ['paragraph_type' => $bundle]);
+    }
+  }
+}
+
+/**
+ * Implements hook_metatags_attachments_alter().
+ */
+function bcht_helpers_metatags_alter(array &$metatags, array &$context) {
+  $entity = $context["entity"];
+  if ($entity instanceof NodeInterface && !$entity->get('field_hero')->isEmpty()) {
+    $heroImageParagraphs = $entity->get("field_hero")->getValue();
+    $globalSettings = \Drupal::service('config.factory')->get('metatag.metatag_defaults.global')->get("tags");
+    foreach ($heroImageParagraphs as $paragraph_entity) {
+      $paragraph = \Drupal::entityTypeManager()->getStorage('paragraph')->load($paragraph_entity['target_id']);
+      if($paragraph->get("field_image")->isEmpty()) {
+        $metatags['image_src'] = $globalSettings['twitter_cards_image'];
+        $metatags['twitter_cards_image'] = $globalSettings['twitter_cards_image'];
+      }
     }
   }
 }

@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.article.field_components
     - field.field.node.article.field_description_text
     - field.field.node.article.field_hero
+    - field.field.node.article.field_metatags
     - field.field.node.article.field_publication_date
     - field.field.node.article.field_related_content
     - field.field.node.article.field_topics
@@ -17,6 +18,7 @@ dependencies:
   module:
     - content_moderation
     - datetime
+    - metatag
     - paragraphs
     - path
     - text
@@ -110,6 +112,14 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  field_metatags:
+    type: metatag_firehose
+    weight: 26
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_publication_date:
     type: datetime_default

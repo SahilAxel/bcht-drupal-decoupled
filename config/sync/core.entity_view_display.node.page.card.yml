@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.page.field_categories
     - field.field.node.page.field_components
     - field.field.node.page.field_hero
+    - field.field.node.page.field_metatags
     - field.field.node.page.field_topics
     - node.type.page
   module:
@@ -42,6 +43,7 @@ hidden:
   content_moderation_control: true
   field_categories: true
   field_components: true
+  field_metatags: true
   field_topics: true
   langcode: true
   links: true

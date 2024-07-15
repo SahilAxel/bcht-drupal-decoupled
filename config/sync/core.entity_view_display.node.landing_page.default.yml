@@ -7,10 +7,12 @@ dependencies:
     - field.field.node.landing_page.field_categories
     - field.field.node.landing_page.field_components
     - field.field.node.landing_page.field_hero
+    - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_topics
     - node.type.landing_page
   module:
     - entity_reference_revisions
+    - metatag
     - text
     - user
 id: node.landing_page.default
@@ -47,6 +49,13 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
     region: content
   links:
     settings: {  }

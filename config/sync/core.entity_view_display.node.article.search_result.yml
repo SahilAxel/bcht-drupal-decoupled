@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.article.field_components
     - field.field.node.article.field_description_text
     - field.field.node.article.field_hero
+    - field.field.node.article.field_metatags
     - field.field.node.article.field_publication_date
     - field.field.node.article.field_related_content
     - field.field.node.article.field_topics
@@ -69,6 +70,7 @@ hidden:
   field_article_type: true
   field_call_to_action_cta_banner: true
   field_components: true
+  field_metatags: true
   field_related_content: true
   field_topics: true
   langcode: true

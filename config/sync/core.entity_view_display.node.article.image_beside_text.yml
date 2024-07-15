@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.article.field_components
     - field.field.node.article.field_description_text
     - field.field.node.article.field_hero
+    - field.field.node.article.field_metatags
     - field.field.node.article.field_publication_date
     - field.field.node.article.field_related_content
     - field.field.node.article.field_topics
@@ -29,15 +30,14 @@ content:
     type: entity_reference_label
     label: hidden
     settings:
-      link: false
+      link: true
     third_party_settings: {  }
     weight: 3
     region: content
   field_description_text:
-    type: text_trimmed
+    type: text_default
     label: hidden
-    settings:
-      trim_length: 300
+    settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
@@ -60,6 +60,7 @@ hidden:
   content_moderation_control: true
   field_call_to_action_cta_banner: true
   field_components: true
+  field_metatags: true
   field_publication_date: true
   field_related_content: true
   field_topics: true
