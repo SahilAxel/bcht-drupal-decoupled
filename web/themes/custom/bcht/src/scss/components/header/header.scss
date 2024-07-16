@@ -26,7 +26,6 @@ header {
   &.hideupperHeader {
     .header_top_wrapper {
       height: 0;
-      // display: none;
       visibility: hidden;
       padding: 0;
       transition: all 0.3s ease;
@@ -57,7 +56,12 @@ header {
     &.active-search {
       .utitlity-menu,
       .search__icon {
+        visibility: hidden;
         display: none;
+      }
+      .search_box_wrapper {
+        min-width: 630px;
+        top: -18px;
       }
     }
 
@@ -128,14 +132,23 @@ header {
     }
   }
 
+  .search_box_wrapper {
+    position: relative;
+  }
   .search__wrapper {
-    width: 0;
+    width: 0px;
     position: absolute;
-    right: 156px;
+    left: 15px;
     background-color: $BostonBlue;
-    display: none;
+    display: block !important;
+    transition: all 0.2s ease-in-out;
+    visibility: hidden;
+    overflow: hidden;
+    top: 0;
     &.active {
-      width: 610px;
+      width: 630px;
+      transition: all 0.4s ease-in-out;
+      visibility: visible;
     }
     form {
       display: flex;
@@ -227,7 +240,7 @@ header {
           background: url('../../../../icons/blue_search.svg');
           background: url('../../../../icons/search.svg');
           width: 24px;
-          height: 36px;
+          height: 30px;
           margin-left: 20px;
           background-repeat: no-repeat;
           background-position: center;
@@ -345,9 +358,12 @@ header {
       flex: 0 0 22%;
       img {
         max-width: 315px;
-        height: auto;
+        width: 315px;
+        height: 36px;
         @media only screen and (max-width: 1130px) {
           max-width: 280px;
+          width: 280px;
+          height: 32px;
         }
       }
 
@@ -755,6 +771,8 @@ header {
       position: relative;
       right: auto;
       margin-top: 24px;
+      left: 0;
+      visibility: visible;
 
       form .reset {
         right: 11%;

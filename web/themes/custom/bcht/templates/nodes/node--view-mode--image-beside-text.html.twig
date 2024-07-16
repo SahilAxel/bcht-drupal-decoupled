@@ -3,7 +3,7 @@
     <div class="text_eyebrow">{{ content.field_article_type.0|raw }}</div>
     <h2>{{ node.title.value|raw }}</h2>
     {% if content.field_description_text.0 and content.field_description_text['#is_multiple'] == false %}
-      <div class="text_content richtext">{{ content.field_description_text.0|raw }}</div>
+      <div class="text_content richtext"><p>{{ content.field_description_text.0['#text']|striptags|length > 150 ? content.field_description_text.0['#text']|striptags|raw|replace({'&nbsp;' : ' '})|slice(0, 150) ~ '…' : content.field_description_text.0['#text']|striptags }}</p></div>
     {% endif %}
     <div class="cta cta_btn">
       <a class="link-arrow-btn link-arrow-btn--default image_beside_link" href="{{ url }}" >{{ 'Learn more'|t }}</a>

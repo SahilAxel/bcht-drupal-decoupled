@@ -205,7 +205,8 @@
       }
     }
   }
-  .featured-text {
+  .featured-text,
+  .intro-text {
     color: $BostonGray;
     font-size: 1.25rem;
     line-height: 30px;
@@ -218,10 +219,17 @@
       display: none;
     }
 
-    @include breakpoint(desktop) {
+    @include breakpoint(small-desktop) {
       font-size: 1.5rem;
       line-height: 36px;
       padding: 16px 0px !important;
+    }
+  }
+  .intro-text {
+    text-align: left;
+    padding: 12px 0px 8px !important;
+    @include breakpoint(small-desktop) {
+      padding: 16px 0px 4px !important;
     }
   }
   figure {

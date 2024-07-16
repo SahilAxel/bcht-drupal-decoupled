@@ -31,5 +31,8 @@ main {
   position: relative;
   float: left;
   width: 100%;
-  min-height: 400px;
+  min-height: 50vh;
+  @include breakpoint(small-desktop) {
+    min-height: 60vh;
+  }
 }

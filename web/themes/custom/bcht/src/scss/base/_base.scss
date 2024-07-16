@@ -300,3 +300,21 @@ p {
     }
   }
 }
+
+.content-body {
+  &.nobanner_wrapper {
+    margin-top: 32px;
+    @include breakpoint(small-desktop) {
+      margin-top: 64px;
+    }
+  }
+  h1.nobanner_h1 {
+    font-size: 1.75rem;
+    line-height: 36px;
+    margin-bottom: 20px;
+    @include breakpoint(small-desktop) {
+      font-size: 2rem;
+      line-height: 42px;
+    }
+  }
+}
