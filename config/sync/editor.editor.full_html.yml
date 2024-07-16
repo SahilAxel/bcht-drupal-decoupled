@@ -55,6 +55,9 @@ settings:
         -
           label: 'Featured Text'
           element: '<p class="featured-text">'
+        -
+          label: 'Intro Text'
+          element: '<p class="intro-text">'
     ckeditor_link_styles_linkStyles:
       styles:
         -

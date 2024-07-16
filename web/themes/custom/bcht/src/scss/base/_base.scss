@@ -47,7 +47,7 @@ hr {
   border: none;
   margin: 12px 0px;
   padding: 0;
-  @include breakpoint(desktop) {
+  @include breakpoint(small-desktop) {
     height: 2px;
     margin: 16px 0px;
   }
@@ -58,7 +58,7 @@ p {
   line-height: 24px;
   padding: 12px 0px;
   font-family: $HelveticaRegular;
-  @include breakpoint(desktop) {
+  @include breakpoint(small-desktop) {
     font-size: 1.125rem;
     line-height: 28px;
     padding: 16px 0px;
