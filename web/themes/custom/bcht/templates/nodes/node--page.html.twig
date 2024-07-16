@@ -87,13 +87,24 @@
     </footer>
   {% endif %}
 
-  {{ content.field_hero }}
+  {% if content.field_hero.0 and content.field_hero['#is_multiple'] == false %}
+    {{ content.field_hero }}
+  {% endif %}
 
   {% if logged_in  %}
     {{ drupal_region('highlighted', 'bcht') }}
   {% endif %}
 
-  <div class="content-body paragraph--type--rich-text container-small component__wrapper check_next_component">
+  {% if content.field_hero.0 and content.field_hero['#is_multiple'] == false %}
+    {% set nobannerclass = '' %}
+  {% else %}
+    {% set nobannerclass = 'nobanner_wrapper' %}
+  {% endif %}
+  <div class="content-body paragraph--type--rich-text container-small component__wrapper check_next_component {{ nobannerclass }}">
+    {% if content.field_hero.0 and content.field_hero['#is_multiple'] == false %}
+    {% else %}
+      <h1 class="nobanner_h1">{{ node.title.value|raw }}</h1>
+    {% endif %}
     {{ content.body|raw }}
   </div>
 
