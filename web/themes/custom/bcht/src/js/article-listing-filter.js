@@ -80,6 +80,23 @@
           $(this).find('.form-radio').trigger('click');
         }
       });
+      $(
+        once(
+          'clickradio',
+          $('.article-listing-filter-wrapper .form-radios .form-type-radio'),
+          context,
+        ),
+      ).click(function (e) {
+        console.log('radio click');
+
+        $(this).find('.form-radio').prop('checked', true);
+        $('.article-listing-filter-wrapper .fieldset-wrapper').removeClass(
+          'active',
+        );
+        $('.article-listing-filter-wrapper .form-radios').slideUp();
+        $('#views-exposed-form-articles-listing-block-1').submit();
+        return false;
+      });
 
       //On document click or outside element click JS
       $(document).on('click', function (event) {

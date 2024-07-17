@@ -103,7 +103,11 @@
   <div class="content-body paragraph--type--rich-text container-small component__wrapper check_next_component {{ nobannerclass }}">
     {% if content.field_hero.0 and content.field_hero['#is_multiple'] == false %}
     {% else %}
-      <h1 class="nobanner_h1">{{ node.title.value|raw }}</h1>
+      <div class="article_no_banner_wrapper">
+        <div class="publication_date">{{ content.field_publication_date|raw }}</div>
+        <h1 class="nobanner_h1">{{ node.title.value|raw }}</h1>
+        <div class="banner_description richtext">{{ content.field_description_text|raw }}</div>
+      </div>  
     {% endif %}
     {{ content.body|raw }}
   </div>

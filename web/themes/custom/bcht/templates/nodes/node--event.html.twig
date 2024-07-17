@@ -99,11 +99,11 @@
   {% else %}
     {% set nobannerclass = 'nobanner_wrapper' %}
   {% endif %}
+  {% if content.field_hero.0 and content.field_hero['#is_multiple'] == false %}
+  {% else %}
+    <div class="content-body paragraph--type--rich-text container-small event_nobanner_wrapper {{ nobannerclass }}"><h1 class="nobanner_h1">{{ node.title.value|raw }}</h1></div>
+  {% endif %}
   {% if content.field_event_details.0 and content.field_event_details['#is_multiple'] == false %}
-    {% if content.field_hero.0 and content.field_hero['#is_multiple'] == false %}
-    {% else %}
-      <div class="content-body paragraph--type--rich-text container-small component__wrapper {{ nobannerclass }}"><h1 class="nobanner_h1">{{ node.title.value|raw }}</h1></div>
-    {% endif %}
     <div class="component__wrapper event_details_wrapper">
       <div class="event_details">
       <span>{{ 'Event Details: '|t }}</span>{{ content.field_event_details.0|raw }}
