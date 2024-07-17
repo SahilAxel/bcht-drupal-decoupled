@@ -1,0 +1,12 @@
+diff --git a/search_api_exclude.module b/search_api_exclude.module
+index 53a4170..f7edb1b 100644
+--- a/search_api_exclude.module
++++ b/search_api_exclude.module
+@@ -36,6 +36,7 @@ function search_api_exclude_form_node_form_alter(&$form, FormStateInterface $for
+   $form['search_api_exclude']['exclude'] = [
+     '#type' => 'checkbox',
+     '#title' => t('Prevent this node from being indexed.'),
++    '#description' => t('Enable this to exclude this page from the search results.'),
+     '#default_value' => $node->get('sae_exclude')->getString(),
+   ];
+ 
