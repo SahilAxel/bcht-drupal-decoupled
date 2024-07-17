@@ -187,7 +187,10 @@ function bcht_helpers_get_term_name($node, $fieldName) {
   $termStorage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
   $termId = $node->get($fieldName)->target_id;
   if ($termId != NULL) {
-    return $termStorage->load($termId)->getName();
+    $term = $termStorage->load($termId);
+    if (!empty($term)) {
+      return $term->getName();
+    }
   }
   return (NULL);
 }
