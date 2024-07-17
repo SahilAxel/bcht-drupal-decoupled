@@ -48,6 +48,7 @@ module:
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
+  metatag_mobile: 0
   metatag_open_graph: 0
   metatag_twitter_cards: 0
   mysql: 0
@@ -80,6 +81,7 @@ module:
   pathauto: 1
   views: 10
   paragraphs: 11
+  bcht_operations: 999
 theme:
   olivero: 0
   claro: 0

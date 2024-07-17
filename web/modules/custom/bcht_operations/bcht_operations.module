@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for BCHT Alterations module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function bcht_operations_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['search_api_exclude'])) {
+    $form['search_api_exclude']['exclude']['#description'] = t('Enable this to exclude this page from the search results.');
+  }
+
+}

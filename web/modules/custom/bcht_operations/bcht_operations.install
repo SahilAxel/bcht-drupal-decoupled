@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the BCHT Operations module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function bcht_operations_install() {
+  // Increase the weight of this module in order to execute the operations of this module after all the other modules have finished their code execution.
+  module_set_weight('bcht_operations', 999);
+}

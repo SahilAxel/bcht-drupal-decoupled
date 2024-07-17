@@ -13,9 +13,11 @@ tags:
   og_image_url: /themes/custom/bcht/images/bcht-meta.png
   og_title: '[current-page:title]'
   og_url: '[current-page:url]'
+  robots: 'index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large'
   title: '[current-page:title]'
   twitter_cards_creator: '@helpkids'
   twitter_cards_image: /themes/custom/bcht/images/bcht-meta.png
   twitter_cards_site: '[site:name]'
   twitter_cards_title: '[current-page:title]'
   twitter_cards_type: summary_large_image
+  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
