@@ -303,10 +303,30 @@ p {
 
 .content-body {
   &.nobanner_wrapper {
-    margin-top: 32px;
+    margin-top: 32px !important;
     @include breakpoint(small-desktop) {
-      margin-top: 64px;
+      margin-top: 64px !important;
     }
+  }
+  .article_no_banner_wrapper {
+    .publication_date {
+      font-family: $HelveticaBold;
+      font-size: 14px;
+      line-height: 17.5px;
+      text-transform: uppercase;
+      color: $BostonOcean;
+      margin-bottom: 30px;
+      @include breakpoint(small-desktop) {
+        font-size: 15px;
+        line-height: 18.75px;
+      }
+    }
+    h1.nobanner_h1 {
+      padding-top: 0;
+    }
+  }
+  &.event_nobanner_wrapper.nobanner_wrapper {
+    margin-bottom: 0 !important;
   }
   h1.nobanner_h1 {
     font-size: 1.75rem;

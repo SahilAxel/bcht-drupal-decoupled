@@ -356,7 +356,6 @@
             $('.pager.more-pager-link .pager__item--last').attr(
               'attr-lastpager',
             ) - 3;
-          console.log(lastth3pagger);
           if (
             $(
               '.pager.more-pager-link ul.pager__items li.pager__item.is-active',

@@ -775,10 +775,13 @@ header {
       visibility: visible;
 
       form .reset {
-        right: 11%;
+        right: 14%;
       }
       form .form-actions .form-submit {
         margin-left: 15px;
+      }
+      form .form-item-search {
+        flex: 0 0 88%;
       }
     }
   }

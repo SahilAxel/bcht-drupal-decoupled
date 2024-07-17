@@ -17,13 +17,13 @@
 		</div>
     {% if node.type.value.0.target_id == 'article' %}
       {% if content.field_description_text.0 %}
-        <div class="card_des">{{ content.field_description_text.0['#text']|striptags|length > 150 ? content.field_description_text.0['#text']|striptags|raw|replace({'&nbsp;' : ' '})|slice(0, 150) ~ '…' : content.field_description_text.0['#text']|striptags }}</div>
+        <div class="card_des">{{ content.field_description_text.0['#text']|striptags|length > 150 ? content.field_description_text.0['#text']|striptags|raw|replace({'&nbsp;' : ' '})|slice(0, 150) ~ '…' : content.field_description_text.0['#text']|striptags|raw|replace({'&nbsp;' : ' '}) }}</div>
       {% else %}
-        <div class="card_des">{{ content.body.0['#text']|striptags|length > 150 ? content.body.0['#text']|striptags|slice(0, 150) ~ '…' : content.body.0['#text']|striptags }}</div>
+        <div class="card_des">{{ content.body.0['#text']|striptags|length > 150 ? content.body.0['#text']|striptags|raw|replace({'&nbsp;' : ' '})|slice(0, 150) ~ '…' : content.body.0['#text']|striptags|raw|replace({'&nbsp;' : ' '}) }}</div>
       {% endif %}
     {% else %}
       {% if content.body.0['#text'] %}
-        <div class="card_des no-date">{{ content.body.0['#text']|striptags|length > 150 ? content.body.0['#text']|striptags|slice(0, 150) ~ '…' : content.body.0['#text']|striptags }}</div>
+        <div class="card_des no-date">{{ content.body.0['#text']|striptags|length > 150 ? content.body.0['#text']|striptags|raw|replace({'&nbsp;' : ' '})|slice(0, 150) ~ '…' : content.body.0['#text']|striptags|raw|replace({'&nbsp;' : ' '}) }}</div>
       {% endif %}
     {% endif %}
     {% if content.field_publication_date %}
