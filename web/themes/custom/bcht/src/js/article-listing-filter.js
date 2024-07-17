@@ -86,9 +86,7 @@
           $('.article-listing-filter-wrapper .form-radios .form-type-radio'),
           context,
         ),
-      ).click(function (e) {
-        console.log('radio click');
-
+      ).click(function () {
         $(this).find('.form-radio').prop('checked', true);
         $('.article-listing-filter-wrapper .fieldset-wrapper').removeClass(
           'active',
