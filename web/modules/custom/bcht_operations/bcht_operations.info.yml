@@ -1,0 +1,5 @@
+name: 'BCHT Operations'
+type: module
+description: 'Use this module for the operations to be executed after all the other installed modules operations have completed their execution'
+package: BCHT
+core_version_requirement: ^10 || ^11
