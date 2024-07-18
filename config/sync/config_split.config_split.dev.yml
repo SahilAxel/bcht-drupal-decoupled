@@ -11,9 +11,11 @@ no_patching: false
 storage: folder
 folder: ../config/dev
 module:
+  pantheon_advanced_page_cache: 0
   field_ui: 0
   views_ui: 0
 theme: {  }
 complete_list:
+  - pantheon_advanced_page_cache.settings
   - search_api.server.pantheon_solr8
 partial_list: {  }
