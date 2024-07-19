@@ -65,7 +65,7 @@
               {% endif %}     
               <div class="testimonial--content">
               {% if content.field_caption.0 and content.field_caption['#is_multiple'] == false %}
-                <h2 class="testimonial--content__quote">{{ content.field_caption[0]['#text']|striptags }}</h2>
+                <h2 class="testimonial--content__quote">{{ content.field_caption[0]['#text']|striptags|raw|replace({'&nbsp;' : ' '}) }}</h2>
               {% endif %}
 
               {% if content.field_heading.0 and content.field_heading['#is_multiple'] == false %}  
