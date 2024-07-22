@@ -1,0 +1,32 @@
+uuid: 1626406b-cdf5-4385-98d0-858b5ca150cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.link_list_image
+  module:
+    - crop
+name: link_list
+label: 'Link list'
+effects:
+  cae0c9af-74ac-4c8b-a0e0-f5178b27f302:
+    uuid: cae0c9af-74ac-4c8b-a0e0-f5178b27f302
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: link_list_image
+      automatic_crop_provider: null
+  45b515e3-46e3-44d8-89a5-4089ca1612f8:
+    uuid: 45b515e3-46e3-44d8-89a5-4089ca1612f8
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 317
+      height: 218
+      anchor: center-center
+  06064e00-df3b-407d-8e5a-cde0a695263f:
+    uuid: 06064e00-df3b-407d-8e5a-cde0a695263f
+    id: image_convert
+    weight: 3
+    data:
+      extension: webp

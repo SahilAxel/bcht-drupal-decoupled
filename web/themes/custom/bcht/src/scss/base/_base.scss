@@ -17,6 +17,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  &::after {
+    position: absolute;
+    visibility: hidden;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    content: url('../../icons/blue_search.svg')
+      url('../../icons/ocean_search.svg');
+  }
   a {
     color: $BostonPink;
     text-decoration: underline;
