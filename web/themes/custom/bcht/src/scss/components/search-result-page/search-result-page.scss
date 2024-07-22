@@ -11,7 +11,7 @@ body.search-result-page {
 .main-content-wrapper {
   .paragraph--type--blocks {
     .search-form-wrapper {
-      max-width: 100%;
+      max-width: 90%;
       margin: 0 auto;
       padding: 0 18px;
       padding-right: 25px;
@@ -29,7 +29,7 @@ body.search-result-page {
           display: none;
         }
         .form-item-search {
-          flex: 0 0 90%;
+          flex: 0 0 93%;
 
           input.form-text {
             height: 32px;
@@ -150,7 +150,7 @@ body.search-result-page {
           background-position: center;
           display: inline-block;
           position: absolute;
-          right: 12.5%;
+          right: 9%;
           cursor: pointer;
           &.hidden {
             display: none;
@@ -181,7 +181,7 @@ body.search-result-page {
 
   @include breakpoint(small-desktop) {
     margin: 64px auto;
-    max-width: 1066px;
+    max-width: 1102px;
     flex-wrap: nowrap;
   }
 
@@ -254,10 +254,15 @@ body.search-result-page {
       .card_image {
         margin-bottom: 24px;
         img {
-          max-width: 327px;
+          max-width: 294px;
           width: 100%;
           object-fit: cover;
           border-radius: 6px;
+          height: 194px;
+          @include breakpoint(small-desktop) {
+            max-width: 327px;
+            height: 218px;
+          }
         }
         @include breakpoint(small-desktop) {
           margin-bottom: 0px;
@@ -283,7 +288,7 @@ body.search-result-page {
         a {
           font-size: 24px;
           font-style: normal;
-          font-weight: 700;
+          font-weight: normal;
           line-height: 32px;
           display: block;
           color: $BostonBlue;
@@ -428,7 +433,7 @@ body.search-result-page {
         @include breakpoint(small-desktop) {
           font-size: rem(18);
           line-height: 28px;
-          margin-bottom: 20px;
+          margin-bottom: 8px;
         }
       }
     }

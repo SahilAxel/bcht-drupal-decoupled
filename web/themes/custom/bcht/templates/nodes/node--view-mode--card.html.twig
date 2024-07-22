@@ -70,10 +70,10 @@
 {% set noimageclass = '' %}
 {% if content.field_hero[0]["#paragraph"].field_image.entity.field_media_image.entity.fileuri and content.field_hero['#is_multiple'] == false %}
   {% set media_uri = content.field_hero[0]["#paragraph"].field_image.entity.field_media_image.entity.fileuri|image_style('card_image') %}
-  <div class="card_image"><img src={{ media_uri }} alt="{{ 'Card title -' ~ node.title.value|raw }}" /></div>
+  <div class="card_image"><img src={{ media_uri }} loading="lazy" alt="{{ 'Card title -' ~ node.title.value|raw }}" /></div>
 {% else %}
     {% set default_media_uri = base_path ~ directory ~ '/images/cards-default.png' %}
-    <div class="card_image"><img src={{ default_media_uri }}  alt="Card image" /></div>
+    <div class="card_image"><img src={{ default_media_uri }} loading="lazy" alt="Card image" /></div>
 {% endif %}
 <div class="card_bottom_wrapper {{ noimageclass }}">
   {% if eyebrow_node %}

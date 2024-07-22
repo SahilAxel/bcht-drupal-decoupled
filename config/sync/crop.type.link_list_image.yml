@@ -1,0 +1,12 @@
+uuid: 69bf66bb-f40c-4de8-919c-51cfc26eba28
+langcode: en
+status: true
+dependencies: {  }
+label: 'Link list image'
+id: link_list_image
+description: 'Link list image (317 x 218)'
+aspect_ratio: '3:2'
+soft_limit_width: 317
+soft_limit_height: 218
+hard_limit_width: 320
+hard_limit_height: 221
