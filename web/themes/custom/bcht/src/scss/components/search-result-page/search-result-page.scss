@@ -430,6 +430,7 @@ body.search-result-page {
       li {
         font-size: rem(16);
         line-height: 24px;
+        margin-bottom: 8px;
         @include breakpoint(small-desktop) {
           font-size: rem(18);
           line-height: 28px;
