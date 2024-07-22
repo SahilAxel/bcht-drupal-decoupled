@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - user.role.administrator
   module:
     - node
     - taxonomy
@@ -264,6 +265,7 @@ display:
     display_plugin: feed
     position: 2
     display_options:
+      enabled: false
       pager:
         type: some
         options:
@@ -302,9 +304,16 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      access:
+        type: role
+        options:
+          role:
+            administrator: administrator
       query:
         type: views_query
         options: {  }
+      defaults:
+        access: false
       display_extenders: {  }
       path: taxonomy/term/%
     cache_metadata:
@@ -314,5 +323,5 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags: {  }
