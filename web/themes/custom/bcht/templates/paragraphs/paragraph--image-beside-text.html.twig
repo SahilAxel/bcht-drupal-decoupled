@@ -85,8 +85,10 @@
         </div>
         <div class="right_content_wrapper">
           {% if content.field_image[0]['#media'].field_media_image.entity.uri.value and content.field_image['#is_multiple'] == false %}
-            {% set media_uri = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('image_beside_text') %}
-              <div class="image_content"><img src={{ media_uri }} loading="lazy" alt="Card title - {{ content.field_heading.0|raw }}" /></div>
+            {% set media_uri = content.field_image[0]['#media'].field_media_image.entity.uri.value %}
+              <div class="image_content">
+                {{ drupal_image(media_uri, 'image_beside_text', {alt: 'Card title - ' ~ content.field_heading.0['#context'].value|raw, loading:'lazy' }) }}
+              </div>
           {% endif %}
         </div>
       </div>
