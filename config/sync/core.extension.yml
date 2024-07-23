@@ -59,6 +59,7 @@ module:
   path: 0
   path_alias: 0
   pluginformalter: 0
+  redirect: 0
   search_api: 0
   search_api_exclude: 0
   search_api_pantheon: 0
