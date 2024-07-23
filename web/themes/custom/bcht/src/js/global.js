@@ -1,7 +1,8 @@
 (function (Drupal, $, once) {
   Drupal.behaviors.global = {
     attach: function (context) {
-      // Main menu dark bg js
+      //******************** */
+      // Main menu scroll JS
       var lastScrollTop = 60;
       $(window).scroll(function () {
         if ($(this).scrollTop() > 60) {
@@ -22,11 +23,12 @@
         $headerHeight = $('.header_wrapper').height();
         $('.main-content-wrapper').css('padding-top', $headerHeight);
       });
-
-      // Main menu
+      //******************** */
+      // Main menu 2nd level js to remove the accesibility issue
       $('header .main-menu ul.primary-nav__menu--level-2').each(function () {
         $(this).attr('aria-hidden', 'false');
       });
+      //******************** */
       // Check if more than 5 link on the first level
       const menulinks = $(
         'header .header_bottom_wrapper .main-menu li.primary-nav__menu-item--level-1',
@@ -34,7 +36,8 @@
       if (menulinks > 5) {
         $('header .header_bottom_wrapper').addClass('morelinks');
       }
-
+      //******************** */
+      // Main menu 1st level click js
       $(
         'header .main-menu ul li a.primary-nav__menu-link--level-1.primary-nav__menu-link--has-children',
       ).each(function () {
@@ -77,7 +80,6 @@
               'display',
               'none',
             );
-
             $firstLevelLink.addClass('active');
             $('header .header_top_wrapper').addClass('active-search');
             $firstLevelLink.attr('aria-expanded', 'true');
@@ -90,6 +92,8 @@
           }
         });
       });
+      //******************** */
+      // search reset button JS for global
       $('.search-form-wrapper form').each(function () {
         if ($(this).find('.reset').length == 0) {
           $(
@@ -111,67 +115,56 @@
       $('.mobile_bottom_wrapper .search-form-wrapper form input.form-text')
         .attr('aria-label', 'mobile-search')
         .attr('id', 'mobile-search');
-      $(
-        once('searchclear', $('header .search__wrapper form .reset'), context),
-      ).click(function () {
+
+      function headerSearchreset() {
         $('header .header_top_wrapper .search__icon').removeClass('active');
         $('header .header_top_wrapper .search__wrapper').removeClass('active');
         $('header .header_top_wrapper').removeClass('active-search');
         $('.search__wrapper input:text').val('');
+      }
+      $(
+        once('searchclear', $('header .search__wrapper form .reset'), context),
+      ).click(function () {
+        headerSearchreset();
       });
       $(
         once('searchclearr', $('header .search__wrapper form .reset'), context),
       ).keypress(function (e) {
         if (e.which == 13) {
-          $('header .header_top_wrapper .search__icon').removeClass('active');
-          $('header .header_top_wrapper .search__wrapper').removeClass(
-            'active',
-          );
-          $('header .header_top_wrapper').removeClass('active-search');
-          $('.search__wrapper input:text').val('');
+          headerSearchreset();
         }
       });
-
-      //Search JS
+      //******************** */
+      // Search JS for Header section
+      function HeaderSearchIconClick(element) {
+        if (element.hasClass('active')) {
+          $('.search__icon').removeClass('active');
+          $('.search__wrapper').removeClass('active');
+          $('header .header_top_wrapper').removeClass('active-search');
+        } else {
+          element.addClass('active');
+          element.next('.search__wrapper').addClass('active');
+          $('header .header_top_wrapper').addClass('active-search');
+          setTimeout(function () {
+            $(
+              '.header_top__container .search_box_wrapper .search__wrapper input:text',
+            ).focus();
+          }, 500);
+        }
+      }
       $(once('search__wrapper', $('.search__icon'), context)).click(
         function () {
-          if ($(this).hasClass('active')) {
-            $('.search__icon').removeClass('active');
-            $('.search__wrapper').removeClass('active');
-            $('header .header_top_wrapper').removeClass('active-search');
-          } else {
-            $(this).addClass('active');
-            $(this).next('.search__wrapper').addClass('active');
-            $('header .header_top_wrapper').addClass('active-search');
-            setTimeout(function () {
-              $(
-                '.header_top__container .search_box_wrapper .search__wrapper input:text',
-              ).focus();
-            }, 500);
-          }
+          HeaderSearchIconClick($(this));
         },
       );
       $(once('search__wrapperr', $('.search__icon'), context)).keypress(
         function (e) {
           if (e.which == 13) {
-            if ($(this).hasClass('active')) {
-              $('.search__icon').removeClass('active');
-              $('header .header_top_wrapper').removeClass('active-search');
-              $('.search__wrapper').removeClass('active');
-            } else {
-              $(this).addClass('active');
-              $(this).next('.search__wrapper').addClass('active');
-              $('header .header_top_wrapper').addClass('active-search');
-              setTimeout(function () {
-                $(
-                  '.header_top__container .search_box_wrapper .search__wrapper input:text',
-                ).focus();
-              }, 500);
-            }
+            HeaderSearchIconClick($(this));
           }
         },
       );
-
+      //******************** */
       //On document click or outside element click JS
       $(document).on('click', function (event) {
         // Close main menu drop down
@@ -204,11 +197,11 @@
           $('header .header_top_wrapper').removeClass('active-search');
         }
       });
-
-      //Mobile menu JS
-      $(once('menuToggle', '#menuToggle', context)).click(function () {
-        if ($(this).hasClass('active')) {
-          $(this).removeClass('active');
+      //******************** */
+      //Mobile menu JS global
+      function MobileMenuClick(element) {
+        if (element.hasClass('active')) {
+          element.removeClass('active');
           $('body').removeClass('mobile-menu-open');
           $('.mobile-menu-wrapper').slideUp();
           $(
@@ -224,35 +217,18 @@
             '.mobile-menu-wrapper .main-menu ul.primary-nav__menu--level-2',
           ).css('display', 'none');
         } else {
-          $(this).addClass('active');
+          element.addClass('active');
           $('body').addClass('mobile-menu-open');
           $('.mobile-menu-wrapper').slideDown();
         }
+      }
+      $(once('menuToggle', '#menuToggle', context)).click(function () {
+        MobileMenuClick($(this));
       });
       $(once('menuTogglekeypress', $('#menuToggle'), context)).keypress(
         function (e) {
           if (e.which == 13) {
-            if ($(this).hasClass('active')) {
-              $(this).removeClass('active');
-              $('body').removeClass('mobile-menu-open');
-              $('.mobile-menu-wrapper').slideUp();
-              $(
-                '.mobile-menu-wrapper .main-menu ul li a.primary-nav__menu-link--level-1.primary-nav__menu-link--has-children',
-              ).removeClass('active');
-              $(
-                '.mobile-menu-wrapper .main-menu ul li a.primary-nav__menu-link--level-1.primary-nav__menu-link--has-children',
-              ).attr('aria-expanded', 'false');
-              $(
-                '.mobile-menu-wrapper .main-menu ul.primary-nav__menu--level-2',
-              ).attr('aria-hidden', 'false');
-              $(
-                '.mobile-menu-wrapper .main-menu ul.primary-nav__menu--level-2',
-              ).css('display', 'none');
-            } else {
-              $(this).addClass('active');
-              $('body').addClass('mobile-menu-open');
-              $('.mobile-menu-wrapper').slideDown();
-            }
+            MobileMenuClick($(this));
           }
         },
       );
@@ -411,7 +387,6 @@
       $('.search-form-wrapper input:text').on(
         'change paste keyup',
         function () {
-          console.log($(this).val());
           if ($(this).val().length > 0) {
             $('.search-form-wrapper form .reset').removeClass('hidden');
           } else {
