@@ -57,9 +57,9 @@
 					{% set mobile_image_url = content.field_image[0]['#media'].field_media_image.entity.uri.value|image_style('home_banner_mobile') %}
 					<div class="hero_image">
 						<picture>
-							<source media="(min-width:768px)" srcset="{{ image_url }}">
-							<source media="(min-width:165px)" srcset="{{ mobile_image_url }}">
-							<img src="{{ image_url }}" alt="{{ content.field_hero_heading .0['#context'].value }}">
+							<source media="(min-width:768px)" srcset="{{ image_url }}" width="1440" height="732">
+							<source media="(min-width:165px)" srcset="{{ mobile_image_url }}" width="375" height="700">
+							<img src="{{ image_url }}" alt="{{ content.field_hero_heading .0['#context'].value }}" width="1440" height="732">
 						</picture>
 					</div>
 				{% endif %}
