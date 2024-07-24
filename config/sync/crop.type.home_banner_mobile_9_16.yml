@@ -2,7 +2,7 @@ uuid: 1bd005a8-600a-4ce9-9184-7cc82117d4d2
 langcode: en
 status: true
 dependencies: {  }
-label: 'Homepage Hero Mobile'
+label: 'Homepage Hero (Mobile)'
 id: home_banner_mobile_9_16
 description: 'Homepage Hero Mobile 9:16 (375 x 700)'
 aspect_ratio: '9:16'

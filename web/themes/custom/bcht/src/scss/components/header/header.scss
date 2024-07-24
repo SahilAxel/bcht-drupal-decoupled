@@ -169,13 +169,12 @@ header {
           width: 100%;
           box-shadow: none;
           border: none;
-          font-size: 16px;
+          font-size: 15px;
           font-style: normal;
           font-weight: 400;
           line-height: 24px;
           font-family: $HelveticaRegular;
-          color: $BostonGray;
-          font-style: italic;
+          color: $BostonBlue;
           &:focus {
             outline: 0.5px none;
           }

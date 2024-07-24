@@ -2,7 +2,7 @@ uuid: f3c4c6bf-185d-47ae-94b5-ca500e1d7e85
 langcode: en
 status: true
 dependencies: {  }
-label: 'Homepage Hero Desktop'
+label: 'Homepage Hero (Desktop)'
 id: home_banner_desktop_16_9
 description: 'Homepage Hero Desktop 16:9 (1440 x 732)'
 aspect_ratio: '16:9'

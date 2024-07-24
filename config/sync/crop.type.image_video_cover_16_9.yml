@@ -2,7 +2,7 @@ uuid: f679f247-fb97-4dc3-a13c-cacedc05c412
 langcode: en
 status: true
 dependencies: {  }
-label: 'Image Video Cover'
+label: 'Video Cover'
 id: image_video_cover_16_9
 description: 'Image Video Cover 16:9 (1091 x 606)'
 aspect_ratio: '16:9'
