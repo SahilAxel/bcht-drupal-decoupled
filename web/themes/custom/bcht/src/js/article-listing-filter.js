@@ -53,6 +53,10 @@
             $(this).removeClass('active');
             $(this).find('.form-radios').slideUp();
           } else {
+            $('.article-listing-filter-wrapper .fieldset-wrapper').removeClass(
+              'active',
+            );
+            $('.article-listing-filter-wrapper .form-radios').slideUp();
             $(this).addClass('active');
             $(this).find('.form-radios').slideDown();
           }

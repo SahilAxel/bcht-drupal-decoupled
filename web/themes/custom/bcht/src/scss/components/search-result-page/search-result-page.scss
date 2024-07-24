@@ -38,7 +38,7 @@ body.search-result-page {
             border-radius: 6px;
             width: 100%;
             box-shadow: none;
-            font-size: 16px;
+            font-size: 15px;
             font-style: normal;
             font-weight: 400;
             line-height: 24px;
@@ -56,10 +56,10 @@ body.search-result-page {
             }
             &::-webkit-input-placeholder {
               /* Chrome/Opera/Safari */
-              font-size: 18px;
+              font-size: 16px;
               font-style: normal;
               font-weight: 400;
-              line-height: 28px;
+              line-height: 24px;
               font-family: $HelveticaRegular;
               color: $BostonGray;
               overflow: visible;
@@ -219,7 +219,7 @@ body.search-result-page {
       word-wrap: break-word;
       position: relative;
 
-      @include breakpoint(small-desktop) {
+      @include breakpoint(tablet) {
         padding: 24px 0;
       }
 
@@ -237,7 +237,7 @@ body.search-result-page {
         .card_image {
           flex: 0 0 100%;
           @include breakpoint(tablet) {
-            flex: 0 0 32%;
+            flex: 0 0 30.7%;
             margin-bottom: 0px;
           }
         }
@@ -254,7 +254,7 @@ body.search-result-page {
       .card_image {
         margin-bottom: 24px;
         img {
-          max-width: 294px;
+          max-width: 100%;
           width: 100%;
           object-fit: cover;
           border-radius: 6px;

@@ -110,6 +110,10 @@
           align-items: baseline;
           cursor: pointer;
 
+          @media only screen and (max-width: 350px) {
+            width: 250px;
+          }
+
           @include breakpoint(small-desktop) {
             height: 52px;
             width: 350px;
@@ -214,6 +218,9 @@
       border: 2px solid $BostonGrayTint;
       border-top: none;
       z-index: 5;
+      @media only screen and (max-width: 350px) {
+        width: 250px;
+      }
       @include breakpoint(small-desktop) {
         width: 350px;
         top: 46px;

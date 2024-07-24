@@ -2,7 +2,7 @@ uuid: 69bf66bb-f40c-4de8-919c-51cfc26eba28
 langcode: en
 status: true
 dependencies: {  }
-label: 'Link list image'
+label: 'Link List'
 id: link_list_image
 description: 'Link list image (317 x 218)'
 aspect_ratio: '3:2'

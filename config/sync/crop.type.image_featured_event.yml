@@ -2,7 +2,7 @@ uuid: 65bfc87e-cb0f-42b0-a3bd-608c08721b64
 langcode: en
 status: true
 dependencies: {  }
-label: 'Image Featured Event'
+label: 'Featured Event'
 id: image_featured_event
 description: 'Image Featured Event 3:4'
 aspect_ratio: '3:4'

@@ -2,7 +2,7 @@ uuid: 1b92a5e4-acc6-4f5e-974c-d16c7160c050
 langcode: en
 status: true
 dependencies: {  }
-label: 'Hero Banner (Interior Pages)'
+label: 'Hero (Interior Page)'
 id: hero_banner_interior_pages_16_9
 description: 'Hero banner (Interior Pages) 16:9 (1440 x 400)'
 aspect_ratio: '16:9'
