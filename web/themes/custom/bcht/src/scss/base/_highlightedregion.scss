@@ -70,8 +70,22 @@
   text-align: center;
   color: $White;
   opacity: 1;
-  line-height: 20px;
-  font-size: 20px;
+  line-height: 0px;
+  font-size: 0px;
+  &:after {
+    background: url('data:image/svg+xml,%3Csvg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Crect y="6.875" width="16.875" height="2.25" rx="1.125" fill="%23FFFFFF"/%3E%3Cpath d="M11.25 1.25L18 8L11.25 14.75" stroke="%23FFFFFF" stroke-width="2.25" stroke-linecap="round"/%3E%3C/svg%3E');
+    content: '';
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: 20px;
+    width: 18px;
+    transform: rotate(270deg);
+    position: relative;
+    top: 3px;
+  }
 }
 
 .back-to-top:hover {

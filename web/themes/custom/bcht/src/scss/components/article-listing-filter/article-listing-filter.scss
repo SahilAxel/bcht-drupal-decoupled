@@ -57,7 +57,7 @@
         flex-wrap: nowrap;
       }
       fieldset {
-        display: flex;
+        display: table;
         flex-wrap: nowrap;
         align-items: center;
         margin: 0;
@@ -91,6 +91,7 @@
           margin-bottom: 0px;
           padding: 0;
           margin-right: 28px;
+          margin-top: 15px;
           @include breakpoint(small-desktop) {
             font-size: 16px;
             line-height: 24px;

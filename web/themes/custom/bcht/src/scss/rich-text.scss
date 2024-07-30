@@ -282,4 +282,30 @@
     ) {
     padding-top: 0px;
   }
+  .btn,
+  .btn-transparent {
+    padding: 10px 18px 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    line-height: 20.8px;
+    font-family: $MuseoSans;
+    font-weight: 600;
+    @include breakpoint(small-desktop) {
+      padding: 15px 25px;
+      border-radius: 6px;
+      font-size: 1.125rem;
+      line-height: 22px;
+    }
+  }
+  .link-arrow-btn {
+    font-family: $MuseoSans;
+    font-weight: 600;
+  }
+  .btn {
+    border: 2px solid $BostonPink;
+    &:hover,
+    &:focus {
+      border-color: $BostonOcean;
+    }
+  }
 }

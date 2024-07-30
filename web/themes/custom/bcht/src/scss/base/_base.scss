@@ -24,7 +24,9 @@ body {
     width: 0;
     height: 0;
     content: url('../../icons/blue_search.svg')
-      url('../../icons/ocean_search.svg');
+      url('../../icons/ocean_search.svg') url('../../icons/facebook-hover.svg')
+      url('../../icons/youtube-hover.svg') url('../../icons/linkedin-hover.svg')
+      url('../../icons/insta-hover.svg');
   }
   a {
     color: $BostonPink;
