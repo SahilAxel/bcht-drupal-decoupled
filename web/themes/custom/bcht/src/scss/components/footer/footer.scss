@@ -58,9 +58,15 @@ footer {
       }
     }
 
-    .second-column,
+    .second-column {
+      flex: 0 0 30%;
+      @include breakpoint(small-desktop) {
+        flex: 0 0 25%;
+      }
+    }
+
     .third-column {
-      flex: 0 0 50%;
+      flex: 0 0 70%;
       @include breakpoint(small-desktop) {
         flex: 0 0 25%;
       }
@@ -186,6 +192,12 @@ footer {
             position: relative;
             top: 3px;
           }
+          &:hover {
+            &:after {
+              background-image: url('../../../../icons/facebook-hover.svg');
+              opacity: 1;
+            }
+          }
         }
       }
       span.youtube {
@@ -202,6 +214,12 @@ footer {
             background-repeat: no-repeat;
             position: relative;
             top: 3px;
+          }
+          &:hover {
+            &:after {
+              background-image: url('../../../../icons/youtube-hover.svg');
+              opacity: 1;
+            }
           }
         }
       }
@@ -220,6 +238,12 @@ footer {
             position: relative;
             top: 3px;
           }
+          &:hover {
+            &:after {
+              background-image: url('../../../../icons/insta-hover.svg');
+              opacity: 1;
+            }
+          }
         }
       }
       span.linkedin {
@@ -236,6 +260,12 @@ footer {
             background-repeat: no-repeat;
             position: relative;
             top: 3px;
+          }
+          &:hover {
+            &:after {
+              background-image: url('../../../../icons/linkedin-hover.svg');
+              opacity: 1;
+            }
           }
         }
       }
@@ -294,6 +324,9 @@ footer {
       display: inline-block;
       margin-left: 5px;
       font-family: $HelveticaRegular;
+      &:hover {
+        text-decoration: none;
+      }
       @include breakpoint(small-desktop) {
         font-size: 14px;
         line-height: 22px;

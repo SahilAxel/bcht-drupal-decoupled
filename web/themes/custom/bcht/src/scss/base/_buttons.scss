@@ -274,12 +274,12 @@
       font-weight: 600;
       text-decoration: none;
       cursor: pointer;
-      @include breakpoint(desktop) {
+      @include breakpoint(small-desktop) {
         font-size: 1.25rem;
         line-height: 26px;
       }
     }
-    @include breakpoint(desktop) {
+    @include breakpoint(small-desktop) {
       font-size: 1.25rem;
       line-height: 26px;
     }
