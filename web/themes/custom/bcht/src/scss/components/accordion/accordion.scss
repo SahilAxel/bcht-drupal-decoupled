@@ -12,7 +12,7 @@
     padding-bottom: 16px;
     margin-bottom: 32px;
 
-    @include breakpoint(desktop) {
+    @include breakpoint(small-desktop) {
       padding-bottom: 8px;
     }
 
@@ -49,7 +49,7 @@
     color: $BostonGray;
     font-family: $HelveticaBold;
     font-weight: normal;
-    @include breakpoint(desktop) {
+    @include breakpoint(small-desktop) {
       padding: 0 91px 24px 18px;
     }
 
@@ -71,7 +71,7 @@
       }
     }
 
-    @include breakpoint(desktop) {
+    @include breakpoint(small-desktop) {
       padding-left: 18px;
       padding-right: 91px;
     }
@@ -85,7 +85,7 @@
       li {
         font-size: rem(16);
         line-height: 24px;
-        @include breakpoint(desktop) {
+        @include breakpoint(small-desktop) {
           font-size: rem(18);
           line-height: 28px;
         }
@@ -104,7 +104,7 @@
         ol {
           padding-top: 12px;
           padding-inline-start: 32px;
-          @include breakpoint(desktop) {
+          @include breakpoint(small-desktop) {
             padding-inline-start: 35px;
           }
           li {
@@ -115,7 +115,7 @@
             }
             ol {
               padding-inline-start: 16px;
-              @include breakpoint(desktop) {
+              @include breakpoint(small-desktop) {
                 padding-inline-start: 35px;
               }
               li {
@@ -147,7 +147,7 @@
         ul {
           padding-top: 12px;
           padding-inline-start: 32px;
-          @include breakpoint(desktop) {
+          @include breakpoint(small-desktop) {
             padding-inline-start: 35px;
           }
           li {
@@ -163,7 +163,7 @@
             }
             ul {
               padding-inline-start: 16px;
-              @include breakpoint(desktop) {
+              @include breakpoint(small-desktop) {
                 padding-inline-start: 35px;
               }
               li {
@@ -201,12 +201,12 @@
       font-size: rem(16);
       line-height: 22px;
       padding-top: 32px;
-      font-family: $MuseoSans;
-      font-weight: 600;
+      font-family: $MuseoSansBold;
+      font-weight: 700;
       text-decoration: none;
       display: inline-flex;
 
-      @include breakpoint(desktop) {
+      @include breakpoint(small-desktop) {
         font-size: rem(20);
         line-height: 26px;
       }
