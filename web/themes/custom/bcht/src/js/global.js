@@ -384,6 +384,19 @@
         $('.search-form-wrapper input:text').focus();
         $(this).addClass('hidden');
       });
+      $(
+        once(
+          'searchclear-resultpage-keypress',
+          $('.search-form-wrapper form .reset'),
+          context,
+        ),
+      ).keypress(function (e) {
+        if (e.which == 13) {
+          $('.search-form-wrapper input:text').val('');
+          $('.search-form-wrapper input:text').focus();
+          $(this).addClass('hidden');
+        }
+      });
       $('.search-form-wrapper input:text').on(
         'change paste keyup',
         function () {
