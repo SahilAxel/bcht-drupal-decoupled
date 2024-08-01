@@ -148,6 +148,19 @@ display:
           tokenize: true
           bypass_access: false
       sorts:
+        search_api_relevance:
+          id: search_api_relevance
+          table: search_api_index_search_content
+          field: search_api_relevance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
         created:
           id: created
           table: search_api_index_search_content
@@ -163,6 +176,54 @@ display:
           exposed: false
       arguments: {  }
       filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_search_content
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_fulltext
+          operator: and
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: Search
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: search
+            required: true
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            expose_fields: false
+            placeholder: Search...
+            searched_fields_id: search_api_fulltext_searched_fields
+            value_maxlength: 128
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields: {  }
         type:
           id: type
           table: search_api_index_search_content
@@ -245,56 +306,17 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        search_api_fulltext:
-          id: search_api_fulltext
-          table: search_api_index_search_content
-          field: search_api_fulltext
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api_fulltext
-          operator: and
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: search_api_fulltext_op
-            label: Search
-            description: ''
-            use_operator: false
-            operator: search_api_fulltext_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: search
-            required: true
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              content_editor: '0'
-              administrator: '0'
-            expose_fields: false
-            placeholder: Search...
-            searched_fields_id: search_api_fulltext_searched_fields
-            value_maxlength: 128
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          parse_mode: terms
-          min_length: null
-          fields: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
       row:
         type: search_api
         options:
@@ -304,10 +326,6 @@ display:
               event: search_result
               landing_page: search_result
               page: search_result
-            'entity:taxonomy_term':
-              article_type: default
-              categories: default
-              topic: default
       query:
         type: search_api_query
         options:
