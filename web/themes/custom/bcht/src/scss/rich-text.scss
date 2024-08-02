@@ -46,6 +46,11 @@
     li {
       padding-bottom: 12px;
       list-style-type: decimal;
+      &:before {
+        content: '';
+        width: 6px;
+        display: inline-block;
+      }
       &:last-child {
         padding: 0;
       }
@@ -97,6 +102,8 @@
         content: url('../../icons/rectangle.svg');
         display: inline-block;
         padding-right: 12px;
+        position: relative;
+        top: -2px;
       }
       ul {
         padding-top: 12px;

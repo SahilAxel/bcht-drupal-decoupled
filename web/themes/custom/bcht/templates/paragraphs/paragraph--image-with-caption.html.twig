@@ -61,7 +61,9 @@
         {% endif %}
         {% if content.field_caption.0 and content.field_caption['#is_multiple'] == false %}
           <div class="caption-text-wrapper">
+            <div class="caption-text-innerwrapper">
             {{ content.field_caption.0['#text']|raw }}
+            </div>
           </div>
         {% endif %}
       </div>

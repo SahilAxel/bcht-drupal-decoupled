@@ -20,13 +20,15 @@
             $(this)
               .closest('.paragraph--type--accordion-item')
               .find('.accordion-description')
-              .attr('aria-hidden', 'false');
+              .attr('aria-hidden', 'false')
+              .css('display', 'block');
           } else {
             $(this).attr('aria-expanded', 'false');
             $(this)
               .closest('.paragraph--type--accordion-item')
               .find('.accordion-description')
-              .attr('aria-hidden', 'true');
+              .attr('aria-hidden', 'true')
+              .css('display', 'none');
           }
         },
       );
