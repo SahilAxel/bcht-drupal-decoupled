@@ -4,7 +4,7 @@
 .btn {
   padding: 15px 25px;
   border-radius: 6px;
-  font-weight: 700;
+  font-weight: normal;
   font-size: 1.125rem;
   line-height: 22px;
   text-decoration: none;
@@ -126,7 +126,7 @@
 .btn-transparent {
   padding: 15px 25px;
   border-radius: 6px;
-  font-weight: 700;
+  font-weight: normal;
   font-size: 1.125rem;
   line-height: 22px;
   width: fit-content;
@@ -263,7 +263,7 @@
     font-family: $MuseoSansSemiBold;
     font-size: 1rem;
     line-height: 22px;
-    font-weight: 700;
+    font-weight: normal;
     text-decoration: none;
     cursor: pointer;
     a {
@@ -316,7 +316,7 @@
     font-family: $MuseoSansSemiBold;
     font-size: 1.25rem;
     line-height: 26px;
-    font-weight: 700;
+    font-weight: normal;
     text-decoration: none;
     cursor: pointer;
     a {
