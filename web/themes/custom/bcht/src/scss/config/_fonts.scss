@@ -7,6 +7,10 @@
   src: url('../../fonts/MuseoSans_300_Italic.ttf');
 }
 @font-face {
+  font-family: 'MuseoSansSemiBold';
+  src: url('../../fonts/MuseoSans_700.ttf');
+}
+@font-face {
   font-family: 'MuseoSansBold';
   src: url('../../fonts/MuseoSans_900.ttf');
 }
@@ -33,6 +37,7 @@
 
 // Font Variables
 $MuseoSans: 'MuseoSans', sans-serif;
+$MuseoSansSemiBold: 'MuseoSansSemiBold', sans-serif;
 $MuseoSansBold: 'MuseoSansBold', sans-serif;
 $MuseoSansItalic: 'MuseoSansItalic', sans-serif;
 $MuseoSansBoldItalic: 'MuseoSansBoldItalic', sans-serif;

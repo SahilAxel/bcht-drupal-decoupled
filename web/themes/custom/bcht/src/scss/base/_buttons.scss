@@ -9,7 +9,7 @@
   line-height: 22px;
   text-decoration: none;
   cursor: pointer;
-  font-family: $MuseoSansBold;
+  font-family: $MuseoSansSemiBold;
   display: inline-block;
   border: none;
   &--default {
@@ -130,7 +130,7 @@
   font-size: 1.125rem;
   line-height: 22px;
   width: fit-content;
-  font-family: $MuseoSansBold;
+  font-family: $MuseoSansSemiBold;
   text-decoration: none;
   border: none;
   cursor: pointer;
@@ -260,7 +260,7 @@
   max-width: fit-content;
   &--default {
     color: $BostonPink;
-    font-family: $MuseoSansBold;
+    font-family: $MuseoSansSemiBold;
     font-size: 1rem;
     line-height: 22px;
     font-weight: 700;
@@ -313,7 +313,7 @@
   }
   &--white {
     color: $White;
-    font-family: $MuseoSansBold;
+    font-family: $MuseoSansSemiBold;
     font-size: 1.25rem;
     line-height: 26px;
     font-weight: 700;

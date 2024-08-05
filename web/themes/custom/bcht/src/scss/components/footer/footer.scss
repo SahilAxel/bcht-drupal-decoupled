@@ -168,10 +168,11 @@ footer {
         a {
           font-size: 0;
           line-height: 0;
+          display: inline-block;
           &:hover,
           &:focus {
             &:after {
-              opacity: 0.8;
+              opacity: 1;
             }
           }
         }
@@ -281,7 +282,7 @@ footer {
         font-style: normal;
         font-weight: 700;
         line-height: 21px;
-        font-family: $MuseoSansBold;
+        font-family: $MuseoSansSemiBold;
         text-decoration: none;
         color: $BostonBlue;
         &:hover,

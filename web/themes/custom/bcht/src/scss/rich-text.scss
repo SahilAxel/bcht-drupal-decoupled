@@ -295,7 +295,7 @@
     border-radius: 5px;
     font-size: 1rem;
     line-height: 20.8px;
-    font-family: $MuseoSansBold;
+    font-family: $MuseoSansSemiBold;
     font-weight: 700;
     @include breakpoint(small-desktop) {
       padding: 15px 25px;
@@ -305,7 +305,7 @@
     }
   }
   .link-arrow-btn {
-    font-family: $MuseoSansBold;
+    font-family: $MuseoSansSemiBold;
     font-weight: 700;
   }
   .btn {
