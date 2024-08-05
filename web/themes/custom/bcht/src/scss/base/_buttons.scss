@@ -4,12 +4,12 @@
 .btn {
   padding: 15px 25px;
   border-radius: 6px;
-  font-weight: 700;
+  font-weight: normal;
   font-size: 1.125rem;
   line-height: 22px;
   text-decoration: none;
   cursor: pointer;
-  font-family: $MuseoSansBold;
+  font-family: $MuseoSansSemiBold;
   display: inline-block;
   border: none;
   &--default {
@@ -126,11 +126,11 @@
 .btn-transparent {
   padding: 15px 25px;
   border-radius: 6px;
-  font-weight: 700;
+  font-weight: normal;
   font-size: 1.125rem;
   line-height: 22px;
   width: fit-content;
-  font-family: $MuseoSansBold;
+  font-family: $MuseoSansSemiBold;
   text-decoration: none;
   border: none;
   cursor: pointer;
@@ -260,10 +260,10 @@
   max-width: fit-content;
   &--default {
     color: $BostonPink;
-    font-family: $MuseoSansBold;
+    font-family: $MuseoSansSemiBold;
     font-size: 1rem;
     line-height: 22px;
-    font-weight: 700;
+    font-weight: normal;
     text-decoration: none;
     cursor: pointer;
     a {
@@ -313,10 +313,10 @@
   }
   &--white {
     color: $White;
-    font-family: $MuseoSansBold;
+    font-family: $MuseoSansSemiBold;
     font-size: 1.25rem;
     line-height: 26px;
-    font-weight: 700;
+    font-weight: normal;
     text-decoration: none;
     cursor: pointer;
     a {
