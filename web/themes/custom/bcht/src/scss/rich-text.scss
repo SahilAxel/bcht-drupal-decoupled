@@ -56,10 +56,10 @@
       }
       ol {
         padding-top: 12px;
-        padding-inline-start: 32px;
+        padding-inline-start: 24px;
         margin: 0px;
         @include breakpoint(small-desktop) {
-          padding-inline-start: 35px;
+          padding-inline-start: 24px;
         }
         li {
           padding-bottom: 12px;
@@ -68,10 +68,10 @@
             padding: 0;
           }
           ol {
-            padding-inline-start: 16px;
+            padding-inline-start: 24px;
             margin: 0px;
             @include breakpoint(small-desktop) {
-              padding-inline-start: 35px;
+              padding-inline-start: 24px;
             }
             li {
               padding-bottom: 12px;
