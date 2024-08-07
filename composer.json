@@ -44,7 +44,8 @@
         "drupal/better_exposed_filters": "^7.0@beta",
         "drupal/metatag": "^1.26",
         "drupal/pantheon_advanced_page_cache": "^2.2",
-        "drupal/redirect": "^1.9"
+        "drupal/redirect": "^1.9",
+        "drupal/sendgrid_integration": "^2.2"
     },
     "require-dev": {
         "drupal/core-dev": "^10",

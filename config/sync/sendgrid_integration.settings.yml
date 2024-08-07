@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: g4qz7cPnloXFwtnLYfIKI2VS0gf_UFOz_I2uQiiulC8
+apikey: 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
+test_defaults:
+  to: jshah@bluestate.co
+  subject: 'Test Email from SendGrid Module'
+  body:
+    value: 'Test Message for SendGrid.'
+    format: plain_text
+  from_name: "Boston Children's Hospital Trust"
+  to_name: ''
+  reply_to: ''
+trackopens: 0
+trackclicks: 0
