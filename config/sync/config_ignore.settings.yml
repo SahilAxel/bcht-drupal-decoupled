@@ -3,5 +3,6 @@ _core:
 mode: simple
 ignored_config_entities:
   - 'bcht.settings:favicon'
+  - 'sendgrid_integration.settings:test_defaults.to'
   - 'system.site:page.404'
   - 'system.site:page.front'
