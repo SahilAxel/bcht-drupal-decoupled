@@ -84,5 +84,9 @@
   }
   .cta-banner--cta-link {
     width: fit-content;
+    &:hover {
+      color: $BostonBlue;
+      background-color: $BostonSkyTint2;
+    }
   }
 }
