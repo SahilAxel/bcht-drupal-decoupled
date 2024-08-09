@@ -67,7 +67,7 @@
         tabindex="-1"
         style="display:none;"
       >
-        <div {{ attributes.addClass(classes, 'field__item') }}>{{ item.content['#text']|raw }}</div>
+        <div {{ attributes.addClass(classes, 'field__item richtext') }}>{{ item.content['#text']|raw }}</div>
       </div>
     {% endfor %}
   {% endif %}

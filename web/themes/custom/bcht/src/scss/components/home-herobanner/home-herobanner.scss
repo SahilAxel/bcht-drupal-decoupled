@@ -45,7 +45,7 @@
       word-wrap: break-word;
       @include breakpoint(tablet) {
         max-width: 630px;
-        width: 630px;
+        width: 450px;
         top: 50%;
         padding: 40px;
         transform: translateY(-50%);
