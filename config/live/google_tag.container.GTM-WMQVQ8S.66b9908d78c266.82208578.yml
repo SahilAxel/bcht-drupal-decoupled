@@ -1,0 +1,46 @@
+uuid: e6e75e98-a800-4e61-9407-84faf4baf8b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - user
+id: GTM-WMQVQ8S.66b9908d78c266.82208578
+label: GTM-WMQVQ8S
+weight: 0
+tag_container_ids:
+  - GTM-WMQVQ8S
+advanced_settings:
+  consent_mode: false
+  gtm:
+    GTM-WMQVQ8S:
+      data_layer: dataLayer
+      include_classes: false
+      allowlist_classes: ''
+      blocklist_classes: ''
+      include_environment: false
+      environment_id: ''
+      environment_token: ''
+dimensions_metrics: {  }
+conditions:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/admin*\r\n/batch*\r\n/node/add*\r\n/node/*/edit\r\n/node/*/delete\r\n/user/*/edit\r\n/user/*/cancel"
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+events:
+  custom: {  }
+  search: {  }
+  login:
+    method: CMS
+  generate_lead:
+    value: ''
+    currency: ''
+  sign_up:
+    method: CMS
