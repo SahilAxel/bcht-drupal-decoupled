@@ -11,6 +11,7 @@ no_patching: false
 storage: folder
 folder: ../config/live
 module:
+  google_tag: 0
   pantheon_advanced_page_cache: 0
 theme: {  }
 complete_list:
