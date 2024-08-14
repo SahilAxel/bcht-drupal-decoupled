@@ -20,4 +20,4 @@ tags:
   twitter_cards_site: '[site:name]'
   twitter_cards_title: '[current-page:title]'
   twitter_cards_type: summary_large_image
-  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
+  viewport: 'width=device-width, initial-scale=1.0'
