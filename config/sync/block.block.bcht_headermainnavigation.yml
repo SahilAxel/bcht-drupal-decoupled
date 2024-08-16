@@ -11,7 +11,7 @@ dependencies:
 id: bcht_headermainnavigation
 theme: bcht
 region: header
-weight: 0
+weight: -2
 provider: null
 plugin: 'system_menu_block:main-navigation'
 settings:

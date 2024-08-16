@@ -48,7 +48,8 @@
         "drupal/sendgrid_integration": "^2.2",
         "drupal/google_tag": "^2.0",
         "drupal/filelog": "^3.0",
-        "drupal/asset_injector": "^2.21"
+        "drupal/asset_injector": "^2.21",
+        "drupal/smart_content_lytics": "^1.0"
     },
     "require-dev": {
         "drupal/core-dev": "^10",

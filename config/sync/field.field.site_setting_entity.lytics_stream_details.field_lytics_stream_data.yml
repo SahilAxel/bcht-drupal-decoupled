@@ -1,0 +1,19 @@
+uuid: 33f84717-9623-48cf-a4c3-80c35b621bd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_lytics_stream_data
+    - site_settings.site_setting_entity_type.lytics_stream_details
+id: site_setting_entity.lytics_stream_details.field_lytics_stream_data
+field_name: field_lytics_stream_data
+entity_type: site_setting_entity
+bundle: lytics_stream_details
+label: 'Lytics Stream Data'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

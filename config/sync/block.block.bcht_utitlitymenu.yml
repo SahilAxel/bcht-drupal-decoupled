@@ -11,7 +11,7 @@ dependencies:
 id: bcht_utitlitymenu
 theme: bcht
 region: header
-weight: -1
+weight: -3
 provider: null
 plugin: 'system_menu_block:utitlity-menu'
 settings:

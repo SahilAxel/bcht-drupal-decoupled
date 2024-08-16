@@ -1,0 +1,11 @@
+uuid: 4cfe30e3-9c0d-4272-9b3a-eb61d489044c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.lytics_cta_button_block
+id: block_content.lytics_cta_button_block
+target_entity_type_id: block_content
+target_bundle: lytics_cta_button_block
+default_langcode: site_default
+language_alterable: false

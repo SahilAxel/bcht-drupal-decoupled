@@ -1,0 +1,29 @@
+uuid: 6cb7b0c7-e26a-4b27-8da8-6a90f5819046
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.lytics_cta_button_block
+    - field.field.block_content.lytics_cta_button_block.field_cta_link
+  module:
+    - link
+id: block_content.lytics_cta_button_block.default
+targetEntityType: block_content
+bundle: lytics_cta_button_block
+mode: default
+content:
+  field_cta_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

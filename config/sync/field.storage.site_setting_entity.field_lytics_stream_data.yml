@@ -1,0 +1,19 @@
+uuid: 419f60c1-65ea-4eb7-9642-31cd81e25337
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+id: site_setting_entity.field_lytics_stream_data
+field_name: field_lytics_stream_data
+entity_type: site_setting_entity
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
