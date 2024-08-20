@@ -1,0 +1,21 @@
+uuid: f51d6d7c-d648-4bae-9660-3eefd168e47f
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+id: global_example
+label: 'Global Example'
+code: 'alert("Global site JS injector test")'
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/admin*'
+contexts: {  }
+conditions_require_all: true

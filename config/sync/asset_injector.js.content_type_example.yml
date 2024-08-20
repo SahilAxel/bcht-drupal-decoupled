@@ -1,0 +1,24 @@
+uuid: 466afbda-c8be-4a8d-825b-b814d44d3033
+langcode: en
+status: false
+dependencies:
+  module:
+    - node
+id: content_type_example
+label: 'Content Type Example'
+code: 'alert("Content type js injector test");'
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      event: event
+contexts: {  }
+conditions_require_all: true

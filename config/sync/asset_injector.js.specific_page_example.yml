@@ -1,0 +1,21 @@
+uuid: 992d8224-c952-410c-987f-dd936167e4fb
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+id: specific_page_example
+label: 'Specific Page Example'
+code: 'alert("Specific page js injector test");'
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /test-generic-landing-page-no-banner
+contexts: {  }
+conditions_require_all: true
