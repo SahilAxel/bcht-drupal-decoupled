@@ -6,3 +6,4 @@ name: 'Article Types'
 vid: article_type
 description: 'The type or category of an article post'
 weight: 0
+new_revision: false

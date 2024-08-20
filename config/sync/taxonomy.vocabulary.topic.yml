@@ -6,3 +6,4 @@ name: Topics
 vid: topic
 description: 'The topic of a page or article'
 weight: 0
+new_revision: false
