@@ -49,7 +49,6 @@ permissions:
   - 'add site setting entities'
   - 'administer js assets injector'
   - 'administer menu'
-  - 'administer site setting entities'
   - 'administer url aliases'
   - 'create article content'
   - 'create event content'
