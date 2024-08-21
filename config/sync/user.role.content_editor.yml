@@ -15,6 +15,7 @@ dependencies:
     - taxonomy.vocabulary.topic
     - workflows.workflow.editorial
   module:
+    - asset_injector
     - comment
     - content_moderation
     - contextual
@@ -46,8 +47,8 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'add site setting entities'
+  - 'administer js assets injector'
   - 'administer menu'
-  - 'administer site setting entities'
   - 'administer url aliases'
   - 'create article content'
   - 'create event content'

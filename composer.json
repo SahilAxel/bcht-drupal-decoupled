@@ -47,7 +47,8 @@
         "drupal/redirect": "^1.9",
         "drupal/sendgrid_integration": "^2.2",
         "drupal/google_tag": "^2.0",
-        "drupal/filelog": "^3.0"
+        "drupal/filelog": "^3.0",
+        "drupal/asset_injector": "^2.21"
     },
     "require-dev": {
         "drupal/core-dev": "^10",
@@ -89,7 +90,6 @@
         "enable-patching": true,
         "patches": {
             "drupal/core": {
-                "#states not working correctly when built from a logical combination of multliple fields": "https://www.drupal.org/files/issues/2024-04-08/fix-core-states-issues.patch",
                 "Dropdown button display becomes narrow when text is long": "https://git.drupalcode.org/project/drupal/-/merge_requests/4986.patch",
                 "State required asterisk doesn't show": "https://www.drupal.org/files/issues/2023-08-18/2912092-67-10-1-x.patch"
             },
