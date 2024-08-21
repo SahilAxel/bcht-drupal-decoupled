@@ -1,0 +1,8 @@
+apitoken:
+enable_tag: true
+debug_mode: false
+ignore_admin_users: false
+tag_config: ''
+account_name: "Boston Children's Hospital"
+account_id: 1e878961e42f3154ba76f23381a14780
+domain: giving.childrenshospital.org

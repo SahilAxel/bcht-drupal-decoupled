@@ -1,0 +1,52 @@
+uuid: a6566533-85cb-4577-bc3a-28fcd927a98a
+langcode: en
+status: true
+dependencies: {  }
+id: ways_to_give_segment
+label: 'Ways to Give Segment'
+settings:
+  segments:
+    2d601ee2-98e6-4e96-9299-4d2bf04d8fea:
+      uuid: 2d601ee2-98e6-4e96-9299-4d2bf04d8fea
+      weight: 0
+      label: 'New User'
+      default: false
+      conditions:
+        group:
+          id: group
+          weight: 0
+          negate: false
+          type: 'plugin:group'
+          op: AND
+          conditions:
+            'lytics:_segments':
+              id: 'lytics:_segments'
+              weight: 0
+              negate: true
+              type: 'type:array_textfield'
+              condition_type_settings:
+                negate: '1'
+                op: contains_contains
+                value: returning_user
+    d8afb927-e949-4c40-97cb-f7ef8b07a5c5:
+      uuid: d8afb927-e949-4c40-97cb-f7ef8b07a5c5
+      weight: 0
+      label: 'Returning User'
+      default: false
+      conditions:
+        group:
+          id: group
+          weight: 0
+          negate: false
+          type: 'plugin:group'
+          op: AND
+          conditions:
+            'lytics:_segments':
+              id: 'lytics:_segments'
+              weight: 0
+              negate: false
+              type: 'type:array_textfield'
+              condition_type_settings:
+                negate: '0'
+                op: contains_contains
+                value: returning_user
