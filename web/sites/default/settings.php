@@ -20,6 +20,14 @@ include __DIR__ . "/settings.pantheon.php";
 $settings['config_sync_directory'] = '../config/sync';
 
 if (!empty($_ENV['PANTHEON_ENVIRONMENT'])) {
+  $secretsFile = $_SERVER['HOME'] . '/files/private/secrets.json';
+  $lytics_api_key = '';
+  if (file_exists($secretsFile)) {
+    $secrets = json_decode(file_get_contents($secretsFile), 1);
+    if (!empty($secrets['lytics_api_key'])) {
+      $lytics_api_key = $secrets['lytics_api_key'];
+    }
+  }
   switch ($_ENV['PANTHEON_ENVIRONMENT']) {
     case 'live':
       $config['config_split.config_split.live']['status'] = TRUE;
@@ -28,13 +36,15 @@ if (!empty($_ENV['PANTHEON_ENVIRONMENT'])) {
       $config['config_split.config_split.test']['status'] = TRUE;
       break;
     default:
+      if ($lytics_api_key) {
+        $config['lytics.settings']['apitoken'] = $lytics_api_key;
+      }
       $config['config_split.config_split.dev']['status'] = TRUE;
       break;
   }
 } elseif (getenv('IS_DDEV_PROJECT') == TRUE) {
   $config['config_split.config_split.local']['status'] = TRUE;
 }
-
 /**
  * Skipping permissions hardening will make scaffolding
  * work better, but will also raise a warning when you
