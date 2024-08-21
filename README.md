@@ -39,9 +39,19 @@ ddev start
 ```
 Import existing database dump file
 
-Get the database dump file from the team member or server admin. Then run the below commands
+Get the database dump file from the team member or server admin. Then run the below command to import the database
 
 ddev import-db --file=<path-to-dump-file>
+```
+
+5. Update configuration
+
+```
+Add the following at the end on settings.ddev.php file. Get the auth_token from team member 
+$config['lytics.settings']['apitoken'] = <auth_token>
+
+Then run the below commands
+
 ddev drush cim
 ddev drush updb
 ddev drush cr

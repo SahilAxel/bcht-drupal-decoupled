@@ -36,11 +36,11 @@ if (!empty($_ENV['PANTHEON_ENVIRONMENT'])) {
       $config['config_split.config_split.test']['status'] = TRUE;
       break;
     default:
-      if ($lytics_api_key) {
-        $config['lytics.settings']['apitoken'] = $lytics_api_key;
-      }
       $config['config_split.config_split.dev']['status'] = TRUE;
       break;
+  }
+  if ($lytics_api_key) {
+    $config['lytics.settings']['apitoken'] = $lytics_api_key;
   }
 } elseif (getenv('IS_DDEV_PROJECT') == TRUE) {
   $config['config_split.config_split.local']['status'] = TRUE;
