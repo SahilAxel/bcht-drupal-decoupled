@@ -6,7 +6,7 @@ dependencies:
     - node
 id: content_type_example
 label: 'Content Type Example'
-code: 'alert("Content type js injector test");'
+code: 'console.log("Content type js injector test");'
 noscript: ''
 noscriptRegion: {  }
 jquery: false

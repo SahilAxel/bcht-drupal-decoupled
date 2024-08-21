@@ -6,7 +6,7 @@ dependencies:
     - system
 id: global_example
 label: 'Global Example'
-code: 'alert("Global site JS injector test")'
+code: 'console.log("Global site JS injector test")'
 noscript: ''
 noscriptRegion: {  }
 jquery: false

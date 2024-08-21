@@ -6,7 +6,7 @@ dependencies:
     - system
 id: specific_page_example
 label: 'Specific Page Example'
-code: 'alert("Specific page js injector test");'
+code: 'console.log("Specific page js injector test");'
 noscript: ''
 noscriptRegion: {  }
 jquery: false
