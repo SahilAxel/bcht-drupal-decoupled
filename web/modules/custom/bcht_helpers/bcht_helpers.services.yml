@@ -1,5 +1,6 @@
 services:
   bcht_helpers.route_subscriber:
     class: Drupal\bcht_helpers\Routing\RouteSubscriber
+    arguments: ['@current_user']
     tags:
       - { name: event_subscriber }
