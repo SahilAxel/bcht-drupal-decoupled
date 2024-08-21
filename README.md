@@ -47,7 +47,8 @@ ddev import-db --file=<path-to-dump-file>
 5. Update configuration
 
 ```
-Add the following at the end on settings.ddev.php file. Get the auth_token from team member 
+Add the following at the end on settings.ddev.php file. Get the auth_token from team member
+(Find the auth_token under manual steps in BCHT-176: https://bluestate.atlassian.net/browse/BCHT-176)
 $config['lytics.settings']['apitoken'] = <auth_token>
 
 Then run the below commands
@@ -57,10 +58,10 @@ ddev drush updb
 ddev drush cr
 ```
 
-5. Launch the Drupal site on browser
+6. Launch the Drupal site on browser
    `ddev launch`
 
-6. Login as Drupal admin. Run below command & hit the one time URL in browser.
+7. Login as Drupal admin. Run below command & hit the one time URL in browser.
    `ddev drush uli`
 
 ## Gulp Compilation
