@@ -21,11 +21,10 @@ $settings['config_sync_directory'] = '../config/sync';
 
 if (!empty($_ENV['PANTHEON_ENVIRONMENT'])) {
   $secretsFile = $_SERVER['HOME'] . '/files/private/secrets.json';
-  $lytics_api_key = '';
   if (file_exists($secretsFile)) {
     $secrets = json_decode(file_get_contents($secretsFile), 1);
     if (!empty($secrets['lytics_api_key'])) {
-      $lytics_api_key = $secrets['lytics_api_key'];
+      $config['lytics.settings']['apitoken'] = $secrets['lytics_api_key'];
     }
   }
   switch ($_ENV['PANTHEON_ENVIRONMENT']) {
@@ -38,9 +37,6 @@ if (!empty($_ENV['PANTHEON_ENVIRONMENT'])) {
     default:
       $config['config_split.config_split.dev']['status'] = TRUE;
       break;
-  }
-  if ($lytics_api_key) {
-    $config['lytics.settings']['apitoken'] = $lytics_api_key;
   }
 } elseif (getenv('IS_DDEV_PROJECT') == TRUE) {
   $config['config_split.config_split.local']['status'] = TRUE;
