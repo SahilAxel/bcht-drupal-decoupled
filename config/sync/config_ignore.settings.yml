@@ -7,3 +7,5 @@ ignored_config_entities:
   - 'system.site:page.404'
   - 'system.site:page.front'
   - 'lytics.settings:apitoken'
+  - 'block.block.personalized_ways_to_give_block'
+  - 'smart_content.smart_content.decision.*'
