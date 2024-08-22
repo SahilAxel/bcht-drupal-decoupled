@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.homepage_hero.field_enable_lytics_cta
     - field.field.paragraph.homepage_hero.field_hero_cta_buttons
     - field.field.paragraph.homepage_hero.field_hero_heading
     - field.field.paragraph.homepage_hero.field_image
@@ -15,6 +16,16 @@ targetEntityType: paragraph
 bundle: homepage_hero
 mode: default
 content:
+  field_enable_lytics_cta:
+    type: boolean
+    label: above
+    settings:
+      format: boolean
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_hero_cta_buttons:
     type: link
     label: hidden
