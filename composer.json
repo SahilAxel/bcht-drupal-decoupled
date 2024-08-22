@@ -109,6 +109,9 @@
             },
             "drupal/smart_content": {
                 "Php 8.2 Deprecated function: Creation of dynamic properties": "https://git.drupalcode.org/project/smart_content/-/merge_requests/13.diff"
+            },
+            "drupal/ckeditor_html_embed": {
+                "Ckeditor HTML Embed breaks all ckeditor fields": "https://www.drupal.org/files/issues/2024-08-22/3469635-1.patch"
             }
         }
     },
