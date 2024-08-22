@@ -1,0 +1,10 @@
+uuid: 7e17a0a9-51dc-49e7-a6c7-6b8ddf1d96cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - site_settings.site_setting_group_entity_type.lytics_details
+id: lytics_stream_details
+label: 'Lytics Stream Details'
+group: lytics_details
+multiple: false

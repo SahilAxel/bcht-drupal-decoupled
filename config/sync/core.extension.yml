@@ -41,6 +41,7 @@ module:
   language: 0
   link: 0
   linkit: 0
+  lytics: 0
   mailsystem: 0
   maxlength: 0
   media: 0
@@ -70,6 +71,9 @@ module:
   shortcut: 0
   site_settings: 0
   site_settings_type_permissions: 0
+  smart_content: 0
+  smart_content_block: 0
+  smart_content_lytics: 0
   sophron: 0
   standard: 0
   system: 0

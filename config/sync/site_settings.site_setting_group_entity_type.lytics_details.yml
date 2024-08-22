@@ -1,0 +1,6 @@
+uuid: b9523b77-b730-42c3-a5f0-f94934eba1b0
+langcode: en
+status: true
+dependencies: {  }
+id: lytics_details
+label: 'Lytics Details'

@@ -1,0 +1,68 @@
+uuid: 3c52dc24-3d85-4bbb-9920-edd305f8c5c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.lytics_stream_details.field_internal_page_link
+    - field.field.site_setting_entity.lytics_stream_details.field_lytics_stream_data
+    - site_settings.site_setting_entity_type.lytics_stream_details
+  module:
+    - link
+    - user
+id: site_setting_entity.lytics_stream_details.default
+targetEntityType: site_setting_entity
+bundle: lytics_stream_details
+mode: default
+content:
+  description:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_internal_page_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_lytics_stream_data:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  group:
+    type: author
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  user_id:
+    type: author
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

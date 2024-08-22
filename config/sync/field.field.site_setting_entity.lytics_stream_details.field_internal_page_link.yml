@@ -1,0 +1,23 @@
+uuid: 829346eb-4f3b-4151-b9bd-04e34243fe0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_internal_page_link
+    - site_settings.site_setting_entity_type.lytics_stream_details
+  module:
+    - link
+id: site_setting_entity.lytics_stream_details.field_internal_page_link
+field_name: field_internal_page_link
+entity_type: site_setting_entity
+bundle: lytics_stream_details
+label: 'Internal Page Link'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 1
+field_type: link

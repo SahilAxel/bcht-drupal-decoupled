@@ -9,7 +9,7 @@ dependencies:
 id: bcht_messages
 theme: bcht
 region: highlighted
-weight: 0
+weight: -2
 provider: null
 plugin: system_messages_block
 settings:
