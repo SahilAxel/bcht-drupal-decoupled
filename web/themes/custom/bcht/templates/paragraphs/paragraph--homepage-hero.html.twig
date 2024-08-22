@@ -63,8 +63,8 @@
 						</picture>
 					</div>
 				{% endif %}
-					<div class="hero_banner_content">
-            <div class="hero_banner_content_inner">
+				<div class="hero_banner_content">
+					<div class="hero_banner_content_inner">
 						{% if content.field_hero_heading.0['#context'].value and content.field_hero_heading	['#is_multiple'] == false %}
 							<h1>{{ content.field_hero_heading.0['#context'].value }}</h1>
 						{% else %}
@@ -77,14 +77,18 @@
 						{# We need to different calss for two links. Only two fields will be shown from the twig file for this component. #}
 						{% if content.field_hero_cta_buttons.0  or content.field_hero_cta_buttons.1 %}
 							<div class="cta_group">
-								{% if content.field_hero_cta_buttons.0 %}
-									<span class="cta cta_btn_1">
-										{% if content.field_hero_cta_buttons.0['#url'].external %}
-											<a class="btn btn--default" href="{{ content.field_hero_cta_buttons.0['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_hero_cta_buttons.0['#title'] }}</a>
-										{% else %}
-											<a class="btn btn--default" href="{{ path(content.field_hero_cta_buttons.0['#url'].routeName, content.field_hero_cta_buttons.0['#url'].routeParameters) }}">{{ content.field_hero_cta_buttons.0['#title'] }}</a>
-										{% endif %}
-									</span>
+								{% if content.field_enable_lytics_cta.0['#markup'] == 1 %}
+									{{ drupal_entity('block', 'personalized_ways_to_give_block') }}
+								{% else %}
+									{% if content.field_hero_cta_buttons.0 %}
+										<span class="cta cta_btn_1">
+											{% if content.field_hero_cta_buttons.0['#url'].external %}
+												<a class="btn btn--default" href="{{ content.field_hero_cta_buttons.0['#url'].uri }}" target="_blank" title="Opens in a new window">{{ content.field_hero_cta_buttons.0['#title'] }}</a>
+											{% else %}
+												<a class="btn btn--default" href="{{ path(content.field_hero_cta_buttons.0['#url'].routeName, content.field_hero_cta_buttons.0['#url'].routeParameters) }}">{{ content.field_hero_cta_buttons.0['#title'] }}</a>
+											{% endif %}
+										</span>
+									{% endif %}
 								{% endif %}
 								{% if content.field_hero_cta_buttons.1 %}
 									<span class="cta cta_btn_2">
@@ -97,9 +101,9 @@
 								{% endif %}
 							</div>
 						{% endif %}
-            </div>
 					</div>
 				</div>
-			{% endblock %}
-		</div>
-	{% endblock paragraph %}
+			</div>
+		{% endblock %}
+	</div>
+{% endblock paragraph %}

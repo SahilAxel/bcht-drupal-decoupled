@@ -91,3 +91,7 @@ article-listing-filter:
       build/css/components/article-listing-filter/article-listing-filter.css: {}
   js:
     build/js/article-listing-filter.js: {}
+
+lytics:
+  js:
+    build/js/lytics.js: {}

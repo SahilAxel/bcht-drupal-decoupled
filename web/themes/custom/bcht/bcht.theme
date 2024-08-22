@@ -112,3 +112,33 @@ function bcht_theme_suggestions_paragraph_alter(array &$suggestions, array $vari
     $suggestions[] = 'paragraph__node_'. $parent_content_type . '__' . $paragraph->bundle();;
   }
 }
+
+/**
+ * Implements hook_page_attachments().
+ */
+function bcht_page_attachments_alter(array &$attachments) {
+  // Get the current URL.
+  $current_path = \Drupal::service('path.current')->getPath();
+  $current_url = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+
+  // Get configuration URL
+  $site_settings =  \Drupal::service('plugin.manager.site_settings_loader')->getActiveLoaderPlugin();
+  $lytics_details = $site_settings->loadByGroup('lytics_details');
+
+  // Check the tag is enabled or not
+  $site_settings_Lytics_tag =  \Drupal::config('lytics.settings')->get('enable_tag');
+
+  foreach ($lytics_details as $x) {
+    $internal_path = $x->get('field_internal_page_link')->getValue()[0]['uri'];
+    $url = Url::fromUri( $internal_path);
+    $url_alias = $url->toString();
+  }
+
+  if ($url_alias === $current_url && $site_settings_Lytics_tag) {
+    foreach ($lytics_details as $x) {
+      $lytics_stream_data = $x->get('field_lytics_stream_data')->getValue()[0]['value'];
+    }
+    $attachments['#attached']['library'][] = 'bcht/lytics';
+    $attachments['#attached']['drupalSettings']['lytics_stream_data']['stream_data'] = $lytics_stream_data;
+  }
+}

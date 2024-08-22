@@ -1,0 +1,21 @@
+uuid: c32a3534-67d8-4fb4-859b-2bded109f30d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_enable_lytics_cta
+    - paragraphs.paragraphs_type.homepage_hero
+id: paragraph.homepage_hero.field_enable_lytics_cta
+field_name: field_enable_lytics_cta
+entity_type: paragraph
+bundle: homepage_hero
+label: 'Enable Lytics CTA?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
