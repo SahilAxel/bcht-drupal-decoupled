@@ -26,11 +26,9 @@
         const stream_data = settings.lytics_stream_data.stream_data;
 
         sendDataToAnalytics(stream_data)
-          .then((message) => {
-            console.log('Data sent successfully'); // This runs if the promise is resolved
-          })
+          .then(() => {})
           .catch((error) => {
-            console.error('Failed to send data:', error); // This runs if the promise is rejected
+            console.error('Failed:', error); // This runs if the promise is rejected
           });
       }
     },
