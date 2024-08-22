@@ -128,17 +128,24 @@ function bcht_page_attachments_alter(array &$attachments) {
   // Check the tag is enabled or not
   $site_settings_Lytics_tag =  \Drupal::config('lytics.settings')->get('enable_tag');
 
-  foreach ($lytics_details as $x) {
-    $internal_path = $x->get('field_internal_page_link')->getValue()[0]['uri'];
-    $url = Url::fromUri( $internal_path);
-    $url_alias = $url->toString();
-  }
-
-  if ($url_alias === $current_url && $site_settings_Lytics_tag) {
-    foreach ($lytics_details as $x) {
-      $lytics_stream_data = $x->get('field_lytics_stream_data')->getValue()[0]['value'];
+  if ($lytics_details) {
+    $url_alias = '';
+    foreach ($lytics_details as $lytics_detail) {
+      if($lytics_detail->get('field_internal_page_link')->getValue()) {
+        $internal_path = $lytics_detail->get('field_internal_page_link')->getValue()[0]['uri'];
+        $url = Url::fromUri($internal_path);
+        $url_alias = $url->toString();
+      }
     }
-    $attachments['#attached']['library'][] = 'bcht/lytics';
-    $attachments['#attached']['drupalSettings']['lytics_stream_data']['stream_data'] = $lytics_stream_data;
+    if ($url_alias === $current_url && $site_settings_Lytics_tag) {
+      $lytics_stream_data = '';
+      foreach ($lytics_details as $lytics_detail) {
+        if($lytics_detail->get('field_lytics_stream_data')->getValue()) {
+        $lytics_stream_data = $lytics_detail->get('field_lytics_stream_data')->getValue() [0]['value'];
+        }
+      }
+      $attachments['#attached']['library'][] = 'bcht/lytics';
+      $attachments['#attached']['drupalSettings']['lytics_stream_data']['stream_data'] = $lytics_stream_data;
+    }
   }
 }
