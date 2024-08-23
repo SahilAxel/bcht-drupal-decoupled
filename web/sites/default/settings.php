@@ -26,6 +26,9 @@ if (!empty($_ENV['PANTHEON_ENVIRONMENT'])) {
     if (!empty($secrets['lytics_api_key'])) {
       $config['lytics.settings']['apitoken'] = $secrets['lytics_api_key'];
     }
+    if (!empty($secrets['sendgrid_api'])) {
+      $config['sendgrid_integration.settings']['apikey'] = $secrets['sendgrid_api'];
+    }
   }
   switch ($_ENV['PANTHEON_ENVIRONMENT']) {
     case 'live':
