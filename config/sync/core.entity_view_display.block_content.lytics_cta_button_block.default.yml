@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.lytics_cta_button_block
     - field.field.block_content.lytics_cta_button_block.field_cta_link
+    - field.field.block_content.lytics_cta_button_block.field_lytics_status_data
   module:
     - link
 id: block_content.lytics_cta_button_block.default
@@ -25,5 +26,6 @@ content:
     weight: 0
     region: content
 hidden:
+  field_lytics_status_data: true
   langcode: true
   search_api_excerpt: true

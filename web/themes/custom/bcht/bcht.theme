@@ -149,3 +149,23 @@ function bcht_page_attachments_alter(array &$attachments) {
     }
   }
 }
+
+/**
+ * Implements template_preprocess_block().
+ */
+function bcht_preprocess_block(&$variables) {
+  $pluginId = $variables['plugin_id'];
+  if (explode(':', $pluginId)[0] == 'block_content') {
+    /** @var  Drupal\block_content\Entity\BlockContent */
+    $blockContent = $variables['content']['#block_content'];
+    if ($blockContent->get('type')->getString() == "lytics_cta_button_block") {
+      $statusData = $blockContent->get('field_lytics_status_data')->getString();
+      // Check the tag is enabled or not.
+      $site_settings_Lytics_tag = \Drupal::config('lytics.settings')->get('enable_tag');
+      if ($statusData && $site_settings_Lytics_tag) {
+        $variables['attributes']['class'][] = 'send-to-lytics';
+        $variables['attributes']['data-lytics-status'] = $statusData;
+      }
+    }
+  }
+}

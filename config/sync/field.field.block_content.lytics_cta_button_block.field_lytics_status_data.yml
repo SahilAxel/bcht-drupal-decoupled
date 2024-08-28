@@ -1,0 +1,21 @@
+uuid: daf13618-762e-47a5-8208-a14b05f8c2ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.lytics_cta_button_block
+    - field.storage.block_content.field_lytics_status_data
+  module:
+    - options
+id: block_content.lytics_cta_button_block.field_lytics_status_data
+field_name: field_lytics_status_data
+entity_type: block_content
+bundle: lytics_cta_button_block
+label: 'Lytics Status Data'
+description: 'Select the data to send to lytics on link click for status field'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

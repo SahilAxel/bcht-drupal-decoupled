@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.lytics_cta_button_block
     - field.field.block_content.lytics_cta_button_block.field_cta_link
+    - field.field.block_content.lytics_cta_button_block.field_lytics_status_data
   module:
     - link
 id: block_content.lytics_cta_button_block.default
@@ -19,6 +20,12 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_lytics_status_data:
+    type: options_buttons
+    weight: 27
+    region: content
+    settings: {  }
     third_party_settings: {  }
   info:
     type: string_textfield

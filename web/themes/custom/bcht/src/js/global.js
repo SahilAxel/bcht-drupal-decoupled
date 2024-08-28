@@ -2,6 +2,45 @@
   Drupal.behaviors.global = {
     attach: function (context) {
       //******************** */
+      // Send potential donor data to Lytics for report generation.
+      function sendDataToAnalyticsAfter(data) {
+        return new Promise((resolve, reject) => {
+          try {
+            jstag.send('default', data);
+            resolve(true);
+          } catch (error) {
+            reject(error.message);
+          }
+        });
+      }
+      if (!context.onceFlagg) {
+        context.onceFlagg = true;
+        $(once('returning_user_click', $('.send-to-lytics'), context)).each(
+          function () {
+            const potentialDonationLinkElement =
+              $(this).find('.lytics_cta_link a');
+            const statusValue = $(this).attr('data-lytics-status');
+            const lyticsData = {
+              status: statusValue,
+            };
+            if (potentialDonationLinkElement.length > 0 && jstag.isLoaded) {
+              potentialDonationLinkElement.click(function (e) {
+                e.preventDefault();
+                const redirectURL = $(this).attr('href');
+
+                sendDataToAnalyticsAfter(lyticsData)
+                  .catch((error) => {
+                    console.error('Failed:', error); // This runs if the promise is rejected
+                  })
+                  .finally(() => {
+                    window.location.href = redirectURL;
+                  });
+              });
+            }
+          },
+        );
+      }
+      //******************** */
       // Main menu scroll JS
       var lastScrollTop = 60;
       $(window).scroll(function () {
