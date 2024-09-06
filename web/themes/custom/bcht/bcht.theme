@@ -147,6 +147,9 @@ function bcht_page_attachments_alter(array &$attachments) {
       $attachments['#attached']['library'][] = 'bcht/lytics';
       $attachments['#attached']['drupalSettings']['lytics_stream_data']['stream_data'] = $lytics_stream_data;
     }
+    if ($site_settings_Lytics_tag) {
+      $attachments['#attached']['drupalSettings']['lytics']['enabled'] = $site_settings_Lytics_tag;
+    }
   }
 }
 
