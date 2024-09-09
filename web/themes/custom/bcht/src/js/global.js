@@ -1,6 +1,63 @@
 (function (Drupal, $, once) {
   Drupal.behaviors.global = {
-    attach: function (context) {
+    attach: function (context, settings) {
+      $(once('lytics_initial', $('body'), context)).each(
+        // Reload page on browser back if lytics is enabled.
+        function() {
+          if (settings.lytics.enabled) {
+            window.onpageshow = function (event) {
+              if (event.persisted) {
+                window.location.reload();
+              }
+            };
+          }
+        }
+      )
+      // Show both cta links together once lytics CTA loads.
+      const fieldCtaLinkLoaded = $(context).find("div.field--name-field-cta-link").length == 1 ? true : false;
+      if (fieldCtaLinkLoaded) {
+        $('.cta_group').removeClass('lytics_cta_hidden');
+      }
+      //******************** */
+      // Send potential donor data to Lytics for report generation.
+      function sendDataToAnalyticsAfter(data) {
+        return new Promise((resolve, reject) => {
+          try {
+            jstag.send('default', data, (r) => {
+              resolve(true);
+            });
+          } catch (error) {
+            reject(error.message);
+          }
+        });
+      }
+      if (!context.onceFlagg) {
+        context.onceFlagg = true;
+        $(once('returning_user_click', $('.send-to-lytics'), context)).each(
+          function () {
+            const potentialDonationLinkElement =
+              $(this).find('.lytics_cta_link a');
+            const statusValue = Drupal.checkPlain($(this).attr('data-lytics-status'));
+            const lyticsData = {
+              status: statusValue,
+            };
+            if (potentialDonationLinkElement.length > 0 && jstag.isLoaded) {
+              potentialDonationLinkElement.click(function (e) {
+                e.preventDefault();
+                const redirectURL = $(this).attr('href');
+
+                sendDataToAnalyticsAfter(lyticsData)
+                  .catch((error) => {
+                    console.error('Failed:', error); // This runs if the promise is rejected
+                  })
+                  .finally(() => {
+                    window.location.href = redirectURL;
+                  });
+              });
+            }
+          },
+        );
+      }
       //******************** */
       // Main menu scroll JS
       var lastScrollTop = 60;

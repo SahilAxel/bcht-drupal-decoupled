@@ -76,7 +76,7 @@
 						{% endif %}
 						{# We need to different calss for two links. Only two fields will be shown from the twig file for this component. #}
 						{% if content.field_hero_cta_buttons.0  or content.field_hero_cta_buttons.1 %}
-							<div class="cta_group">
+							<div class="cta_group lytics_cta_hidden">
 								{% if content.field_enable_lytics_cta.0['#markup'] == 1 %}
 									{{ drupal_entity('block', 'personalized_ways_to_give_block') }}
 								{% else %}

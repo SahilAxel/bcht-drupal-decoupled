@@ -1,0 +1,24 @@
+uuid: c864d309-ec02-4eca-a46d-5be05e1f074c
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_lytics_status_data
+field_name: field_lytics_status_data
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: potential_donor
+      label: potential_donor
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
