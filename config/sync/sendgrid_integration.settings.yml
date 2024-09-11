@@ -1,6 +1,6 @@
 _core:
   default_config_hash: g4qz7cPnloXFwtnLYfIKI2VS0gf_UFOz_I2uQiiulC8
-apikey: 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
+apikey: null
 test_defaults:
   to: sahil.gidwani@axelerant.com
   subject: 'Test Email from SendGrid Module'

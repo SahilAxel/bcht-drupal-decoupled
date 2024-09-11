@@ -3,9 +3,10 @@ _core:
 mode: simple
 ignored_config_entities:
   - 'bcht.settings:favicon'
+  - block.block.personalized_ways_to_give_block
+  - 'lytics.settings:apitoken'
+  - 'sendgrid_integration.settings:apikey'
   - 'sendgrid_integration.settings:test_defaults.to'
+  - 'smart_content.smart_content.decision.*'
   - 'system.site:page.404'
   - 'system.site:page.front'
-  - 'lytics.settings:apitoken'
-  - 'block.block.personalized_ways_to_give_block'
-  - 'smart_content.smart_content.decision.*'
