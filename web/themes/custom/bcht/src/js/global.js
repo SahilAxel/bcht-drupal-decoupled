@@ -3,7 +3,7 @@
     attach: function (context, settings) {
       $(once('lytics_initial', $('body'), context)).each(
         // Reload page on browser back if lytics is enabled.
-        function() {
+        function () {
           if (settings.lytics.enabled) {
             window.onpageshow = function (event) {
               if (event.persisted) {
@@ -11,10 +11,13 @@
               }
             };
           }
-        }
-      )
+        },
+      );
       // Show both cta links together once lytics CTA loads.
-      const fieldCtaLinkLoaded = $(context).find("div.field--name-field-cta-link").length == 1 ? true : false;
+      const fieldCtaLinkLoaded =
+        $(context).find('div.field--name-field-cta-link').length == 1
+          ? true
+          : false;
       if (fieldCtaLinkLoaded) {
         $('.cta_group').removeClass('lytics_cta_hidden');
       }
@@ -37,7 +40,9 @@
           function () {
             const potentialDonationLinkElement =
               $(this).find('.lytics_cta_link a');
-            const statusValue = Drupal.checkPlain($(this).attr('data-lytics-status'));
+            const statusValue = Drupal.checkPlain(
+              $(this).attr('data-lytics-status'),
+            );
             const lyticsData = {
               status: statusValue,
             };
@@ -58,6 +63,15 @@
           },
         );
       }
+      //******************** */
+      // Requires jQuery!
+      // Jira issue collector JS
+      jQuery.ajax({
+        url: 'https://bluestate.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/-3ddrgv/b/8/b0105d975e9e59f24a3230a22972a71a/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs.js?locale=en-US&collectorId=8048751c',
+        type: 'get',
+        cache: true,
+        dataType: 'script',
+      });
       //******************** */
       // Main menu scroll JS
       var lastScrollTop = 60;
