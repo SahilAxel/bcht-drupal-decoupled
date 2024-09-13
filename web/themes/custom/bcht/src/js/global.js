@@ -64,15 +64,6 @@
         );
       }
       //******************** */
-      // Requires jQuery!
-      // Jira issue collector JS
-      jQuery.ajax({
-        url: 'https://bluestate.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/-3ddrgv/b/8/b0105d975e9e59f24a3230a22972a71a/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs.js?locale=en-US&collectorId=8048751c',
-        type: 'get',
-        cache: true,
-        dataType: 'script',
-      });
-      //******************** */
       // Main menu scroll JS
       var lastScrollTop = 60;
       $(window).scroll(function () {
