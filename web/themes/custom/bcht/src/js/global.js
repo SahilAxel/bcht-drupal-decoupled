@@ -1,6 +1,9 @@
 (function (Drupal, $, once) {
   Drupal.behaviors.global = {
     attach: function (context, settings) {
+      // Function to check if a given url is external or internal.
+      const isExternalURL = (url) => new URL(url).origin !== location.origin;
+
       $(once('lytics_initial', $('body'), context)).each(
         // Reload page on browser back if lytics is enabled.
         function () {
@@ -43,20 +46,29 @@
             const statusValue = Drupal.checkPlain(
               $(this).attr('data-lytics-status'),
             );
-            const lyticsData = {
+            let lyticsData = {
               status: statusValue,
             };
+            if (statusValue == 'potential_donor') {
+              lyticsData['_sesstart'] = 1;
+            }
             if (potentialDonationLinkElement.length > 0 && jstag.isLoaded) {
               potentialDonationLinkElement.click(function (e) {
                 e.preventDefault();
-                const redirectURL = $(this).attr('href');
+                const redirectURL = $(this).get(0).href;
+                $(this).css('pointer-events', 'none');
 
                 sendDataToAnalyticsAfter(lyticsData)
                   .catch((error) => {
                     console.error('Failed:', error); // This runs if the promise is rejected
                   })
                   .finally(() => {
-                    window.location.href = redirectURL;
+                    $(this).css('pointer-events', 'initial');
+                    if (isExternalURL(redirectURL)) {
+                      window.open(redirectURL, '_blank');
+                    } else {
+                      document.location.href = redirectURL;
+                    }
                   });
               });
             }
