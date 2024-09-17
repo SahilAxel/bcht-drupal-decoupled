@@ -1,9 +1,6 @@
 (function (Drupal, $, once) {
   Drupal.behaviors.global = {
     attach: function (context, settings) {
-      // Function to check if a given url is external or internal.
-      const isExternalURL = (url) => new URL(url).origin !== location.origin;
-
       $(once('lytics_initial', $('body'), context)).each(
         // Reload page on browser back if lytics is enabled.
         function () {
@@ -56,6 +53,7 @@
               potentialDonationLinkElement.click(function (e) {
                 e.preventDefault();
                 const redirectURL = $(this).get(0).href;
+                const isExternal = $(this).attr('target') == '_blank';
                 $(this).css('pointer-events', 'none');
 
                 sendDataToAnalyticsAfter(lyticsData)
@@ -64,7 +62,7 @@
                   })
                   .finally(() => {
                     $(this).css('pointer-events', 'initial');
-                    if (isExternalURL(redirectURL)) {
+                    if (isExternal) {
                       window.open(redirectURL, '_blank');
                     } else {
                       document.location.href = redirectURL;
