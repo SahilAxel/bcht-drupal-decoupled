@@ -43,20 +43,30 @@
             const statusValue = Drupal.checkPlain(
               $(this).attr('data-lytics-status'),
             );
-            const lyticsData = {
+            let lyticsData = {
               status: statusValue,
             };
+            if (statusValue == 'potential_donor') {
+              lyticsData['_sesstart'] = 1;
+            }
             if (potentialDonationLinkElement.length > 0 && jstag.isLoaded) {
               potentialDonationLinkElement.click(function (e) {
                 e.preventDefault();
-                const redirectURL = $(this).attr('href');
+                const redirectURL = $(this).get(0).href;
+                const isExternal = $(this).attr('target') == '_blank';
+                $(this).css('pointer-events', 'none');
 
                 sendDataToAnalyticsAfter(lyticsData)
                   .catch((error) => {
                     console.error('Failed:', error); // This runs if the promise is rejected
                   })
                   .finally(() => {
-                    window.location.href = redirectURL;
+                    $(this).css('pointer-events', 'initial');
+                    if (isExternal) {
+                      window.open(redirectURL, '_blank');
+                    } else {
+                      document.location.href = redirectURL;
+                    }
                   });
               });
             }
