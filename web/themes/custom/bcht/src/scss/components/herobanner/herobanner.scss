@@ -56,7 +56,6 @@
 
       h1 {
         color: $BostonBlue;
-        text-transform: capitalize;
       }
 
       .cta_group {
@@ -77,7 +76,6 @@
             font-size: 16px;
             line-height: 20.8px;
             padding: 10px 18px;
-            text-transform: capitalize;
 
             @include breakpoint(small-desktop) {
               font-size: rem(18);
