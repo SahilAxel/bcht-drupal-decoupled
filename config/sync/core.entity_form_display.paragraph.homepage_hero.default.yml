@@ -47,7 +47,7 @@ content:
       placeholder: ''
     third_party_settings:
       maxlength:
-        maxlength_js: 40
+        maxlength_js: 50
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: true
   field_image:
@@ -68,7 +68,7 @@ content:
       placeholder: ''
     third_party_settings:
       maxlength:
-        maxlength_js: 60
+        maxlength_js: 100
         maxlength_js_label: 'Content limited to @limit characters, remaining: <strong>@remaining</strong>'
         maxlength_js_enforce: true
 hidden:

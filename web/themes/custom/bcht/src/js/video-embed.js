@@ -56,6 +56,7 @@
           function appendAutoplay(src, autoplay) {
             const url = new URL(src);
             url.searchParams.set('autoplay', autoplay ? '1' : '0');
+            url.searchParams.set('muted', '1');
             return url.toString();
           }
         },
