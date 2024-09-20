@@ -50,6 +50,8 @@ settings:
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<iframe src title width height allow allowfullscreen referrerpolicy loading>'
+        - '<span id class>'
+        - '<div id class>'
     ckeditor5_style:
       styles:
         -
