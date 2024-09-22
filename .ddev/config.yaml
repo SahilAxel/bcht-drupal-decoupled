@@ -1,4 +1,4 @@
-name: boston-childrens-hospital-trust
+name: bcht-decoupled
 type: drupal10
 docroot: web
 php_version: "8.2"
