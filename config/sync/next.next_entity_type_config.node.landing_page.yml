@@ -1,0 +1,13 @@
+uuid: c89ff961-c3e2-4f19-bf85-2dfb3e01587a
+langcode: en
+status: true
+dependencies: {  }
+id: node.landing_page
+site_resolver: site_selector
+configuration:
+  sites:
+    next_js: next_js
+revalidator: path
+revalidator_configuration:
+  revalidate_page: true
+  additional_paths: ''

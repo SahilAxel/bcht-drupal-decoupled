@@ -10,6 +10,8 @@ dependencies:
     - filter
     - media
     - paragraphs_type_permissions
+    - site_settings_type_permissions
+    - subrequests
     - system
 _core:
   default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
@@ -21,6 +23,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'issue subrequests'
   - 'use text format restricted_html'
   - 'view media'
   - 'view paragraph content accordion'
@@ -40,3 +43,11 @@ permissions:
   - 'view paragraph content rich_text'
   - 'view paragraph content testimonial'
   - 'view paragraph content video_embed'
+  - 'view published article_listing_no_results_setti site setting entities'
+  - 'view published footer_bottom site setting entities'
+  - 'view published footer_middle site setting entities'
+  - 'view published footer_top site setting entities'
+  - 'view published header_bottom site setting entities'
+  - 'view published header_top site setting entities'
+  - 'view published lytics_stream_details site setting entities'
+  - 'view published search_page_no_results_settings site setting entities'

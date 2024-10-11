@@ -1,0 +1,10 @@
+services:
+  bcht_decoupled.typed_data:
+    class: Drupal\bcht_decoupled\Normalizer\NodeNormalizer
+    tags:
+      - { name: normalizer, priority: 10 }
+
+  serializer.normalizer.resource_object.bcht_decoupled:
+    class: Drupal\bcht_decoupled\Normalizer\ResourceObjectNormalizer
+    decorates: serializer.normalizer.resource_object.jsonapi
+    arguments: ['@serializer.normalizer.resource_object.bcht_decoupled.inner','@entity_type.manager']
