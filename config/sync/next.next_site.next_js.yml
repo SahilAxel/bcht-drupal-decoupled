@@ -1,0 +1,11 @@
+uuid: 9ff0baab-2355-4422-8601-a81fa7daeb5f
+langcode: en
+status: true
+dependencies: {  }
+id: next_js
+label: Next.js
+base_url: 'http://host.docker.internal:3000'
+preview_url: 'http://host.docker.internal:3000/api/draft'
+preview_secret: secret
+revalidate_url: 'http://host.docker.internal:3000/api/revalidate'
+revalidate_secret: secret

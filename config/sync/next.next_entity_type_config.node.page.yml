@@ -1,0 +1,13 @@
+uuid: df3493df-a34b-4d99-8418-37fb36aab33b
+langcode: en
+status: true
+dependencies: {  }
+id: node.page
+site_resolver: site_selector
+configuration:
+  sites:
+    next_js: next_js
+revalidator: path
+revalidator_configuration:
+  revalidate_page: true
+  additional_paths: ''

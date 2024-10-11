@@ -2,7 +2,6 @@ _core:
   default_config_hash: g4qz7cPnloXFwtnLYfIKI2VS0gf_UFOz_I2uQiiulC8
 apikey: null
 test_defaults:
-  to: sahil.gidwani@axelerant.com
   subject: 'Test Email from SendGrid Module'
   body:
     value: 'Test Message for SendGrid.'
@@ -10,5 +9,6 @@ test_defaults:
   from_name: "Boston Children's Hospital Trust"
   to_name: ''
   reply_to: ''
+  to: sahil.gidwani@axelerant.com
 trackopens: 0
 trackclicks: 0

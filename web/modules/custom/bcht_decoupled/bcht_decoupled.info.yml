@@ -1,0 +1,5 @@
+name: 'BCHT Decoupled'
+type: module
+description: 'Customization for making the site headless'
+package: BCHT
+core_version_requirement: ^10 || ^11

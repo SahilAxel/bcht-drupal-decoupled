@@ -50,9 +50,13 @@
     "drupal/filelog": "^3.0",
     "drupal/asset_injector": "^2.21",
     "drupal/smart_content_lytics": "^1.0",
-    "drupal/next": "^1.6",
+    "drupal/next": "^2.0@beta",
     "drupal/jsonapi_extras": "^3.25",
-    "drupal/jsonapi_menu_items": "^1.2"
+    "drupal/jsonapi_menu_items": "^1.2",
+    "drupal/consumer_image_styles": "^4.0",
+    "drupal/jsonapi_views": "^1.1",
+    "drupal/jsonapi_search_api": "^1.0@RC",
+    "drupal/editor_advanced_link": "^2.2"
   },
   "require-dev": {
     "drupal/core-dev": "^10",
@@ -118,7 +122,7 @@
       "drupal/core": {
         "Dropdown button display becomes narrow when text is long": "https://git.drupalcode.org/project/drupal/-/merge_requests/4986.patch",
         "State required asterisk doesn't show": "https://www.drupal.org/files/issues/2023-08-18/2912092-67-10-1-x.patch",
-        "`link` fields in REST, JSON:API and GraphQL cannot be rendered by client": "https://www.drupal.org/files/issues/2024-09-04/3066751-85.patch"
+        "`link` fields in REST, JSON:API and GraphQL cannot be rendered by client": "https://www.drupal.org/files/issues/2024-07-29/3066751-84.patch"
       },
       "drupal/paragraphs": {
         "Space missing between the word to and the emphasis tag near the add button": "https://git.drupalcode.org/project/paragraphs/-/merge_requests/101.patch",
@@ -144,6 +148,9 @@
       },
       "drupal/decoupled_router": {
         "Unable to resolve path on node in other language than default": "https://www.drupal.org/files/issues/2024-08-05/decouple_router-3111456-resolve-language-issue-63--get-translation-re-rolled-and-good-redirect.patch"
+      },
+      "drupal/consumer_image_styles": {
+        "Images with non transliterated names will break the jsonapi validation": "https://www.drupal.org/files/issues/2024-09-05/consumer_image_styles_rfc.patch"
       }
     }
   },

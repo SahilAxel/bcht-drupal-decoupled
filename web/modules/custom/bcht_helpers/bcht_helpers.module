@@ -22,7 +22,11 @@ function bcht_helpers_views_pre_view(ViewExecutable $view, $display_id, array &$
    */
   if ($view->id() == 'related_content') {
     if (isset($args[0])) {
-      $paragraphID = $args[0]->__toString();
+      if (gettype($args[0]) != "string") {
+        $paragraphID = $args[0]->__toString();
+      } else {
+        $paragraphID = $args[0];
+      }
       $paragraph = Paragraph::load($paragraphID);
     }
 
@@ -176,6 +180,7 @@ function bcht_helpers_preprocess_node(&$variables) {
     elseif ($nodeType == 'listing_page') {
       $eyebrowText == "Listing Page";
     }
+
     $variables['eyebrow_node'] = $eyebrowText;
   }
 }
