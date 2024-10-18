@@ -51,3 +51,5 @@ permissions:
   - 'view published header_top site setting entities'
   - 'view published lytics_stream_details site setting entities'
   - 'view published search_page_no_results_settings site setting entities'
+  - 'view search_page_no_results_settings site setting entity revisions'
+  - 'view unpublished article_listing_no_results_setti site setting entities'

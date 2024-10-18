@@ -194,7 +194,9 @@ resourceFields:
     fieldName: field_publication_date
     publicName: field_publication_date
     enhancer:
-      id: ''
+      id: date_time_from_string
+      settings:
+        dateTimeFormat: 'Y-m-d\TH:i:sO'
   field_related_content:
     disabled: false
     fieldName: field_related_content

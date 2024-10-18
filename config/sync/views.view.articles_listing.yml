@@ -363,7 +363,9 @@ display:
     display_options:
       display_description: ''
       exposed_block: true
-      display_extenders: {  }
+      display_extenders:
+        jsonapi_views:
+          enabled: true
     cache_metadata:
       max-age: -1
       contexts:

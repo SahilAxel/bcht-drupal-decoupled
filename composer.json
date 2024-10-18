@@ -122,7 +122,8 @@
       "drupal/core": {
         "Dropdown button display becomes narrow when text is long": "https://git.drupalcode.org/project/drupal/-/merge_requests/4986.patch",
         "State required asterisk doesn't show": "https://www.drupal.org/files/issues/2023-08-18/2912092-67-10-1-x.patch",
-        "`link` fields in REST, JSON:API and GraphQL cannot be rendered by client": "https://www.drupal.org/files/issues/2024-07-29/3066751-84.patch"
+        "`link` fields in REST, JSON:API and GraphQL cannot be rendered by client": "https://www.drupal.org/files/issues/2024-07-29/3066751-84.patch",
+        "Protect pager against [] for the page": "https://git.drupalcode.org/project/drupal/-/merge_requests/5703.patch"
       },
       "drupal/paragraphs": {
         "Space missing between the word to and the emphasis tag near the add button": "https://git.drupalcode.org/project/paragraphs/-/merge_requests/101.patch",
@@ -151,6 +152,9 @@
       },
       "drupal/consumer_image_styles": {
         "Images with non transliterated names will break the jsonapi validation": "https://www.drupal.org/files/issues/2024-09-05/consumer_image_styles_rfc.patch"
+      },
+      "drupal/jsonapi_views": {
+        "Support pagination offset/limit": "https://www.drupal.org/files/issues/2023-09-29/3213575-views_json-pagination-10.patch"
       }
     }
   },
